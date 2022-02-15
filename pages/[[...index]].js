@@ -81,8 +81,8 @@ export default function Home({ index }) {
         </div>
     );
 }
-export async function getServerSideProps(context) {
-    return {
-        props: { index: context.params.index || '' }, // will be passed to the page component as props
-    };
-}
+// export async function getStaticProps(context) {
+//     return {
+//         props: { index: context.params.index || '' }, // will be passed to the page component as props
+//     };
+// }
