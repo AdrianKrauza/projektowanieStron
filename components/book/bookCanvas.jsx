@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-const currentFrame = (index) => `assets/book/Main_${index.toString().padStart(5, '0')}.jpg`;
+const currentFrame = (index) => `/assets/book/Main_${index.toString().padStart(5, '0')}.jpg`;
 const bookImages = [
     [49, 103 - 49],
     [189, 244 - 189],
