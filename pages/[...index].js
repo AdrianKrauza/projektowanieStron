@@ -66,17 +66,17 @@ export default function Home({ index }) {
     };
     return (
         <div className="scroller" style={{ height: '100vh' }}>
-            <>{index && index.map((el) => components[el])}</>
+            {/*<>{index && index.map((el) => components[el])}</>*/}
             {/*{index?.map((el) => {*/}
             {/*    if (el === 'oko') return <Oko />;*/}
             {/*})}*/}
-            {/*<Header />*/}
-            {/*<Cards3 />*/}
-            {/*<Tablets />*/}
-            {/*<Book />*/}
-            {/*/!*<Banach />*!/*/}
-            {/*<Guarantee />*/}
-            {/*<Oko />*/}
+            <Header />
+            <Cards3 />
+            <Tablets />
+            <Book />
+            {/*<Banach />*/}
+            <Guarantee />
+            <Oko />
             {/*<div className={' h-[300rem]'} />*/}
         </div>
     );
