@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zegar</title>
+</head>
+<body>
+<style>
+    .clock{
+        width: 100%;
+        height: 100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .h{
+        position: absolute;
+        width:60px;
+        background: black;
+        height: 4px;
+    }
+    .m{
+        position: absolute;
+        width:90px;
+        background: black;
+        height: 2px;
+    }
+    .border{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border:1px solid black;
+        border-radius:100%
+    }
+    .s{
+        position: absolute;
+        width:100px;
+        background: red;
+        height: 2px;
+    }
+    </style>
+<div class="clock">
+    <div class="h"></div>
+    <div class="m"></div>
+    <div class="s"></div>
+    <div class="border"></div>
+</div>
+    <script>
+
+
+                                                                                                                   const h = document.querySelector(".h")
+    const m = document.querySelector(".m")
+    const s = document.querySelector(".s")
+
+    setInterval(()=>{
+                       now = new Date();
+    const time = {
+        hour : now.getHours(),
+        min : now.getMinutes(),
+        sec : now.getSeconds(),
+    }
+    console.log(time)
+    h.style.transform = `rotate(${(time.hour / 60) * 360}deg) translateX(50%)`
+    m.style.transform = `rotate(${(time.min / 60) * 360}deg) translateX(50%)`
+    s.style.transform = `rotate(${(time.sec / 60) * 360}deg) translateX(50%)`
+    },1000)
+    </script>
+</body>
+</html>
