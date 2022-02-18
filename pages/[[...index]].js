@@ -70,13 +70,13 @@ export default function Home({ index }) {
             {/*{index?.map((el) => {*/}
             {/*    if (el === 'oko') return <Oko />;*/}
             {/*})}*/}
-            <Header />
-            <Cards3 />
-            <Tablets />
-            <Book />
-            {/*<Banach />*/}
+            {/*<Header />*/}
+            {/*<Cards3 />*/}
+            {/*<Tablets />*/}
+            {/*<Book />*/}
             <Guarantee />
-            <Oko />
+            <Banach />
+            {/*<Oko />*/}
             {/*<div className={' h-[300rem]'} />*/}
         </div>
     );
