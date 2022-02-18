@@ -74,7 +74,7 @@ const Banach = () => {
                         <span className={'block'} key={el}>
                             {el.split('').map((el) => {
                                 return (
-                                    <span className="inline-block relative overflow-hidden text-[#f0f0f0]">
+                                    <span key={el} className="inline-block relative overflow-hidden text-[#f0f0f0]">
                                         <span className="absolute translate-y-[240%] block">{el}</span>
                                         <span className="translate-y-[130%] block">{el}</span>
                                     </span>
