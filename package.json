@@ -14,8 +14,10 @@
     "lottie-web": "^5.8.1",
     "next": "12.0.10",
     "nextjs-fonts": "^0.22.0",
+    "odometer": "^0.4.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-odometerjs": "^2.1.2",
     "smooth-scrollbar": "^8.7.4"
   },
   "devDependencies": {

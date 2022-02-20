@@ -28,8 +28,8 @@ const UsePortfolio = () => {
             },
         });
     };
-    const scrollAnimationElement = (el, from, to, start, end) => {
-        gsap.fromTo(container.current.querySelector(el), from, {
+    const scrollAnimationElement = (el, from, to, start, end, scrollTriggerProps) => {
+        gsap.fromTo(container.current.querySelectorAll(el), from, {
             ease: 'none',
             ...to,
             scrollTrigger: {
@@ -37,6 +37,7 @@ const UsePortfolio = () => {
                 start: `${vh(start)}px 100%`,
                 end: `+=${vh(end)} 100%`,
                 scrub: 1,
+                ...scrollTriggerProps,
             },
         });
     };

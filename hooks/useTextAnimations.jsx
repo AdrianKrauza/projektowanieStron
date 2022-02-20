@@ -36,6 +36,19 @@ const UseTextAnimations = () => {
     const AnimationHeadingScrub = (el, trigger, start = -50, end = 200, childrenSpan = false) => {
         Split(el.current, childrenSpan);
         gsap.fromTo(
+            el.current,
+            { scale: 0.7 },
+            {
+                scale: 1,
+                scrollTrigger: {
+                    start: typeof start === 'number' ? `${start}% 50%` : start,
+                    end: typeof end === 'number' ? `${end}% 50%` : end,
+                    scrub: true,
+                    trigger: trigger.current,
+                },
+            },
+        );
+        gsap.fromTo(
             el.current.querySelectorAll(childrenSpan ? 'span span' : 'span '),
             {
                 scale: 0,

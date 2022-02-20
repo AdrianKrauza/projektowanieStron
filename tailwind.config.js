@@ -7,6 +7,7 @@ module.exports = {
                 roboto: ['"roboto"'],
                 robotoMono: ['"Roboto Mono"'],
                 AGaramondPro: ['"AGaramondPro"'],
+                dalmatins: ['"Dalmatins"'],
             },
             colors: {
                 transparent: 'transparent',

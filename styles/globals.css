@@ -65,7 +65,61 @@ html {
   }
 }
 
+.signature{
+  font-family: Dalmatins;
+  color: #c29a5c;
+  font-size: 50px;
+  text-transform: none;
+  position: absolute;
+  left: 200px;
+  background: rgb(194,154,92);
+  padding: 100px 0;
+  background: linear-gradient(90deg, rgba(194,154,92,1) 20%, rgba(213,196,170,1) 32%, rgba(227,227,227,0) 50%, rgba(243,238,232,0) 61%);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-x: 100%;
+  animation-name: signature;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  transform: translate(-250px, -90px) rotate( 355deg );
+  transform-origin: top left;
+}
+.signature2{
+  font-family: Dalmatins;
+  color: #c29a5c;
+  text-transform: none;
+  position: absolute;
+  left: 200px;
+  background: rgb(194,154,92);
+  padding: 100px 0;
+  background: linear-gradient(90deg, rgba(194,154,92,1) 20%, rgba(213,196,170,1) 32%, rgba(227,227,227,0) 50%, rgba(243,238,232,0) 61%);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-x: 100%;
+  animation-name: signature;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  transform: translate(-200px, -90px) rotate( 355deg );
+  transform-origin: top left;
+  font-size: 45px;
 
+}
 .spiral rect {
   fill: #E5E6EA !important;
+}
+.banachCloud rect {
+  fill: #141414 !important;
+}
+
+.odometerText{
+  font-weight: 900;
+  color: #f2eeeb69;
+  font-size: 240px;
+  -webkit-text-stroke: .5px #e3d2b9;
+  line-height:1;
+  font-family:roboto;
 }
