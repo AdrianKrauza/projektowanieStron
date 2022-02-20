@@ -5,8 +5,8 @@ const Guarantee = () => {
             <div className={'border-white border-[1px] w-[50rem] m-auto my-12'} />
             <p className={'text-white text-center'}>
                 Gwarantujemy zwiększyć konwersję Twojej strony,
-                <br />
-                albo nie zapłacisz nic za naszą ciężką pracę.
+                {/*<br />*/}
+                {/*albo nie zapłacisz nic za naszą ciężką pracę.*/}
                 <br />
                 <span className={'text-2xl mt-10'}>Szegóły niżej, w sekcji FAQ.</span>
             </p>
