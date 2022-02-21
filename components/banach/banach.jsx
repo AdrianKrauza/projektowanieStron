@@ -275,7 +275,7 @@ const Banach = () => {
                 <div className={'-left-[300px] pattern  absolute bottom-0  translate-y-full'}>
                     <Image {...pattern} quality={100} />
                 </div>
-                <div className={'-left-[300px] z-40 patternPhone  absolute bottom-0  translate-y-full'}>
+                <div className={'-left-[300px] z-40 h-[572px] patternPhone  absolute bottom-0  translate-y-full'}>
                     <video
                         src="/assets/banach/Design-pattern.mp4"
                         autoPlay
