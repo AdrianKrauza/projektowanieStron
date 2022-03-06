@@ -4,6 +4,7 @@ import Line from './textLine';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import WhiteSpheres from './whiteSpheres';
+
 import UseTextAnimations from '../../hooks/useTextAnimations';
 gsap.registerPlugin(ScrollTrigger);
 const texts = [
@@ -84,10 +85,12 @@ const Book = () => {
                     style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg)' }}
                     className={'leading-snug font-size'}
                 >
-                    <span>To czego się zaraz dowiesz </span>
-                    <span>zmieni Twój sposób myślenia </span>
-                    <span>o obecności Twojej firmy w sieci</span>
-                    <span className={'text-[1.8rem] mt-6'}>- na zawsze!</span>
+                    <span>To czego się tu dowiesz zmieni </span>
+                    <span>Twój sposób myślenia </span>
+                    <span>o firmie w internecie</span>
+                    {/*<br />*/}
+                    <span className={'text-[3rem] mt-3'}>- Na zawsze!</span>
+                    {/*<span className={'text-[1.8rem] mt-6'}>- na zawsze!</span>*/}
                 </p>
             </div>
             <div className={'hidden'}>

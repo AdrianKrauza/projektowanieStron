@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 const UseCanvasFrameAnimation = (path, images) => {
     let img;
@@ -27,7 +28,7 @@ const UseCanvasFrameAnimation = (path, images) => {
     };
 
     const updateImage = (index) => {
-        img.src = currentFrame(index);
+        img.src = currentFrame(index % images[1]);
         context.drawImage(img, 0, 0);
     };
 

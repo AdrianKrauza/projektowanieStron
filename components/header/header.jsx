@@ -33,7 +33,7 @@ const Header = () => {
     }, []);
     return (
         <>
-            <div id="header" className={'w-screen  h-[100rem]  '}>
+            <div id="header" className={'w-screen  h-[100rem] will-change-transform '}>
                 <div style={{ background: 'linear-gradient(180deg, #212121 62%, #3f3f3f 77%)' }}>
                     <div
                         ref={gradientRef}
@@ -45,7 +45,7 @@ const Header = () => {
                         <h1
                             ref={headerRef}
                             className={
-                                'text-[6.5rem] text-white font-black font-playfair leading-[0.85] pt-36 opacity-0 relative z-20'
+                                'text-[6.5rem] ml-24 text-white font-black font-playfair leading-[0.85] pt-40 opacity-0 relative z-20'
                             }
                         >
                             <span className={'block tracking-[1px]'}> Tak się tworzy</span>
@@ -54,14 +54,14 @@ const Header = () => {
                         <p
                             ref={paragraphRef}
                             className={
-                                'text-[2.5rem] text-white font-thin font-roboto mt-10 leading-[1.2] opacity-0  relative z-20'
+                                'ml-24 text-[2.5rem] text-white font-thin font-roboto mt-10 leading-[1.2] opacity-0  relative z-20'
                             }
                         >
                             <span className={'block tracking-[-1px]'}>Projektujemy przyjemne, cyfrowe</span>
                             <span className={'block tracking-[-2px]'}>doświadczenia, które dostarczają</span>
                             <span className={'block tracking-[-3px]'}>topowych wyników biznesowych.</span>
                         </p>
-                        <div className={'w-[70rem] absolute top-0 -right-44 inline-block '}>
+                        <div className={'w-[70rem] absolute top-[5rem] -right-44 inline-block '}>
                             <Image layout={'responsive'} {...LaptopImg} priority />
                         </div>
                     </div>

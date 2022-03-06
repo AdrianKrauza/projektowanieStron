@@ -26,7 +26,13 @@ const Card = ({ title, paragraph, video, mask, index }) => {
                 start: `${index * 45}% 100%`,
                 onEnter: () => snotLottie.playSegments([0, 12], true),
             });
-            AnimationHeadingScrub(titleRef, 'body', `${vh(index * 20 + 35)}vh 0%`, `${vh((index + 1) * 20 + 90)}vh 0%`);
+            if (index === 0) {
+                AnimationHeadingScrub(titleRef, 'body', `${vh((index + 1) * 5)} 0%`, `${vh((index + 2) * 25)} 0%`);
+            } else if (index === 1) {
+                AnimationHeadingScrub(titleRef, 'body', `${vh((index + 1) * 20)} 0%`, `${vh((index + 2) * 35)} 0%`);
+            } else {
+                AnimationHeadingScrub(titleRef, 'body', `${vh((index + 1) * 25)} 0%`, `${vh((index + 2) * 35)} 0%`);
+            }
             gsap.to(cardRef.current, {
                 scrollTrigger: {
                     trigger: 'body',
@@ -99,7 +105,7 @@ const Card = ({ title, paragraph, video, mask, index }) => {
     return (
         <div
             ref={cardRef}
-            className={'bg-lightGray rounded-3xl  w-[24rem] mx-12 p-8 relative mt-44 h-96  translate-y-[100vh]'}
+            className={'bg-lightGray rounded-3xl  w-[24rem] mx-12 p-8 relative mt-44 h-96  translate-y-[100vh] will-change-transform'}
         >
             <video
                 autoPlay

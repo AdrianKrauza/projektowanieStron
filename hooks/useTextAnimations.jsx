@@ -33,38 +33,71 @@ const UseTextAnimations = () => {
             delay: (el, i) => 500 + 30 * i,
         });
     };
-    const AnimationHeadingScrub = (el, trigger, start = -50, end = 200, childrenSpan = false) => {
-        Split(el.current, childrenSpan);
-        gsap.fromTo(
-            el.current,
-            { scale: 0.7 },
-            {
-                scale: 1,
-                scrollTrigger: {
-                    start: typeof start === 'number' ? `${start}% 50%` : start,
-                    end: typeof end === 'number' ? `${end}% 50%` : end,
-                    scrub: true,
-                    trigger: trigger.current,
+    const AnimationHeadingScrub = (
+        el,
+        trigger,
+        start = -50,
+        end = 200,
+        childrenSpan = false,
+        scale = false,
+        reverse = false,
+    ) => {
+        if (!reverse) Split(el.current, childrenSpan);
+        if (scale) {
+            gsap.fromTo(
+                el.current,
+                { scale: 0.7 },
+                {
+                    scale: 1,
+                    // tylko w if
+                    transformOrigin: 'bottom',
+                    //
+                    scrollTrigger: {
+                        start: typeof start === 'number' ? `${start}% 50%` : start,
+                        end: typeof end === 'number' ? `${end}% 50%` : end,
+                        scrub: 2,
+                        trigger: trigger.current,
+                    },
                 },
-            },
-        );
-        gsap.fromTo(
-            el.current.querySelectorAll(childrenSpan ? 'span span' : 'span '),
-            {
-                scale: 0,
-            },
-            {
-                scale: 1,
-                ease: 'elastic(1.005,0,995)',
-                stagger: 0.02,
-                scrollTrigger: {
-                    start: typeof start === 'number' ? `${start}% 50%` : start,
-                    end: typeof end === 'number' ? `${end}% 50%` : end,
-                    scrub: true,
-                    trigger: trigger.current,
+            );
+        }
+
+        if (reverse) {
+            gsap.to(
+                el.current.querySelectorAll(childrenSpan ? 'span span' : 'span '),
+
+                {
+                    scale: 0,
+                    ease: 'elastic(1.005,0,995)',
+                    stagger: 0.02,
+                    transformOrigin: 'bottom',
+                    scrollTrigger: {
+                        start: typeof start === 'number' ? `${start}% 50%` : start,
+                        end: typeof end === 'number' ? `${end}% 50%` : end,
+                        scrub: 2,
+                        trigger: trigger.current,
+                    },
                 },
-            },
-        );
+            );
+        } else {
+            gsap.fromTo(
+                el.current.querySelectorAll(childrenSpan ? 'span span' : 'span '),
+                {
+                    scale: 0,
+                },
+                {
+                    scale: 1,
+                    ease: 'elastic(1.005,0,995)',
+                    stagger: 0.02,
+                    scrollTrigger: {
+                        start: typeof start === 'number' ? `${start}% 50%` : start,
+                        end: typeof end === 'number' ? `${end}% 50%` : end,
+                        scrub: 2,
+                        trigger: trigger.current,
+                    },
+                },
+            );
+        }
     };
     return { Split, AnimationHeading, AnimationParagraph, AnimationHeadingScrub };
 };

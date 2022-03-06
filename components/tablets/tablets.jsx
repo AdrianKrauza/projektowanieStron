@@ -2,8 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import gsap from 'gsap';
 import Image from 'next/image';
-import Tablet1Img from '/assets/tablets/A.jpg';
-import Tablet2Img from '/assets/tablets/B.jpg';
+import Tablet1Img from '/assets/tablets/Laptopy.jpg';
+import Tablet2Img from '/assets/tablets/Laptopy.jpg';
+const positionBoxes = [
+    { x: 0, y: 10 },
+    { x: 18, y: 42 },
+    { x: 45, y: 8 },
+];
 const Tablets = () => {
     const headingRef = useRef();
     const mouseMoveRef = useRef();
@@ -13,8 +18,20 @@ const Tablets = () => {
         setState(index);
     };
     useEffect(() => {
+        gsap.to('.rotatedsa', {
+            rotateX: 0,
+            duration: 0.6,
+            stagger: 0.01,
+            delay: 3,
+        });
+        gsap.to('.rotatedsa', {
+            rotateX: 90,
+            duration: 0.6,
+            stagger: 0.01,
+            delay: 3.4,
+        });
         setTimeout(() => {
-            AnimationHeadingScrub(headingRef, headingRef);
+            AnimationHeadingScrub(headingRef, headingRef, -50, 200, false, true);
         }, 0);
 
         const tl = gsap.timeline({
@@ -31,11 +48,11 @@ const Tablets = () => {
         });
     }, []);
     return (
-        <div className={'relative z-20'}>
+        <div className={'relative z-20 mt-64'}>
             <h2 ref={headingRef} className={'text-center text-darkGray'}>
                 Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
             </h2>
-            <p className={'text-center mt-28'}>
+            <p className={'text-center mt-28 leading-[1.3]'}>
                 Zdobądź piękną, wysokowydajną stronę, która przekonuje
                 <br />
                 znacznie więcej klientów niż strony Twojej konkurencji.
@@ -69,15 +86,51 @@ const Tablets = () => {
                         <circle className="dot" cx="64.5" cy="64.5" r="10" fill="black " />
                     </svg>
                 </div>
-                <p>więcej</p>
+                <p className={'text-[25px]'}>więcej</p>
             </div>
-            <div className={'absolute left-1/2 -translate-x-1/2 -z-10 h-[1400px] relative'}>
-                {[Tablet1Img, Tablet2Img].map((img, index) => (
+            <div
+                style={{ left: 'calc(50% )' }}
+                className={'absolute mt-[100px] -translate-x-1/2 -z-10 h-[1400px] relative ml-[2%]  '}
+            >
+                {[Tablet1Img].map((img, index) => (
                     <div
                         key={img.src}
-                        className={`absolute top-0 left-1/2 -translate-x-1/2 opacity-${index === state ? 1 : 0}`}
+                        className={` h-auto w-[160vw]  max-w-[2942px] absolute top-0 left-1/2 -translate-x-1/2 opacity-${
+                            index === state ? 1 : 0
+                        }`}
                     >
-                        <Image {...img} layout={`fixed`} />
+                        <Image {...img} layout={`responsive`} />
+                        {positionBoxes.map(({ x, y }, index) => (
+                            <div
+                                key={img.src}
+                                className={'top-0 absolute h-full w-[160vw] max-w-[2942px] left-0'}
+                                style={{
+                                    WebkitMaskBoxImage: `url(/assets/tablets/Laptopy${index}.svg)`,
+                                }}
+                            >
+                                <div
+                                    key={`${x}${y}`}
+                                    className={`flex absolute flex-col   z-10 h-1/2 `}
+                                    style={{
+                                        left: x + '%',
+                                        top: y + '%',
+                                    }}
+                                >
+                                    {new Array(50).fill(0).map((_, i) => (
+                                        <div
+                                            key={i}
+                                            style={{
+                                                transform:
+                                                    ' translateX(0) translateY(0) rotateZ(334deg) rotateX(90deg)',
+                                            }}
+                                            className={
+                                                'rotatedsa bg-[gray] max-w-[1471px] w-[80vw] h-[40px] origin-bottom'
+                                            }
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 ))}
             </div>

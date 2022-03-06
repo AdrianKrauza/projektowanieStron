@@ -16,7 +16,8 @@ import bp3 from '/assets/banach/Bp3.jpg';
 import bp4 from '/assets/banach/Bp4.jpg';
 import bp5 from '/assets/banach/Bp5.jpg';
 import pattern from '/assets/banach/Tlo-telefon.jpg';
-import usePortfolio from '/hooks/usePortfolio';
+import video from '/assets/banach/Tlo-telefon.jpg';
+import usePortfolio from '/hooks/usePortfolio2';
 import anime from 'animejs';
 import { useEffect, useRef, useState } from 'react';
 import gsap, { Expo } from 'gsap';
@@ -71,6 +72,7 @@ const vh = (coef) => window.innerHeight * (coef / 100);
 gsap.registerPlugin(ScrollTrigger);
 const Banach = () => {
     const containerRef = useRef();
+    const videoRef = useRef()
     const percentTextRef = useRef();
     const headerRef = useRef();
     const lottieCloudRef = useRef();
@@ -79,7 +81,15 @@ const Banach = () => {
     const [odometerValue, setOdometerValue] = useState(25);
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     useEffect(() => {
+
         setTimeout(() => {
+            console.log(   videoRef.current)
+            videoRef.current.playbackRate = 2
+            console.log( videoRef.current.playbackRate)
+        },2000)
+        setTimeout(() => {
+
+
             AnimationHeadingScrub(headerRef,headerRef,`${vh(740)} 0%`,`${vh(780)} 0%`)
             const cloudLottie = lottieLoad(lottieCloudRef.current,lottieCloud,true)
             ScrollTrigger.create({
@@ -113,6 +123,18 @@ const Banach = () => {
             moveElement('.patternPhone', 650, 350);
             moveElement('.text-animation-header', 20, 400);
             moveElement('.patternConvert', 400, 1250);
+
+            // scrollAnimationElement(
+            //     '.banach3',
+            //     {
+            //         borderRadius: '100%',
+            //     },
+            //     {
+            //         borderRadius: '0%',
+            //     },
+            //     50,
+            //     100,
+            // );
             scrollAnimationElement(
                 '.signature',
                 {
@@ -208,13 +230,24 @@ const Banach = () => {
                     return (prev + 1) % 3;
                 })
 
-              },2400)
+            },2400)
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[600rem] bg-[#E2E2E2]'}>
+        <div ref={containerRef} className={'h-[600rem] bg-darkGray-900'}>
+            <div
+                className={`presentation  flex justify-center h-[400px]  absolute items-center w-full`}
+            >
+                <p className={'text-right text-white'}>
+                    Strona dla Banach
+                </p>
+                <div className={'h-[100px] bg-white w-[1px] mx-10'} />
+                <div>
+                    <video ref={videoRef}  src="/assets/banach/Banach-logo.mp4" autoPlay muted className={'w-96'} />
+                </div>
+            </div>
+            <div className={'pin2 w-[1350px] m-auto relative h-screen  '}>
 
-            <div className={'pin w-[1350px] m-auto relative h-screen  '}>
 
                 <div ref={lottieCloudRef} className={"pointer-events-none banachCloud z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen"}/>
                 <div className={"flex justify-center pointer-events-none w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen"}>
@@ -226,7 +259,7 @@ const Banach = () => {
                 </div>
                 <div
                     className={
-                        'banach3  gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
+                        'banach3 overflow-hidden gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
                     <Image {...banach3} layout={'responsive'} />
@@ -413,6 +446,8 @@ const Banach = () => {
                         className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[416px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
                     />
+
+
 
 
                 </div>

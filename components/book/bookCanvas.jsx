@@ -43,7 +43,7 @@ const BookCanvas = ({ bookSectionRef }) => {
                 trigger: bookSectionRef.current,
                 pin: bookCanvasRef.current,
                 start: '0 6%',
-                end: '105% 50%',
+                end: '105% 35%',
             });
 
             bookSectionRef.current.querySelectorAll('.space').forEach((el, index) => {

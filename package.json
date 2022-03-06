@@ -8,9 +8,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^12.1.0",
     "animejs": "^3.2.1",
     "gsap": "^3.9.1",
     "locomotive-scroll": "^4.1.4",
+    "lottie-react": "^2.2.1",
     "lottie-web": "^5.8.1",
     "next": "12.0.10",
     "nextjs-fonts": "^0.22.0",

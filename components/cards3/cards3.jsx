@@ -12,7 +12,7 @@ const Cards3 = () => {
             gsap.to(cardsRef.current, {
                 scrollTrigger: {
                     trigger: 'body',
-                    end: `${vh((2 + 1) * 20 + 20)}px 0%`,
+                    end: `${vh((2 + 1) * 20 + 50)}px 0%`,
                     pin: cardsRef.current,
                 },
             });
@@ -20,7 +20,7 @@ const Cards3 = () => {
     });
     return (
         <>
-            <Spiral />
+            {/*<Spiral />*/}
             <div ref={cardsRef} className={'absolute  flex justify-center w-screen top-0'}>
                 <Card
                     mask={'/assets/cards3/maska_dicaprioSV.svg'}
@@ -55,7 +55,7 @@ const Cards3 = () => {
                         </>
                     }
                 />
-            </div>{' '}
+            </div>
         </>
     );
 };
