@@ -139,7 +139,9 @@ const Page3 = () => {
                     this.textPath.textContent = this.textContent.trim();
                 }
             }
-            customElements.define('circle-text', CircleText, {});
+            console.log(customElements);
+
+            customElements.get('circle-text') || customElements.define('circle-text', CircleText, {});
         }
     }, []);
     return (
@@ -203,9 +205,9 @@ const Page3 = () => {
                 <div className={'-mt-[50px]'}>
                     <Image {...page3c2} />
                     <div className={'absolute left-[818px] translate-y-[-262px]'}>
-                        <Lottie animationData={icon1} loop={true} className={'w-[70px]'} />
-                        <Lottie animationData={icon2} loop={true} className={'w-[70px]'} />
-                        <Lottie animationData={icon3} loop={true} className={'w-[70px]'} />
+                        {/*<Lottie animationData={icon1} loop={true} className={'w-[70px]'} />*/}
+                        {/*<Lottie animationData={icon2} loop={true} className={'w-[70px]'} />*/}
+                        {/*<Lottie animationData={icon3} loop={true} className={'w-[70px]'} />*/}
                     </div>
                 </div>
                 <div className={'bg-[#141414] -mt-[10px]'}>

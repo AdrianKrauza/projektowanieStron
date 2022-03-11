@@ -20,7 +20,7 @@ const Cards3 = () => {
     });
     return (
         <>
-            {/*<Spiral />*/}
+            <Spiral />
             <div ref={cardsRef} className={'absolute  flex justify-center w-screen top-0'}>
                 <Card
                     mask={'/assets/cards3/maska_dicaprioSV.svg'}

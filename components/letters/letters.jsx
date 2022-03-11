@@ -60,7 +60,7 @@ const Letters = () => {
     const containerRef = useRef();
     return (
         // <div ref={containerRef} className={'relative z-50 -top-[22rem] flex mb-[30rem] w-[100rem] m-auto'}>
-        <div ref={containerRef} className={'tablets1 relative z-50 -top-[30rem] flex mb-[30rem] w-[100rem] m-auto'}>
+        <div ref={containerRef} className={'tablets1 relative z-50 -top-[20rem] flex mb-[30rem] w-[100rem] m-auto'}>
             <LottieLetter container={containerRef} data={letterY} left={53} top={-25.9} />
             <LottieLetter container={containerRef} data={letterW} left={42} top={-19.9} />
             <LottieLetter container={containerRef} data={letterO} left={35} top={-16.4} />

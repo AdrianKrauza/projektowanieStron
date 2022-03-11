@@ -17,16 +17,15 @@ const UsePortfolio = () => {
             end: '100% 0%',
         });
     };
-    const moveElement = (el, start, speed,responsive = true,stop = 0.7,scrub = 5) => {
+    const moveElement = (el, start, speed,responsive = true,stop = 0.7,scrub = 1) => {
         const element = container.current.querySelectorAll(el);
-        console.log(container.current.querySelector(el)?.offsetHeight)
         gsap.to(element, {
 
             y: responsive ? -vh(100) - ((container.current.querySelector(el)?.offsetHeight / 5 || 0)  ):(-window.innerHeight + container.current.querySelector(el)?.offsetHeight * stop || 0) ,
             ease:responsive ? 'none' : Expo.easeOut,
             scrollTrigger: {
                 trigger: container.current,
-                start: `${typeof start === 'number' ? start + 'px' :  start} 100%`,
+                start: `${typeof start === 'number' ? vh(50) + start + 'px' :  start} 100%`,
                 end: `+=${vh( 100 )  + speed} 100%`,
                 scrub,
             },
@@ -41,7 +40,7 @@ const UsePortfolio = () => {
                 trigger: container.current,
                 start: `${start}px 100%`,
                 end: `+=${vh(100) + end} 100%`,
-                scrub: 3,
+                scrub: 1,
                 ...scrollTriggerProps,
             },
         });

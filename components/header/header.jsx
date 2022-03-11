@@ -13,6 +13,8 @@ const Header = () => {
     const paragraphRef = useRef();
     const gradientRef = useRef();
     useEffect(() => {
+        console.log('test');
+        let animations;
         setTimeout(() => {
             ScrollTrigger.create({
                 trigger: 'body ',
@@ -21,15 +23,23 @@ const Header = () => {
                 end: `${vh(2 * 20 + 125)}px 0%`,
             });
         }, 0);
+        AnimationHeading(headerRef, true);
+
         setTimeout(() => {
-            AnimationHeading(headerRef, true);
+            let currentState = 0;
+            animations = setInterval(() => {
+                currentState++;
+                gradientRef.current.style.backgroundImage = `radial-gradient( circle at ${
+                    window.innerWidth < 2600 ? '75vw 25vw' : '2170px 490px'
+                } , transparent 0%, #141414 ${currentState}% )`;
+                if (currentState > 85) clearInterval(animations);
+            }, 10);
             setTimeout(() => {
-                GradientAnimation(gradientRef);
-                setTimeout(() => {
-                    AnimationParagraph(paragraphRef, true);
-                }, 500);
-            }, 1500);
-        }, 500);
+                AnimationParagraph(paragraphRef, true);
+            }, 500);
+        }, 1500);
+
+        return () => clearInterval(animations);
     }, []);
     return (
         <>

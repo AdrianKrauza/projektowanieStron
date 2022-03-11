@@ -13,19 +13,33 @@ import End from './components/end';
 import Phone from './components/phone';
 import UseCanvasFrameAnimation from '../../hooks/useCanvasFrameAnimation';
 import If from './components/if';
-import useTextAnimations from '../../hooks/useTextAnimations';
 gsap.registerPlugin(ScrollTrigger);
 const vh = (coef) => window.innerHeight * (coef / 100);
-const Pragmile = () => {
+const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
     const containerRef = useRef();
 
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     const { initCanvas, updateImage } = UseCanvasFrameAnimation('pragmile/Comp 1_00', [0, 49]);
-    const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         setTimeout(() => {
+            console.log(containerRef);
+
+            gsap.to(containerRef.current.querySelector('.pin'), {
+                opacity: 1,
+                duration: 2,
+            });
+            ScrollTrigger.create({
+                trigger: containerRef.current,
+                start: '3% 0%',
+                end: '3% 0%',
+                markers: true,
+                onEnterBack: () => {
+                    // setPageState(0);
+                },
+            });
             pinPortfolio(containerRef);
-            moveElement('.startImg3', 500, 12000, false, 0.05);
+            moveElement('.presentation', vh(50) + 'px', 800);
+            moveElement('.startImg3', vh(100) + 'px', 12000, false, 0.05);
             moveElement('.page1', 1080, 7000);
             moveElement('.gate1', 2750, 4100);
             moveElement('.text1', 2680, 4400);
@@ -77,14 +91,14 @@ const Pragmile = () => {
 
                     scale: 0.9,
                 });
-            scrollAnimationElement('.startImg3', {}, {}, 1100, 0, {
-                onLeave: () => {
-                    containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
-                },
-                onEnterBack: () => {
-                    containerRef.current.querySelector(' .startImg3').style.overflow = 'hidden';
-                },
-            });
+            // scrollAnimationElement('.startImg3', {}, {}, 1100, 0, {
+            //     onLeave: () => {
+            //         containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
+            //     },
+            //     onEnterBack: () => {
+            //         containerRef.current.querySelector(' .startImg3').style.overflow = 'hidden';
+            //     },
+            // });
             scrollAnimationElement(
                 '.startImg3',
                 {},
@@ -237,8 +251,8 @@ const Pragmile = () => {
     return (
         //
         <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen -mt-[25rem] '}>
-            <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2  '}>
-                {/*<Presentation />*/}
+            <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
+                <Presentation />
                 <StartImg />
                 <Page1 />
                 <Page2 />

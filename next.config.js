@@ -5,8 +5,5 @@ module.exports = {
 };
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //     // enabled: true
-// })
-// module.exports = withBundleAnalyzer({})
-
-
-
+// });
+// module.exports = withBundleAnalyzer({});

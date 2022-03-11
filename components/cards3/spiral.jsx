@@ -2,14 +2,15 @@ import { useEffect, useRef } from 'react';
 import SpiralData from '../../assets/cards3/spiral.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import lottieLoad from '../../helpers/lottieLoad';
+import Lottie from 'lottie-react';
 const vh = (coef) => window.innerHeight * (coef / 100);
+
 export const Spiral = () => {
     gsap.registerPlugin(ScrollTrigger);
     const spiralRef = useRef();
+    const spiralDataRef = useRef();
     useEffect(() => {
-        const spiral = lottieLoad(spiralRef.current, SpiralData, true);
-        spiral.goToAndStop(-1, true);
+        spiralDataRef.current.goToAndStop(-1, true);
         setTimeout(() => {
             ScrollTrigger.create({
                 trigger: 'body',
@@ -22,7 +23,7 @@ export const Spiral = () => {
                 start: `${vh((2 + 1) * 20)}px 0%`,
                 end: `${vh(2 * 20 + 100)}px 0%`,
                 onUpdate: ({ progress }) => {
-                    spiral.goToAndStop(Math.floor(28 * progress - 1), true);
+                    spiralDataRef.current.goToAndStop(Math.floor(28 * progress - 1), true);
                 },
                 onLeave: () => {
                     document.body.classList.remove('bg-darkGray-900');
@@ -34,7 +35,10 @@ export const Spiral = () => {
                 },
             });
         }, []);
-        return () => (spiralRef.current.innerHTML = '');
     });
-    return <div ref={spiralRef} className={'spiral absolute top-0 h-screen w-screen'} />;
+    return (
+        <div ref={spiralRef} className={'absolute top-0 h-screen w-screen'}>
+            <Lottie lottieRef={spiralDataRef} className={'spiral absolute top-0 '} animationData={SpiralData} />
+        </div>
+    );
 };

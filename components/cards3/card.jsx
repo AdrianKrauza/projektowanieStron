@@ -4,9 +4,9 @@ const vh = (coef) => window.innerHeight * (coef / 100);
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import snot from '/assets/cards3/snot.json';
-import lottieLoad from '../../helpers/lottieLoad';
-gsap.registerPlugin(ScrollTrigger);
 
+gsap.registerPlugin(ScrollTrigger);
+import Lottie from 'lottie-react';
 const Card = ({ title, paragraph, video, mask, index }) => {
     const cardRef = useRef();
     const titleRef = useRef();
@@ -14,17 +14,17 @@ const Card = ({ title, paragraph, video, mask, index }) => {
     const paragraphRef = useRef();
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
-        const snotLottie = lottieLoad(snotRef.current, snot);
         gsap.to(cardRef.current, {
             background: 'linear-gradient( rgba(231,230,232,1) 30%, rgba(231,230,232,1) 61%)',
             duration: 0.5,
         });
-        snotLottie.setSpeed(0.5);
+
         setTimeout(() => {
+            snotRef.current.setSpeed(0.5);
             ScrollTrigger.create({
                 trigger: cardRef.current,
                 start: `${index * 45}% 100%`,
-                onEnter: () => snotLottie.playSegments([0, 12], true),
+                onEnter: () => snotRef.current.playSegments([0, 12], true),
             });
             if (index === 0) {
                 AnimationHeadingScrub(titleRef, 'body', `${vh((index + 1) * 5)} 0%`, `${vh((index + 2) * 25)} 0%`);
@@ -99,13 +99,13 @@ const Card = ({ title, paragraph, video, mask, index }) => {
                     ease: 'linear',
                 });
         }, 0);
-        return () => (snotRef.current.innerHTML = '');
     }, []);
-
     return (
         <div
             ref={cardRef}
-            className={'bg-lightGray rounded-3xl  w-[24rem] mx-12 p-8 relative mt-44 h-96  translate-y-[100vh] will-change-transform'}
+            className={
+                'bg-lightGray rounded-3xl  w-[24rem] mx-12 p-8 relative mt-44 h-96  translate-y-[100vh] will-change-transform'
+            }
         >
             <video
                 autoPlay
@@ -121,8 +121,9 @@ const Card = ({ title, paragraph, video, mask, index }) => {
             <p ref={paragraphRef} className={'mt-9 font-roboto text-3xl'}>
                 {paragraph}
             </p>
-            <div
-                ref={snotRef}
+            <Lottie
+                animationData={snot}
+                lottieRef={snotRef}
                 className={'-translate-x-1/2 left-1/2 absolute bottom-32 translate-y-full w-[25rem] -z-10'}
             />
         </div>

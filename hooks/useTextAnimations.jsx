@@ -5,8 +5,9 @@ gsap.registerPlugin(ScrollTrigger);
 const UseTextAnimations = () => {
     const Split = (el, childrenSpan) => {
         [childrenSpan ? [...el.childNodes] : el].flat().forEach((words) => {
-            words.innerHTML = words.textContent.replace(/\S/g, "<span class='inline-block'>$&</span>");
-            words.innerHTML = words.innerHTML.replaceAll('<span class="inline-block">/</span>', '<br/>');
+            words.innerHTML = words.textContent.replace(/\S/g, "<span style='transform-origin: 50% 100%' class='inline-block'>$&</span>");
+            words.innerHTML = words.innerHTML.replaceAll('<span style="transform-origin: 50% 100%" class="inline-block">/</span>', '<br/>');
+
         });
         gsap.set(el, { opacity: 1 });
     };

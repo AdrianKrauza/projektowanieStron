@@ -51,7 +51,7 @@ const IfBox = ({ el, index, containerRef, start }) => {
                 <Lottie
                     animationData={boxLottie}
                     className={` w-[31rem] h-[29rem] rotate-90 -translate-x-1/2 left-1/2 -top-[7rem] absolute -z-10`}
-                    loop={true}
+                    loop={false}
                     rendererSettings={{
                         preserveAspectRatio: 'none',
                     }}
