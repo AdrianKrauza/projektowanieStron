@@ -21,18 +21,21 @@ const pageState = {
             <Header />
             <Cards3 />
             <Tablets />
-            <Letters />
+            {/*<Letters />*/}
             <Book />
             <Guarantee setPageState={setPageState} />
-            {/*<div className={'h-[40rem] bg-darkGray-900'} />*/}
             <Pragmile setPageState={setPageState} />
+            {/*<If />*/}
+            {/*<If />*/}
             {/*<Banach />*/}
+            {/*<Oko />*/}
         </div>
     ),
     1: (setPageState) => (
         <>
-            <Guarantee setPageState={setPageState} disable />
-            <Pragmile setPageState={setPageState} />
+            <If />
+            <Banach />
+            <Oko />
         </>
     ),
 };
@@ -40,9 +43,9 @@ export default function Home({ index }) {
     const [pageState2, setPageState2] = useState(0);
     const { fromEnter, setPageState, currentPageState } = UseChangePageState();
     useEffect(() => {
-        setTimeout(() => {
-            setPageState2(currentPageState);
-        }, 1000);
+        // setTimeout(() => {
+        setPageState2(currentPageState);
+        // }, 1000);
     }, [currentPageState]);
     console.log('ds');
     return (

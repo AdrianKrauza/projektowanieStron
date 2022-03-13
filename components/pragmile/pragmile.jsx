@@ -15,7 +15,7 @@ import UseCanvasFrameAnimation from '../../hooks/useCanvasFrameAnimation';
 import If from './components/if';
 gsap.registerPlugin(ScrollTrigger);
 const vh = (coef) => window.innerHeight * (coef / 100);
-const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
+const Pragmile = ({ setPageState }) => {
     const containerRef = useRef();
 
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
@@ -30,15 +30,13 @@ const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
             });
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: '3% 0%',
-                end: '3% 0%',
+                start: `${vh(300 + 100) + 13500} 0px`,
                 markers: true,
-                onEnterBack: () => {
-                    // setPageState(0);
+                onEnter: () => {
+                    setPageState(1);
                 },
             });
             pinPortfolio(containerRef);
-            moveElement('.presentation', vh(50) + 'px', 800);
             moveElement('.startImg3', vh(100) + 'px', 12000, false, 0.05);
             moveElement('.page1', 1080, 7000);
             moveElement('.gate1', 2750, 4100);
@@ -54,11 +52,11 @@ const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
             moveElement('.imgWithGradient_Gradient', 10930, 2000);
             moveElement('.sphere4', 11850, 1550);
             moveElement('.gate4', 11500, 1800);
-            moveElement('.phone', 9600, 3300);
-            moveElement('.hoodie', 12800, 2700);
-            moveElement('.hand', 12500, 2200);
-            moveElement('.text5', 13550, 800);
-            moveElement('.videoHand', 13200, 900);
+            moveElement('.phone', 7600, 3300);
+            moveElement('.hoodie', 11800, 2700);
+            moveElement('.hand', 11500, 2200);
+            moveElement('.text5', 11550, 800);
+            moveElement('.videoHand', 11200, 900);
 
             //
             moveElement('.box1_1', 5250, 2700);
@@ -69,7 +67,15 @@ const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
             moveElement('.box2_2', 13300, 1000);
             moveElement('.box2_3', 13700, 300);
             //
-
+            scrollAnimationElement(
+                '.startImg3 img',
+                {},
+                {
+                    webkitFilter: 'blur(10px)',
+                },
+                2880,
+                500,
+            );
             const tl = gsap.timeline({
                 ease: 'none',
                 scrollTrigger: {
@@ -91,21 +97,21 @@ const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
 
                     scale: 0.9,
                 });
-            // scrollAnimationElement('.startImg3', {}, {}, 1100, 0, {
-            //     onLeave: () => {
-            //         containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
-            //     },
-            //     onEnterBack: () => {
-            //         containerRef.current.querySelector(' .startImg3').style.overflow = 'hidden';
-            //     },
-            // });
+            scrollAnimationElement('.startImg3', {}, {}, 1100, 0, {
+                onLeave: () => {
+                    containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
+                },
+                onEnterBack: () => {
+                    containerRef.current.querySelector(' .startImg3').style.overflow = 'hidden';
+                },
+            });
             scrollAnimationElement(
                 '.startImg3',
                 {},
                 {
                     opacity: 0,
                 },
-                2300,
+                2800,
                 1500,
             );
             scrollAnimationElement(
@@ -156,21 +162,6 @@ const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
                             {
                                 duration: 2.5,
                                 scale: -0.3,
-                                transformOrigin: '50% 50%',
-                                stagger: -0.05,
-                                ease: 'elastic',
-                            },
-                            0,
-                        );
-                },
-                onEnterBack: () => {
-                    gsap.timeline({ defaults: { duration: 45 } })
-                        .fromTo('.m1_cGroup', { opacity: 1 }, { duration: 0.3, opacity: 0, stagger: -0.1 }, 0)
-                        .from(
-                            '.m1_cGroup',
-                            {
-                                duration: 2.5,
-                                scale: 2,
                                 transformOrigin: '50% 50%',
                                 stagger: -0.05,
                                 ease: 'elastic',
@@ -252,7 +243,6 @@ const Pragmile = ({ setPageState, countDown, setFromEnter }) => {
         //
         <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen -mt-[25rem] '}>
             <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
-                <Presentation />
                 <StartImg />
                 <Page1 />
                 <Page2 />

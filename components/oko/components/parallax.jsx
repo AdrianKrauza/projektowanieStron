@@ -4,6 +4,7 @@ import gate from '/assets/oko/Ekran-Strona-oko.png';
 import item1 from '/assets/oko/Edukacja-Babka-DlonA.png';
 import item2 from '/assets/oko/Edukacja-Babka-DlonB.png';
 import lamp from '/assets/oko/Lampa-Strona-oko.png';
+import szejp from '../../../assets/oko/Szejp.png';
 
 const Parallax = () => {
     return (
@@ -30,6 +31,9 @@ const Parallax = () => {
             </div>
             <div className={'woman -left-[300px]'}>
                 <Image {...woman} />
+            </div>
+            <div className={'szejp3 '} style={{ left: 'calc((-50vw + (1350px / 2))' }}>
+                <Image {...szejp} />
             </div>
         </>
     );

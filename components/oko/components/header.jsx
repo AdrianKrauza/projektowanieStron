@@ -3,6 +3,7 @@ import okoHeaderImg from '/assets/oko/oko-tlo.jpg';
 import hand from '/assets/oko/Dlon-org-TINYPNG.png';
 import handItem from '/assets/oko/Artefakt-org-TINYPNG.png';
 import { useEffect, useRef } from 'react';
+import szejp from '../../../assets/oko/Szejp.png';
 const Header = ({ gradient2State }) => {
     const handRef = useRef();
     const handItemRef = useRef();

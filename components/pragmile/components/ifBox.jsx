@@ -2,24 +2,28 @@ import useTextAnimations from '/hooks/useTextAnimations';
 import gsap from 'gsap';
 import Lottie from 'lottie-react';
 import boxLottie from '/assets/if/lf20_j7bkleac.json';
+import Image from 'next/image';
+import boxGif from '/assets/if/ezgif.com-gif-maker (13).gif';
 import { useEffect, useRef } from 'react';
 const vh = (coef) => window.innerHeight * (coef / 100);
-const IfBox = ({ el, index, containerRef, start }) => {
+const IfBox = ({ el, index, containerRef, start, second }) => {
+    console.log(boxGif);
     const headerRef = useRef();
     const boxRef = useRef();
     const lottieRef = useRef();
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
+        if (second) return;
         setTimeout(() => {
             gsap.fromTo(
                 boxRef.current,
-                { opacity: 0.3 },
+                { opacity: 0.1 },
                 {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: `${vh(index ? 130 + 100 * index : 0) + start} 0%`,
-                        end: `${vh(200 + 100 * index) + start} 0%`,
+                        start: `${vh(index ? 1000 + 100 * index : 0) + start} 0%`,
+                        end: `${vh(1070 + 100 * index) + start} 0%`,
                         scrub: true,
                     },
                 },
@@ -28,11 +32,11 @@ const IfBox = ({ el, index, containerRef, start }) => {
                 lottieRef.current,
                 { opacity: 0 },
                 {
-                    opacity: 1,
+                    opacity: 0.01,
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: `${vh(index ? 130 + 100 * index : 0) + start} 0%`,
-                        end: `${vh(200 + 100 * index) + start} 0%`,
+                        start: `${vh(index ? 1000 + 100 * index : 0) + start} 0%`,
+                        end: `${vh(1070 + 100 * index) + start} 0%`,
                         scrub: true,
                     },
                 },
@@ -46,25 +50,23 @@ const IfBox = ({ el, index, containerRef, start }) => {
         }, 0);
     }, []);
     return (
-        <div ref={boxRef} className={'relative opacity-30'}>
-            <div ref={lottieRef} className={'relative -z-10'}>
-                <Lottie
-                    animationData={boxLottie}
-                    className={` w-[31rem] h-[29rem] rotate-90 -translate-x-1/2 left-1/2 -top-[7rem] absolute -z-10`}
-                    loop={false}
-                    rendererSettings={{
-                        preserveAspectRatio: 'none',
-                    }}
-                />
+        <div ref={boxRef} className={`relative ${!second && 'opacity-30'}`}>
+            <div
+                ref={lottieRef}
+                className={
+                    ' -z-10 w-[60rem] h-[70rem] rotate-90 -translate-x-1/2 left-1/2 -top-[25rem] absolute -z-10 opacity-[0.01]'
+                }
+            >
+                <Image src={boxGif} layout={'fill'} />
             </div>
 
-            <h3 ref={headerRef} className={'text-center font-playfair text-white text-[4rem] mb-[2vw]'}>
+            <h3 ref={headerRef} className={'text-center font-playfair text-[#dfdfdf] text-[5rem] mb-[2vw]'}>
                 Jeśli:
             </h3>
             <p
-                className={'text-[1.2rem] text-[#CBCBCB]'}
+                className={'text-[1.6rem] text-[#CBCBCB] leading-[1.1]'}
                 dangerouslySetInnerHTML={{
-                    __html: `<b class="text-white font-black">${el[0]}</b><br/><br/>${el[0]}`,
+                    __html: `<b class="text-[#dfdfdf] font-black">${el[0]}</b><br/><br/>${el[0]}`,
                 }}
             />
         </div>

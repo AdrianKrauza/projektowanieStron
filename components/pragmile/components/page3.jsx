@@ -149,7 +149,7 @@ const Page3 = () => {
             <div className={'rounded-t-[90px] overflow-hidden page3 shadow-[1px_-9px_100px_18px_#141414]'}>
                 <div className={'absolute h-[1450px] w-[1350px] top-[20px]  bg-[#F2EEE9]'} />
                 <div className={'bg-black'}>
-                    <Image {...page3c1} />
+                    <Image {...page3c1} placeholder={'blur'} priority />
                 </div>
                 <div className={'relative'}>
                     <div />
@@ -179,19 +179,19 @@ const Page3 = () => {
                         <div className={'flex justify-center'}>
                             <div className={'w-[300px] absolute -top-[60px]'}>
                                 <div className={'w-[445px] h-[300px] absolute top-[150px] left-[-100px] '}>
-                                    <Image {...shadow} />
+                                    <Image placeholder={'blur'} {...shadow} />
                                 </div>
                                 <div className={'w-[260px] h-[260px] absolute'}>
-                                    <Image {...box} />
+                                    <Image placeholder={'blur'} {...box} />
                                 </div>
                             </div>
                             {boxesData.map(({ className, textClassName, text }, index) => (
                                 <div className={`${className} relative w-[0] h-[0]  box${index}`} key={text}>
                                     <div className={`w-[100px] h-[66px] absolute top-[42px] left-[52px]`}>
-                                        <Image {...shadow} />
+                                        <Image placeholder={'blur'} {...shadow} />
                                     </div>
                                     <div className={'w-[100px] h-[100px] absolute left-[50px] top-[-30px]'}>
-                                        <Image {...box} />
+                                        <Image placeholder={'blur'} {...box} />
                                     </div>
                                     <p
                                         className={'text-[18px] color-[#717171] relative w-max ' + textClassName}
@@ -202,37 +202,23 @@ const Page3 = () => {
                         </div>
                     </div>
                 </div>
-                <div className={'-mt-[50px]'}>
-                    <Image {...page3c2} />
-                    <div className={'absolute left-[818px] translate-y-[-262px]'}>
-                        {/*<Lottie animationData={icon1} loop={true} className={'w-[70px]'} />*/}
-                        {/*<Lottie animationData={icon2} loop={true} className={'w-[70px]'} />*/}
-                        {/*<Lottie animationData={icon3} loop={true} className={'w-[70px]'} />*/}
-                    </div>
-                </div>
-                <div className={'bg-[#141414] -mt-[10px]'}>
-                    <Image {...page3c3} />
+
+                <div className={'bg-[#141414] -mt-[210px]'}>
+                    <Image {...page3c3} placeholder={'blur'} priority />
                     <div className={'bg-gradient-to-t from-[#141414] h-[100px] absolute bottom-0 w-[1350px] '} />
                 </div>
             </div>
             <div className={'gate3 left-[110px]'}>
-                <Image {...gate3} />
+                <Image {...gate3} placeholder={'blur'} />
             </div>
             <div className={'gate4 left-[180px]'}>
-                <Image {...gate4} />
+                <Image {...gate4} placeholder={'blur'} />
             </div>
             <div className={'sphere4 left-[110px]'}>
-                <Image {...sphere} />
+                <Image {...sphere} placeholder={'blur'} />
             </div>
             <div className={'text3 left-[120px]'}>
-                <Image {...text3} />
-            </div>
-            <div
-                style={{ background: 'linear-gradient(49deg, #33fde2 0%, #bfff67 100%)' }}
-                className={'imgWithGradient_Gradient w-[530px] h-[354px] left-[90px] z-20'}
-            />
-            <div className={'imgWithGradient_Img left-[120px] z-20'}>
-                <Image {...img} />
+                <Image {...text3} placeholder={'blur'} />
             </div>
         </>
     );

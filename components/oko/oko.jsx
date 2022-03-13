@@ -25,11 +25,11 @@ const Oko = () => {
             pinPortfolio(containerRef);
             moveElement('.presentation', 200, 850);
             moveElement('.startImg3', 900, 4000, false);
-            moveElement('.headerImg', 2000, 2400);
+            moveElement('.headerImg', 2000, 3000);
             moveElement('.szejp', 1600, 2000);
             moveElement('.szejp2', 1600, 2000);
-            moveElement('.szejp3', 5600, 500);
-            moveElement('.page2', 3200, 1800);
+            moveElement('.szejp3', 4900, 750);
+            moveElement('.page2', 3400, 1800);
             moveElement('.slider', 5450, 700);
             moveElement('.woman', 4400, 1300);
             moveElement('.gate', 4300, 1250);
@@ -38,8 +38,8 @@ const Oko = () => {
             moveElement('.item2', 4900, 100);
             moveElement('.lamp', 4500, 120);
             moveElement('.textSlider', 4700, 650);
-            moveElement('.page3', 6000, 700);
-            moveElement('.ending', 6500, -200);
+            moveElement('.page3', 5200, 700);
+            moveElement('.ending', 4900, 2500);
             scrollAnimationElement(
                 '.startImg3',
                 {
@@ -48,7 +48,7 @@ const Oko = () => {
                 {
                     borderRadius: '0%',
                 },
-                500,
+                900,
                 150,
             );
             scrollAnimationElement(
@@ -77,6 +77,15 @@ const Oko = () => {
             );
             scrollAnimationElement(
                 '.startImg3 img',
+                {},
+                {
+                    webkitFilter: 'blur(10px)',
+                },
+                2680,
+                300,
+            );
+            scrollAnimationElement(
+                '.startImg3 img',
                 {
                     scale: 3.5,
                 },
@@ -98,14 +107,15 @@ const Oko = () => {
                 4900,
                 100,
             );
-            scrollAnimationElement('.szejp', {}, { x: '-100%' }, 1600, 2000, {});
-            scrollAnimationElement('.szejp2', {}, { x: '100%' }, 1600, 2000, {});
-            scrollAnimationElement('.startImg3 div', {}, {}, 2500, 710, {
+            scrollAnimationElement('.szejp3', {}, { x: '-33%' }, 4900, 750, {});
+            scrollAnimationElement('.szejp', {}, { x: '-33%' }, 1600, 2000, {});
+            scrollAnimationElement('.szejp2', {}, { x: '33%' }, 1600, 2000, {});
+            scrollAnimationElement('.startImg3 div', {}, {}, 3500, 710, {
                 onUpdate: (e) => {
                     setGradient1State(e.progress * 100);
                 },
             });
-            scrollAnimationElement('.startImg3 div', {}, {}, 3700, -125, {
+            scrollAnimationElement('.startImg3 div', {}, {}, 4300, -125, {
                 onUpdate: (e) => {
                     setGradient2State(e.progress * 200);
                 },
@@ -120,20 +130,11 @@ const Oko = () => {
     return (
         <div ref={containerRef} className={'h-[10500px] bg-[#06051C] w-screen '}>
             <div className={'pin w-[1350px] relative h-screen  bg-[#06051C] -translate-x-1/2 left-1/2  '}>
-                <div
-                    style={{ transform: 'translate(-50%,-100%)' }}
-                    className={
-                        'gradientStart top-0 translate-y-0  h-[500px] w-screen -translate-x-1/2 left-1/2 bg-gradient-to-b from-[#141414] to-[#06051C]'
-                    }
-                />
-                <Presentation />
+                {/*<Presentation />*/}
                 <StartImg gradient1State={gradient1State} />
                 <Header gradient2State={gradient2State} />
-
                 <Page2 />
                 <Parallax />
-
-                <Slider slideState={slideState} setSlideState={setSlideState} />
                 <Page3 />
             </div>
         </div>

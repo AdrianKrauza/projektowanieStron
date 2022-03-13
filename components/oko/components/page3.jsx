@@ -5,9 +5,6 @@ import szejp from '../../../assets/oko/Szejp.png';
 const Page2 = () => {
     return (
         <>
-            <div className={'szejp3 rotate-180'} style={{ right: 'calc((-50vw + (1350px / 2))' }}>
-                <Image {...szejp} />
-            </div>
             <div
                 className={
                     'page3  overflow-hidden rounded-t-[90px] border-[2px] border-[#0e082e]  shadow-[-1px_-10px_12px_10px_#06051c9e]'

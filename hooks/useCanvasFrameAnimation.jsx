@@ -3,14 +3,15 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 const UseCanvasFrameAnimation = (path, images) => {
+    const images2 = [null];
     let img;
     let context;
     const currentFrame = (index) => `assets/${path}${index.toString().padStart(3, '0')}.jpg`;
 
     const preloadImages = () => {
         for (let i = images[0]; i < images[0] + images[1]; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
+            images2[i] = new Image();
+            images2[i].src = currentFrame(i);
         }
     };
 
@@ -28,8 +29,9 @@ const UseCanvasFrameAnimation = (path, images) => {
     };
 
     const updateImage = (index) => {
-        img.src = currentFrame(index % images[1]);
-        context.drawImage(img, 0, 0);
+
+        console.log(images2[index % images[1]],images,index)
+        images2[index % images[1]] && context.drawImage(images2[index % images[1]], 0, 0);
     };
 
     return { initCanvas, updateImage };

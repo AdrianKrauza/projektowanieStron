@@ -4,6 +4,7 @@ import crowd from '/assets/oko/oko-tlum.png';
 import boxImage1 from '/assets/oko/OKO1.jpg';
 import boxImage2 from '/assets/oko/OKO2.jpg';
 import boxImage3 from '/assets/oko/OKO3.jpg';
+import hipnotyzuj from '/assets/oko/Hipnotyzuj.gif';
 import icon1 from '/assets/oko/lf20_jrf5g8nc.json';
 import icon2 from '/assets/oko/lf20_nvlbupxb.json';
 import icon3 from '/assets/oko/lf20_tjoisgkg.json';
@@ -21,7 +22,7 @@ const Box = () => (
                     <Image {...image} />
                 </div>
                 <div className={'flex items-center'}>
-                    <Lottie className={'w-[100px]'} animationData={lottie} loop={true} />
+                    {/*<Lottie className={'w-[100px]'} animationData={lottie} loop={true} />*/}
                     <p className={'text-[25px] text-[#6a648d]'}>
                         {text1} <br />
                         {text2}
@@ -39,7 +40,11 @@ const Page2 = () => {
             </div>
             <div className={' bg-[#0C052C] pt-[150px]'}>
                 <Box />
-                <video className={'m-auto block'} muted loop autoPlay src="/assets/oko/Hipnotyzuj-transcode.mp4" />
+                <div className={'m-auto block w-[65rem] opacity-[0.4]'}>
+                    <Image {...hipnotyzuj} layout={'responsive'} />
+                </div>
+
+                {/*<video muted loop autoPlay src="/assets/oko/Hipnotyzuj-transcode.mp4" />*/}
             </div>
             <div className={'absolute h-[1300px] w-[1350px] bg-[#0C052C]'} />
         </div>

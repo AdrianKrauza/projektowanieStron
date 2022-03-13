@@ -5,9 +5,14 @@ gsap.registerPlugin(ScrollTrigger);
 const UseTextAnimations = () => {
     const Split = (el, childrenSpan) => {
         [childrenSpan ? [...el.childNodes] : el].flat().forEach((words) => {
-            words.innerHTML = words.textContent.replace(/\S/g, "<span style='transform-origin: 50% 100%' class='inline-block'>$&</span>");
-            words.innerHTML = words.innerHTML.replaceAll('<span style="transform-origin: 50% 100%" class="inline-block">/</span>', '<br/>');
-
+            words.innerHTML = words.textContent.replace(
+                /\S/g,
+                "<span style='transform-origin: 50% 100%' class='inline-block'>$&</span>",
+            );
+            words.innerHTML = words.innerHTML.replaceAll(
+                '<span style="transform-origin: 50% 100%" class="inline-block">/</span>',
+                '<br/>',
+            );
         });
         gsap.set(el, { opacity: 1 });
     };
@@ -34,6 +39,29 @@ const UseTextAnimations = () => {
             delay: (el, i) => 500 + 30 * i,
         });
     };
+    const AnimationParagraphScrub = (el, trigger, start = -50, end = 200, childrenSpan = false) => {
+        Split(el.current, childrenSpan);
+        console.log(el.current);
+        gsap.fromTo(
+            el.current.querySelectorAll('span '),
+            {
+                x: 40,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                stagger: 0.01,
+                ease: 'expo.inOut',
+                scrollTrigger: {
+                    start: typeof start === 'number' ? `${start}% 50%` : start,
+                    end: typeof end === 'number' ? `${end}% 50%` : end,
+                    scrub: true,
+                    trigger: trigger.current,
+                },
+            },
+        );
+    };
     const AnimationHeadingScrub = (
         el,
         trigger,
@@ -56,7 +84,7 @@ const UseTextAnimations = () => {
                     scrollTrigger: {
                         start: typeof start === 'number' ? `${start}% 50%` : start,
                         end: typeof end === 'number' ? `${end}% 50%` : end,
-                        scrub: 2,
+                        scrub: true,
                         trigger: trigger.current,
                     },
                 },
@@ -75,7 +103,7 @@ const UseTextAnimations = () => {
                     scrollTrigger: {
                         start: typeof start === 'number' ? `${start}% 50%` : start,
                         end: typeof end === 'number' ? `${end}% 50%` : end,
-                        scrub: 2,
+                        scrub: true,
                         trigger: trigger.current,
                     },
                 },
@@ -93,14 +121,14 @@ const UseTextAnimations = () => {
                     scrollTrigger: {
                         start: typeof start === 'number' ? `${start}% 50%` : start,
                         end: typeof end === 'number' ? `${end}% 50%` : end,
-                        scrub: 2,
+                        scrub: true,
                         trigger: trigger.current,
                     },
                 },
             );
         }
     };
-    return { Split, AnimationHeading, AnimationParagraph, AnimationHeadingScrub };
+    return { Split, AnimationHeading, AnimationParagraph, AnimationHeadingScrub, AnimationParagraphScrub };
 };
 
 export default UseTextAnimations;

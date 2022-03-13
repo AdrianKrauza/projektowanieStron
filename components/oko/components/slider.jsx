@@ -109,30 +109,6 @@ const Slider = ({ slideState, setSlideState }) => {
                     superprosto
                 </h2>
             </div>
-            <div className={'slider w-[1350px] '}>
-                <div className={'flex items-center relative -left-[94px] -mt-[200px]'}>
-                    <div className={'w-[600px] relative left-[-55px]'}>
-                        <Image layout={'responsive'} {...studio} />
-                    </div>
-                    <Range slideState={slideState} setSlideState={setSlideState} />
-                    <div style={{ perspective: '1100px' }} className={'relative top-[-100px]'}>
-                        <style jsx>{`
-                            div:before {
-                                content: '';
-                                width: 603px;
-                                height: 670px;
-                                background: linear-gradient(0deg, #0b052c 20%, rgba(6, 3, 24, 0) 50%, #0b052c 80%);
-                                z-index: 1;
-                                position: absolute;
-                                top: -240px;
-                            }
-                        `}</style>
-                        {sliderData.map((el, index) => (
-                            <Slide key={el} el={el} slideState={slideState} index={index} />
-                        ))}
-                    </div>
-                </div>
-            </div>
         </>
     );
 };

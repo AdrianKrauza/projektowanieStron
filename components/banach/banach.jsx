@@ -8,6 +8,7 @@ import cloud1 from '/assets/banach/Chmury.jpg';
 import cloud2 from '/assets/banach/Chmurka-dol.jpg';
 import cloud3 from '/assets/banach/ezgif.com-gif-maker (1).png';
 // import lottieCloud from '/assets/'
+import Lottie from 'lottie-react';
 import page1 from '/assets/banach/Bprojekt1.jpg';
 import page2 from '/assets/banach/B2.jpg';
 import bp1 from '/assets/banach/Bp1.jpg';
@@ -57,9 +58,10 @@ const banachTextScrollAnimation = (containerRef, el, start,spped = 65) => {
         });
     });
 };
-const UseBanachSplitText2 = ({ content, size }) =>
-    content.map((el) => (
-        <span className={`block text-[${size}]`} key={el}>
+
+const UseBanachSplitText2 = ({ content, size,smallLine }) =>
+    content.map((el,index) => (
+        <span className={`block text-[${size}] ${smallLine && !index && "mb-[-2.5rem]"}`} key={el}>
             {el.split('').map((el) => (
                 <span key={el} className="inline-block relative overflow-hidden ">
                     <span className={`absolute translate-y-[240%] block ${el === '/' && 'opacity-0'}`}>{el}</span>
@@ -75,29 +77,24 @@ const Banach = () => {
     const videoRef = useRef()
     const percentTextRef = useRef();
     const headerRef = useRef();
+    const paragraphRef = useRef();
     const lottieCloudRef = useRef();
-    const { Split,AnimationHeadingScrub } = useTextAnimations();
+    const cloudLottieData = useRef();
+    const { Split,AnimationHeadingScrub,AnimationParagraphScrub } = useTextAnimations();
     const [currentTextState, setCurrentTextState ] = useState(0);
     const [odometerValue, setOdometerValue] = useState(25);
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     useEffect(() => {
-
         setTimeout(() => {
-            console.log(   videoRef.current)
-            videoRef.current.playbackRate = 2
-            console.log( videoRef.current.playbackRate)
-        },2000)
-        setTimeout(() => {
-
-
-            AnimationHeadingScrub(headerRef,headerRef,`${vh(740)} 0%`,`${vh(780)} 0%`)
-            const cloudLottie = lottieLoad(lottieCloudRef.current,lottieCloud,true)
+            AnimationHeadingScrub(headerRef,headerRef,`${vh(750)} 0%`,`${vh(790)} 0%`,false,true)
+            AnimationParagraphScrub(paragraphRef,headerRef,`${vh(780)} 0%`,`${vh(840)} 0%`,false)
+            cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: `${vh(700)}px 0%`,
                 end: `${vh(800)}px 0%`,
                 onUpdate: ({ progress }) => {
-                    cloudLottie.goToAndStop(Math.floor(24 * progress - 1), true);
+                    cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
                 },
                 onLeave: () => {
                     document.body.classList.remove('bg-darkGray-900');
@@ -121,20 +118,20 @@ const Banach = () => {
             moveElement('.page1', 290, 700);
             moveElement('.pattern', 640, 300);
             moveElement('.patternPhone', 650, 350);
-            moveElement('.text-animation-header', 20, 400);
+            moveElement('.text-animation-header', 90, 400);
             moveElement('.patternConvert', 400, 1250);
 
-            // scrollAnimationElement(
-            //     '.banach3',
-            //     {
-            //         borderRadius: '100%',
-            //     },
-            //     {
-            //         borderRadius: '0%',
-            //     },
-            //     50,
-            //     100,
-            // );
+            scrollAnimationElement(
+                '.banach3',
+                {
+                    borderRadius: '100%',
+                },
+                {
+                    borderRadius: '0%',
+                },
+                50,
+                100,
+            );
             scrollAnimationElement(
                 '.signature',
                 {
@@ -171,6 +168,7 @@ const Banach = () => {
                 225,
                 {},
             );
+            scrollAnimationElement(".cloudText",{},{   y: '-200vh',},810,830,);
             banachTextScrollAnimation(containerRef, '.animation-header1', 350);
             banachTextScrollAnimation(containerRef, '.animation-header2', 500);
             banachTextScrollAnimation(containerRef, '.animation-header3', 400);
@@ -234,28 +232,38 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[600rem] bg-darkGray-900'}>
-            <div
-                className={`presentation  flex justify-center h-[400px]  absolute items-center w-full`}
-            >
-                <p className={'text-right text-white'}>
-                    Strona dla Banach
-                </p>
-                <div className={'h-[100px] bg-white w-[1px] mx-10'} />
-                <div>
-                    <video ref={videoRef}  src="/assets/banach/Banach-logo.mp4" autoPlay muted className={'w-96'} />
-                </div>
-            </div>
-            <div className={'pin2 w-[1350px] m-auto relative h-screen  '}>
+        <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[30rem]'}>
+            <div className={'pin2 w-[1350px] m-auto relative h-screen'}>
 
+        <div style={{transform: "translateX(-50%)"}} className={"pointer-events-none banachCloud z-50 w-screen  left-1/2 top-0 h-screen"}>
+            <Lottie  lottieRef={cloudLottieData} animationData={lottieCloud} ref={lottieCloudRef} className={"pointer-events-none banachCloud z-50 w-screen  "}  />
 
-                <div ref={lottieCloudRef} className={"pointer-events-none banachCloud z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen"}/>
-                <div className={"flex justify-center pointer-events-none w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen"}>
+        </div>
+                <div style={{transform: "translateX(-50%)"}} className={"cloudText pointer-events-none w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen"}>
                     <h2 ref={headerRef} className={"text-[7rem] mt-[10rem] text-center text-lightGray"}>
                         2x lepsza strona,/
                         pomoże Ci stworzyć/
                         2x lepszy biznes.
                     </h2>
+                    <div>
+                        <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>2x więcej zapytań, 2x więcej sprzedaży, 2x więcej zysków. </p>
+                    </div>
+                    <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mb-12 mt-[10rem]'} />
+
+                    <p className={'text-[#dfdfdf] text-center text-[4.5rem]'}>Przykład realizacji:</p>
+                    <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mt-12  mb-[10rem] '} />
+                    <div
+                        className={`  flex justify-center h-[400px]  absolute items-center w-full`}
+                    >
+                        <p className={'text-right text-white'}>
+                            Strona dla studia video <br />
+                            rozszerzonej rzeczywistości.
+                        </p>
+                        <div className={'h-[100px] bg-white w-[1px] mx-10'} />
+                        <div>
+                            <video ref={video} src="/assets/oko/Oko-logo.mp4" autoPlay muted className={'w-96'} />
+                        </div>
+                    </div>
                 </div>
                 <div
                     className={
@@ -274,10 +282,10 @@ const Banach = () => {
                 </div>
                 <div
                     className={
-                        'animation-header4 text-white text-animation-header font-AGaramondPro font-thin text-[13rem] text-center leading-[0.8] font-AGaramondPro   absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
+                        'animation-header4 text-[#c7c6c2] text-animation-header font-AGaramondPro font-thin text-[13rem] text-center leading-[0.8] font-AGaramondPro   absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
-                    <UseBanachSplitText2 size="5rem" content={['BANACH', 'OUTSOURCING']} />
+                    <UseBanachSplitText2 smallLine size="5rem" content={['BANACH', 'OUTSOURCING']} />
                 </div>
                 <div
                     className={

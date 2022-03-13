@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import UseCanvasFrameAnimation from '../../../hooks/useCanvasFrameAnimation';
 import Image from 'next/image';
 import phone from '/assets/pragmile/Telefon.jpg';
+
 const Phone = ({ initCanvas }) => {
     const canvasRef = useRef();
     useEffect(() => {

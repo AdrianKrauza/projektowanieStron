@@ -17,9 +17,9 @@ const StartImg = ({ gradient1State }) => {
                     className={'absolute w-screen h-[100rem]  top-[0rem]'}
                 />
             </div>
-            <div className={'szejp '} style={{ left: 'calc((-50vw + (1350px / 2))' }}>
-                <Image {...szejp} />
-            </div>
+            {/*<div className={'szejp '} style={{ left: 'calc((-50vw + (1350px / 2))' }}>*/}
+            {/*    <Image {...szejp} />*/}
+            {/*</div>*/}
             <div className={'szejp2 rotate-180'} style={{ right: 'calc((-50vw + (1350px / 2))' }}>
                 <Image {...szejp} />
             </div>

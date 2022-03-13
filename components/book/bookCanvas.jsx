@@ -8,11 +8,12 @@ const bookImages = [
     [189, 244 - 189],
     [330, 390 - 330],
 ];
+const images = [null];
 const preloadImages = () => {
     bookImages.map((book) => {
         for (let i = book[0]; i < book[0] + book[1]; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
+            images[i] = new Image();
+            images[i].src = currentFrame(i);
         }
     });
 };
@@ -30,8 +31,9 @@ const BookCanvas = ({ bookSectionRef }) => {
         img.onload = () => context.drawImage(img, 0, 0);
 
         const updateImage = (index) => {
-            img.src = currentFrame(index);
-            context.drawImage(img, 0, 0);
+            // img.src = currentFrame(index);
+            console.log(images[index], index);
+            images[index] && context.drawImage(images[index], 0, 0);
         };
 
         preloadImages();
@@ -56,7 +58,8 @@ const BookCanvas = ({ bookSectionRef }) => {
                         onUpdate: (e) => {
                             const state = Math.floor(e.progress * bookImages[index][1] + bookImages[index][0]);
                             if (lastState !== state) {
-                                updateImage(state);
+                                // updateImage(state);
+                                requestAnimationFrame(() => updateImage(state));
                                 lastState = state;
                             }
                         },
