@@ -22,8 +22,6 @@ const Pragmile = ({ setPageState }) => {
     const { initCanvas, updateImage } = UseCanvasFrameAnimation('pragmile/Comp 1_00', [0, 49]);
     useEffect(() => {
         setTimeout(() => {
-            console.log(containerRef);
-
             gsap.to(containerRef.current.querySelector('.pin'), {
                 opacity: 1,
                 duration: 2,
@@ -46,26 +44,26 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.gate2', 5100, 3100);
             moveElement('.person', 4250, 4900);
             moveElement('.page3', 5350, 11000);
-            moveElement('.text3', 7150, 2000);
-            moveElement('.gate3', 7150, 1700);
+            moveElement('.text3', 7150, 2800);
+            moveElement('.gate3', 7150, 2500);
             moveElement('.imgWithGradient_Img', 10900, 2000);
             moveElement('.imgWithGradient_Gradient', 10930, 2000);
-            moveElement('.sphere4', 11850, 1550);
-            moveElement('.gate4', 11500, 1800);
-            moveElement('.phone', 7600, 3300);
+            moveElement('.sphere4', 10850, 2050);
+            moveElement('.gate4', 10500, 2500);
+            moveElement('.phone', 9000, 3300);
             moveElement('.hoodie', 11800, 2700);
             moveElement('.hand', 11500, 2200);
-            moveElement('.text5', 11550, 800);
-            moveElement('.videoHand', 11200, 900);
+            moveElement('.text5', 12550, 800);
+            moveElement('.videoHand', 12200, 900);
 
             //
             moveElement('.box1_1', 5250, 2700);
             moveElement('.box1_2', 5550, 2100);
             moveElement('.box1_3', 5900, 1400);
             //
-            moveElement('.box2_1', 13200, 1200);
-            moveElement('.box2_2', 13300, 1000);
-            moveElement('.box2_3', 13700, 300);
+            moveElement('.box2_1', 12200, 1200);
+            moveElement('.box2_2', 12300, 1000);
+            moveElement('.box2_3', 12700, 300);
             //
             scrollAnimationElement(
                 '.startImg3 img',

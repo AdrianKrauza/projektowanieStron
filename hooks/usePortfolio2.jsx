@@ -17,6 +17,7 @@ const UsePortfolio = () => {
         });
     };
     const moveElement = (el, start, speed) => {
+        start += 50;
         gsap.to(container.current.querySelector(el), {
             y: -vh(100),
             ease: 'none',
@@ -29,6 +30,7 @@ const UsePortfolio = () => {
         });
     };
     const scrollAnimationElement = (el, from, to, start, end, scrollTriggerProps) => {
+        start += 50;
         gsap.fromTo(container.current.querySelectorAll(el), from, {
             ease: 'none',
             ...to,

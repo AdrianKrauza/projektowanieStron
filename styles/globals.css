@@ -43,7 +43,7 @@ html {
     @apply h-full;
     @apply w-full;
     @apply bg-darkGray-900;
-    /*@apply bg-lightGray;*/
+    @apply bg-lightGray;
     /*overflow: hidden;*/
   }
   h1,h2,h3 {

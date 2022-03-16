@@ -22,8 +22,8 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: `${vh(index ? 1000 + 100 * index : 0) + start} 0%`,
-                        end: `${vh(1070 + 100 * index) + start} 0%`,
+                        start: `${vh(150 + 100 * index) + start} 0%`,
+                        end: `${vh(220 + 100 * index) + start} 0%`,
                         scrub: true,
                     },
                 },
@@ -35,8 +35,8 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
                     opacity: 0.01,
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: `${vh(index ? 1000 + 100 * index : 0) + start} 0%`,
-                        end: `${vh(1070 + 100 * index) + start} 0%`,
+                        start: `${vh(150 + 100 * index) + start} 0%`,
+                        end: `${vh(220 + 100 * index) + start} 0%`,
                         scrub: true,
                     },
                 },
@@ -44,8 +44,8 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
             AnimationHeadingScrub(
                 headerRef,
                 containerRef,
-                `${vh(140 + 100 * index) + start} 0%`,
-                `${vh(210 + 100 * index) + start} 0%`,
+                `${vh(160 + 100 * index) + start} 0%`,
+                `${vh(230 + 100 * index) + start} 0%`,
             );
         }, 0);
     }, []);

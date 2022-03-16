@@ -23,7 +23,6 @@ const Oko = () => {
     useEffect(() => {
         setTimeout(() => {
             pinPortfolio(containerRef);
-            moveElement('.presentation', 200, 850);
             moveElement('.startImg3', 900, 4000, false);
             moveElement('.headerImg', 2000, 3000);
             moveElement('.szejp', 1600, 2000);
@@ -128,9 +127,8 @@ const Oko = () => {
         }, 0);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[10500px] bg-[#06051C] w-screen '}>
-            <div className={'pin w-[1350px] relative h-screen  bg-[#06051C] -translate-x-1/2 left-1/2  '}>
-                {/*<Presentation />*/}
+        <div ref={containerRef} className={'h-[10500px] bg-[#06051C] w-screen mt-[-50rem]'}>
+            <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />
                 <Header gradient2State={gradient2State} />
                 <Page2 />

@@ -86,13 +86,13 @@ const Banach = () => {
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     useEffect(() => {
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef,headerRef,`${vh(750)} 0%`,`${vh(790)} 0%`,false,true)
-            AnimationParagraphScrub(paragraphRef,headerRef,`${vh(780)} 0%`,`${vh(840)} 0%`,false)
+            AnimationHeadingScrub(headerRef,headerRef,`${vh(800)} 0%`,`${vh(840)} 0%`,false,true)
+            AnimationParagraphScrub(paragraphRef,headerRef,`${vh(830)} 0%`,`${vh(890)} 0%`,false)
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: `${vh(700)}px 0%`,
-                end: `${vh(800)}px 0%`,
+                start: `${vh(750)}px 0%`,
+                end: `${vh(850)}px 0%`,
                 onUpdate: ({ progress }) => {
                     cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
                 },
@@ -168,7 +168,7 @@ const Banach = () => {
                 225,
                 {},
             );
-            scrollAnimationElement(".cloudText",{},{   y: '-200vh',},810,830,);
+            scrollAnimationElement(".cloudText",{},{   y: '-300vh',},910,930,);
             banachTextScrollAnimation(containerRef, '.animation-header1', 350);
             banachTextScrollAnimation(containerRef, '.animation-header2', 500);
             banachTextScrollAnimation(containerRef, '.animation-header3', 400);
@@ -248,7 +248,7 @@ const Banach = () => {
                     <div>
                         <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>2x więcej zapytań, 2x więcej sprzedaży, 2x więcej zysków. </p>
                     </div>
-                    <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mb-12 mt-[10rem]'} />
+                    <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mb-12 mt-[15rem]'} />
 
                     <p className={'text-[#dfdfdf] text-center text-[4.5rem]'}>Przykład realizacji:</p>
                     <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mt-12  mb-[10rem] '} />
@@ -285,7 +285,7 @@ const Banach = () => {
                         'animation-header4 text-[#c7c6c2] text-animation-header font-AGaramondPro font-thin text-[13rem] text-center leading-[0.8] font-AGaramondPro   absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
-                    <UseBanachSplitText2 smallLine size="5rem" content={['BANACH', 'OUTSOURCING']} />
+                    <UseBanachSplitText2 smallLine size="13rem" content={['BANACH', 'OUTSOURCING']} />
                 </div>
                 <div
                     className={
@@ -293,6 +293,11 @@ const Banach = () => {
                     }
                 >
                     <Image {...banach1} layout={'responsive'} />
+                    <div
+                        className={
+                            'h-screen bg-[#E2E2E2] absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
+                        }
+                    />
                     <div
                         className={
                             'bgGradient bg-gradient-to-b from-[#e5e5e5] to-[#E2E2E2] h-56 absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
@@ -306,13 +311,13 @@ const Banach = () => {
                 >
                     <Image {...cloud} layout={'responsive'} />
                 </div>
-                <div
-                    className={
-                        'cloud z-30 gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
-                    }
-                >
-                    <Image {...cloud} layout={'responsive'} />
-                </div>
+                {/*<div*/}
+                {/*    className={*/}
+                {/*        'cloud z-30 gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'*/}
+                {/*    }*/}
+                {/*>*/}
+                {/*    <Image {...cloud} layout={'responsive'} />*/}
+                {/*</div>*/}
                 <div className={'-left-[300px] pattern  absolute bottom-0  translate-y-full'}>
                     <Image {...pattern} quality={100} />
                 </div>
@@ -435,7 +440,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
-                        className={'w-[100px] absolute top-[3678px]  mix-blend-darken left-[435px]'}
+                        className={'w-[100px] absolute top-[3320px]  mix-blend-darken left-[1009px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 100% 99%, 0 99%)' }}
                     />
                     <video
@@ -443,7 +448,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
-                        className={'w-[130px] absolute top-[3491px]  mix-blend-darken left-[794px]'}
+                        className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[575px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 100% 99%, 0 99%)' }}
                     />
                     <video
@@ -451,7 +456,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
-                        className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[416px]'}
+                        className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[158px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
                     />
 

@@ -95,11 +95,6 @@ const If = ({ containerRef }) => {
                 <h2 ref={headerRef} className={'text-center text-[6vw] text-[#dfdfdf] pt-[30vh] '}>
                     Owocne strony będą/ dla Ciebie idealne,
                 </h2>
-                {/*<Lottie*/}
-                {/*    animationData={bottomLottie}*/}
-                {/*    lottieRef={ifSmokeRef}*/}
-                {/*    className={'bottomSvg absolute top-[15vh] w-[100rem] mx-auto left-1/2 -translate-x-1/2'}*/}
-                {/*/>*/}
                 <div
                     style={{ transform: 'translateY(100vh)' }}
                     ref={boxesRef}

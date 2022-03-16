@@ -33,7 +33,7 @@ const If = ({}) => {
                 <h2 ref={headerRef} className={'text-center text-[6vw] text-[#dfdfdf] pt-[10vh] '}>
                     Owocne strony będą <br /> dla Ciebie idealne,
                 </h2>
-                <div ref={boxesRef} className={'w-[60rem] m-auto justify-between flex mt-[10vh]'}>
+                <div ref={boxesRef} className={'w-[75rem] m-auto justify-between flex mt-[10vh]'}>
                     {boxesData.map((el, index) => (
                         <IfBox containerRef={ifContentRef} key={el[0]} el={el} index={index} start={start} second />
                     ))}

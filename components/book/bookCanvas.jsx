@@ -8,14 +8,16 @@ const bookImages = [
     [189, 244 - 189],
     [330, 390 - 330],
 ];
-const images = [null];
-const preloadImages = () => {
+const images = [];
+const preloadImages = (updateImage) => {
     bookImages.map((book) => {
-        for (let i = book[0]; i < book[0] + book[1]; i++) {
+        for (let i = book[0]; i < book[0] + book[1] + 1; i++) {
+            console.log(i);
             images[i] = new Image();
             images[i].src = currentFrame(i);
         }
     });
+    updateImage(bookImages[0][0]);
 };
 const BookCanvas = ({ bookSectionRef }) => {
     const bookCanvasRef = useRef();
@@ -25,20 +27,17 @@ const BookCanvas = ({ bookSectionRef }) => {
 
         gsap.registerPlugin(ScrollTrigger);
         const img = new Image();
-        img.src = currentFrame(1);
+        img.src = currentFrame(bookImages[0][0]);
         bookCanvasRef.current.width = 960;
         bookCanvasRef.current.height = 540;
         img.onload = () => context.drawImage(img, 0, 0);
 
         const updateImage = (index) => {
-            // img.src = currentFrame(index);
-            console.log(images[index], index);
             images[index] && context.drawImage(images[index], 0, 0);
         };
 
-        preloadImages();
+        preloadImages(updateImage);
 
-        updateImage(bookImages[0][0]);
         let lastState;
         setTimeout(() => {
             ScrollTrigger.create({
@@ -54,11 +53,9 @@ const BookCanvas = ({ bookSectionRef }) => {
                         trigger: bookSectionRef.current,
                         start: '0 6%',
                         end: '19% center',
-                        markers: true,
                         onUpdate: (e) => {
                             const state = Math.floor(e.progress * bookImages[index][1] + bookImages[index][0]);
                             if (lastState !== state) {
-                                // updateImage(state);
                                 requestAnimationFrame(() => updateImage(state));
                                 lastState = state;
                             }
@@ -73,7 +70,7 @@ const BookCanvas = ({ bookSectionRef }) => {
                     onUpdate: (e) => {
                         const state = Math.floor(e.progress * bookImages[index][1] + bookImages[index][0]);
                         if (lastState !== state) {
-                            updateImage(state);
+                            requestAnimationFrame(() => updateImage(state));
                             lastState = state;
                         }
                     },
@@ -83,7 +80,7 @@ const BookCanvas = ({ bookSectionRef }) => {
     }, []);
     return (
         <div className={'absolute -right-12 mt-40'}>
-            <canvas ref={bookCanvasRef} className={'w-[60rem]'} />
+            <canvas ref={bookCanvasRef} className={'w-[66rem]'} />
         </div>
     );
 };

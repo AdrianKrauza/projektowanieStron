@@ -21,7 +21,7 @@ const pageState = {
             <Header />
             <Cards3 />
             <Tablets />
-            {/*<Letters />*/}
+            <Letters />
             <Book />
             <Guarantee setPageState={setPageState} />
             <Pragmile setPageState={setPageState} />
@@ -43,11 +43,8 @@ export default function Home({ index }) {
     const [pageState2, setPageState2] = useState(0);
     const { fromEnter, setPageState, currentPageState } = UseChangePageState();
     useEffect(() => {
-        // setTimeout(() => {
         setPageState2(currentPageState);
-        // }, 1000);
     }, [currentPageState]);
-    console.log('ds');
     return (
         <>
             <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>

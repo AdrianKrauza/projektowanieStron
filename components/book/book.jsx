@@ -9,33 +9,38 @@ import UseTextAnimations from '../../hooks/useTextAnimations';
 gsap.registerPlugin(ScrollTrigger);
 const texts = [
     [
-        ['W sieci jest więcej', 'klientów niż Twoja', 'firma jest w stanie', 'obsłużyć.'],
+        ['W sieci jest więcej ', 'klientów niż Twoja firma ', 'jest w stanie obsłużyć.  '],
         [
-            'Tak jak kupuje się',
-            'bułki w sklepie, tak',
-            'można dziś kupić z',
-            'Facebook i Google',
-            'więcej ruchu, niż',
-            'udźwigną Twoje',
-            'serwery.',
+            'Jak kupuje się bułki w sklepie ',
+            'tak możesz kupić od Google',
+            'czy Facebook więcej ruchu,',
+            'niż udźwigną Twoje serwery.',
         ],
     ],
     [
         [
-            'Aby opłacało Ci się',
-            'kupić więcej ruchu,',
-            'Twoja strona musi',
-            'być zdolna zmienić',
-            'ten ruch w realnych',
-            'płacących klientów.',
+            'By opłacało Ci się kupować ',
+            'więcej ruchu, Twoja strona ',
+            'musi być zdolna zmieniać',
+            'ten ruch w prawdziwych,',
+            'płacących klientów. ',
         ],
-        ['Musi przekonywać', 'znacznie lepiej od', 'stron konkurencji.'],
-        ['Wszystko zaczyna ', 'się od konwersji'],
+        [
+            'Jeśli przekonujesz ludzi lepiej',
+            'od konkurencji to zarabiasz ',
+            'z zyskiem nawet gdy frazy ',
+            'kluczowe Google są drogie.',
+        ],
     ],
     [
-        ['Gdy Twoja strona', 'konwertuje 2x lepiej,', 'to cały marketing', 'działa ci 2x lepiej.'],
-        ['2x Więcej klientów', 'i przychodów, albo', '2x niższe koszty', 'reklam.'],
-        ['Dokładnie tak się', 'dziś robi dobry', 'biznes w sieci.'],
+        ['Dobry biznes w sieci zaczyna ', 'się od dobrej konwersji.'],
+        ['Gdy Twoja strona konwertuje ', '2x lepiej, to Twoja firma ', 'też działa 2x lepiej. '],
+        [
+            'Masz 2x więcej klientów, lub ',
+            '2x niższe koszty reklam. Ale',
+            'zanim zobaczysz realizacje, ',
+            'zobacz tą grubą gwarancję.',
+        ],
     ],
 ];
 const TopText = () => {
@@ -88,9 +93,7 @@ const Book = () => {
                     <span>To czego się tu dowiesz zmieni </span>
                     <span>Twój sposób myślenia </span>
                     <span>o firmie w internecie</span>
-                    {/*<br />*/}
                     <span className={'text-[3rem] mt-3'}>- Na zawsze!</span>
-                    {/*<span className={'text-[1.8rem] mt-6'}>- na zawsze!</span>*/}
                 </p>
             </div>
             <div className={'hidden'}>
@@ -102,7 +105,7 @@ const Book = () => {
                 <div key={index} className={'ml-36'}>
                     <div className={`h-${!index ? 2 : 72} space`} />
                     {text.map((paragraph) => (
-                        <p className={'text-[4.5rem] mt-20 font-robotoMono'} key={paragraph.join()}>
+                        <p className={'text-[3.4rem] mt-20 font-robotoMono'} key={paragraph.join()}>
                             {paragraph.map((line) => (
                                 <Line key={line} line={line} />
                             ))}
