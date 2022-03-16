@@ -21,7 +21,7 @@ const pageState = {
             <Header />
             <Cards3 />
             <Tablets />
-            <Letters />
+            {/*<Letters />*/}
             <Book />
             <Guarantee setPageState={setPageState} />
             <Pragmile setPageState={setPageState} />
