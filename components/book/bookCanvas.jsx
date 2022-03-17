@@ -79,7 +79,7 @@ const BookCanvas = ({ bookSectionRef }) => {
         });
     }, []);
     return (
-        <div className={'absolute -right-12 mt-40'}>
+        <div className={'absolute -right-20 mt-40'}>
             <canvas ref={bookCanvasRef} className={'w-[66rem]'} />
         </div>
     );

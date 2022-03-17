@@ -49,7 +49,7 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.imgWithGradient_Img', 10900, 2000);
             moveElement('.imgWithGradient_Gradient', 10930, 2000);
             moveElement('.sphere4', 10850, 2050);
-            moveElement('.gate4', 10500, 2500);
+            moveElement('.gate4', 10400, 2900);
             moveElement('.phone', 9000, 3300);
             moveElement('.hoodie', 11800, 2700);
             moveElement('.hand', 11500, 2200);
@@ -119,7 +119,7 @@ const Pragmile = ({ setPageState }) => {
                     scale: 1.25,
                     opacity: 0,
                 },
-                4150,
+                5150,
                 150,
             );
             scrollAnimationElement(
@@ -128,7 +128,7 @@ const Pragmile = ({ setPageState }) => {
                 {
                     rotate: 0,
                 },
-                8500,
+                9500,
                 400,
             );
 
@@ -138,7 +138,7 @@ const Pragmile = ({ setPageState }) => {
                 {
                     y: 0,
                 },
-                8900,
+                9400,
                 400,
             );
             scrollAnimationElement(
@@ -147,7 +147,7 @@ const Pragmile = ({ setPageState }) => {
                 {
                     rotate: 40,
                 },
-                8500,
+                9400,
                 400,
             );
             gsap.set('.m1_cGroup', { opacity: 0 });
@@ -226,7 +226,7 @@ const Pragmile = ({ setPageState }) => {
                         x: 0,
                         y: 0,
                     },
-                    8900,
+                    9900,
                     400,
                 );
             });

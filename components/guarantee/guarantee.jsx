@@ -28,12 +28,12 @@ const Guarantee = ({ setPageState, disable }) => {
         }, 0);
     }, []);
     return (
-        <div ref={conRef} className={`w-screen bg-darkGray-900   ${!disable && 'mt-[60rem]'} relative z-10 `}>
+        <div ref={conRef} className={`w-screen bg-darkGray-900   ${!disable && 'mt-[65rem]'} relative z-10 `}>
             {!disable && (
                 <>
                     <h2
                         className={
-                            'text-center text-[16rem] -translate-y-full text-darkGray-900 my-0 leading-[0.8] -mt-[25rem] '
+                            'text-center text-[16rem] -translate-y-full text-darkGray-900 my-0 leading-[0.88] -mt-[25rem] -mb-[5rem]'
                         }
                     >
                         GWARANCJA

@@ -29,7 +29,7 @@ const If = ({}) => {
     }, []);
     return (
         <>
-            <div ref={ifContentRef} style={{ bottom: 'auto' }} className={' w-screen  h-screen'}>
+            <div ref={ifContentRef} style={{ bottom: 'auto' }} className={' w-screen  h-screen bg-darkGray-900'}>
                 <h2 ref={headerRef} className={'text-center text-[6vw] text-[#dfdfdf] pt-[10vh] '}>
                     Owocne strony będą <br /> dla Ciebie idealne,
                 </h2>
