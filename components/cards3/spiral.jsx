@@ -23,7 +23,7 @@ export const Spiral = () => {
                 start: `${vh((2 + 1) * 20)}px 0%`,
                 end: `${vh(2 * 20 + 100)}px 0%`,
                 onUpdate: ({ progress }) => {
-                    spiralDataRef.current.goToAndStop(Math.floor(28 * progress - 1), true);
+                    spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
                 },
                 onLeave: () => {
                     document.body.classList.remove('bg-darkGray-900');
@@ -38,7 +38,12 @@ export const Spiral = () => {
     });
     return (
         <div ref={spiralRef} className={'absolute top-0 h-screen w-screen'}>
-            <Lottie lottieRef={spiralDataRef} className={'spiral absolute top-0 '} animationData={SpiralData} />
+            <Lottie
+                style={{ transform: 'rotateY(183deg)' }}
+                lottieRef={spiralDataRef}
+                className={'spiral absolute top-0 rotate-180 '}
+                animationData={SpiralData}
+            />
         </div>
     );
 };

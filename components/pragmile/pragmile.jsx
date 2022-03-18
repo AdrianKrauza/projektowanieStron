@@ -95,7 +95,7 @@ const Pragmile = ({ setPageState }) => {
 
                     scale: 0.9,
                 });
-            scrollAnimationElement('.startImg3', {}, {}, 1100, 0, {
+            scrollAnimationElement('.startImg3', {}, {}, 1500, 0, {
                 onLeave: () => {
                     containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
                 },

@@ -21,7 +21,9 @@ const pageState = {
             <Header />
             <Cards3 />
             <Tablets />
-            {/*<Letters />*/}
+
+            <Letters />
+
             <Book />
             <Guarantee setPageState={setPageState} />
             <Pragmile setPageState={setPageState} />
@@ -32,11 +34,11 @@ const pageState = {
         </div>
     ),
     1: (setPageState) => (
-        <>
+        <div className={'bg-darkGray-900'}>
             <If />
             <Banach />
             <Oko />
-        </>
+        </div>
     ),
 };
 export default function Home({ index }) {

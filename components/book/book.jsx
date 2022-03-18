@@ -85,9 +85,9 @@ const Book = () => {
         <div ref={bookSectionRef} className={'relative w-[100rem] m-auto  -mt-96 z-20 '}>
             <BookCanvas bookSectionRef={bookSectionRef} />
             <WhiteSpheres bookSectionRef={bookSectionRef} />
-            <div style={{ perspective: '100px' }} className={' right-0 mb-96 ml-[30rem]'}>
+            <div style={{ perspective: '100px' }} className={' right-0 mb-96 ml-[25rem] mt-[35rem]'}>
                 <p
-                    style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg)' }}
+                    style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg) translateY(2rem)' }}
                     className={'leading-snug font-size'}
                 >
                     <span>To czego się tu dowiesz zmieni </span>

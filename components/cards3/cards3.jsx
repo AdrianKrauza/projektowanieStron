@@ -12,7 +12,7 @@ const Cards3 = () => {
             gsap.to(cardsRef.current, {
                 scrollTrigger: {
                     trigger: 'body',
-                    end: `${vh((2 + 1) * 20 + 50)}px 0%`,
+                    end: `${vh((2 + 1) * 20 + 35)}px 0%`,
                     pin: cardsRef.current,
                 },
             });

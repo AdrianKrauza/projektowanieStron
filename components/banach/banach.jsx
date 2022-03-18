@@ -85,6 +85,10 @@ const Banach = () => {
     const [odometerValue, setOdometerValue] = useState(25);
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     useEffect(() => {
+        gsap.to(containerRef.current.querySelector('.pin2'), {
+            opacity: 1,
+            duration: 2,
+        });
         setTimeout(() => {
             AnimationHeadingScrub(headerRef,headerRef,`${vh(800)} 0%`,`${vh(840)} 0%`,false,true)
             AnimationParagraphScrub(paragraphRef,headerRef,`${vh(830)} 0%`,`${vh(890)} 0%`,false)
@@ -233,7 +237,7 @@ const Banach = () => {
     }, []);
     return (
         <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[30rem]'}>
-            <div className={'pin2 w-[1350px] m-auto relative h-screen'}>
+            <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
 
         <div style={{transform: "translateX(-50%)"}} className={"pointer-events-none banachCloud z-50 w-screen  left-1/2 top-0 h-screen"}>
             <Lottie  lottieRef={cloudLottieData} animationData={lottieCloud} ref={lottieCloudRef} className={"pointer-events-none banachCloud z-50 w-screen  "}  />
