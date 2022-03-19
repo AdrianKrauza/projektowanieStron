@@ -1,4 +1,6 @@
-modulde.exports = {
+moduld
+
+e.exports = {
     // parser: '@typescript-eslint/parser',
     // "extends": "standard",
     extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
