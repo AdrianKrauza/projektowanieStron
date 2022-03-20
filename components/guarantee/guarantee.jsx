@@ -83,6 +83,7 @@ const Guarantee = ({ setPageState }) => {
                     autoPlay
                 />
             </div>
+            <div/>
             <p className={'text-center mt-[5rem] text-[3rem]'}>A gdy idzie o kwestie techniczne to:</p>
             <h2 className={'text-center my-[5rem] mt-[1rem] text-[10rem] tracking-[-0.6rem]'} ref={heading2Ref}>
                 Wszystkie/ odpowiedzi/ brzmią - Tak!
