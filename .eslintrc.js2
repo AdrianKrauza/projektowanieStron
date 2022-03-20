@@ -1,7 +1,7 @@
 mod2ule.exports = {
     // parser: '@typescript-eslint/parser',
     // "extends": "standard",
-    //
+    //dsad
     //sadasddasdsdsa
     extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
     parserOptions: {
