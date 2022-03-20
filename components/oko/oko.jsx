@@ -126,9 +126,8 @@ const Oko = () => {
             });
         }, 0);
     }, []);
-    //bg-[#06051C]
     return (
-        <div ref={containerRef} style={{ background: '#06061c' }} className={'h-[10500px]  w-screen mt-[-10rem]'}>
+        <div ref={containerRef} style={{ background: '#06061c' }} className={'h-[10500px]  w-screen mt-[-40rem]'}>
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />
                 <Header gradient2State={gradient2State} />

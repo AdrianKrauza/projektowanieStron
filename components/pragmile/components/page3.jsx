@@ -146,8 +146,12 @@ const Page3 = () => {
     }, []);
     return (
         <>
-            <div className={'rounded-t-[90px] overflow-hidden page3 shadow-[1px_-9px_100px_18px_#141414]'}>
-                <div className={'absolute h-[1450px] w-[1350px] top-[20px]  bg-[#F2EEE9]'} />
+            <div
+                className={
+                    'rounded-t-[90px] overflow-hidden page3 shadow-[1px_-9px_100px_18px_#141414] border-[1px] border-[#022300]'
+                }
+            >
+                <div className={'absolute h-[1450px] w-[1350px] top-[90px]  bg-[#F2EEE9]'} />
                 <div className={'bg-black'}>
                     <Image {...page3c1} placeholder={'blur'} priority />
                 </div>

@@ -6,8 +6,12 @@ import text1 from '/assets/pragmile/Tekst-strony-Team-Novate1.png';
 const Page1 = () => {
     return (
         <>
-            <div className={'page1   rounded-t-[90px]  '}>
-                <div className={'   rounded-t-[90px] overflow-hidden '}>
+            <div
+                className={
+                    'page1 border-[1px] border-[#022300]  rounded-t-[60px]   shadow-[-1px_-10px_22px_10px_#090e0760]'
+                }
+            >
+                <div className={'   rounded-t-[60px] overflow-hidden '}>
                     <Image {...page1} />
                 </div>
 

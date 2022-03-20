@@ -26,6 +26,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import dynamic from 'next/dynamic';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import lottieLoad from "../../helpers/lottieLoad";
+import logoGif from "../../assets/banach/Banach-Logo.gif";
 
 const Odometer = dynamic(import('react-odometerjs'), {
     ssr: false,
@@ -115,7 +116,7 @@ const Banach = () => {
             pinPortfolio(containerRef);
             moveElement('.banach1', 30, 450);
             moveElement('.banach2', -50, 600);
-            moveElement('.banach3', 0, 500);
+            moveElement('.banach3', 60, 400);
             moveElement('.cloud1', 20, 450);
             moveElement('.cloud2', 200, 250);
             moveElement('.cloud', 200, 150);
@@ -176,7 +177,7 @@ const Banach = () => {
             banachTextScrollAnimation(containerRef, '.animation-header1', 350);
             banachTextScrollAnimation(containerRef, '.animation-header2', 500);
             banachTextScrollAnimation(containerRef, '.animation-header3', 400);
-            banachTextScrollAnimation(containerRef, '.animation-header4', 100);
+            banachTextScrollAnimation(containerRef, '.animation-header4', 200);
 
             gsap.to('.animation-header2', {
                 onComplete: () => {
@@ -252,21 +253,17 @@ const Banach = () => {
                     <div>
                         <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>2x więcej zapytań, 2x więcej sprzedaży, 2x więcej zysków. </p>
                     </div>
-                    <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mb-12 mt-[15rem]'} />
-
-                    <p className={'text-[#dfdfdf] text-center text-[4.5rem]'}>Przykład realizacji:</p>
-                    <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mt-12  mb-[10rem] '} />
                     <div
-                        className={`  flex justify-center h-[400px]  absolute items-center w-full`}
+                        className={`  flex flex-col justify-center h-[400px]  absolute items-center w-full mt-[20rem]`}
                     >
-                        <p className={'text-right text-white'}>
-                            Strona dla studia video <br />
-                            rozszerzonej rzeczywistości.
-                        </p>
-                        <div className={'h-[100px] bg-white w-[1px] mx-10'} />
-                        <div>
-                            <video ref={video} src="/assets/oko/Oko-logo.mp4" autoPlay muted className={'w-96'} />
+                        <div className={'mb-[4rem]'}>
+                            <video ref={video} src="/assets/oko/Oko-logo.mp4"  muted className={'w-96'} />
                         </div>
+                        <p className={'text-center text-[#dfdfdf]'}>
+                            Studio OKO - Przykład strony dla <br/>
+                            studia wideo rozszerzonej rzeczywistości.
+                        </p>
+
                     </div>
                 </div>
                 <div

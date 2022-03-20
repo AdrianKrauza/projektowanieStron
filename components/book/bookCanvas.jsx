@@ -8,6 +8,7 @@ const bookImages = [
     [189, 244 - 189],
     [330, 390 - 330],
 ];
+const vh = (coef) => window.innerHeight * (coef / 100);
 const images = [];
 const preloadImages = (updateImage) => {
     bookImages.map((book) => {
@@ -40,11 +41,23 @@ const BookCanvas = ({ bookSectionRef }) => {
 
         let lastState;
         setTimeout(() => {
-            ScrollTrigger.create({
-                trigger: bookSectionRef.current,
-                pin: bookCanvasRef.current,
-                start: '0 6%',
-                end: '105% 35%',
+            ScrollTrigger.matchMedia({
+                '(min-width: 1200px)': () => {
+                    ScrollTrigger.create({
+                        trigger: bookSectionRef.current,
+                        pin: bookCanvasRef.current,
+                        start: '0 6%',
+                        end: '105% 35%',
+                    });
+                },
+                '(max-width: 1200px)': () => {
+                    ScrollTrigger.create({
+                        trigger: bookSectionRef.current,
+                        pin: bookCanvasRef.current,
+                        start: `0% ${vh(100) - window.innerWidth * 0.8}`,
+                        end: '105% 70%',
+                    });
+                },
             });
 
             bookSectionRef.current.querySelectorAll('.space').forEach((el, index) => {
@@ -79,8 +92,8 @@ const BookCanvas = ({ bookSectionRef }) => {
         });
     }, []);
     return (
-        <div className={'absolute -right-20 mt-40'}>
-            <canvas ref={bookCanvasRef} className={'w-[66rem]'} />
+        <div className={'absolute -right-20 mt-40 m:z-30 m:shadow-[#e6e8ec_0px_-9px_13px_5px]'}>
+            <canvas ref={bookCanvasRef} className={'w-[66rem] m:w-[110rem]'} />
         </div>
     );
 };

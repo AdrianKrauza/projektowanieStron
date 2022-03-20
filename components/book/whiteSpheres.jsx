@@ -7,13 +7,14 @@ const Sphere = ({ index, bookSectionRef }) => {
     const sphereRef = useRef();
     useEffect(() => {
         setTimeout(() => {
-            // gsap.to(sphereRef.current, {
-            //     delay: index * 5,
-            //     rotate: 360,
-            //     z: -14,
-            //     repeat: -1,
-            //     duration: 3,
-            // });
+            gsap.to(sphereRef.current, {
+                // delay: index * 5,
+                ease: 'none',
+                rotate: 360,
+                z: -14,
+                repeat: -1,
+                duration: 6 + index,
+            });
             let pos = {};
             if (index === 0) {
                 pos.x = '100vw';
@@ -33,7 +34,7 @@ const Sphere = ({ index, bookSectionRef }) => {
                     scale: 0.5,
                 },
                 {
-                    y: 0,
+                    y: index * 20,
                     x: 0,
                     scale: 1,
                     opacity: 1,
@@ -53,10 +54,10 @@ const Sphere = ({ index, bookSectionRef }) => {
         }, 0);
     }, []);
     return (
-        <div ref={sphereRef} className={'w-[35rem] h-[35rem] absolute'}>
+        <div ref={sphereRef} className={'w-[35rem] h-[35rem] absolute opacity-[0.5]'}>
             <div
                 className={`bg-white w-full h-full  absolute rounded-full blur-md translate-x-[${
-                    index * 6
+                    index * 50
                 }rem] translate-y-[${index * 3}rem]`}
             />
         </div>
@@ -69,10 +70,10 @@ const WhiteSpheres = ({ bookSectionRef }) => {
             ScrollTrigger.create({
                 trigger: bookSectionRef.current,
                 pin: spheresRef.current,
-                start: '0% 16%',
+                start: '0% 10%',
                 end: '105% 50%',
             });
-            // return;
+
             bookSectionRef.current.querySelectorAll('.space').forEach((el, index) => {
                 if (!index) {
                     gsap.fromTo(
@@ -86,49 +87,16 @@ const WhiteSpheres = ({ bookSectionRef }) => {
                                 scrub: true,
                                 trigger: el,
                                 start: '-10% 100%',
-                                // start: '100% 100%',
                             },
                         },
                     );
                     return;
                 }
-                gsap.fromTo(
-                    spheresRef.current,
-                    {
-                        opacity: 1,
-                    },
-                    {
-                        opacity: 0,
-                        ease: 'linear',
-                        scrollTrigger: {
-                            trigger: el,
-                            scrub: true,
-                            start: '120% center',
-                            end: '150% center',
-                        },
-                    },
-                );
-                gsap.fromTo(
-                    spheresRef.current,
-                    {
-                        opacity: 0,
-                    },
-                    {
-                        opacity: 1,
-                        ease: 'linear',
-                        scrollTrigger: {
-                            trigger: el,
-                            scrub: true,
-                            start: '220% center',
-                            end: '280% center',
-                        },
-                    },
-                );
             });
         }, 0);
     }, []);
     return (
-        <div ref={spheresRef} className={'pointer-events-none absolute left-24'}>
+        <div ref={spheresRef} className={'pointer-events-none absolute left-28 m:hidden'}>
             <Sphere index={0} bookSectionRef={bookSectionRef} />
             <Sphere index={1} bookSectionRef={bookSectionRef} />
             <Sphere index={2} bookSectionRef={bookSectionRef} />

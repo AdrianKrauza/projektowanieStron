@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import IfBox from '../pragmile/components/ifBox';
 import logoGif from '/assets/banach/Banach-Logo.gif';
+import logoWebp from '../../assets/pragmile/TeamNovate-WebP.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 const start = 13500;
@@ -38,22 +39,21 @@ const If = ({}) => {
                         <IfBox containerRef={ifContentRef} key={el[0]} el={el} index={index} start={start} second />
                     ))}
                 </div>
-                <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mb-12 mt-[15rem]'} />
 
-                <p className={'text-[#dfdfdf] text-center text-[4.5rem]'}>Przykład realizacji:</p>
-                <div className={'border-[#dfdfdf] border-[1px] w-[50rem] m-auto mt-12  mb-[10rem] '} />
                 <div
                     // style={{ marginBottom: `-20rem` }}
-                    className={'presentation  flex justify-center h-[400px] bg-red  absolute items-center w-full'}
+                    className={
+                        'presentation  flex  flex-col justify-center h-[400px] bg-red  absolute items-center w-full mt-[10rem]'
+                    }
                 >
-                    <p className={'text-right text-[#dfdfdf]'}>Strona dla Banach</p>
-                    <div className={'h-[100px] bg-[#dfdfdf] w-[1px] mx-10'} />
-                    <div>
+                    <div className={'mb-[4rem]'}>
                         <picture>
-                            {/*<source srcSet={logoWebp.src} type="image/webp" />*/}
                             <img src={logoGif.src} />
                         </picture>
                     </div>
+                    <p className={'text-center text-[#dfdfdf]'}>
+                        Banach Outsourcing - Przykład strony <br />w branży Konsultingu, doradztwa i finansów
+                    </p>
                 </div>
             </div>
         </>

@@ -23,9 +23,9 @@ const pageState = {
             <Tablets />
 
             <Letters />
-
+            {/*<div className={'h-[50vh]'} />*/}
             <Book />
-            <Guarantee setPageState={setPageState} />
+            <Guarantee />
             <Pragmile setPageState={setPageState} />
             {/*<If />*/}
             {/*<If />*/}

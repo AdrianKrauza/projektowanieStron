@@ -7,6 +7,11 @@ import WhiteSpheres from './whiteSpheres';
 
 import UseTextAnimations from '../../hooks/useTextAnimations';
 gsap.registerPlugin(ScrollTrigger);
+const textsSpace = [
+    ['1/3 ', ' Klienci'],
+    ['2/3 ', ' Konwersja'],
+    ['3/3 ', ' Biznes'],
+];
 const texts = [
     [
         ['W sieci jest więcej ', 'klientów niż Twoja firma ', 'jest w stanie obsłużyć.  '],
@@ -103,9 +108,18 @@ const Book = () => {
             <TopText />
             {texts.map((text, index) => (
                 <div key={index} className={'ml-36'}>
-                    <div className={`h-${!index ? 2 : 72} space`} />
+                    <div
+                        className={`h-${
+                            !index ? 60 : 65
+                        } space m:h-[60rem] justify-center w-[32rem]  mt-20  z-20 relative flex items-center  `}
+                    >
+                        <p className={'text-center text-[5rem] font-[600] blur-[4px] font-robotoMono text-[#E7E6E8]'}>
+                            {textsSpace[index][0]}
+                            <span className={'text-[8rem]'}>{textsSpace[index][1]}</span>
+                        </p>
+                    </div>
                     {text.map((paragraph) => (
-                        <p className={'text-[3.4rem] mt-20 font-robotoMono'} key={paragraph.join()}>
+                        <p className={'m:text-[8rem] text-[3.4rem] mt-20 font-robotoMono'} key={paragraph.join()}>
                             {paragraph.map((line) => (
                                 <Line key={line} line={line} />
                             ))}

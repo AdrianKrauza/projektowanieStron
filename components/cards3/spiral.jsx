@@ -18,30 +18,53 @@ export const Spiral = () => {
                 start: '0% 0%',
                 end: `${vh(400)} 100%`,
             });
-            ScrollTrigger.create({
-                trigger: 'body',
-                start: `${vh((2 + 1) * 20)}px 0%`,
-                end: `${vh(2 * 20 + 100)}px 0%`,
-                onUpdate: ({ progress }) => {
-                    spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
+            ScrollTrigger.matchMedia({
+                '(min-width: 1200px)': () => {
+                    ScrollTrigger.create({
+                        trigger: 'body',
+                        start: `${vh((2 + 1) * 20)}px 0%`,
+                        end: `${vh(2 * 20 + 100)}px 0%`,
+                        onUpdate: ({ progress }) => {
+                            spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
+                        },
+                        onLeave: () => {
+                            document.body.classList.remove('bg-darkGray-900');
+                            document.body.classList.add('bg-lightGray');
+                        },
+                        onEnterBack: () => {
+                            document.body.classList.remove('bg-lightGray');
+                            document.body.classList.add('bg-darkGray-900');
+                        },
+                    });
                 },
-                onLeave: () => {
-                    document.body.classList.remove('bg-darkGray-900');
-                    document.body.classList.add('bg-lightGray');
-                },
-                onEnterBack: () => {
-                    document.body.classList.remove('bg-lightGray');
-                    document.body.classList.add('bg-darkGray-900');
+                '(max-width: 1200px)': () => {
+                    ScrollTrigger.create({
+                        trigger: 'body',
+                        start: `${vh(0)}px 0%`,
+                        end: `${vh(50)}px 0%`,
+                        onUpdate: ({ progress }) => {
+                            spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
+                        },
+                        onLeave: () => {
+                            document.body.classList.remove('bg-darkGray-900');
+                            document.body.classList.add('bg-lightGray');
+                        },
+                        onEnterBack: () => {
+                            document.body.classList.remove('bg-lightGray');
+                            document.body.classList.add('bg-darkGray-900');
+                        },
+                    });
                 },
             });
-        }, []);
-    });
+        }, 0);
+    }, []);
     return (
         <div ref={spiralRef} className={'absolute top-0 h-screen w-screen'}>
             <Lottie
                 style={{ transform: 'rotateY(183deg)' }}
                 lottieRef={spiralDataRef}
-                className={'spiral absolute top-0 rotate-180 '}
+                rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+                className={'spiral  h-screen '}
                 animationData={SpiralData}
             />
         </div>

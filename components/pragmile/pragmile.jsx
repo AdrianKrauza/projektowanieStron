@@ -35,7 +35,7 @@ const Pragmile = ({ setPageState }) => {
                 },
             });
             pinPortfolio(containerRef);
-            moveElement('.startImg3', vh(100) + 'px', 12000, false, 0.05);
+            moveElement('.startImg3', 1200, 8000, false, 0.3);
             moveElement('.page1', 1080, 7000);
             moveElement('.gate1', 2750, 4100);
             moveElement('.text1', 2680, 4400);
@@ -71,7 +71,7 @@ const Pragmile = ({ setPageState }) => {
                 {
                     webkitFilter: 'blur(10px)',
                 },
-                2880,
+                3580,
                 500,
             );
             const tl = gsap.timeline({
@@ -95,7 +95,7 @@ const Pragmile = ({ setPageState }) => {
 
                     scale: 0.9,
                 });
-            scrollAnimationElement('.startImg3', {}, {}, 1500, 0, {
+            scrollAnimationElement('.startImg3', {}, {}, 2500, 0, {
                 onLeave: () => {
                     containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
                 },
@@ -109,7 +109,7 @@ const Pragmile = ({ setPageState }) => {
                 {
                     opacity: 0,
                 },
-                2800,
+                3800,
                 1500,
             );
             scrollAnimationElement(
@@ -201,7 +201,7 @@ const Pragmile = ({ setPageState }) => {
                     scale: 1.4,
                     transformOrigin: 'top',
                 },
-                100,
+                1100,
                 1000,
                 {
                     scrub: 4,
@@ -239,7 +239,7 @@ const Pragmile = ({ setPageState }) => {
     }, []);
     return (
         //
-        <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen -mt-[25rem] '}>
+        <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen -mt-[75rem] '}>
             <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
                 <StartImg />
                 <Page1 />
