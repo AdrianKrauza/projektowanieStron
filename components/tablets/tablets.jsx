@@ -132,7 +132,7 @@ const Tablets = () => {
         });
     }, []);
     return (
-        <div ref={conRef} className={'relative z-20 '}>
+        <div ref={conRef} className={'relative z-20 mt-[8rem] '}>
             <h2 ref={headingRef} className={'text-center text-darkGray'}>
                 Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
             </h2>

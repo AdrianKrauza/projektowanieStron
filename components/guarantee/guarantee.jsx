@@ -29,7 +29,7 @@ const Guarantee = ({ setPageState }) => {
         }, 0);
     }, []);
     return (
-        <div ref={conRef} className={`w-screen   relative z-10 `}>
+        <div ref={conRef} className={`w-screen   relative z-10 mt-[25rem] bg-lightGray `}>
             <h2 className={'text-center text-[16rem]  my-0 '}>GWARANCJA</h2>
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
                 Zwiększymy konwersję Twojej/ strony, albo zwrócimy Ci/ 100% środków!

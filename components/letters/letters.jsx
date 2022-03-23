@@ -1562,7 +1562,7 @@ const Letters = () => {
             letterRef.current.goToAndStop(0);
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: '100% 0%',
+                start: '100% 50%',
                 end: `100% -100%`,
                 onUpdate: ({ progress }) => {
                     letterRef.current.goToAndStop(progress * 99, true);
