@@ -2,15 +2,16 @@ module.exports = {
     // parser: '@typescript-eslint/parser',
     // "extends": "standard",
     ignorePatterns: ['temp.js', '**/vendor/*.jsx'],
-    extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true,
-        },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
     },
+
     rules: {
+        "semi": 2,
         'react/react-in-jsx-scope': 'off',
         'react/no-children-prop': 'off',
         'react/prop-types': 'off',
