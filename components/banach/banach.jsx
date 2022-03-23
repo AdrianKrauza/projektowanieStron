@@ -233,7 +233,7 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[30rem]'}>
+        <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[-10rem]'}>
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
                 <div
                     style={{ transform: 'translateX(-50%)' }}
@@ -263,7 +263,7 @@ const Banach = () => {
                     <div
                         className={`  flex flex-col justify-center h-[400px]  absolute items-center w-full mt-[20rem]`}
                     >
-                        <div className={'mb-[4rem]'}>
+                        <div className={'mb-[4rem] opacity-0'}>
                             <video ref={video} src="/assets/oko/Oko-logo.mp4" muted className={'w-96'} />
                         </div>
                         <p className={'text-center text-[#dfdfdf]'}>

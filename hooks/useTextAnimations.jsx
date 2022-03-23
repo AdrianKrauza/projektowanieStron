@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 const UseTextAnimations = () => {
     const Split = (el, childrenSpan) => {
-        [childrenSpan ? [...el.childNodes] : el].flat().forEach((words) => {
+        [childrenSpan ? [...el?.childNodes || []] : el].flat().forEach((words) => {
             words.innerHTML = words.textContent.replace(
                 /\S/g,
                 "<span style='transform-origin: 50% 100%' class='inline-block'>$&</span>",
@@ -93,7 +93,7 @@ const UseTextAnimations = () => {
 
         if (reverse) {
             gsap.to(
-                el.current.querySelectorAll(childrenSpan ? 'span span' : 'span '),
+                el.current?.querySelectorAll(childrenSpan ? 'span span' : 'span '),
 
                 {
                     scale: 0,
@@ -110,7 +110,7 @@ const UseTextAnimations = () => {
             );
         } else {
             gsap.fromTo(
-                el.current.querySelectorAll(childrenSpan ? 'span span' : 'span '),
+                el.current?.querySelectorAll(childrenSpan ? 'span span' : 'span '),
                 {
                     scale: 0,
                 },

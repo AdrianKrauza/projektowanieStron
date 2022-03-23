@@ -43,7 +43,7 @@ const If = ({}) => {
                 <div
                     // style={{ marginBottom: `-20rem` }}
                     className={
-                        'presentation  flex  flex-col justify-center h-[400px] bg-red  absolute items-center w-full mt-[10rem]'
+                        'presentation  flex  flex-col justify-center h-[400px] bg-red  items-center w-full mt-[20rem]'
                     }
                 >
                     <div className={'mb-[4rem]'}>

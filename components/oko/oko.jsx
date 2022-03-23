@@ -125,9 +125,17 @@ const Oko = () => {
                 },
             });
         }, 0);
+        gsap.to(containerRef.current, {
+            opacity: 1,
+            duration: 2,
+        });
     }, []);
     return (
-        <div ref={containerRef} style={{ background: '#06061c' }} className={'h-[10500px]  w-screen mt-[-40rem]'}>
+        <div
+            ref={containerRef}
+            style={{ background: '#06061c' }}
+            className={'h-[10500px]  w-screen mt-[-40rem] opacity-0'}
+        >
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />
                 <Header gradient2State={gradient2State} />

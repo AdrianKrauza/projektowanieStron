@@ -22,7 +22,7 @@ const pageState = {
             <Header />
             <Cards3 />
             <Tablets />
-
+            {/**/}
             <Letters />
             {/*<div className={'h-[50vh]'} />*/}
             <Book />
@@ -35,7 +35,7 @@ const pageState = {
         </div>
     ),
     1: (setPageState) => (
-        <div className={'bg-darkGray-900'}>
+        <div className={'bg-darkGray-900 min-h-[100vh]'}>
             <If />
             <Banach />
             <Oko />
