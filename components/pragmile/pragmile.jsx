@@ -1,4 +1,4 @@
-import usePortfolio from '../../hooks/usePortfolio';
+import usePortfolio from '/hooks/usePortfolio';
 import { useEffect, useRef, useState } from 'react';
 import gsap, { Power1 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
