@@ -1,8 +1,6 @@
-mod2ule.exports = {
+module.exports = {
     // parser: '@typescript-eslint/parser',
     // "extends": "standard",
-    //dsad
-    //sadasddasdsdsa
     extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
     parserOptions: {
         ecmaVersion: 2018,

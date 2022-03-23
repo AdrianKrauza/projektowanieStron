@@ -131,9 +131,13 @@ html {
 .pin > *,.pinItem {
   position: absolute;
   bottom:0;
-  @apply translate-y-[120%];
+  @apply translate-y-[100%];
 }
-
+/*.pin > *,.pinItem {*/
+/*  position: absolute;*/
+/*  bottom:0;*/
+/*  @apply translate-y-[120%];*/
+/*}*/
 .cloud rect {
   fill: #141414 !important;
 }.bottomSvg rect {

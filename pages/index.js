@@ -14,6 +14,7 @@ import If from '../components/if/if';
 import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 import UseChangePageState from '../hooks/useChangePageState';
 import Transform from '../components/transform/transform';
+import MobilePragmile from '../components/mobilePragmile/mobilePragmile';
 
 const pageState = {
     0: (setPageState) => (
@@ -50,6 +51,10 @@ export default function Home({ index }) {
     return (
         <>
             <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>
+                {/*<div className={'h-[50vh]'} />*/}
+                {/*<div className={'h-[50vh]'} />*/}
+                {/*<div className={'h-[50vh]'} />*/}
+                {/*<MobilePragmile />*/}
                 <div>{pageState[pageState2](setPageState)}</div>
                 {/*<Pragmile setPageState={setPageState} />*/}
                 {/*<div className={'h-[40rem]'} />*/}
