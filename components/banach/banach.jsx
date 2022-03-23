@@ -138,6 +138,7 @@ const Banach = () => {
                 50,
                 100,
             );
+
             scrollAnimationElement(
                 '.signature',
                 {
@@ -343,17 +344,20 @@ const Banach = () => {
                     <h1 className="z-20 scale-x-[0.8] animation-header1 absolute top-[170px] left-[140px] font-AGaramondPro font-thin text-[85px] leading-[0.8]">
                         {['HARMONIA', 'KSIĘGOWO', 'PODATKOWA'].map((el, index) => (
                             <span key={el} className={!index && 'text-[75px] top-[15px] relative'}>
-                                {el.split('').map((el) => {
+                                {el.split('').map((el, index) => {
                                     if (el.toLowerCase() === 'ę') {
                                         return (
-                                            <span className="inline-block relative overflow-hidden top-[15px] pb-[15px]">
+                                            <span
+                                                key={el + index}
+                                                className="inline-block relative overflow-hidden top-[15px] pb-[15px]"
+                                            >
                                                 <span className="absolute translate-y-[240%]">{el}</span>
                                                 <span className="translate-y-[130%]">{el}</span>
                                             </span>
                                         );
                                     }
                                     return (
-                                        <span className="inline-block relative overflow-hidden">
+                                        <span key={el + index} className="inline-block relative overflow-hidden">
                                             <span className="absolute translate-y-[240%]">{el}</span>
                                             <span className="translate-y-[130%]">{el}</span>
                                         </span>
@@ -401,17 +405,20 @@ const Banach = () => {
                     <h1 className="z-20 scale-x-[0.8] animation-header2 absolute top-[1580px] left-[615px] font-AGaramondPro font-thin text-[97px] leading-[0.8]">
                         {['SPOKÓJ', 'PŁACOWO', '- KADROWY'].map((el, index) => (
                             <span key={el} className={!index && 'text-[90px] top-[5px] relative'}>
-                                {el.split('').map((el) => {
+                                {el.split('').map((el, index) => {
                                     if (el.toLowerCase() === 'ę') {
                                         return (
-                                            <span className="inline-block relative overflow-hidden top-[15px] pb-[15px]">
+                                            <span
+                                                key={el + index}
+                                                className="inline-block relative overflow-hidden top-[15px] pb-[15px]"
+                                            >
                                                 <span className="absolute translate-y-[240%]">{el}</span>
                                                 <span className="translate-y-[130%]">{el}</span>
                                             </span>
                                         );
                                     }
                                     return (
-                                        <span className="inline-block relative overflow-hidden">
+                                        <span key={el + index} className="inline-block relative overflow-hidden">
                                             <span className="absolute translate-y-[240%]">{el}</span>
                                             <span className="translate-y-[130%]">{el}</span>
                                         </span>
@@ -433,6 +440,7 @@ const Banach = () => {
                         ].map((text, index) => {
                             return (
                                 <h2
+                                    key={text + index}
                                     className={`font-roboto text-[#5f4328] text-[45px] ${
                                         currentTextState !== index && 'hidden'
                                     }`}
@@ -476,5 +484,5 @@ const Banach = () => {
         </div>
     );
 };
-
+//
 export default Banach;
