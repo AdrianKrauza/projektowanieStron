@@ -7,7 +7,7 @@ import logoWebp from '/assets/pragmile/TeamNovate-WebP.webp';
 import logoGif from '/assets/pragmile/TeamNovate-GF.gif';
 import img3 from '/assets/guarantee/Projektowanie-UX-Makieta.jpg';
 import FAQ from './FAQ';
-import Image from 'Next/Image';
+import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 const Guarantee = ({ setPageState }) => {
     const { AnimationHeadingScrub } = useTextAnimations();
@@ -83,7 +83,7 @@ const Guarantee = ({ setPageState }) => {
                     autoPlay
                 />
             </div>
-            <div/>
+            <div />
             <p className={'text-center mt-[5rem] text-[3rem]'}>A gdy idzie o kwestie techniczne to:</p>
             <h2 className={'text-center my-[5rem] mt-[1rem] text-[10rem] tracking-[-0.6rem]'} ref={heading2Ref}>
                 Wszystkie/ odpowiedzi/ brzmią - Tak!

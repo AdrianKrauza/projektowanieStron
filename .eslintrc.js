@@ -1,6 +1,7 @@
-moddule.exports = {
+module.exports = {
     // parser: '@typescript-eslint/parser',
     // "extends": "standard",
+    ignorePatterns: ['temp.js', '**/vendor/*.jsx'],
     extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
     parserOptions: {
         ecmaVersion: 2018,

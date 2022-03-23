@@ -25,14 +25,15 @@ import gsap, { Expo } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import dynamic from 'next/dynamic';
 import useTextAnimations from '../../hooks/useTextAnimations';
-import lottieLoad from "../../helpers/lottieLoad";
-import logoGif from "../../assets/banach/Banach-Logo.gif";
-
-const Odometer = dynamic(import('react-odometerjs'), {
-    ssr: false,
-    loading: () => 0,
-});
-const banachTextScrollAnimation = (containerRef, el, start,spped = 65) => {
+import lottieLoad from '../../helpers/lottieLoad';
+import logoGif from '../../assets/banach/Banach-Logo.gif';
+/* eslint-disable */
+// const Odometer = dynamic(import('react-odometerjs'), {
+//     ssr: false,
+//     loading: () => 0,
+// });
+/* eslint-enable */
+const banachTextScrollAnimation = (containerRef, el, start, spped = 65) => {
     const el2 = [...document.querySelectorAll(`${el} > span`)];
     el2.forEach((el, index2) => {
         [...el.children].forEach((el, index) => {
@@ -60,9 +61,9 @@ const banachTextScrollAnimation = (containerRef, el, start,spped = 65) => {
     });
 };
 
-const UseBanachSplitText2 = ({ content, size,smallLine }) =>
-    content.map((el,index) => (
-        <span className={`block text-[${size}] ${smallLine && !index && "mb-[-2.5rem]"}`} key={el}>
+const UseBanachSplitText2 = ({ content, size, smallLine }) =>
+    content.map((el, index) => (
+        <span className={`block text-[${size}] ${smallLine && !index && 'mb-[-2.5rem]'}`} key={el}>
             {el.split('').map((el) => (
                 <span key={el} className="inline-block relative overflow-hidden ">
                     <span className={`absolute translate-y-[240%] block ${el === '/' && 'opacity-0'}`}>{el}</span>
@@ -75,14 +76,14 @@ const vh = (coef) => window.innerHeight * (coef / 100);
 gsap.registerPlugin(ScrollTrigger);
 const Banach = () => {
     const containerRef = useRef();
-    const videoRef = useRef()
+    const videoRef = useRef();
     const percentTextRef = useRef();
     const headerRef = useRef();
     const paragraphRef = useRef();
     const lottieCloudRef = useRef();
     const cloudLottieData = useRef();
-    const { Split,AnimationHeadingScrub,AnimationParagraphScrub } = useTextAnimations();
-    const [currentTextState, setCurrentTextState ] = useState(0);
+    const { Split, AnimationHeadingScrub, AnimationParagraphScrub } = useTextAnimations();
+    const [currentTextState, setCurrentTextState] = useState(0);
     const [odometerValue, setOdometerValue] = useState(25);
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     useEffect(() => {
@@ -91,8 +92,8 @@ const Banach = () => {
             duration: 2,
         });
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef,headerRef,`${vh(800)} 0%`,`${vh(840)} 0%`,false,true)
-            AnimationParagraphScrub(paragraphRef,headerRef,`${vh(830)} 0%`,`${vh(890)} 0%`,false)
+            AnimationHeadingScrub(headerRef, headerRef, `${vh(800)} 0%`, `${vh(840)} 0%`, false, true);
+            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(830)} 0%`, `${vh(890)} 0%`, false);
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
@@ -173,17 +174,14 @@ const Banach = () => {
                 225,
                 {},
             );
-            scrollAnimationElement(".cloudText",{},{   y: '-300vh',},910,930,);
+            scrollAnimationElement('.cloudText', {}, { y: '-300vh' }, 910, 930);
             banachTextScrollAnimation(containerRef, '.animation-header1', 350);
             banachTextScrollAnimation(containerRef, '.animation-header2', 500);
             banachTextScrollAnimation(containerRef, '.animation-header3', 400);
             banachTextScrollAnimation(containerRef, '.animation-header4', 200);
 
             gsap.to('.animation-header2', {
-                onComplete: () => {
-
-
-                },
+                onComplete: () => {},
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: `${vh(700)}px 100%`,
@@ -192,22 +190,20 @@ const Banach = () => {
             });
         }, 0);
         setInterval(() => {
-
-
-            percentTextRef.current.querySelectorAll("h2").forEach((el)=>{
+            percentTextRef.current.querySelectorAll('h2').forEach((el) => {
                 anime
                     .timeline()
 
                     .add({
-                        targets:  el.querySelectorAll("span"),
+                        targets: el.querySelectorAll('span'),
                         translateX: [0, -30],
                         opacity: [1, 0],
                         easing: 'easeInExpo',
                         duration: 1100,
-                        delay: (el, i) =>  30 * i,
+                        delay: (el, i) => 30 * i,
                     })
                     .add({
-                        targets: el.querySelectorAll("span"),
+                        targets: el.querySelectorAll('span'),
                         translateX: [40, 0],
                         translateZ: 0,
                         opacity: [0, 1],
@@ -215,55 +211,64 @@ const Banach = () => {
                         duration: 1200,
                         delay: (el, i) => 500 + 30 * i,
                     });
-            })
+            });
             setTimeout(() => {
                 setOdometerValue(0);
-            },2000)
+            }, 2000);
             setTimeout(() => {
-                setCurrentTextState(prev => {
-                    setOdometerValue(()=>{
-                        if(prev === 1){
-                            return 52
-                        }else if(prev === 0){
-                            return 59
-                        }else if(prev === 2){
-                            return 25
+                setCurrentTextState((prev) => {
+                    setOdometerValue(() => {
+                        if (prev === 1) {
+                            return 52;
+                        } else if (prev === 0) {
+                            return 59;
+                        } else if (prev === 2) {
+                            return 25;
                         }
                     });
                     return (prev + 1) % 3;
-                })
-
-            },2400)
+                });
+            }, 2400);
         }, 10000);
     }, []);
     return (
         <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[30rem]'}>
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
-
-        <div style={{transform: "translateX(-50%)"}} className={"pointer-events-none banachCloud z-50 w-screen  left-1/2 top-0 h-screen"}>
-            <Lottie  lottieRef={cloudLottieData} animationData={lottieCloud} ref={lottieCloudRef} className={"pointer-events-none banachCloud z-50 w-screen  "}  />
-
-        </div>
-                <div style={{transform: "translateX(-50%)"}} className={"cloudText pointer-events-none w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen"}>
-                    <h2 ref={headerRef} className={"text-[7rem] mt-[10rem] text-center text-lightGray"}>
-                        2x lepsza strona,/
-                        pomoże Ci stworzyć/
-                        2x lepszy biznes.
+                <div
+                    style={{ transform: 'translateX(-50%)' }}
+                    className={'pointer-events-none banachCloud z-50 w-screen  left-1/2 top-0 h-screen'}
+                >
+                    <Lottie
+                        lottieRef={cloudLottieData}
+                        animationData={lottieCloud}
+                        ref={lottieCloudRef}
+                        className={'pointer-events-none banachCloud z-50 w-screen  '}
+                    />
+                </div>
+                <div
+                    style={{ transform: 'translateX(-50%)' }}
+                    className={
+                        'cloudText pointer-events-none w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen'
+                    }
+                >
+                    <h2 ref={headerRef} className={'text-[7rem] mt-[10rem] text-center text-lightGray'}>
+                        2x lepsza strona,/ pomoże Ci stworzyć/ 2x lepszy biznes.
                     </h2>
                     <div>
-                        <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>2x więcej zapytań, 2x więcej sprzedaży, 2x więcej zysków. </p>
+                        <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>
+                            2x więcej zapytań, 2x więcej sprzedaży, 2x więcej zysków.{' '}
+                        </p>
                     </div>
                     <div
                         className={`  flex flex-col justify-center h-[400px]  absolute items-center w-full mt-[20rem]`}
                     >
                         <div className={'mb-[4rem]'}>
-                            <video ref={video} src="/assets/oko/Oko-logo.mp4"  muted className={'w-96'} />
+                            <video ref={video} src="/assets/oko/Oko-logo.mp4" muted className={'w-96'} />
                         </div>
                         <p className={'text-center text-[#dfdfdf]'}>
-                            Studio OKO - Przykład strony dla <br/>
+                            Studio OKO - Przykład strony dla <br />
                             studia wideo rozszerzonej rzeczywistości.
                         </p>
-
                     </div>
                 </div>
                 <div
@@ -368,7 +373,7 @@ const Banach = () => {
                                 'animation-header3 text-[#f0f0f0] pt-[60px] rounded-3xl w-[1550px] h-[600px] bg-[#685d57] text-[50px] font-AGaramondPro text-center scale-x-[0.8] leading-[0.8] -ml-[100px] absolute'
                             }
                         >
-                            <div className={"text-[150px]"}/>
+                            <div className={'text-[150px]'} />
                             <UseBanachSplitText2 size={'150px'} content={['NASZE/PUBLIKACJE']} />
                         </div>
                         <div className={'publications flex justify-between mt-[200px] w-[1350px]'}>
@@ -385,7 +390,11 @@ const Banach = () => {
                         />
                         <div className={' absolute w-[1400px] -ml-[1px] h-[200px]  bg-[#E2E2E2] '} />
                     </div>
-                    <div className={"patternConvert w-[1551px] h-[406px] bg-[url('/assets/banach/Bpattern.png')]  absolute -translate-x-1/2 left-1/2"} />
+                    <div
+                        className={
+                            "patternConvert w-[1551px] h-[406px] bg-[url('/assets/banach/Bpattern.png')]  absolute -translate-x-1/2 left-1/2"
+                        }
+                    />
                     <div className="rounded-3xl overflow-hidden ">
                         <Image {...page2} layout={'fixed'} />
                     </div>
@@ -395,9 +404,7 @@ const Banach = () => {
                                 {el.split('').map((el) => {
                                     if (el.toLowerCase() === 'ę') {
                                         return (
-                                            <span
-                                                className="inline-block relative overflow-hidden top-[15px] pb-[15px]"
-                                            >
+                                            <span className="inline-block relative overflow-hidden top-[15px] pb-[15px]">
                                                 <span className="absolute translate-y-[240%]">{el}</span>
                                                 <span className="translate-y-[130%]">{el}</span>
                                             </span>
@@ -415,7 +422,8 @@ const Banach = () => {
                         <span className={'signature2'}>Kompleksowy</span>
                     </h1>
                     <div className={'absolute top-[2505px] left-[750px] font-[50px] odometerText '}>
-                        <Odometer value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />
+                        <div value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />
+                        {/*<Odometer value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />*/}
                     </div>
                     <div ref={percentTextRef} className={'absolute top-[2550px] left-[220px] '}>
                         {[
@@ -424,15 +432,18 @@ const Banach = () => {
                             'Zgodność z aktualnymi/ regulacjami i przepisami',
                         ].map((text, index) => {
                             return (
-                                <h2 className={`font-roboto text-[#5f4328] text-[45px] ${currentTextState !== index && 'hidden'}`}>
+                                <h2
+                                    className={`font-roboto text-[#5f4328] text-[45px] ${
+                                        currentTextState !== index && 'hidden'
+                                    }`}
+                                >
                                     {text}
                                 </h2>
                             );
                         })}
-                        <p className={"text-[30px] mt-[30px]"}>
-                            Korzyści płynące z outsourceingu <br/>
+                        <p className={'text-[30px] mt-[30px]'}>
+                            Korzyści płynące z outsourceingu <br />
                             na podstawie badań KPMG i HFS.
-
                         </p>
                     </div>
 
@@ -460,10 +471,6 @@ const Banach = () => {
                         className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[158px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
                     />
-
-
-
-
                 </div>
             </div>
         </div>
