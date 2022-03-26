@@ -25,8 +25,8 @@ const UsePortfolio = () => {
             ease:responsive ? 'none' : Expo.easeOut,
             scrollTrigger: {
                 trigger: container.current,
-                start: `${typeof start === 'number' ? vh(50) + start* 1.20 + 'px' :  start} 100%`,
-                end: `+=${vh( 100 )  + speed * 0.20} 100%`,
+                start: `${typeof start === 'number' ?3000 + ( vh(50) + start)* .2 + 'px' :  start} 100%`,
+                end: `+=${ (vh( 100 )  + speed) * 0.20} 100%`,
                 scrub,
             },
         });
