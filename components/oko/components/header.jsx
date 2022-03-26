@@ -25,13 +25,13 @@ const Header = ({ gradient2State }) => {
                     'w-[1350px] relative overflow-hidden rounded-t-[90px] border-[2px] border-[#0e082e]  shadow-[-1px_-10px_12px_10px_#06051c9e]'
                 }
             >
-                <Image {...okoHeaderImg} />
+                <Image priority {...okoHeaderImg} />
                 <div ref={handItemRef} className="absolute bottom-[100px] right-[70px]">
-                    <Image {...handItem} />
+                    <Image priority {...handItem} />
                 </div>
 
                 <div ref={handRef} className="absolute bottom-0 -right-[100px]">
-                    <Image {...hand} />
+                    <Image priority {...hand} />
                 </div>
 
                 <div

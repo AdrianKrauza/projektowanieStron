@@ -28,10 +28,10 @@ import useTextAnimations from '../../hooks/useTextAnimations';
 import lottieLoad from '../../helpers/lottieLoad';
 import logoGif from '../../assets/banach/Banach-Logo.gif';
 /* eslint-disable */
-// const Odometer = dynamic(import('react-odometerjs'), {
-//     ssr: false,
-//     loading: () => 0,
-// });
+const Odometer = dynamic(import('react-odometerjs'), {
+    ssr: false,
+    loading: () => 0,
+});
 /* eslint-enable */
 const banachTextScrollAnimation = (containerRef, el, start, spped = 65) => {
     const el2 = [...document.querySelectorAll(`${el} > span`)];
@@ -92,7 +92,7 @@ const Banach = () => {
             duration: 2,
         });
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef, headerRef, `${vh(800)} 0%`, `${vh(840)} 0%`, false, true);
+            AnimationHeadingScrub(headerRef, headerRef, `${vh(750)} 0%`, `${vh(840)} 0%`, false, true);
             AnimationParagraphScrub(paragraphRef, headerRef, `${vh(830)} 0%`, `${vh(890)} 0%`, false);
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
@@ -175,7 +175,16 @@ const Banach = () => {
                 225,
                 {},
             );
-            scrollAnimationElement('.cloudText', {}, { y: '-300vh' }, 910, 930);
+            scrollAnimationElement('.cloudText', { y: '40vh' }, { y: '-300vh' }, 810, 930);
+            scrollAnimationElement('.cloudText', { }, {onEnter:()=>{
+                    // videoRef.current.play();
+                    try {
+                         videoRef.current.play();
+
+                    } catch(err) {
+                       console.log(err)
+                    }
+                }}, 810, 930);
             banachTextScrollAnimation(containerRef, '.animation-header1', 350);
             banachTextScrollAnimation(containerRef, '.animation-header2', 500);
             banachTextScrollAnimation(containerRef, '.animation-header3', 400);
@@ -263,8 +272,8 @@ const Banach = () => {
                     <div
                         className={`  flex flex-col justify-center h-[400px]  absolute items-center w-full mt-[20rem]`}
                     >
-                        <div className={'mb-[4rem] opacity-0'}>
-                            <video ref={video} src="/assets/oko/Oko-logo.mp4" muted className={'w-96'} />
+                        <div className={'mb-[4rem]'}>
+                            <video ref={video} src="/assets/oko/Oko-logo.mp4"   muted className={'w-96'} />
                         </div>
                         <p className={'text-center text-[#dfdfdf]'}>
                             Studio OKO - Przykład strony dla <br />
@@ -277,7 +286,7 @@ const Banach = () => {
                         'banach3 overflow-hidden gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
-                    <Image {...banach3} layout={'responsive'} />
+                    <Image priority {...banach3} layout={'responsive'} />
                 </div>
 
                 <div
@@ -285,7 +294,7 @@ const Banach = () => {
                         'banach2 gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
-                    <Image {...banach2} layout={'responsive'} />
+                    <Image priority {...banach2} layout={'responsive'} />
                 </div>
                 <div
                     className={
@@ -299,7 +308,7 @@ const Banach = () => {
                         'banach1 gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
-                    <Image {...banach1} layout={'responsive'} />
+                    <Image priority {...banach1} layout={'responsive'} />
                     <div
                         className={
                             'h-screen bg-[#E2E2E2] absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
@@ -316,17 +325,17 @@ const Banach = () => {
                         'cloud gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'
                     }
                 >
-                    <Image {...cloud} layout={'responsive'} />
+                    <Image priority {...cloud} layout={'responsive'} />
                 </div>
                 {/*<div*/}
                 {/*    className={*/}
                 {/*        'cloud z-30 gradientStart absolute bottom-0  translate-y-full w-screen -translate-x-1/2 left-1/2'*/}
                 {/*    }*/}
                 {/*>*/}
-                {/*    <Image {...cloud} layout={'responsive'} />*/}
+                {/*    <Image priority  {...cloud} layout={'responsive'} />*/}
                 {/*</div>*/}
                 <div className={'-left-[300px] pattern  absolute bottom-0  translate-y-full'}>
-                    <Image {...pattern} quality={100} />
+                    <Image priority {...pattern} quality={100} />
                 </div>
                 <div className={'-left-[300px] z-40 h-[572px] patternPhone  absolute bottom-0  translate-y-full'}>
                     <video
@@ -368,7 +377,7 @@ const Banach = () => {
                         <span className={' signature'}>Kompleksowa</span>
                     </h1>
                     <div className="rounded-3xl overflow-hidden">
-                        <Image {...page1} layout={'fixed'} />
+                        <Image priority {...page1} layout={'fixed'} />
                     </div>
 
                     <div className="absolute top-[767px]">
@@ -381,11 +390,11 @@ const Banach = () => {
                             <UseBanachSplitText2 size={'150px'} content={['NASZE/PUBLIKACJE']} />
                         </div>
                         <div className={'publications flex justify-between mt-[200px] w-[1350px]'}>
-                            <Image {...bp1} layout={'fixed'} />
-                            <Image {...bp2} layout={'fixed'} />
-                            <Image {...bp3} layout={'fixed'} />
-                            <Image {...bp4} layout={'fixed'} />
-                            <Image {...bp5} layout={'fixed'} />
+                            <Image priority {...bp1} layout={'fixed'} />
+                            <Image priority {...bp2} layout={'fixed'} />
+                            <Image priority {...bp3} layout={'fixed'} />
+                            <Image priority {...bp4} layout={'fixed'} />
+                            <Image priority {...bp5} layout={'fixed'} />
                         </div>
                         <div
                             className={
@@ -400,7 +409,7 @@ const Banach = () => {
                         }
                     />
                     <div className="rounded-3xl overflow-hidden ">
-                        <Image {...page2} layout={'fixed'} />
+                        <Image priority {...page2} layout={'fixed'} />
                     </div>
                     <h1 className="z-20 scale-x-[0.8] animation-header2 absolute top-[1580px] left-[615px] font-AGaramondPro font-thin text-[97px] leading-[0.8]">
                         {['SPOKÓJ', 'PŁACOWO', '- KADROWY'].map((el, index) => (
@@ -429,7 +438,7 @@ const Banach = () => {
                         <span className={'signature2'}>Kompleksowy</span>
                     </h1>
                     <div className={'absolute top-[2505px] left-[750px] font-[50px] odometerText '}>
-                        <div value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />
+                        <Odometer value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />
                         {/*<Odometer value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />*/}
                     </div>
                     <div ref={percentTextRef} className={'absolute top-[2550px] left-[220px] '}>

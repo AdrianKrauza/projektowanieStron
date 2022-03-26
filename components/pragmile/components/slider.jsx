@@ -107,7 +107,7 @@ const Slider = () => {
             </div>
             <div className={'flex items-center relative -left-[94px] -mt-[200px]'}>
                 <div className={'w-[600px]'}>
-                    <Image layout={'responsive'} {...studio} />
+                    <Image priority layout={'responsive'} {...studio} />
                 </div>
                 <div style={{ perspective: '1100px' }} className={'relative'}>
                     <style jsx>{`

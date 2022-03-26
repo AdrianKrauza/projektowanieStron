@@ -62,7 +62,7 @@ const Header = () => {
                             <span className={'block tracking-[-3px]'}>topowych wyników biznesowych.</span>
                         </p>
                         <div className={'w-[70rem] absolute top-0 -right-44 inline-block '}>
-                            <Image layout={'responsive'} {...LaptopImg} priority />
+                            <Image priority  layout={'responsive'} {...LaptopImg} priority />
                         </div>
                     </div>
                 </div>

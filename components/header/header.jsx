@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import LaptopImg from '/assets/header/Monitor-stron-M (1).png';
 import LaptopMobileImg from '/assets/header/Laptop-Mobile.png';
+import preVideo from '/assets/header/Projektowanie-stron-EKRAN.jpg';
 import UseTextAnimations from '../../hooks/useTextAnimations.jsx';
 import { GradientAnimation } from '../../helpers/gradientAnimation';
 import Logo from './logo';
@@ -129,11 +130,11 @@ const Header = () => {
                     <div
                         ref={gradientRef}
                         className={
-                            'h-screen w-screen absolute left-0 top-0 z-10  bg-gradient-to-r from-darkGray-900 to-darkGray-900  '
+                            'pointer-events-none h-screen w-screen absolute left-0 top-0 z-10  bg-gradient-to-r from-darkGray-900 to-darkGray-900  '
                         }
                     />
                     <div className={'max-w-[90rem] m-auto relative h-screen top-10'}>
-                        <div className={'m:top-[80rem] m:relative'}>
+                        <div className={'m:top-[80rem] m:relative pointer-events-none'}>
                             <style jsx>{`
                                 @media (min-width: 2000px) {
                                     h1,
@@ -148,7 +149,7 @@ const Header = () => {
                                     'text-[6.5rem] m:ml-0 ml-14 text-[#dfdfdf] font-black font-playfair leading-[0.85] pt-40 opacity-0 relative z-20 m:text-center m:text-[12rem]'
                                 }
                             >
-                                <span className={'block tracking-[1px]'}> Tak się tworzy</span>
+                                <span className={'block tracking-[1px]'}>Tu się tworzy</span>
                                 <span className={'block tracking-[1px]'}>dobre strony </span>
                             </h1>
                             <p
@@ -199,7 +200,7 @@ const Header = () => {
                                 style={{
                                     WebkitMaskBoxImage: `url(assets/header/Monit1-Maska.svg)`,
                                 }}
-                                className={'z-10 absolute w-full h-full bg-black m:hidden top-[-0.3rem]'}
+                                className={' z-10 absolute w-full h-full bg-black m:hidden top-[-0.3rem]'}
                             >
                                 <style jsx>{`
                                     video {
@@ -210,6 +211,10 @@ const Header = () => {
                                         max-width: unset !important;
                                     }
                                 `}</style>
+                                <div className={'absolute left-[20rem] top-[2rem] w-[52rem]'}>
+                                    <Image {...preVideo} priority />
+                                </div>
+
                                 <video src="/assets/header/video.mp4" autoPlay={true} muted={true} loop={true} />
                             </div>
                             {/*<div*/}
@@ -237,10 +242,10 @@ const Header = () => {
                             {/*    />*/}
                             {/*</div>*/}
                             <div className={'m:block hidden'}>
-                                <Image quality={85} layout={'responsive'} {...LaptopMobileImg} priority />
+                                <Image priority quality={85} layout={'responsive'} {...LaptopMobileImg} />
                             </div>
                             <div className={'m:hidden'}>
-                                <Image quality={85} layout={'responsive'} {...LaptopImg} priority />
+                                <Image priority quality={85} layout={'responsive'} {...LaptopImg} />
                             </div>
                         </div>
                     </div>

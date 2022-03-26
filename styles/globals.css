@@ -130,8 +130,8 @@ html {
 }
 /*.pin > *,.pinItem {*/
 /*  position: absolute;*/
-/*  bottom:0;*/
-/*  @apply translate-y-[100%];*/
+/*  top:2000px;*/
+/*  !*@apply translate-y-[100%];*!*/
 /*}*/
 .pin > *,.pinItem {
   position: absolute;

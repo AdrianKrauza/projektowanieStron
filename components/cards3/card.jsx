@@ -1,13 +1,15 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-const vh = (coef) => window.innerHeight * (coef / 100);
+
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import snot from '/assets/cards3/snot.json';
-
+import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 import Lottie from 'lottie-react';
-const Card = ({ title, paragraph, video, mask, index, mobileRight }) => {
+import isSlowNetwork from '../../helpers/isSlovNetwork';
+const vh = (coef) => window.innerHeight * (coef / 100);
+const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
     const cardRef = useRef();
     const titleRef = useRef();
     const snotRef = useRef();
@@ -155,32 +157,46 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight }) => {
             });
         }, 0);
     }, []);
+    console.log(isSlowNetwork(), 'ds');
     return (
         <div
             ref={cardRef}
             className={
-                'bg-lightGray rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-12 p-8 relative mt-44 h-96 m:mt-[5rem] translate-y-[100vh] will-change-transform m:bg-transparent'
+                'pointer-events-none bg-lightGray rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-12 p-[1.8rem] relative mt-44 h-96 m:mt-[5rem] translate-y-[100vh] will-change-transform m:bg-transparent'
             }
         >
-            <video
-                autoPlay
-                muted
-                loop
-                src={video}
-                className={`absolute left-1/2 max-w-none w-[28rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
-                    mobileRight && 'm:left-[0rem]'
-                }`}
-                style={{ WebkitMaskBoxImage: `url(${mask})` }}
-            />
+            {!isSlowNetwork() ? (
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    src={video}
+                    className={`absolute left-1/2 max-w-none w-[28rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
+                        mobileRight && 'm:left-[0rem]'
+                    }`}
+                    style={{ WebkitMaskBoxImage: `url(${mask})` }}
+                />
+            ) : (
+                <div
+                    style={{ WebkitMaskBoxImage: `url(${mask})` }}
+                    className={`absolute left-1/2 max-w-none w-[27rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
+                        mobileRight && 'm:left-[0rem]'
+                    }`}
+                >
+                    <Image {...image} />
+                </div>
+            )}
             <h3
                 ref={titleRef}
-                className={`font-playfair text-5xl m:text-[5rem] mt-24 ${mobileRight && 'm:ml-[50rem]'}`}
+                className={`font-playfair text-[3.4rem] m:text-[5rem] mt-24 ${mobileRight && 'm:ml-[50rem]'}`}
             >
                 {title}
             </h3>
             <p
                 ref={paragraphRef}
-                className={`mt-9 font-roboto text-3xl m:text-[4rem] m:leading-[1] ${mobileRight && 'm:ml-[50rem]'}`}
+                className={`mt-9 font-roboto text-[2.2rem] m:text-[4rem] m:leading-[1] ${
+                    mobileRight && 'm:ml-[50rem]'
+                }`}
             >
                 {paragraph}
             </p>

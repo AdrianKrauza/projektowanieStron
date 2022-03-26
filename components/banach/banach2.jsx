@@ -50,7 +50,7 @@
 //         <div ref={containerRef} className={'h-[300rem] '}>
 //             <div className={'pin w-[1350px] m-auto relative h-screen '}>
 //                 <div className={'absolute bottom-0 startImg translate-y-full'}>
-//                     <Image {...testImg} />
+//                     <Image priority  {...testImg} />
 //                     <h1 className="scale-x-[0.8] animation-header1 absolute top-44 left-32 font-AGaramondPro font-thin text-6xl leading-[0.8]">
 //                         {['Harmonia', 'KSIĘGOWO', 'PODATKOWA'].map((el, index) => (
 //                             <span key={el} className={!index && 'font-5xl top-[40px] relative'}>

@@ -8,8 +8,9 @@ const MobilePragmile = () => {
     useEffect(() => {
         setTimeout(() => {
             pinPortfolio(containerRef);
-            moveElement('.page1', 4000, 5200);
-            moveElement('.text1', 4200, 6250);
+            moveElement('.page1', 1000, 6000);
+            moveElement('.text1', 1000, 6500);
+            moveElement('.gate1', 1000, 6700);
         }, 0);
     }, []);
     return (

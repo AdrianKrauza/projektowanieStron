@@ -112,20 +112,20 @@ const Page2 = () => {
                 </svg>
             </div>
             <div className={'gate2 left-[650px] '}>
-                <Image {...gate1} />
+                <Image priority {...gate1} />
             </div>
             <div className={'text2 left-[700px]  '}>
-                <Image {...text1} />
+                <Image priority {...text1} />
             </div>
             <div className={'box1_1 left-[210px]  '}>
-                <Image {...box1} />
+                <Image priority {...box1} />
             </div>
             <div className={'box1_2 left-[50px]  '}>
-                <Image {...box2} />
+                <Image priority {...box2} />
             </div>
             <div className={'person    '}>
                 <div className={' relative left-[185px]   '}>
-                    <Image {...person} />
+                    <Image priority {...person} />
                 </div>
 
                 <div className={'bg-gradient-to-t from-[#18181A] h-[100px] absolute bottom-0 w-[1350px] '} />
@@ -133,7 +133,7 @@ const Page2 = () => {
             </div>
 
             <div className={'box1_3 left-[100px]  '}>
-                <Image {...box3} />
+                <Image priority {...box3} />
             </div>
         </>
     );

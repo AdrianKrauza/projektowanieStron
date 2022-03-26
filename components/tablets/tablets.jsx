@@ -132,7 +132,7 @@ const Tablets = () => {
         });
     }, []);
     return (
-        <div ref={conRef} className={'relative z-20 mt-[8rem] '}>
+        <div ref={conRef} className={'relative z-20 mt-[8rem] bg-lightGray '}>
             <h2 ref={headingRef} className={'text-center text-darkGray'}>
                 Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
             </h2>
@@ -185,7 +185,7 @@ const Tablets = () => {
                             index ? 'absolute opacity-0' : 'absolute'
                         } top-0 left-1/2 -translate-x-1/2 `}
                     >
-                        <Image {...img} layout={`fixed`} quality={70} placeholder={'blur'} />
+                        <Image priority {...img} layout={`fixed`} quality={70} placeholder={'blur'} />
                     </div>
                 ))}
                 <div ref={convertRef}>

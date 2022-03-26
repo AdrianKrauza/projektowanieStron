@@ -19,7 +19,7 @@ const Box = () => (
         {boxesData.map(([image, text1, text2, lottie]) => (
             <div key={text1} className={'mx-[30px]'}>
                 <div className={'w-[300px] rounded-t-2xl overflow-hidden'}>
-                    <Image {...image} />
+                    <Image priority {...image} />
                 </div>
                 <div className={'flex items-center'}>
                     {/*<Lottie className={'w-[100px]'} animationData={lottie} loop={true} />*/}
@@ -34,14 +34,14 @@ const Box = () => (
 );
 const Page2 = () => {
     return (
-        <div className={'page2  '}>
-            <div className={'-mb-[40px]'}>
-                <Image {...crowd} />
+        <div className={'page2 w-[1350px] '}>
+            <div className={'-mb-[40px] w-[1350px]'}>
+                <Image priority {...crowd} />
             </div>
             <div className={' bg-[#0C052C] pt-[150px]'}>
                 <Box />
-                <div className={'m-auto block w-[65rem] opacity-[0.4]'}>
-                    <Image {...hipnotyzuj} layout={'responsive'} />
+                <div className={'m-auto block w-[65rem] opacity-[0.4] max-w-[1350px]'}>
+                    <Image priority {...hipnotyzuj} layout={'responsive'} />
                 </div>
 
                 {/*<video muted loop autoPlay src="/assets/oko/Hipnotyzuj-transcode.mp4" />*/}

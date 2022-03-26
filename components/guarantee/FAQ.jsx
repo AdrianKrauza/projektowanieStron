@@ -1,17 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 const questions = [
-    'Czy gwarantujecie przebić konwersję mojej obecnej strony?',
-    'Mogę zmieniać lub rozbudować stronę w pełni samodzielnie?',
-    'Podłączycie mi pocztę, płatności, Google Analytics i Hot Jar?',
-    'Czy cena zawiera hosting i konfigurację domen i zabezpieczeń?',
-    'Możemy pracować przez mail, telefon, video, zoom lub skype?',
-    'Czy strona będzie ładować się błyskawicznie? (Page speed)',
+    'Gwarantujecie przebić konwersję mojej obecnej strony?',
+    'Mogę samodzielnie edytować lub rozbudować stronę?',
+    'Podłączycie mi maile, płatności, analitykę i zabezpieczenia?',
+    'Czy cena zawiera hosting i konfigurację domen i certyfikaty SSL?',
+    'Czy stosujecie stronę do potrzeb pozycjonowania SEO?',
+    'Czy strona jest responsywna? Czy ładuje się błyskawicznie?',
     'Możecie pomóc mi w prowadzeniu marketingu internetowego?',
-    'Czy strona będzie dostosowana do potrzeb pozycjonowania SEO?',
-    'Czy mogę liczyć na bezpłatne wsparcie poserwisowe?',
-    'Czy możecie przeprowadzić proces szybko? Jak szybko?',
-    'Czy możecie przyjąć mój projekt dzisiaj? Jak możemy zacząć?',
+    'Możemy pracować przez mail, telefon, video, zoom lub skype?',
+    'Czy możemy poprowadzić proces w trybie ekspresowym?',
+    'Czy możecie przyjąć mój projekt Teraz? Jak zacząć?',
 ];
 const Question = ({ question, setIsOpen, isOpen, index }) => {
     useEffect(() => {
@@ -63,9 +62,9 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
                     'absolute right-[2rem] top-[1.4rem]  rounded-full border-[1px] border-[#cecece] w-[1.5rem] h-[1.5rem]'
                 }
             >
-                <div className={'w-[.75rem] bg-black h-[1px] relative left-[.35rem] top-[.73rem]'}> </div>
+                <div className={'w-[.75rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem]'}> </div>
                 <div
-                    className={`w-[.75rem] bg-black h-[1px] relative left-[.35rem] top-[.73rem] translate-y-[-1px] transition-opacity rotate-90 opacity-${
+                    className={`w-[.75rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem] translate-y-[-1px] transition-opacity rotate-90 opacity-${
                         isOpen ? 0 : 1
                     }`}
                 />

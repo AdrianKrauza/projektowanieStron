@@ -33,8 +33,9 @@ const texts = [
         [
             'Jeśli przekonujesz ludzi lepiej',
             'od konkurencji to zarabiasz ',
-            'z zyskiem nawet gdy frazy ',
-            'kluczowe Google są drogie.',
+            ' z zyskiem nawet wtedy, gdy',
+
+            '  masz drogie frazy w Google.',
         ],
     ],
     [
@@ -48,6 +49,7 @@ const texts = [
         ],
     ],
 ];
+
 const TopText = () => {
     const topTextRef = useRef();
     const headingRef = useRef();

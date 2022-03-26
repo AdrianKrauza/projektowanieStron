@@ -53,11 +53,11 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
         <div ref={boxRef} className={`relative ${!second && 'opacity-30'}`}>
             <div
                 ref={lottieRef}
-                className={
-                    ' -z-10 w-[60rem] h-[70rem] rotate-90 -translate-x-1/2 left-1/2 -top-[25rem] absolute -z-10 opacity-[0.01]'
-                }
+                className={` ${
+                    !second && '-z-10'
+                }  w-[60rem] h-[70rem] rotate-90 -translate-x-1/2 left-1/2 -top-[25rem] absolute -z-10 opacity-[0.01]`}
             >
-                <Image src={boxGif} layout={'fill'} />
+                <Image priority src={boxGif} layout={'fill'} />
             </div>
 
             <h3 ref={headerRef} className={'text-center font-playfair text-[#dfdfdf] text-[5rem] mb-[2vw]'}>

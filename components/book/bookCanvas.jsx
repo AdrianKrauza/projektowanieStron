@@ -11,13 +11,16 @@ const bookImages = [
 const vh = (coef) => window.innerHeight * (coef / 100);
 const images = [];
 const preloadImages = (updateImage) => {
-    bookImages.map((book) => {
-        for (let i = book[0]; i < book[0] + book[1] + 1; i++) {
-            console.log(i);
-            images[i] = new Image();
-            images[i].src = currentFrame(i);
-        }
-    });
+    setTimeout(() => {
+        bookImages.map((book) => {
+            for (let i = book[0]; i < book[0] + book[1] + 1; i++) {
+                console.log(i);
+                images[i] = new Image();
+                images[i].src = currentFrame(i);
+            }
+        });
+    }, 5000);
+
     updateImage(bookImages[0][0]);
 };
 const BookCanvas = ({ bookSectionRef }) => {

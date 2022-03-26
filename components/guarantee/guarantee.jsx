@@ -34,18 +34,27 @@ const Guarantee = ({ setPageState }) => {
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
                 Zwiększymy konwersję Twojej/ strony, albo zwrócimy Ci/ 100% środków!
             </h3>
-            <p className={'text-2xl mt-10 text-darkGray-900 text-center mb-[15rem]'}>+ Szczegóły w sekcji FAQ</p>
-            <div className={'my-[10rem] m-auto w-[30rem]'}>
-                <p className={' text-[3rem]'}>
-                    Lepsza <br />
-                    konwersja <br />
-                    zaczyna się <br /> od lepszego
-                    <br /> projektowania.
-                </p>
-                <p className={'text-white mt-[2rem] text-[2rem]'}>
-                    To nie są szczegóły. <br /> To są fundamenty!
-                </p>
+            <p className={'text-2xl mt-10 text-darkGray-900 text-center mb-[5rem]'}>+ Szczegóły w sekcji FAQ</p>
+            <div className={'flex justify-center items-end mb-[5rem]'}>
+                <div className={' w-[20rem]'}>
+                    <p className={' text-[3rem]'}>
+                        Świetna
+                        <br />
+                        konwersja
+                        <br />
+                        zaczyna się
+                        <br />
+                        od świetnego
+                        <br />
+                        projektowania.
+                    </p>
+                    <p className={'text-white mt-[2rem] text-[2rem]'}>
+                        To nie są szczegóły. <br /> To są fundamenty!
+                    </p>
+                </div>
+                <video src="/assets/gu/Projektowanie-stron-statystyki.mp4" loop autoPlay muted />
             </div>
+
             <div className={'m-auto w-[50rem]  '}>
                 <p className={'text-[2rem]'}>
                     Nie da się ukryć, że uwielbiamy się z grafikami,
@@ -55,7 +64,7 @@ const Guarantee = ({ setPageState }) => {
                     <br />
                     U nas na długo przed grafikiem medytują:
                     <br />
-                    Marketer, Copywriter oraz Projektant UX
+                    Copywriter, Projektant UX, oraz Marketer.
                     <br />
                     <br />
                     Badają konkurencję i zasady konkurowania.
@@ -68,16 +77,23 @@ const Guarantee = ({ setPageState }) => {
                     zorientowany na wysokie rezultaty:
                 </p>
             </div>
-            <p className={'text-center mt-[3rem] text-[2rem]'}>Makietę “User Expirience”</p>
-            <p className={'text-center mt-[1rem] text-[1rem] text-white underline'}>Makietę “User Expirience”</p>
+            <p className={'text-center mt-[3rem] text-[2rem]'}>
+                Wszystko zaczyna się od <br /> makiety UX <i>User Experience.</i>
+            </p>
+            <a
+                href={'https://copywriting.pl/makiety'}
+                className={'text-center mt-[1rem] text-[1rem] text-white underline block'}
+            >
+                ( Kompletny proces zobaczysz tutaj )
+            </a>
             <div className={'flex justify-center'}>
-                <Image quality={100} {...img3} />
+                <Image priority quality={100} {...img3} />
                 <video
                     style={{
                         WebkitMaskBoxImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
                     }}
                     src="/assets/gu/Projektowanie-UX.mp4 "
-                    className={'absolute w-[670px] translate-y-[45px] translate-x-[-5px]'}
+                    className={'absolute w-[670px] translate-y-[45px] translate-x-[-5px] -mb-[4rem]'}
                     muted
                     loop
                     autoPlay

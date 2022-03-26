@@ -19,19 +19,21 @@ const UsePortfolio = () => {
     };
     const moveElement = (el, start, speed, responsive = true, stop = 0.7, scrub = 1) => {
         const element = container.current.querySelectorAll(el);
-        // console.log(container.current.querySelector(el)?.offsetHeight,el)
-        console.log(start / (14 - vw(1)),14 - vw(1), el);
+
+        const start2 = start / (14 / vw(1));
+        console.log(speed, (speed * 20) / vw(1));
         gsap.to(element, {
             // y: -vh(100) +  container.current.querySelector(el)?.offsetHeight - 1000,
-            y: -vh(100) +  container.current.querySelector(el)?.offsetHeight ,
+            y: -4000,
             // y: responsive ? -vh(100) - ((container.current.querySelector(el)?.offsetHeight / 5 || 0)  ):(-window.innerHeight + container.current.querySelector(el)?.offsetHeight * stop || 0) ,
             ease: 'none',
             scrollTrigger: {
                 trigger: container.current,
                 markers: true,
                 id: el,
-                start: `${start / (14 - vw(1))}px 100%`,
-                end: `${(start / (14 - vw(1)) + (speed / (14 - vh(1)) ) / 2)} 100%`,
+                // start: `${start / (20 / vw(1))}px 100%`,
+                start: `${start / 2}px 0%`,
+                end: `+=${speed}px 0%`,
                 scrub,
             },
         });

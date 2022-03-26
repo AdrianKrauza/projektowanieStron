@@ -12,7 +12,7 @@ const Page1 = () => {
                 }
             >
                 <div className={'   rounded-t-[60px] overflow-hidden '}>
-                    <Image {...page1} />
+                    <Image priority {...page1} />
                 </div>
 
                 <div
@@ -22,10 +22,10 @@ const Page1 = () => {
                 />
             </div>
             <div className={'gate1 left-[280px] '}>
-                <Image {...gate1} />
+                <Image priority {...gate1} />
             </div>
             <div className={'text1 left-[280px]  '}>
-                <Image {...text1} />
+                <Image priority {...text1} />
                 <style jsx>{`
                     @keyframes pulse {
                         0% {

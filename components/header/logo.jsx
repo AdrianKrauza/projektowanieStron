@@ -28,7 +28,7 @@ const Logo = () => {
     return (
         <div className={'inline-block w-[236px] h-[90px] overflow-hidden relative'}>
             <div ref={logoRef} className={'absolute'}>
-                <Image {...logoImg} />
+                <Image priority {...logoImg} />
             </div>
         </div>
     );

@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Spiral } from './spiral';
 import useTextAnimations from '../../hooks/useTextAnimations';
 const vh = (coef) => window.innerHeight * (coef / 100);
+import image1 from '/assets/cards3/carrey_jp.jpg';
+import image2 from '/assets/cards3/dicaprio_jp.jpg';
+import image3 from '/assets/cards3/szydercze_ziomki_jp.jpg';
 gsap.registerPlugin(ScrollTrigger);
 const Cards3 = () => {
     const cardsRef = useRef();
@@ -25,7 +28,10 @@ const Cards3 = () => {
     return (
         <>
             <Spiral />
-            <div ref={cardsRef} className={'absolute m:flex-col flex justify-center w-screen top-0'}>
+            <div
+                ref={cardsRef}
+                className={'absolute m:flex-col flex justify-center w-screen top-0 pointer-events-none'}
+            >
                 <h2
                     className={'text-center text-[7rem] relative top-[20rem] opacity-0 m:block hidden'}
                     ref={headingRef}
@@ -39,6 +45,7 @@ const Cards3 = () => {
                     video={'/assets/cards3/Logo+Identyfikacja.mp4'}
                     title={'UX & design'}
                     index={0}
+                    image={image2}
                     paragraph={
                         <>
                             Wizualną różnicę <br /> łatwo zamienisz w <br /> zaufanie i poważanie
@@ -49,6 +56,7 @@ const Cards3 = () => {
                     mask={'/assets/cards3/maska_carreySV.svg'}
                     video={'/assets/cards3/Copywriting.mp4'}
                     title={'Copywriting'}
+                    image={image1}
                     index={1}
                     mobileRight
                     paragraph={
@@ -61,6 +69,7 @@ const Cards3 = () => {
                     index={2}
                     mask={'/assets/cards3/maska_ziomkiSV.svg'}
                     video={'/assets/cards3/Konwersja.mp4'}
+                    image={image3}
                     title={'Konwersja'}
                     paragraph={
                         <>

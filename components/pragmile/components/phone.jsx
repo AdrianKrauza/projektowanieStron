@@ -14,7 +14,7 @@ const Phone = ({ initCanvas }) => {
                 className={'absolute top-0 w-[548px] h-[597px]'}
                 style={{ WebkitMaskBoxImage: `url(/assets/pragmile/maska3SV.svg)` }}
             >
-                <Image {...phone} />
+                <Image priority {...phone} />
             </div>
             <canvas ref={canvasRef} style={{ WebkitMaskBoxImage: `url(/assets/pragmile/maska1SV.svg)` }} />
         </div>

@@ -10,10 +10,10 @@ const End = () => {
     return (
         <>
             <div className={'box2_1 left-[-150px]  scale-[0.6]'}>
-                <Image {...box2} />
+                <Image priority {...box2} />
             </div>
             <div className={'hoodie left-[-300px] scale-[0.8]'}>
-                <Image {...hoodie} />
+                <Image priority {...hoodie} />
                 <style jsx>{`
                     .gr {
                         bottom: 0px;
@@ -37,7 +37,7 @@ const End = () => {
             </div>
             <div className={'hand  w-screen left-1/2 -translate-x-1/2'}>
                 <div className={'translate-x-[-4px] scale-[0.6] origin-bottom-right mx-auto w-[1580px]'}>
-                    <Image {...hand} />
+                    <Image priority {...hand} />
                 </div>
 
                 <style jsx>{`
@@ -69,15 +69,15 @@ const End = () => {
                 autoPlay
             />
             <div className={'text5 translate-x-[1060px]  scale-[0.7]'}>
-                <Image {...text5} />
+                <Image priority {...text5} />
             </div>
 
             <div className={'box2_2 left-[-360px]  scale-[0.6]'}>
-                <Image {...box1} />
+                <Image priority {...box1} />
             </div>
 
             <div className={'box2_3 left-[-200px]  scale-[0.6]'}>
-                <Image {...box3} />
+                <Image priority {...box3} />
             </div>
         </>
     );

@@ -153,7 +153,7 @@ const Page3 = () => {
             >
                 <div className={'absolute h-[1450px] w-[1350px] top-[90px]  bg-[#F2EEE9]'} />
                 <div className={'bg-black'}>
-                    <Image {...page3c1} placeholder={'blur'} priority />
+                    <Image priority {...page3c1} placeholder={'blur'} />
                 </div>
                 <div className={'relative'}>
                     <div />
@@ -183,19 +183,19 @@ const Page3 = () => {
                         <div className={'flex justify-center'}>
                             <div className={'w-[300px] absolute -top-[60px]'}>
                                 <div className={'w-[445px] h-[300px] absolute top-[150px] left-[-100px] '}>
-                                    <Image placeholder={'blur'} {...shadow} />
+                                    <Image priority placeholder={'blur'} {...shadow} />
                                 </div>
                                 <div className={'w-[260px] h-[260px] absolute'}>
-                                    <Image placeholder={'blur'} {...box} />
+                                    <Image priority placeholder={'blur'} {...box} />
                                 </div>
                             </div>
                             {boxesData.map(({ className, textClassName, text }, index) => (
                                 <div className={`${className} relative w-[0] h-[0]  box${index}`} key={text}>
                                     <div className={`w-[100px] h-[66px] absolute top-[42px] left-[52px]`}>
-                                        <Image placeholder={'blur'} {...shadow} />
+                                        <Image priority placeholder={'blur'} {...shadow} />
                                     </div>
                                     <div className={'w-[100px] h-[100px] absolute left-[50px] top-[-30px]'}>
-                                        <Image placeholder={'blur'} {...box} />
+                                        <Image priority placeholder={'blur'} {...box} />
                                     </div>
                                     <p
                                         className={'text-[18px] color-[#717171] relative w-max ' + textClassName}
@@ -208,21 +208,21 @@ const Page3 = () => {
                 </div>
 
                 <div className={'bg-[#141414] -mt-[210px]'}>
-                    <Image {...page3c3} placeholder={'blur'} priority />
+                    <Image priority {...page3c3} placeholder={'blur'} priority />
                     <div className={'bg-gradient-to-t from-[#141414] h-[100px] absolute bottom-0 w-[1350px] '} />
                 </div>
             </div>
             <div className={'gate3 left-[110px]'}>
-                <Image {...gate3} placeholder={'blur'} />
+                <Image priority {...gate3} placeholder={'blur'} />
             </div>
             <div className={'gate4 left-[180px]'}>
-                <Image {...gate4} placeholder={'blur'} />
+                <Image priority {...gate4} placeholder={'blur'} />
             </div>
             <div className={'sphere4 left-[110px]'}>
-                <Image {...sphere} placeholder={'blur'} />
+                <Image priority {...sphere} placeholder={'blur'} />
             </div>
             <div className={'text3 left-[120px]'}>
-                <Image {...text3} placeholder={'blur'} />
+                <Image priority {...text3} placeholder={'blur'} />
             </div>
         </>
     );

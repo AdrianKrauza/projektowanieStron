@@ -10,10 +10,10 @@ const Page2 = () => {
                     'page3  overflow-hidden rounded-t-[90px] border-[2px] border-[#0e082e]  shadow-[-1px_-10px_12px_10px_#06051c9e]'
                 }
             >
-                <Image {...page3} />
+                <Image priority {...page3} />
             </div>
             <div className={'ending w-[1350px]'}>
-                <Image layout={'responsive'} {...ending} quality={100} />
+                <Image priority layout={'responsive'} {...ending} quality={100} />
                 <div
                     className={
                         'absolute h-[300px] bg-gradient-to-t -translate-y-full from-[#ebe6eb] to-transparent w-screen -translate-x-1/2 left-1/2'
