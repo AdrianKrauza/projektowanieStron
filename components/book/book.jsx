@@ -68,7 +68,7 @@ const TopText = () => {
             ScrollTrigger.create({
                 trigger: topTextRef.current,
                 pin: topTextRef.current,
-                start: '80% 60%',
+                start: '80% 70%',
                 end: '150% 60%',
             });
         }, 0);

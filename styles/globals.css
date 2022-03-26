@@ -56,7 +56,7 @@ html {
   h1 span,h2 span,h3 span, p span{
     @apply block;
   }
-  p {
+  p,button,a {
     @apply font-roboto;
     @apply font-thin;
     @apply text-darkGray;

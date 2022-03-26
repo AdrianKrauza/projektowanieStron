@@ -19,27 +19,27 @@ import MobilePragmile from '../components/mobilePragmile/mobilePragmile';
 const pageState = {
     0: (setPageState) => (
         <div>
-            {/*<Header />*/}
-
-            {/*<div className={'pointer-events-none'}>*/}
-            {/*    <Cards3 />*/}
-            {/*    <Tablets />*/}
-            {/*</div>*/}
-            {/*<Letters />*/}
+            <Header />
+            {/**/}
+            <div className={'pointer-events-none'}>
+                <Cards3 />
+                <Tablets />
+            </div>
+            <Letters />
             {/*<div className={'h-[50vh]'} />*/}
-            {/*<Book />*/}
-            {/*<Guarantee />*/}
+            <Book />
+            <Guarantee />
             {/*<Pragmile setPageState={setPageState} />*/}
             {/*<If />*/}
             {/*<If />*/}
-            <Banach />
+            {/*<Banach />*/}
             {/*<Oko />*/}
         </div>
     ),
     1: (setPageState) => (
         <div className={'bg-darkGray-900 min-h-[100vh]'}>
             <If />
-            <Banach />
+            <Banach />/
             <Oko />
         </div>
     ),

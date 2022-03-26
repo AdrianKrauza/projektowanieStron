@@ -179,12 +179,13 @@ const Banach = () => {
             scrollAnimationElement('.cloudText', { }, {onEnter:()=>{
                     // videoRef.current.play();
                     try {
+                        console.log(videoRef)
                          videoRef.current.play();
 
                     } catch(err) {
                        console.log(err)
                     }
-                }}, 810, 930);
+                }}, 980, 930);
             banachTextScrollAnimation(containerRef, '.animation-header1', 350);
             banachTextScrollAnimation(containerRef, '.animation-header2', 500);
             banachTextScrollAnimation(containerRef, '.animation-header3', 400);
@@ -242,7 +243,9 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
+
         <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[-10rem]'}>
+            {/*<video  src="/assets/oko/Oko-logo.mp4"  autoPlay muted className={'w-96 hidden'} />*/}
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
                 <div
                     style={{ transform: 'translateX(-50%)' }}
@@ -273,7 +276,7 @@ const Banach = () => {
                         className={`  flex flex-col justify-center h-[400px]  absolute items-center w-full mt-[20rem]`}
                     >
                         <div className={'mb-[4rem]'}>
-                            <video ref={video} src="/assets/oko/Oko-logo.mp4"   muted className={'w-96'} />
+                            <video ref={videoRef} src="/assets/oko/Oko-logo.mp4"   muted className={'w-96'} />
                         </div>
                         <p className={'text-center text-[#dfdfdf]'}>
                             Studio OKO - Przykład strony dla <br />

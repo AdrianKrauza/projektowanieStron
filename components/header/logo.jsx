@@ -8,11 +8,11 @@ const Logo = () => {
     useEffect(() => {
         const logo = gsap.to(logoRef.current, {
             duration: 4,
-            delay: 9,
-            y: -11340 + 180,
+            // delay: 9,
+            y: -5670 + 91,
             ease: SteppedEase.config(62),
         });
-
+        logo.progress(100);
         const handleMouseEnter = () => {
             logo.reverse();
         };
@@ -26,7 +26,7 @@ const Logo = () => {
     }, []);
 
     return (
-        <div className={'inline-block w-[236px] h-[90px] overflow-hidden relative'}>
+        <div className={'inline-block w-[130px] h-[45px] overflow-hidden relative opacity-[0.2]'}>
             <div ref={logoRef} className={'absolute'}>
                 <Image priority {...logoImg} />
             </div>

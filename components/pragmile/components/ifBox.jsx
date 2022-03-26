@@ -55,7 +55,7 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
                 ref={lottieRef}
                 className={` ${
                     !second && '-z-10'
-                }  w-[60rem] h-[70rem] rotate-90 -translate-x-1/2 left-1/2 -top-[25rem] absolute -z-10 opacity-[0.01]`}
+                }  w-[60rem] h-[70rem] rotate-90 -translate-x-1/2 left-1/2 -top-[25rem] absolute  opacity-[0.01]`}
             >
                 <Image priority src={boxGif} layout={'fill'} />
             </div>

@@ -36,8 +36,8 @@ const Guarantee = ({ setPageState }) => {
             </h3>
             <p className={'text-2xl mt-10 text-darkGray-900 text-center mb-[5rem]'}>+ Szczegóły w sekcji FAQ</p>
             <div className={'flex justify-center items-end mb-[5rem]'}>
-                <div className={' w-[20rem]'}>
-                    <p className={' text-[3rem]'}>
+                <div className={' w-[25rem]'}>
+                    <p className={' text-[3.5rem]'}>
                         Świetna
                         <br />
                         konwersja
@@ -48,11 +48,18 @@ const Guarantee = ({ setPageState }) => {
                         <br />
                         projektowania.
                     </p>
-                    <p className={'text-white mt-[2rem] text-[2rem]'}>
+                    <p className={'text-white mt-[2rem] text-[2.5rem]'}>
                         To nie są szczegóły. <br /> To są fundamenty!
                     </p>
                 </div>
-                <video src="/assets/gu/Projektowanie-stron-statystyki.mp4" loop autoPlay muted />
+                <video
+                    className={'-mb-[50px]'}
+                    style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
+                    src="/assets/gu/Projektowanie-stron-statystyki.mp4"
+                    loop
+                    autoPlay
+                    muted
+                />
             </div>
 
             <div className={'m-auto w-[50rem]  '}>

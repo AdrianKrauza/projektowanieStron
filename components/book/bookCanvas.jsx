@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const currentFrame = (index) => `/assets/book/Main_${index.toString().padStart(5, '0')}.jpg`;
 const bookImages = [
-    [49, 103 - 49],
+    [48, 105 - 49],
     [189, 244 - 189],
     [330, 390 - 330],
 ];
