@@ -126,34 +126,6 @@ const Header = () => {
     }, []);
     return (
         <>
-            <nav ref={navRef} className={'bg-black m:hidden absolute z-[999]  w-screen '}>
-                <div
-                    className={
-                        'p-[10px] w-[85rem] relative flex left-1/2 -translate-x-1/2 items-center justify-between'
-                    }
-                >
-                    <div className={'flex items-center'}>
-                        <Logo />
-                        <p className={'text-[12px] ml-[5px] font-bold'}>Dlaczego owocne strony?</p>
-                        <p className={'text-[12px] ml-[5px] font-bold'}>|</p>
-                        <p className={'text-[12px] ml-[5px] font-bold'}>Gwarancja</p>
-                        <p className={'text-[12px] ml-[5px] font-bold'}>|</p>
-                        <p className={'text-[12px] ml-[5px] font-bold'}>Przykłady realizacji </p>
-                    </div>
-                    <div className={'flex items-center'}>
-                        <button
-                            className={
-                                'font-bold bg-[#0071e3] text-white text-[12px] px-[20px] py-[10px] mr-[20px] rounded-[50px]'
-                            }
-                        >
-                            Poproszę o ofertę
-                        </button>
-                        <a href="" className={'font-bold text-white text-[12px]'}>
-                            +48 660 970 980
-                        </a>
-                    </div>
-                </div>
-            </nav>
             <div id="header" className={'w-screen  h-[100rem] will-change-transform '}>
                 <div style={{ background: 'linear-gradient(180deg, #212121 62%, #3f3f3f 77%)' }}>
                     <div

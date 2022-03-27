@@ -23,8 +23,8 @@ const UsePortfolio = () => {
             ease: 'none',
             scrollTrigger: {
                 trigger: container.current,
-                start: `${typeof start === 'number' ? vh(start) + 'px' : start} 100%`,
-                end: `+=${vh(speed)} 100%`,
+                start: `${typeof start === 'number' ? vh(start * 0.4) + 'px' : start} 100%`,
+                end: `+=${vh(speed * 0.4)} 100%`,
                 scrub: 1,
             },
         });
@@ -36,8 +36,8 @@ const UsePortfolio = () => {
             ...to,
             scrollTrigger: {
                 trigger: container.current,
-                start: `${vh(start)}px 100%`,
-                end: `+=${vh(end)} 100%`,
+                start: `${vh(start * 0.4)}px 100%`,
+                end: `+=${vh(end * 0.4)} 100%`,
                 scrub: 1,
                 ...scrollTriggerProps,
             },

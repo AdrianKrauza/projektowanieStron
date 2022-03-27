@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 const vh = (coef) => window.innerHeight * (coef / 100);
 const vw = (coef) => window.innerWidth * (coef / 100);
 
-const UsePortfolio = () => {
+const UsePortfolio = (changeSpeed = 0) => {
     let container;
     const pinPortfolio = (containerRef) => {
         container = containerRef;
@@ -25,8 +25,8 @@ const UsePortfolio = () => {
             ease:responsive ? 'none' : Expo.easeOut,
             scrollTrigger: {
                 trigger: container.current,
-                start: `${typeof start === 'number' ?3000 + ( vh(50) + start)* .2 + 'px' :  start} 100%`,
-                end: `+=${ (vh( 100 )  + speed) * 0.20} 100%`,
+                start: `${typeof start === 'number' ? (vh(100) * changeSpeed) + ( vh(50) + start)* ( changeSpeed ? 0.4 : 1) + 'px' :  start} 100%`,
+                end: `+=${ (vh( 100 )  + speed) * ( changeSpeed ? 0.4 : 1)} 100%`,
                 scrub,
             },
         });
@@ -38,8 +38,8 @@ const UsePortfolio = () => {
             ...to,
             scrollTrigger: {
                 trigger: container.current,
-                start: `${start}px 100%`,
-                end: `+=${vh(100) + end} 100%`,
+                start: `${(vh(100) * changeSpeed) + start* ( changeSpeed ? 0.4 : 1)}px 100%`,
+                end: `+=${(vh(100) + end)* ( changeSpeed ? 0.4 : 1)} 100%`,
                 scrub: 1,
                 ...scrollTriggerProps,
             },

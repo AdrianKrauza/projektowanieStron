@@ -18,7 +18,7 @@ const vh = (coef) => window.innerHeight * (coef / 100);
 const Pragmile = ({ setPageState }) => {
     const containerRef = useRef();
 
-    const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
+    const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio(true);
     const { initCanvas, updateImage } = UseCanvasFrameAnimation('pragmile/Comp 1_00', [0, 49]);
     useEffect(() => {
         setTimeout(() => {
@@ -50,7 +50,7 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.imgWithGradient_Gradient', 10930, 2000);
             moveElement('.sphere4', 10850, 2050);
             moveElement('.gate4', 10400, 2900);
-            moveElement('.phone', 9000, 3300);
+            moveElement('.phone', 9300, 3800);
             moveElement('.hoodie', 11800, 2700);
             moveElement('.hand', 11500, 2200);
             moveElement('.text5', 12550, 800);
@@ -78,8 +78,8 @@ const Pragmile = ({ setPageState }) => {
                 ease: 'none',
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: `${5900}px 100%`,
-                    end: `+=${vh(100) + 1400} 100%`,
+                    start: `${5900 * 0.4}px 100%`,
+                    end: `+=${(vh(100) + 1400) * 0.4} 100%`,
                     scrub: 1,
                 },
             });
@@ -95,7 +95,7 @@ const Pragmile = ({ setPageState }) => {
 
                     scale: 0.9,
                 });
-            scrollAnimationElement('.startImg3', {}, {}, 2500, 0, {
+            scrollAnimationElement('.startImg3', {}, {}, 2000, 0, {
                 onLeave: () => {
                     containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
                 },
@@ -151,7 +151,7 @@ const Pragmile = ({ setPageState }) => {
                 400,
             );
             gsap.set('.m1_cGroup', { opacity: 0 });
-            scrollAnimationElement('.m1_cGroup', {}, {}, 6500, 0, {
+            scrollAnimationElement('.m1_cGroup', {}, {}, 6500 * 0.4, 0, {
                 onEnter: () => {
                     gsap.timeline({ defaults: { duration: 45 } })
                         .fromTo('.m1_cGroup', { opacity: 0 }, { duration: 0.3, opacity: 1, stagger: -0.1 }, 0)

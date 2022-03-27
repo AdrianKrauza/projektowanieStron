@@ -3,55 +3,29 @@ import Image from 'next/image';
 import page1 from '/assets/pragmile/Strona.jpg';
 import gate1 from '/assets/pragmile/Kratki.png';
 import text1 from '/assets/pragmile/Tekst-strony-Team-Novate1.png';
+
+import Element from '../../../hooks/useMobilePortfolio';
+import { useEffect } from 'react';
+
 const Page1 = () => {
     return (
         <>
-            <div
-                className={
-                    'page1 border-[1px] border-[#022300]  rounded-t-[60px]   shadow-[-1px_-10px_22px_10px_#090e0760]'
-                }
+            <Element
+                start={0}
+                end={25}
+                left={0}
+                className={' border-[1px] border-[#022300]  rounded-t-[60px]   shadow-[-1px_-10px_22px_10px_#090e0760]'}
             >
-                <div className={' w-[95vw]  rounded-t-[60px] overflow-hidden '}>
-                    <Image priority layout={'responsive'} {...page1} />
+                <div className={' w-[95vw] rounded-t-[60px] overflow-hidden '}>
+                    <img priority layout={'responsive'} {...page1} />
                 </div>
-
-                <div
-                    className={
-                        'absolute h-[200px] bottom-[-180px] w-[1350px] bg-[#111111] shadow-[0px_-10px_40px_11px_#111111]'
-                    }
-                />
-            </div>
-            <div className={'gate1 left-[280px] w-[5rem]'}>
-                <Image priority layout={'responsive'} {...gate1} />
-            </div>
-            <div className={'text1 left-[20rem] w-[35rem]  '}>
-                <Image priority layout={'responsive'} {...text1} />
-                {/*<style jsx>{`*/}
-                {/*    @keyframes pulse {*/}
-                {/*        0% {*/}
-                {/*            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.2),*/}
-                {/*                0 0 0 30px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0.2);*/}
-                {/*        }*/}
-
-                {/*        100% {*/}
-                {/*            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 30px rgba(255, 255, 255, 0.2),*/}
-                {/*                0 0 0 60px rgba(255, 255, 255, 0.2), 0 0 0 90px rgba(255, 255, 255, 0);*/}
-                {/*        }*/}
-                {/*    }*/}
-                {/*    .ring-button {*/}
-                {/*        animation: pulse 3s linear infinite;*/}
-                {/*        position: absolute;*/}
-                {/*        border-radius: 100%;*/}
-                {/*        width: 3rem;*/}
-                {/*        height: 3rem;*/}
-                {/*        bottom: 123px;*/}
-                {/*        left: 69px;*/}
-                {/*        z-index: -1;*/}
-                {/*    }*/}
-                {/*`}</style>*/}
-
-                {/*<div className={'ring-button'} />*/}
-            </div>
+            </Element>
+            <Element nieWiemCoToTakiego={0.026} start={20} end={60} width={10} left={20}>
+                <img priority layout={'responsive'} {...gate1} />
+            </Element>
+            <Element nieWiemCoToTakiego={0.0265} start={20} end={55} left={20} width={50}>
+                <img priority layout={'responsive'} {...text1} />
+            </Element>
         </>
     );
 };

@@ -15,6 +15,8 @@ import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 import UseChangePageState from '../hooks/useChangePageState';
 import Transform from '../components/transform/transform';
 import MobilePragmile from '../components/mobilePragmile/mobilePragmile';
+import Nav from '../components/nav/nav';
+import Footer from '../components/footer/footer';
 
 const pageState = {
     0: (setPageState) => (
@@ -25,7 +27,7 @@ const pageState = {
                 <Cards3 />
                 <Tablets />
             </div>
-            {/*<Letters />*/}
+            <Letters />
             {/*<div className={'h-[50vh]'} />*/}
             <Book />
             <Guarantee />
@@ -50,14 +52,21 @@ export default function Home({ index }) {
     useEffect(() => {
         setPageState2(currentPageState);
     }, [currentPageState]);
+
     return (
         <>
             <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>
+                {/*<Nav />*/}
                 {/*<div className={'h-[50vh]'} />*/}
-                {/*<div className={'h-[50vh]'} />*/}
-                {/*<div className={'h-[50vh]'} />*/}
+                {/*<div className={'h-[100vh]'} />*/}
                 {/*<MobilePragmile />*/}
+                {/*<div className={'h-[100vh]'} />*/}
+                {/*<div className={'h-[100vh]'} />*/}
+                {/*<div className={'h-[100vh]'} />*/}
+                {/*<div className={'h-[100vh]'} />*/}
+                {/*<Pragmile setPageState={setPageState} />*/}
                 <div>{pageState[pageState2](setPageState)}</div>
+                {/*<Footer />*/}
                 {/*<Pragmile setPageState={setPageState} />*/}
                 {/*<div className={'h-[40rem]'} />*/}
                 {/*<Cards3 />*/}

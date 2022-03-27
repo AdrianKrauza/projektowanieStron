@@ -62,9 +62,9 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
                     'absolute right-[2rem] top-[1.4rem]  rounded-full border-[1px] border-[#cecece] w-[1.5rem] h-[1.5rem]'
                 }
             >
-                <div className={'w-[.75rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem]'}> </div>
+                <div className={'w-[.65rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem]'}> </div>
                 <div
-                    className={`w-[.75rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem] translate-y-[-1px] transition-opacity rotate-90 opacity-${
+                    className={`w-[.65rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem] translate-y-[-1px] transition-opacity rotate-90 opacity-${
                         isOpen ? 0 : 1
                     }`}
                 />

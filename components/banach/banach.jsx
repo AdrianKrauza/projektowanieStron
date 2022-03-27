@@ -28,10 +28,10 @@ import useTextAnimations from '../../hooks/useTextAnimations';
 import lottieLoad from '../../helpers/lottieLoad';
 import logoGif from '../../assets/banach/Banach-Logo.gif';
 /* eslint-disable */
-// const Odometer = dynamic(import('react-odometerjs'), {
-//     ssr: false,
-//     loading: () => 0,
-// });
+const Odometer = dynamic(import('react-odometerjs'), {
+    ssr: false,
+    loading: () => 0,
+});
 /* eslint-enable */
 const banachTextScrollAnimation = (containerRef, el, start, spped = 65) => {
     const el2 = [...document.querySelectorAll(`${el} > span`)];
@@ -92,13 +92,13 @@ const Banach = () => {
             duration: 2,
         });
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef, headerRef, `${vh(750)} 0%`, `${vh(840)} 0%`, false, true);
-            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(830)} 0%`, `${vh(890)} 0%`, false);
+            AnimationHeadingScrub(headerRef, headerRef, `${vh(550)* 0.4} 0%`, `${vh(640)* 0.4} 0%`, false, true);
+            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(630)* 0.4} 0%`, `${vh(690)* 0.4} 0%`, false);
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: `${vh(750)}px 0%`,
-                end: `${vh(850)}px 0%`,
+                start: `${vh(550* 0.4)}px 0%`,
+                end: `${vh(750* 0.4)}px 0%`,
                 onUpdate: ({ progress }) => {
                     cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
                 },
@@ -193,16 +193,16 @@ const Banach = () => {
                 980,
                 930,
             );
-            banachTextScrollAnimation(containerRef, '.animation-header1', 350);
-            banachTextScrollAnimation(containerRef, '.animation-header2', 500);
-            banachTextScrollAnimation(containerRef, '.animation-header3', 400);
-            banachTextScrollAnimation(containerRef, '.animation-header4', 200);
+            banachTextScrollAnimation(containerRef, '.animation-header1', 350* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header2', 500* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header3', 400* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header4', 200* 0.4);
 
             gsap.to('.animation-header2', {
                 onComplete: () => {},
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: `${vh(700)}px 100%`,
+                    start: `${vh(700)* 0.4}px 100%`,
                     markers: true,
                 },
             });

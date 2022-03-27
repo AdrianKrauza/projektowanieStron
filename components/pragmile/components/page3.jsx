@@ -218,7 +218,7 @@ const Page3 = () => {
             <div className={'gate4 left-[180px]'}>
                 <Image priority {...gate4} placeholder={'blur'} />
             </div>
-            <div className={'sphere4 left-[110px]'}>
+            <div className={'sphere4 left-[110px] z-50'}>
                 <Image priority {...sphere} placeholder={'blur'} />
             </div>
             <div className={'text3 left-[120px]'}>

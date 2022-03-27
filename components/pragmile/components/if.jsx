@@ -9,7 +9,7 @@ import Lottie from 'lottie-react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import IfBox from './ifBox';
 gsap.registerPlugin(ScrollTrigger);
-const start = 12500;
+const start = 13500;
 
 const vh = (coef) => window.innerHeight * (coef / 100);
 const boxesData = [
@@ -37,8 +37,8 @@ const If = ({ containerRef }) => {
             AnimationHeadingScrub(
                 headerRef,
                 containerRef,
-                `${vh(70) + start} 0%`,
-                `${vh(200) + start} 0%`,
+                `${(vh(70) + start) * 0.4} 0%`,
+                `${(vh(200) + start) * 0.4} 0%`,
                 false,
                 true,
             );
@@ -47,8 +47,8 @@ const If = ({ containerRef }) => {
                 y: '-20vh',
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: `${vh(100) + start} 0%`,
-                    end: `+=${vh(300)} 0%`,
+                    start: `${(vh(100) + start) * 0.4} 0%`,
+                    end: `+=${vh(300) * 0.4} 0%`,
                     scrub: true,
                 },
             });
@@ -77,8 +77,8 @@ const If = ({ containerRef }) => {
                     y: 0,
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: `${vh(50) + start} 0%`,
-                        end: `+=${vh(100)} 0%`,
+                        start: `${(vh(50) + start) * 0.4} 0%`,
+                        end: `+=${vh(100) * 0.4} 0%`,
                         scrub: true,
                     },
                 },
@@ -101,7 +101,7 @@ const If = ({ containerRef }) => {
                     className={'w-[75rem] m-auto justify-between flex mt-[10vh]'}
                 >
                     {boxesData.map((el, index) => (
-                        <IfBox containerRef={containerRef} key={el[0]} el={el} index={index} start={start} />
+                        <IfBox containerRef={containerRef} key={el[0]} el={el} index={index} start={start * 0.4} />
                     ))}
                 </div>
             </div>

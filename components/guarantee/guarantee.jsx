@@ -15,9 +15,38 @@ const Guarantee = ({ setPageState }) => {
     const heading2Ref = useRef();
     const heading3Ref = useRef();
     const conRef = useRef();
+    const openBlackRef = useRef();
     const router = useRouter();
     useEffect(() => {
         setTimeout(() => {
+            // scrollAnimationElement(
+            //     '.startImg3',
+            //     {
+            //
+            //     },
+            //     {
+            //
+            //     },
+            //     1200,
+            //     150,
+            // );
+            gsap.fromTo(
+                openBlackRef.current,
+                {
+                    borderTopLeftRadius: '100%',
+                    borderTopRightRadius: '100%',
+                },
+                {
+                    borderTopLeftRadius: '0%',
+                    borderTopRightRadius: '0%',
+                    scrollTrigger: {
+                        trigger: openBlackRef.current,
+                        start: '0 100%',
+                        end: '50% 100%',
+                        scrub: true,
+                    },
+                },
+            );
             ScrollTrigger.create({
                 trigger: conRef.current,
                 start: 'top top',
@@ -112,24 +141,28 @@ const Guarantee = ({ setPageState }) => {
                 Wszystkie/ odpowiedzi/ brzmią - Tak!
             </h2>
             <FAQ />
-            <h2 className={'text-center my-[10rem] text-[10rem]'} ref={heading3Ref}>
+            <h2 className={'text-center my-[10rem] text-[10rem] '} ref={heading3Ref}>
                 Prayklady/ realizacji
             </h2>
-            <div
-                className={
-                    'presentation  bg-darkGray-900 flex flex-col justify-center h-[400px] bg-red  absolute items-center w-full'
-                }
-            >
-                <div className={'mb-[4rem]'}>
-                    <picture>
-                        <source srcSet={logoWebp.src} type="image/webp" />
-                        <img src={logoGif.src} className={'shadow-[0_0_60px_50px_#141414] '} />
-                    </picture>
+            <div className={'h-[30rem] -z-10 relative overflow-hidden'}>
+                <div ref={openBlackRef} className={'bg-darkGray-900 h-[100vw] w-screen'}>
+                    <div
+                        className={
+                            '  mt-[5rem] flex flex-col justify-center h-[400px] bg-red  absolute items-center w-full'
+                        }
+                    >
+                        <div className={'mb-[4rem]'}>
+                            <picture>
+                                <source srcSet={logoWebp.src} type="image/webp" />
+                                <img src={logoGif.src} className={'shadow-[0_0_60px_50px_#141414] '} />
+                            </picture>
+                        </div>
+                        <p className={'text-center text-[#dfdfdf]'}>
+                            Team Novate - Przykład strony dla <br />
+                            innowacyjnego zespołu programistów
+                        </p>
+                    </div>
                 </div>
-                <p className={'text-center text-[#dfdfdf]'}>
-                    Team Novate - Przykład strony dla <br />
-                    innowacyjnego zespołu programistów
-                </p>
             </div>
         </div>
     );

@@ -38,7 +38,7 @@ const Oko = () => {
             moveElement('.lamp', 4500, 120);
             moveElement('.textSlider', 4700, 650);
             moveElement('.page3', 5200, 700);
-            moveElement('.ending', 4900, 2500);
+            moveElement('.ending', 5650, 100);
             scrollAnimationElement(
                 '.startImg3',
                 {
@@ -134,7 +134,7 @@ const Oko = () => {
         <div
             ref={containerRef}
             style={{ background: '#06061c' }}
-            className={'h-[10500px]  w-screen mt-[-40rem] opacity-0'}
+            className={'h-[7500px]  w-screen mt-[-500rem] opacity-0'}
         >
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />
