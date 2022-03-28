@@ -10,6 +10,7 @@ import Page2 from './components/page2';
 import Parallax from './components/parallax';
 import Page3 from './components/page3';
 import Slider from './components/slider';
+import Footer from './components/footer';
 // import Header from '/components/oko/components/header/header';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,6 +40,7 @@ const Oko = () => {
             moveElement('.textSlider', 4700, 650);
             moveElement('.page3', 5200, 700);
             moveElement('.ending', 5650, 100);
+            moveElement('.footer', 6300, 100);
             scrollAnimationElement(
                 '.startImg3',
                 {
@@ -133,8 +135,8 @@ const Oko = () => {
     return (
         <div
             ref={containerRef}
-            style={{ background: '#06061c' }}
-            className={'h-[7500px]  w-screen mt-[-500rem] opacity-0'}
+            style={{ background: '#06061c', height: 'calc(100vh + 6700px)' }}
+            className={'  w-screen mt-[-170rem] opacity-0 overflow-hidden relative -z-10'}
         >
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />
@@ -142,6 +144,7 @@ const Oko = () => {
                 <Page2 />
                 <Parallax />
                 <Page3 />
+                <Footer containerRef={containerRef} />
             </div>
         </div>
     );

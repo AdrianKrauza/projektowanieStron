@@ -1573,7 +1573,9 @@ const Letters = () => {
     return (
         <div
             ref={containerRef}
-            className={'h-[1px] relative z-50 top-[-44rem] left-[10rem] flex mb-[30rem] w-[60rem] m-auto'}
+            className={
+                'pointer-events-none h-[1px] relative z-50 top-[-44rem] left-[10rem] flex mb-[30rem] w-[60rem] m-auto'
+            }
         >
             <div className={'top-[-14.5rem] left-[-14.8rem] relative w-full'}>
                 <UpperLine />

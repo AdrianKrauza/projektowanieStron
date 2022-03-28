@@ -14,7 +14,7 @@ const StartImg = ({ gradient1State }) => {
                             100 - gradient1State
                         }%)`,
                     }}
-                    className={'absolute w-screen h-[100rem]  top-[0rem]'}
+                    className={'absolute w-screen h-[100%]  top-[0rem]'}
                 />
             </div>
             {/*<div className={'szejp '} style={{ left: 'calc((-50vw + (1350px / 2))' }}>*/}

@@ -132,7 +132,7 @@ const Tablets = () => {
         });
     }, []);
     return (
-        <div ref={conRef} className={'relative z-20 mt-[8rem] bg-lightGray '}>
+        <div ref={conRef} className={'relative z-20 mt-[8rem]  '}>
             <h2 ref={headingRef} className={'text-center text-darkGray'}>
                 Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
             </h2>
@@ -166,7 +166,7 @@ const Tablets = () => {
                         </svg>
                     ))}
                 </div>
-                <div className="w-[50px] h-[90px] rounded-full rounded-full border-[1px] border-black m-[17px] ">
+                <div className="pointer-events-none w-[50px] h-[90px] rounded-full rounded-full border-[1px] border-black m-[17px] ">
                     <svg ref={mouseMoveRef} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
                         <circle className="dot" cx="64.5" cy="64.5" r="10" fill="black " />
                     </svg>
@@ -175,7 +175,7 @@ const Tablets = () => {
             </div>
             <div
                 style={{ left: 'calc(50% )' }}
-                className={'absolute mt-[100px] -translate-x-1/2 -z-10  relative ml-[-60px]  h-[1163px] '}
+                className={'bg-lightGray absolute mt-[100px] -translate-x-1/2 -z-10  relative ml-[-60px]  h-[1163px] '}
                 ref={tabletsRef}
             >
                 {[Tablet3Img, Tablet2Img, Tablet1Img].map((img, index) => (

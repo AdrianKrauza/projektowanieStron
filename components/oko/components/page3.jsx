@@ -19,7 +19,7 @@ const Page2 = () => {
                         'absolute h-[300px] bg-gradient-to-t -translate-y-full from-[#000] to-transparent w-screen -translate-x-1/2 left-1/2'
                     }
                 />
-                <div className={'absolute h-[100vh] -translate-y-[2px] bg-[#000] w-screen -translate-x-1/2 left-1/2'} />
+                <div className={'absolute h-[150vh] -translate-y-[2px] bg-[#000] w-screen -translate-x-1/2 left-1/2'} />
             </div>
         </>
     );

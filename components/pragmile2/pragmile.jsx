@@ -1,4 +1,4 @@
-import usePortfolio from '/hooks/usePortfolio';
+import usePortfolio from '/hooks/usePortfolioM';
 import { useEffect, useRef, useState } from 'react';
 import gsap, { Power1 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -46,8 +46,8 @@ const Pragmile = ({ setPageState }) => {
             pinPortfolio(containerRef);
             moveElement('.startImg3', 1200, 8000, false, 0.3);
             moveElement('.page1', 1080, 7000);
-            moveElement('.gate1', 2750, 4100);
-            moveElement('.text1', 2680, 4400);
+            moveElement('.gate1', 2250, 5000);
+            moveElement('.text1', 2400, 5000);
             moveElement('.bg2', 3850, 6400);
             moveElement('.text2', 5100, 3500);
             moveElement('.gate2', 5100, 3100);
@@ -106,10 +106,10 @@ const Pragmile = ({ setPageState }) => {
                 });
             scrollAnimationElement('.startImg3', {}, {}, 2000, 0, {
                 onLeave: () => {
-                    containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
+                    // containerRef.current.querySelector(' .startImg3').style.overflow = 'visible';
                 },
                 onEnterBack: () => {
-                    containerRef.current.querySelector(' .startImg3').style.overflow = 'hidden';
+                    // containerRef.current.querySelector(' .startImg3').style.overflow = 'hidden';
                 },
             });
             scrollAnimationElement(
@@ -249,14 +249,14 @@ const Pragmile = ({ setPageState }) => {
     return (
         //
         <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen -mt-[75rem] '}>
-            <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
-                <StartImg />
+            <div className={'pin w-[95rem] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
+                {/*<StartImg />*/}
                 <Page1 />
-                <Page2 />
-                <Page3 />
-                <Phone initCanvas={initCanvas} />
-                <End />
-                <If containerRef={containerRef} />
+                {/*<Page2 />*/}
+                {/*<Page3 />*/}
+                {/*<Phone initCanvas={initCanvas} />*/}
+                {/*<End />*/}
+                {/*<If containerRef={containerRef} />*/}
             </div>
         </div>
     );

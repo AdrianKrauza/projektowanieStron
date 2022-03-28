@@ -27,10 +27,19 @@ const If = ({}) => {
     const boxesRef = useRef();
     useEffect(() => {
         setTimeout(() => {}, 0);
+
+        gsap.to('body', {
+            opacity: 1,
+            duration: 0.07,
+        });
     }, []);
     return (
         <>
-            <div ref={ifContentRef} style={{ bottom: 'auto' }} className={' w-screen  h-screen bg-darkGray-900'}>
+            <div
+                ref={ifContentRef}
+                style={{ bottom: 'auto' }}
+                className={'z-40 relative w-screen  h-screen bg-darkGray-900'}
+            >
                 <h2 ref={headerRef} className={'text-center text-[6vw] text-[#dfdfdf] pt-[10vh] '}>
                     Owocne strony będą <br /> dla Ciebie idealne,
                 </h2>
@@ -43,7 +52,7 @@ const If = ({}) => {
                 <div
                     // style={{ marginBottom: `-20rem` }}
                     className={
-                        'presentation  flex  flex-col justify-center h-[400px] bg-red  items-center w-full mt-[20rem]'
+                        'presentation  pb-[10rem] flex  flex-col justify-center h-[400px] bg-darkGray-900  items-center w-full mt-[20rem]'
                     }
                 >
                     <div className={'mb-[4rem]'}>

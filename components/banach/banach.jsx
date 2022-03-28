@@ -92,14 +92,38 @@ const Banach = () => {
             duration: 2,
         });
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef, headerRef, `${vh(550)* 0.4} 0%`, `${vh(640)* 0.4} 0%`, false, true);
-            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(630)* 0.4} 0%`, `${vh(690)* 0.4} 0%`, false);
+            AnimationHeadingScrub(headerRef, headerRef, `${vh(600)* 0.4} 0%`, `${vh(690)* 0.4} 0%`, false, true);
+            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(680)* 0.4} 0%`, `${vh(740)* 0.4} 0%`, false);
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: `${vh(550* 0.4)}px 0%`,
                 end: `${vh(750* 0.4)}px 0%`,
+                onEnter: () => {
+
+                },
+            })
+            ScrollTrigger.create({
+                trigger: containerRef.current,
+                start: `${vh(550* 0.4)}px 0%`,
+                end: `${vh(750* 0.4)}px 0%`,
                 onUpdate: ({ progress }) => {
+                    console.log(progress)
+                    if(progress === 1){
+                        gsap.set([lottieCloudRef.current,".banach1",".page1",".patternPhone",".pattern"],{
+                            opacity:0
+                        })
+                        gsap.set([".bg-darkGray-900"],{
+                             background:"#06061C"
+                        })
+                    }else{
+                        gsap.set([lottieCloudRef.current,".banach1",".page1",".patternPhone",".pattern"],{
+                            opacity:1
+                        })
+                        gsap.set([".bg-darkGray-900"],{
+                            background:"rgb(10,10,10)"
+                        })
+                    }
                     cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
                 },
                 onLeave: () => {
@@ -203,7 +227,6 @@ const Banach = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: `${vh(700)* 0.4}px 100%`,
-                    markers: true,
                 },
             });
         }, 0);
@@ -250,17 +273,17 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[650rem] bg-darkGray-900 mt-[-10rem]'}>
-            {/*<video  src="/assets/oko/Oko-logo.mp4"  autoPlay muted className={'w-96 hidden'} />*/}
+        <div ref={containerRef} className={'h-[350rem]  mt-[10rem]'}>
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
                 <div
+                    ref={lottieCloudRef}
                     style={{ transform: 'translateX(-50%)' }}
                     className={'pointer-events-none banachCloud z-50 w-screen  left-1/2 top-0 h-screen'}
                 >
                     <Lottie
                         lottieRef={cloudLottieData}
                         animationData={lottieCloud}
-                        ref={lottieCloudRef}
+
                         className={'pointer-events-none banachCloud z-50 w-screen  '}
                     />
                 </div>

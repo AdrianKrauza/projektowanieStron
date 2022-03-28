@@ -9,6 +9,7 @@ import Book from '../components/book/book';
 import Banach from '../components/banach/banach';
 import Guarantee from '../components/guarantee/guarantee';
 import Pragmile from '../components/pragmile/pragmile';
+import Pragmile2 from '../components/pragmile2/pragmile';
 import Letters from '../components/letters/letters';
 import If from '../components/if/if';
 import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
@@ -16,30 +17,22 @@ import UseChangePageState from '../hooks/useChangePageState';
 import Transform from '../components/transform/transform';
 import MobilePragmile from '../components/mobilePragmile/mobilePragmile';
 import Nav from '../components/nav/nav';
-import Footer from '../components/footer/footer';
+import Footer from '../components/oko/components/footer';
 
 const pageState = {
     0: (setPageState) => (
         <div>
             <Header />
-            {/**/}
-            <div className={'pointer-events-none'}>
-                <Cards3 />
-                <Tablets />
-            </div>
+            <Cards3 />
+            <Tablets />
             <Letters />
-            {/*<div className={'h-[50vh]'} />*/}
             <Book />
             <Guarantee />
             <Pragmile setPageState={setPageState} />
-            {/*<If />*/}
-            {/*<If />*/}
-            {/*<Banach />*/}
-            {/*<Oko />*/}
         </div>
     ),
     1: (setPageState) => (
-        <div className={'bg-darkGray-900 min-h-[100vh]'}>
+        <div className={'bg-darkGray-900 min-h-[100vh] relative z-10'}>
             <If />
             <Banach />/
             <Oko />
@@ -55,8 +48,8 @@ export default function Home({ index }) {
 
     return (
         <>
+            <Nav />
             <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>
-                {/*<Nav />*/}
                 {/*<div className={'h-[50vh]'} />*/}
                 {/*<div className={'h-[100vh]'} />*/}
                 {/*<MobilePragmile />*/}
@@ -64,7 +57,7 @@ export default function Home({ index }) {
                 {/*<div className={'h-[100vh]'} />*/}
                 {/*<div className={'h-[100vh]'} />*/}
                 {/*<div className={'h-[100vh]'} />*/}
-                {/*<Pragmile setPageState={setPageState} />*/}
+                {/*<Pragmile2 setPageState={setPageState} />*/}
                 <div>{pageState[pageState2](setPageState)}</div>
                 {/*<Footer />*/}
                 {/*<Pragmile setPageState={setPageState} />*/}

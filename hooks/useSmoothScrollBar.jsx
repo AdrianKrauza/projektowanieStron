@@ -34,19 +34,19 @@ const UseSmoothScrollBar = ({ children, fromEnter, pageState }) => {
     }, []);
     useEffect(() => {
         if(fromEnter === "top"){
-            bodyScrollBar.current?.scrollTo(0, 0);
+            bodyScrollBar.current?.scrollTo(0, 50);
 
             setTimeout(() => {
-                document.querySelector(".scroll-content >div").classList.add("stopScroll");
+                // document.querySelector(".scroll-content >div").classList.add("stopScroll");
             }, 100);
 
             setTimeout(() => {
-                document.querySelector(".scroll-content >div").classList.remove("stopScroll");
+                // document.querySelector(".scroll-content >div").classList.remove("stopScroll");
             }, 1000);
 
         }else if(fromEnter === "bottom"){
             // setTimeout(() => {
-            //     bodyScrollBar.current?.scrollTo(0, 1000);
+            //     bodyScrollBar.current?.scrollTo(0, 30);
             // }, 3500);
         }
     }, [pageState]);

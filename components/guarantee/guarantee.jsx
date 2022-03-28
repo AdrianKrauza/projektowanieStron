@@ -58,7 +58,7 @@ const Guarantee = ({ setPageState }) => {
         }, 0);
     }, []);
     return (
-        <div ref={conRef} className={`w-screen   relative z-10 mt-[25rem] bg-lightGray `}>
+        <div ref={conRef} className={`w-screen   relative z-10 mt-[32rem] bg-lightGray `}>
             <h2 className={'text-center text-[16rem]  my-0 '}>GWARANCJA</h2>
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
                 Zwiększymy konwersję Twojej/ strony, albo zwrócimy Ci/ 100% środków!
@@ -91,7 +91,7 @@ const Guarantee = ({ setPageState }) => {
                 />
             </div>
 
-            <div className={'m-auto w-[50rem]  '}>
+            <div className={'m-auto w-[41rem]  '}>
                 <p className={'text-[2rem]'}>
                     Nie da się ukryć, że uwielbiamy się z grafikami,
                     <br />

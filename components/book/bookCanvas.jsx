@@ -50,7 +50,7 @@ const BookCanvas = ({ bookSectionRef }) => {
                         trigger: bookSectionRef.current,
                         pin: bookCanvasRef.current,
                         start: '0 6%',
-                        end: '105% 35%',
+                        end: '105% 15%',
                     });
                 },
                 '(max-width: 1200px)': () => {
