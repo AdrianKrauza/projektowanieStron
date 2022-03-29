@@ -9,12 +9,11 @@ const Footer = ({ containerRef }) => {
     const headerRef = useRef();
     useEffect(() => {
         setTimeout(() => {
-            console.log(containerRef);
             AnimationHeadingScrub(
                 headerRef,
                 containerRef,
-                6300 + vh(100) + 'px 100%',
-                6610 + vh(100) + 'px 100%',
+                6200 + vh(100) + 'px 100%',
+                6510 + vh(100) + 'px 100%',
                 false,
                 true,
             );

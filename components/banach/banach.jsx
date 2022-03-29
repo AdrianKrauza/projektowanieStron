@@ -121,7 +121,7 @@ const Banach = () => {
                             opacity:1
                         })
                         gsap.set([".bg-darkGray-900"],{
-                            background:"rgb(10,10,10)"
+                            background:"#141414"
                         })
                     }
                     cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
@@ -217,9 +217,9 @@ const Banach = () => {
                 980,
                 930,
             );
-            banachTextScrollAnimation(containerRef, '.animation-header1', 350* 0.4);
-            banachTextScrollAnimation(containerRef, '.animation-header2', 500* 0.4);
-            banachTextScrollAnimation(containerRef, '.animation-header3', 400* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header1', 250* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header2', 450* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header3', 350* 0.4);
             banachTextScrollAnimation(containerRef, '.animation-header4', 200* 0.4);
 
             gsap.to('.animation-header2', {

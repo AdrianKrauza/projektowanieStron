@@ -48,7 +48,7 @@ export default function Home({ index }) {
 
     return (
         <>
-            {/*<Nav />*/}
+            <Nav />
             <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>
                 {/*<div className={'h-[50vh]'} />*/}
                 {/*<div className={'h-[100vh]'} />*/}

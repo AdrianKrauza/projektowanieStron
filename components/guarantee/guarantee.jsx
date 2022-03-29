@@ -158,7 +158,7 @@ const Guarantee = ({ setPageState }) => {
                 />
             </div>
             <div />
-            <div className={'flex align-center justify-center mt-[-90px] ml-[-100px]'}>
+            <div className={'flex align-center justify-center mt-[-86px] ml-[-100px]'}>
                 <div className={'flex flex-col justify-center items-center'}>
                     <Image {...gif} />
                     <div className={'mt-[-40px] -z-10 relative'}>
@@ -168,7 +168,7 @@ const Guarantee = ({ setPageState }) => {
 
                 <div>
                     <p className={'text-[55px] font-black text-[#D2952A] mt-[90px]'}>Projekt UX - GRATIS *</p>
-                    <p className={'text-[19px] mt-[10px]'}>
+                    <p className={'text-[21px] mt-[10px] font-normal'}>
                         * {month[getMonth()]} opracowujemy projekt makiety UX w cenie strony.
                     </p>
                 </div>

@@ -40,7 +40,7 @@ const Oko = () => {
             moveElement('.textSlider', 4700, 650);
             moveElement('.page3', 5200, 700);
             moveElement('.ending', 5650, 100);
-            moveElement('.footer', 6300, 100);
+            moveElement('.footer', 6200, 100);
             scrollAnimationElement(
                 '.startImg3',
                 {
@@ -135,7 +135,7 @@ const Oko = () => {
     return (
         <div
             ref={containerRef}
-            style={{ background: '#06061c', height: 'calc(100vh + 6700px)' }}
+            style={{ background: '#06061c', height: 'calc(100vh + 6400px)' }}
             className={'  w-screen mt-[-170rem] opacity-0 overflow-hidden relative -z-10'}
         >
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
