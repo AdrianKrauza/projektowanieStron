@@ -18,7 +18,7 @@ const vh = (coef) => window.innerHeight * (coef / 100);
 const Pragmile = ({ setPageState }) => {
     const containerRef = useRef();
 
-    const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio(true);
+    const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio();
     const { initCanvas, updateImage } = UseCanvasFrameAnimation('pragmile/Comp 1_00', [0, 49]);
     useEffect(() => {
         setTimeout(() => {
@@ -44,26 +44,26 @@ const Pragmile = ({ setPageState }) => {
                 },
             });
             pinPortfolio(containerRef);
-            moveElement('.startImg3', 1200, 8000, false, 0.3);
-            moveElement('.page1', 1080, 7000);
-            moveElement('.gate1', 2250, 5000);
-            moveElement('.text1', 2400, 5000);
-            moveElement('.bg2', 3850, 6400);
-            moveElement('.text2', 5100, 3500);
-            moveElement('.gate2', 5100, 3100);
-            moveElement('.person', 4250, 4900);
-            moveElement('.page3', 5350, 11000);
-            moveElement('.text3', 7150, 2800);
-            moveElement('.gate3', 7150, 2500);
-            moveElement('.imgWithGradient_Img', 10900, 2000);
-            moveElement('.imgWithGradient_Gradient', 10930, 2000);
-            moveElement('.sphere4', 10850, 2050);
-            moveElement('.gate4', 10400, 2900);
-            moveElement('.phone', 9300, 3800);
-            moveElement('.hoodie', 11800, 2700);
-            moveElement('.hand', 11500, 2200);
-            moveElement('.text5', 12550, 800);
-            moveElement('.videoHand', 12200, 900);
+            // moveElement('.startImg3', 1200, 6000, false, 0.3);
+            moveElement('.page1', 1080, 500);
+            moveElement('.gate1', 1250, 200);
+            moveElement('.text1', 1250, 230);
+            moveElement('.bg2', 1300, 600);
+            moveElement('.text2', 1400, 600);
+            // moveElement('.gate2', 5100, 3100);
+            moveElement('.person', 1350, 400);
+            // moveElement('.page3', 5350, 11000);
+            // moveElement('.text3', 7150, 2800);
+            // moveElement('.gate3', 7150, 2500);
+            // moveElement('.imgWithGradient_Img', 10900, 2000);
+            // moveElement('.imgWithGradient_Gradient', 10930, 2000);
+            // moveElement('.sphere4', 10850, 2050);
+            // moveElement('.gate4', 10400, 2900);
+            // moveElement('.phone', 9300, 3800);
+            // moveElement('.hoodie', 11800, 2700);
+            // moveElement('.hand', 11500, 2200);
+            // moveElement('.text5', 12550, 800);
+            // moveElement('.videoHand', 12200, 900);
 
             //
             moveElement('.box1_1', 5250, 2700);
@@ -252,7 +252,7 @@ const Pragmile = ({ setPageState }) => {
             <div className={'pin w-[95rem] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
                 {/*<StartImg />*/}
                 <Page1 />
-                {/*<Page2 />*/}
+                <Page2 />
                 {/*<Page3 />*/}
                 {/*<Phone initCanvas={initCanvas} />*/}
                 {/*<End />*/}

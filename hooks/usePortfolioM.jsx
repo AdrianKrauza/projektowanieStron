@@ -17,7 +17,7 @@ const UsePortfolio = (changeSpeed = 0) => {
             end: '100% 0%',
         });
     };
-    const moveElement = (el, start, speed,responsive = true,stop = 0.7,scrub = 1) => {
+    const moveElement = (el, start, speed,responsive = true,stop = 0.7,scrub = true) => {
         const element = container.current.querySelectorAll(el);
         gsap.to(element, {
 
@@ -40,7 +40,7 @@ const UsePortfolio = (changeSpeed = 0) => {
                 trigger: container.current,
                 start: `${(vh(100) * changeSpeed) + start* ( changeSpeed ? 0.4 : 1)}px 100%`,
                 end: `+=${(vh(100) + end)* ( changeSpeed ? 0.4 : 1)} 100%`,
-                scrub: 1,
+                scrub: true,
                 ...scrollTriggerProps,
             },
         });

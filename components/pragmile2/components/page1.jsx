@@ -8,7 +8,7 @@ const Page1 = () => {
         <>
             <div
                 className={
-                    'page1 border-[1px] border-[#022300]  rounded-t-[60px]   shadow-[-1px_-10px_22px_10px_#090e0760]'
+                    'page1 border-[1px] border-[#022300]  rounded-t-[10rem]  shadow-[-1px_-10px_22px_10px_#090e0760]'
                 }
             >
                 <div className={'   rounded-t-[60px] overflow-hidden w-[95rem]'}>
@@ -21,7 +21,7 @@ const Page1 = () => {
                     }
                 />
             </div>
-            <div className={'gate1 left-[20vw] w-[13rem] '}>
+            <div className={'gate1 left-[20vw] w-[10rem] '}>
                 <Image priority {...gate1} />
             </div>
             <div className={'text1  left-[20vw] w-[45rem] '}>

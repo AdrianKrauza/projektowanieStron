@@ -6,9 +6,31 @@ import { useRouter } from 'next/router';
 import logoWebp from '/assets/pragmile/TeamNovate-WebP.webp';
 import logoGif from '/assets/pragmile/TeamNovate-GF.gif';
 import img3 from '/assets/guarantee/Projektowanie-UX-Makieta.jpg';
+import gif from '/assets/guarantee/ezgif.com-gif-maker (17).gif';
+import shadow from '/assets/guarantee/Cien.jpg';
 import FAQ from './FAQ';
 import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
+const month = [
+    'W styczniu',
+    'W lutym',
+    'W marcu',
+    'W kwietniu',
+    'W maju',
+    'W czerwcu',
+    'W lipcu',
+    'W sierpniu',
+    'W wrześniu',
+    'W październiku',
+    'W listopadzie',
+    'W grudniu',
+];
+const getMonth = () => {
+    const date = new Date();
+    const month = date.getMonth();
+    return month;
+};
+
 const Guarantee = ({ setPageState }) => {
     const { AnimationHeadingScrub } = useTextAnimations();
     const headerRef = useRef();
@@ -136,6 +158,21 @@ const Guarantee = ({ setPageState }) => {
                 />
             </div>
             <div />
+            <div className={'flex align-center justify-center mt-[-90px] ml-[-100px]'}>
+                <div className={'flex flex-col justify-center items-center'}>
+                    <Image {...gif} />
+                    <div className={'mt-[-40px] -z-10 relative'}>
+                        <Image {...shadow} />
+                    </div>
+                </div>
+
+                <div>
+                    <p className={'text-[55px] font-black text-[#D2952A] mt-[90px]'}>Projekt UX - GRATIS *</p>
+                    <p className={'text-[19px] mt-[10px]'}>
+                        * {month[getMonth()]} opracowujemy projekt makiety UX w cenie strony.
+                    </p>
+                </div>
+            </div>
             <p className={'text-center mt-[5rem] text-[3rem]'}>A gdy idzie o kwestie techniczne to:</p>
             <h2 className={'text-center my-[5rem] mt-[1rem] text-[10rem] tracking-[-0.6rem]'} ref={heading2Ref}>
                 Wszystkie/ odpowiedzi/ brzmią - Tak!
