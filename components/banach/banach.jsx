@@ -28,10 +28,10 @@ import useTextAnimations from '../../hooks/useTextAnimations';
 import lottieLoad from '../../helpers/lottieLoad';
 import logoGif from '../../assets/banach/Banach-Logo.gif';
 /* eslint-disable */
-const Odometer = dynamic(import('react-odometerjs'), {
-    ssr: false,
-    loading: () => 0,
-});
+// const Odometer = dynamic(import('react-odometerjs'), {
+//     ssr: false,
+//     loading: () => 0,
+// });
 /* eslint-enable */
 const banachTextScrollAnimation = (containerRef, el, start, spped = 65) => {
     const el2 = [...document.querySelectorAll(`${el} > span`)];
@@ -92,37 +92,35 @@ const Banach = () => {
             duration: 2,
         });
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef, headerRef, `${vh(600)* 0.4} 0%`, `${vh(690)* 0.4} 0%`, false, true);
-            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(680)* 0.4} 0%`, `${vh(740)* 0.4} 0%`, false);
+            AnimationHeadingScrub(headerRef, headerRef, `${vh(600) * 0.4} 0%`, `${vh(690) * 0.4} 0%`, false, true);
+            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(680) * 0.4} 0%`, `${vh(740) * 0.4} 0%`, false);
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: `${vh(550* 0.4)}px 0%`,
-                end: `${vh(750* 0.4)}px 0%`,
-                onEnter: () => {
-
-                },
-            })
+                start: `${vh(550 * 0.4)}px 0%`,
+                end: `${vh(750 * 0.4)}px 0%`,
+                onEnter: () => {},
+            });
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: `${vh(550* 0.4)}px 0%`,
-                end: `${vh(750* 0.4)}px 0%`,
+                start: `${vh(550 * 0.4)}px 0%`,
+                end: `${vh(750 * 0.4)}px 0%`,
                 onUpdate: ({ progress }) => {
-                    console.log(progress)
-                    if(progress === 1){
-                        gsap.set([lottieCloudRef.current,".banach1",".page1",".patternPhone",".pattern"],{
-                            opacity:0
-                        })
-                        gsap.set([".bg-darkGray-900"],{
-                             background:"#06061C"
-                        })
-                    }else{
-                        gsap.set([lottieCloudRef.current,".banach1",".page1",".patternPhone",".pattern"],{
-                            opacity:1
-                        })
-                        gsap.set([".bg-darkGray-900"],{
-                            background:"#141414"
-                        })
+                    console.log(progress);
+                    if (progress === 1) {
+                        gsap.set([lottieCloudRef.current, '.banach1', '.page1', '.patternPhone', '.pattern'], {
+                            opacity: 0,
+                        });
+                        gsap.set(['.bg-darkGray-900'], {
+                            background: '#06061C',
+                        });
+                    } else {
+                        gsap.set([lottieCloudRef.current, '.banach1', '.page1', '.patternPhone', '.pattern'], {
+                            opacity: 1,
+                        });
+                        gsap.set(['.bg-darkGray-900'], {
+                            background: '#141414',
+                        });
                     }
                     cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
                 },
@@ -217,16 +215,16 @@ const Banach = () => {
                 980,
                 930,
             );
-            banachTextScrollAnimation(containerRef, '.animation-header1', 250* 0.4);
-            banachTextScrollAnimation(containerRef, '.animation-header2', 450* 0.4);
-            banachTextScrollAnimation(containerRef, '.animation-header3', 350* 0.4);
-            banachTextScrollAnimation(containerRef, '.animation-header4', 200* 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header1', 250 * 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header2', 450 * 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header3', 350 * 0.4);
+            banachTextScrollAnimation(containerRef, '.animation-header4', 200 * 0.4);
 
             gsap.to('.animation-header2', {
                 onComplete: () => {},
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: `${vh(700)* 0.4}px 100%`,
+                    start: `${vh(700) * 0.4}px 100%`,
                 },
             });
         }, 0);
@@ -283,7 +281,6 @@ const Banach = () => {
                     <Lottie
                         lottieRef={cloudLottieData}
                         animationData={lottieCloud}
-
                         className={'pointer-events-none banachCloud z-50 w-screen  '}
                     />
                 </div>
@@ -470,7 +467,7 @@ const Banach = () => {
                         <span className={'signature2'}>Kompleksowy</span>
                     </h1>
                     <div className={'absolute top-[2505px] left-[750px] font-[50px] odometerText '}>
-                        <Odometer value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />
+                        <div value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />
                         {/*<Odometer value={odometerValue} theme={'minimal'} duration={3000} format="dd%" />*/}
                     </div>
                     <div ref={percentTextRef} className={'absolute top-[2550px] left-[220px] '}>
