@@ -111,9 +111,9 @@ const Page2 = () => {
                 {/*    </g>*/}
                 {/*</svg>*/}
             </div>
-            {/*<div className={'gate2 left-[650px] '}>*/}
-            {/*    <Image priority {...gate1} />*/}
-            {/*</div>*/}
+            <div className={'gate2 left-[52rem] w-[10rem] '}>
+                <Image priority {...gate1} />
+            </div>
             <div className={'text2 left-[55rem] w-[30rem] '}>
                 <Image priority {...text1} />
             </div>

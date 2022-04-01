@@ -49,30 +49,28 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.gate1', 1250, 200);
             moveElement('.text1', 1250, 230);
             moveElement('.bg2', 1300, 600);
-            moveElement('.text2', 1400, 600);
-            // moveElement('.gate2', 5100, 3100);
+            moveElement('.text2', 1450, 200);
+            moveElement('.gate2', 1440, 150);
             moveElement('.person', 1350, 400);
-            // moveElement('.page3', 5350, 11000);
-            // moveElement('.text3', 7150, 2800);
-            // moveElement('.gate3', 7150, 2500);
-            // moveElement('.imgWithGradient_Img', 10900, 2000);
-            // moveElement('.imgWithGradient_Gradient', 10930, 2000);
-            // moveElement('.sphere4', 10850, 2050);
-            // moveElement('.gate4', 10400, 2900);
-            // moveElement('.phone', 9300, 3800);
-            // moveElement('.hoodie', 11800, 2700);
+            moveElement('.page3', 1450, 1300);
+            moveElement('.text3', 1670, 270);
+            moveElement('.gate3', 1680, 230);
+            moveElement('.sphere4', 2270, 80);
+            moveElement('.gate4', 2220, 230);
+            moveElement('.hoodie', 2320, 400);
+            moveElement('.videoHand', 2390, 120);
             // moveElement('.hand', 11500, 2200);
             // moveElement('.text5', 12550, 800);
-            // moveElement('.videoHand', 12200, 900);
+            moveElement('.hand', 2220, 400);
 
             //
-            moveElement('.box1_1', 5250, 2700);
-            moveElement('.box1_2', 5550, 2100);
-            moveElement('.box1_3', 5900, 1400);
-            //
-            moveElement('.box2_1', 12200, 1200);
-            moveElement('.box2_2', 12300, 1000);
-            moveElement('.box2_3', 12700, 300);
+            // moveElement('.box1_1', 5250, 2700);
+            // moveElement('.box1_2', 5550, 2100);
+            // moveElement('.box1_3', 5900, 1400);
+            // //
+            // moveElement('.box2_1', 12200, 1200);
+            // moveElement('.box2_2', 12300, 1000);
+            // moveElement('.box2_3', 12700, 300);
             //
             scrollAnimationElement(
                 '.startImg3 img',
@@ -143,12 +141,12 @@ const Pragmile = ({ setPageState }) => {
 
             scrollAnimationElement(
                 '.circleTextMain p',
-                { y: 300 },
+                { y: '10rem' },
                 {
                     y: 0,
                 },
-                9400,
-                400,
+                2000,
+                50,
             );
             scrollAnimationElement(
                 '.circleText circle-text',
@@ -156,8 +154,8 @@ const Pragmile = ({ setPageState }) => {
                 {
                     rotate: 40,
                 },
-                9400,
-                400,
+                2100,
+                100,
             );
             gsap.set('.m1_cGroup', { opacity: 0 });
             scrollAnimationElement('.m1_cGroup', {}, {}, 6500 * 0.4, 0, {
@@ -228,15 +226,15 @@ const Pragmile = ({ setPageState }) => {
                 scrollAnimationElement(
                     `.box${index}`,
                     {
-                        x,
-                        y,
+                        x: x / 15 + 'rem',
+                        y: y / 15 + 'rem',
                     },
                     {
                         x: 0,
                         y: 0,
                     },
-                    9900,
-                    400,
+                    2100,
+                    50,
                 );
             });
             scrollAnimationElement('.startImg3', {}, {}, 9600, 3300, {
@@ -253,9 +251,8 @@ const Pragmile = ({ setPageState }) => {
                 {/*<StartImg />*/}
                 <Page1 />
                 <Page2 />
-                {/*<Page3 />*/}
-                {/*<Phone initCanvas={initCanvas} />*/}
-                {/*<End />*/}
+                <Page3 />
+                <End />
                 {/*<If containerRef={containerRef} />*/}
             </div>
         </div>

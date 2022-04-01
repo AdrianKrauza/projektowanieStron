@@ -66,7 +66,7 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
             <p
                 className={'text-[1.6rem] text-[#CBCBCB] leading-[1.1]'}
                 dangerouslySetInnerHTML={{
-                    __html: `<b class="text-[#dfdfdf] font-black">${el[0]}</b><br/><br/>${el[0]}`,
+                    __html: `<b class="text-[#dfdfdf] font-black">${el[0]}</b><br/><br/>${el[1]}`,
                 }}
             />
         </div>

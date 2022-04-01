@@ -294,7 +294,7 @@ const Banach = () => {
                     }
                 >
                     <h2 ref={headerRef} className={'text-[7rem] mt-[10rem] text-center text-lightGray'}>
-                        2x lepsza strona,/ pomoże Ci stworzyć/ 2x lepszy biznes.
+                        2x lepsza stron,/ pomoże Ci stworzyć/ 2x lepszy biznes.
                     </h2>
                     <div>
                         <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>

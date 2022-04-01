@@ -48,7 +48,7 @@ const Cards3 = () => {
                     image={image2}
                     paragraph={
                         <>
-                            Wizualną różnicę <br /> łatwo zamienisz w <br /> zaufanie i poważanie
+                            Wizualną różnicę <br /> łatwo zamienisz w <br /> zaufanie i poważanie.
                         </>
                     }
                 />

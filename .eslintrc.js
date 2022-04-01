@@ -1,4 +1,4 @@
-modwwule.exports = {
+module.exp2orts = {
     // parser: '@typescript-eslint/parser',
     // "extends": "standard",
     extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],

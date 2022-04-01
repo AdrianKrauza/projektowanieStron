@@ -16,7 +16,7 @@ const texts = [
     [
         ['W sieci jest więcej ', 'klientów niż Twoja firma ', 'jest w stanie obsłużyć.  '],
         [
-            'Jak kupuje się bułki w sklepie ',
+            'Tak jak kupuje się bułki w sklepie, ',
             'tak możesz kupić od Google',
             'czy Facebook więcej ruchu,',
             'niż udźwigną Twoje serwery.',
@@ -42,10 +42,10 @@ const texts = [
         ['Dobry biznes w sieci zaczyna ', 'się od dobrej konwersji.'],
         ['Gdy Twoja strona konwertuje ', '2x lepiej, to Twoja firma ', 'też działa 2x lepiej. '],
         [
-            'Masz 2x więcej klientów, lub ',
+            'Masz 2x więcej klientów lub ',
             '2x niższe koszty reklam. Ale',
             'zanim zobaczysz realizacje, ',
-            'zobacz tą grubą gwarancję.',
+            'zobacz tę grubą gwarancję.',
         ],
     ],
 ];
@@ -81,7 +81,7 @@ const TopText = () => {
                     <span>prostych</span>
                     <span>słowach.</span>
                 </h2>
-                <p className={'text-4xl mt-6'}>Konwersja, Konwersja Konwersja!</p>
+                <p className={'text-4xl mt-6'}>Konwersja, Konwersja, Konwersja!</p>
             </div>
         </div>
     );
@@ -100,7 +100,7 @@ const Book = () => {
                     <span>To czego się tu dowiesz zmieni </span>
                     <span>Twój sposób myślenia </span>
                     <span>o firmie w internecie</span>
-                    <span className={'text-[3rem] mt-3'}>- Na zawsze!</span>
+                    <span className={'text-[3rem] mt-3'}>- na zawsze!</span>
                 </p>
             </div>
             <div className={'hidden'}>

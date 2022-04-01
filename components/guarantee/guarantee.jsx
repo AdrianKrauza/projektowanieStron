@@ -41,17 +41,6 @@ const Guarantee = ({ setPageState }) => {
     const router = useRouter();
     useEffect(() => {
         setTimeout(() => {
-            // scrollAnimationElement(
-            //     '.startImg3',
-            //     {
-            //
-            //     },
-            //     {
-            //
-            //     },
-            //     1200,
-            //     150,
-            // );
             gsap.fromTo(
                 openBlackRef.current,
                 {
@@ -83,7 +72,7 @@ const Guarantee = ({ setPageState }) => {
         <div ref={conRef} className={`w-screen   relative z-10 mt-[32rem] bg-lightGray `}>
             <h2 className={'text-center text-[16rem]  my-0 '}>GWARANCJA</h2>
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
-                Zwiększymy konwersję Twojej/ strony, albo zwrócimy Ci/ 100% środków!
+                Zwiększymy konwersję Twojej/ strony albo zwrócimy Ci/ 100% środków!
             </h3>
             <p className={'text-2xl mt-10 text-darkGray-900 text-center mb-[5rem]'}>+ Szczegóły w sekcji FAQ</p>
             <div className={'flex justify-center items-end mb-[5rem]'}>
@@ -179,7 +168,7 @@ const Guarantee = ({ setPageState }) => {
             </h2>
             <FAQ />
             <h2 className={'text-center my-[10rem] text-[10rem] '} ref={heading3Ref}>
-                Prayklady/ realizacji
+                Przykłady/ realizacji
             </h2>
             <div className={'h-[30rem] -z-10 relative overflow-hidden'}>
                 <div ref={openBlackRef} className={'bg-darkGray-900 h-[100vw] w-screen'}>

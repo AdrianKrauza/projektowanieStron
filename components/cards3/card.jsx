@@ -17,11 +17,11 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         setTimeout(() => {
-            snotRef.current.setSpeed(0.5);
+            // snotRef.current.setSpeed(0.5);
             ScrollTrigger.create({
                 trigger: cardRef.current,
                 start: `${index * 45}% 100%`,
-                onEnter: () => snotRef.current.playSegments([0, 12], true),
+                // onEnter: () => snotRef.current.playSegments([0, 12], true),
             });
 
             ScrollTrigger.matchMedia({
@@ -200,7 +200,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
             >
                 {paragraph}
             </p>
-            <Lottie
+            <div
                 animationData={snot}
                 lottieRef={snotRef}
                 className={'-translate-x-1/2 left-1/2 absolute bottom-32 translate-y-full w-[25rem] -z-10 m:hidden'}

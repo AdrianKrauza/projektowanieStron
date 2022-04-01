@@ -190,7 +190,7 @@ const Header = () => {
                             </div>
                             <p className={'font-normal text-[1.5rem] text-[#545458] tracking-[-0.1rem]'}>
                                 Przewiń w dół. Sprawdź jak działamy, <br />
-                                Zobacz cennik i przykłady realizacji.
+                                zobacz cennik i przykłady realizacji.
                             </p>
                         </div>
 
