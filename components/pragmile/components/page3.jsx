@@ -208,7 +208,7 @@ const Page3 = () => {
                 </div>
 
                 <div className={'bg-[#141414] -mt-[210px]'}>
-                    <Image priority {...page3c3} placeholder={'blur'} priority />
+                    <Image priority {...page3c3} placeholder={'blur'} />
                     <div className={'bg-gradient-to-t from-[#141414] h-[100px] absolute bottom-0 w-[1350px] '} />
                 </div>
             </div>
