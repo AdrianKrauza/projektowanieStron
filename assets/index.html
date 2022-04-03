@@ -1,24 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<script type="text/javascript">
+    function someFunction (){
+        var t0 = performance.now();
+        console.log(t0);
+        //Function calculations
+        //Some loop
+        var counter = 0;
+        for (i = 0; i < 1000000; i++) {
+            counter ++;
+        }
+        var t1 = performance.now();
+        console.log(t1);
+        console.log(t1 - t0);
+        document.querySelector("div").innerHTML = t1 - t0;
+    }
 
-</body>
-<script>
-    var A = [];
-    var n = 1000;;
-    var _i3315=1000;
-    for(;_i3315-->0; ) {
-        // A = new Array(n);
-        for(var i=0; i<n; i++)
-            A[i] = i*(i+1)/2;
-    };
-    console.log(A)
 </script>
-</html>
+<div></div>
+<button type="button" onclick="someFunction()">Click me</button>

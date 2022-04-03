@@ -196,7 +196,7 @@ const Tablets = () => {
                                 'top-0 absolute h-full  w-[2688px]  left-1/2 -translate-x-1/2 ml-[127px] h-[1163px]'
                             }
                             style={{
-                                WebkitMaskBoxImage: `url(/assets/tablets/Laptopy${index}.svg)`,
+                                WebkitMaskImage: `url(/assets/tablets/Laptopy${index}.svg)`,
                             }}
                         >
                             <div

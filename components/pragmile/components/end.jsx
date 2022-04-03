@@ -62,21 +62,21 @@ const End = () => {
                 <div className={'gr'} />
             </div>
             <video
-                className={'videoHand translate-x-[1090px] w-[350px] scale-[0.7] mix-blend-difference'}
+                className={'videoHand translate-x-[1090px] w-[350px] scale-[0.7] mix-blend-difference h-[304px]'}
                 src={'/assets/pragmile/Badz-soba-animacja.mp4'}
                 loop
                 muted
                 autoPlay
             />
-            <div className={'text5 translate-x-[1060px]  scale-[0.7]'}>
+            <div className={'text5 translate-x-[1060px] h-[267px] scale-[0.7]'}>
                 <Image priority {...text5} />
             </div>
 
-            <div className={'box2_2 left-[-360px]  scale-[0.6]'}>
+            <div className={'box2_2 left-[-360px] h-[398px] scale-[0.6]'}>
                 <Image priority {...box1} />
             </div>
 
-            <div className={'box2_3 left-[-200px]  scale-[0.6]'}>
+            <div className={'box2_3 left-[-200px] h-[398px] scale-[0.6]'}>
                 <Image priority {...box3} />
             </div>
         </>

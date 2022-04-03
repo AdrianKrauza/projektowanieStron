@@ -56,7 +56,7 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.text3', 1670, 270);
             moveElement('.gate3', 1680, 230);
             moveElement('.sphere4', 2270, 80);
-            moveElement('.gate4', 2220, 230);
+            moveElement('.gate4', 2250, 130);
             moveElement('.hoodie', 2320, 400);
             moveElement('.videoHand', 2390, 120);
             // moveElement('.hand', 11500, 2200);
@@ -64,9 +64,9 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.hand', 2220, 400);
 
             //
-            // moveElement('.box1_1', 5250, 2700);
-            // moveElement('.box1_2', 5550, 2100);
-            // moveElement('.box1_3', 5900, 1400);
+            moveElement('.box1_1', 1500, 150);
+            moveElement('.box1_2', 1550, 80);
+            moveElement('.box1_3', 1600, 10);
             // //
             // moveElement('.box2_1', 12200, 1200);
             // moveElement('.box2_2', 12300, 1000);
@@ -158,7 +158,7 @@ const Pragmile = ({ setPageState }) => {
                 100,
             );
             gsap.set('.m1_cGroup', { opacity: 0 });
-            scrollAnimationElement('.m1_cGroup', {}, {}, 6500 * 0.4, 0, {
+            scrollAnimationElement('.m1_cGroup', {}, {}, 1500, 0, {
                 onEnter: () => {
                     gsap.timeline({ defaults: { duration: 45 } })
                         .fromTo('.m1_cGroup', { opacity: 0 }, { duration: 0.07, opacity: 1, stagger: -0.1 }, 0)

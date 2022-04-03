@@ -35,6 +35,9 @@ const Header = () => {
         },
     );
     useEffect(() => {
+        gsap.set(imageRef.current, {
+            opacity: 1,
+        });
         let animations;
         setTimeout(() => {
             ScrollTrigger.matchMedia({
@@ -193,17 +196,16 @@ const Header = () => {
                                 zobacz cennik i przykłady realizacji.
                             </p>
                         </div>
-
                         <div
                             ref={imageRef}
                             className={
-                                'w-[80rem] absolute top-[2rem] -right-44 inline-block m:right-[-7rem] m:w-[105rem] m:mt-48'
+                                'w-[80rem] absolute top-[2rem] -right-44 inline-block m:right-[-7rem] m:w-[105rem] m:mt-48 opacity-0'
                             }
                         >
                             <div
                                 ref={imageBgRef}
                                 style={{
-                                    WebkitMaskBoxImage: `url(assets/header/Monit1-Maska.svg)`,
+                                    WebkitMaskImage: `url(assets/header/Monit1-Maska.svg)`,
                                 }}
                                 className={' z-10 absolute w-full h-full bg-black m:hidden top-[-0.3rem]'}
                             >
@@ -225,7 +227,7 @@ const Header = () => {
                             {/*<div*/}
                             {/*    ref={imageBgRef}*/}
                             {/*    style={{*/}
-                            {/*        WebkitMaskBoxImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,*/}
+                            {/*        WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,*/}
                             {/*    }}*/}
                             {/*    className={'z-10 absolute w-[86rem] h-[52rem] left-[8.5rem]  top-[0.9rem]'}*/}
                             {/*>*/}

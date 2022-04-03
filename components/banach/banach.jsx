@@ -372,7 +372,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
-                        style={{ WebkitMaskBoxImage: `url(/assets/banach/phoneMask.svg)` }}
+                        style={{ WebkitMaskImage: `url(/assets/banach/phoneMask.svg)` }}
                     />
                 </div>
 

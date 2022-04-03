@@ -137,7 +137,7 @@ const Guarantee = ({ setPageState }) => {
                 <Image priority quality={100} {...img3} />
                 <video
                     style={{
-                        WebkitMaskBoxImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
+                        WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
                     }}
                     src="/assets/gu/Projektowanie-UX.mp4 "
                     className={'absolute w-[670px] translate-y-[45px] translate-x-[-5px] -mb-[4rem]'}

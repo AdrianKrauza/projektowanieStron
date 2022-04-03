@@ -132,26 +132,30 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     tl.from('#header', {
                         opacity: 1,
                         scale: 1,
-                        webkitFilter: 'blur(0px)',
+                        // webkitFilter: 'blur(0px)',
                         rotate: 0,
                         duration: 0,
                         y: '0vw',
                     })
-                        .to('#header', {
-                            webkitFilter: 'blur(4px)',
-                            scale: 0.9,
-                            y: '-10vw',
-                            duration: 3,
-                            ease: 'sine.out',
-                        })
+                        // .to('#header', {
+                        //     // webkitFilter: 'blur(4px)',
+                        //     opacity: 0.4,
+                        //     scale: 0.8,
+                        //     // y: '-10vw',
+                        //     rotate: -1,
+                        //     // transformOrigin: 'top',
+                        //     duration: 3,
+                        //     ease: 'circ.out',
+                        // })
                         .to('#header', {
                             duration: 10,
-                            y: '20vw',
+                            y: '20rem',
                             opacity: 0,
-                            rotate: 10,
-                            scale: 0.45,
-                            webkitFilter: 'blur(10px)',
-                            ease: 'linear',
+                            rotate: -10,
+                            scale: 0.25,
+                            // transformOrigin: 'top',
+                            // webkitFilter: 'blur(10px)',
+                            // ease: 'circ.in',
                         });
                 },
             });
@@ -174,11 +178,11 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     className={`absolute left-1/2 max-w-none w-[28rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'
                     }`}
-                    style={{ WebkitMaskBoxImage: `url(${mask})` }}
+                    style={{ WebkitMaskImage: `url(${mask})` }}
                 />
             ) : (
                 <div
-                    style={{ WebkitMaskBoxImage: `url(${mask})` }}
+                    style={{ WebkitMaskImage: `url(${mask})` }}
                     className={`absolute left-1/2 max-w-none w-[27rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'
                     }`}
