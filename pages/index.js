@@ -33,7 +33,7 @@ const pageState = {
     ),
     1: (setPageState) => (
         <div className={'bg-darkGray-900 min-h-[100vh] relative z-10'}>
-            <If />
+            <If setPageState={setPageState} />
             <Banach />/
             <Oko />
         </div>
@@ -48,7 +48,7 @@ export default function Home({ index }) {
 
     return (
         <>
-            {/*<Nav />*/}
+            <Nav />
             <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>
                 {/*<div className={'h-[50vh]'} />*/}
                 {/*<div className={'h-[100vh]'} />*/}

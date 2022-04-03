@@ -229,7 +229,7 @@ const Banach = () => {
             });
         }, 0);
         setInterval(() => {
-            percentTextRef.current.querySelectorAll('h2').forEach((el) => {
+            percentTextRef.current?.querySelectorAll('h2')?.forEach((el) => {
                 anime
                     .timeline()
 

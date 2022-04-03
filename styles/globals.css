@@ -111,7 +111,7 @@ html {
 .spiral rect {
   fill: #E5E6EA !important;
 }
-.banachCloud rect {
+.banachCloud path {
   fill: #06051c !important;
 }
 

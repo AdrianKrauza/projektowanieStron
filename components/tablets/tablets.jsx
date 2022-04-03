@@ -101,12 +101,15 @@ const Tablets = () => {
 
     useEffect(() => {
         setTimeout(() => {
+            let firstEnter = true;
             AnimationHeadingScrub(headingRef, headingRef, -50, 200, false, true);
             ScrollTrigger.create({
                 trigger: conRef.current,
                 start: '0% 50%',
                 end: '100% 50%',
                 onEnter: () => {
+                    if (!firstEnter) return;
+                    firstEnter = false;
                     loading(
                         0,
                         circlesRef.current.querySelectorAll('svg .circle'),

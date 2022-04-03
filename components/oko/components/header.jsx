@@ -3,12 +3,11 @@ import okoHeaderImg from '/assets/oko/oko-tlo.jpg';
 import hand from '/assets/oko/Dlon-org-TINYPNG.png';
 import handItem from '/assets/oko/Artefakt-org-TINYPNG.png';
 import { useEffect, useRef } from 'react';
-import szejp from '../../../assets/oko/Szejp.png';
 const Header = ({ gradient2State }) => {
     const handRef = useRef();
     const handItemRef = useRef();
     useEffect(() => {
-        window.addEventListener('mousemove', ({ clientX, clientY }) => {
+        const mouseMove = ({ clientX, clientY }) => {
             const { innerHeight, innerWidth } = window;
             handRef.current.style.transform = `translate(${(clientX / innerWidth) * 100 - 50}px,${
                 (clientY / innerHeight) * 100 - 50
@@ -16,7 +15,9 @@ const Header = ({ gradient2State }) => {
             handItemRef.current.style.transform = `translate(${(clientX / innerWidth) * 30 - 15}px,${
                 (clientY / innerHeight) * 30 - 15
             }px)`;
-        });
+        };
+        window.addEventListener('mousemove', mouseMove);
+        return () => window.removeEventListener('mousemove', mouseMove);
     }, []);
     return (
         <div className={'headerImg absolute bottom-0 translate-y-full    '}>

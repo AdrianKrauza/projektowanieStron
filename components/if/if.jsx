@@ -21,13 +21,11 @@ const boxesData = [
         'Od napisania wyjątkowo <br/> przekonującej oferty, przez <br/> doskonałą grafikę i kodowanie.',
     ],
 ];
-const If = ({}) => {
+const If = ({ setPageState }) => {
     const ifContentRef = useRef();
     const headerRef = useRef();
     const boxesRef = useRef();
     useEffect(() => {
-        setTimeout(() => {}, 0);
-
         gsap.to('body', {
             opacity: 1,
             duration: 0.07,
@@ -40,6 +38,7 @@ const If = ({}) => {
                 style={{ bottom: 'auto' }}
                 className={'z-40 relative w-screen  h-screen bg-darkGray-900'}
             >
+                <button onClick={() => setPageState(0)}>wróć</button>
                 <h2 ref={headerRef} className={'text-center text-[6vw] text-[#dfdfdf] pt-[10vh] '}>
                     Owocne strony będą <br /> dla Ciebie idealne,
                 </h2>
