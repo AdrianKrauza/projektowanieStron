@@ -24,7 +24,6 @@ const Oko = () => {
     useEffect(() => {
         setTimeout(() => {
             pinPortfolio(containerRef);
-            moveElement('.startImg3', 900, 4000, false);
             moveElement('.headerImg', 2000, 3000);
             moveElement('.szejp', 1600, 2000);
             moveElement('.szejp2', 1600, 2000);
@@ -41,17 +40,7 @@ const Oko = () => {
             moveElement('.page3', 5200, 700);
             moveElement('.ending', 5650, 100);
             moveElement('.footer', 6200, 100);
-            scrollAnimationElement(
-                '.startImg3',
-                {
-                    borderRadius: '100%',
-                },
-                {
-                    borderRadius: '0%',
-                },
-                900,
-                150,
-            );
+
             scrollAnimationElement(
                 '.page2 .boxes > div',
                 {
@@ -85,18 +74,7 @@ const Oko = () => {
                 2680,
                 300,
             );
-            scrollAnimationElement(
-                '.startImg3 img',
-                {
-                    scale: 3.5,
-                },
-                {
-                    scale: 1,
-                    transformOrigin: 'top',
-                },
-                580,
-                150,
-            );
+
             scrollAnimationElement(
                 '.item2',
                 {
@@ -127,16 +105,12 @@ const Oko = () => {
                 },
             });
         }, 0);
-        gsap.to(containerRef.current, {
-            opacity: 1,
-            duration: 2,
-        });
     }, []);
     return (
         <div
             ref={containerRef}
             style={{ background: '#06061c', height: 'calc(100vh + 6400px)' }}
-            className={'  w-screen mt-[-170rem] opacity-0 overflow-hidden relative -z-10'}
+            className={'  w-screen mt-[-65rem] overflow-hidden relative -z-10'}
         >
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />

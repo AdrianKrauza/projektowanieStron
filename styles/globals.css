@@ -45,6 +45,7 @@ html {
     @apply bg-darkGray-900;
     /*@apply bg-lightGray;*/
     /*overflow: hidden;*/
+    max-width: 100vw;
   }
   h1,h2,h3 {
     @apply font-playfair;
@@ -108,6 +109,9 @@ html {
   font-size: 45px;
 
 }
+.clouds * {
+  fill: #E7E6E8 !important;
+}
 .spiral rect {
   fill: #E5E6EA !important;
 }
@@ -130,15 +134,18 @@ html {
 }
 /*.pin > *,.pinItem {*/
 /*  position: absolute;*/
-/*  top:2000px;*/
-/*  !*@apply translate-y-[100%];*!*/
+/*  top:0px;*/
+/*  !*@apply translate-y-[-100%];*!*/
+
 /*}*/
 .pin > *,.pinItem {
   position: absolute;
   bottom:0;
   @apply translate-y-[120%];
 }
-.cloud rect {
+.cloudIf rect {
+  fill: #0b0b0b !important;
+}.cloud rect {
   fill: #141414 !important;
 }.bottomSvg rect {
   fill: #2c2c2c !important;

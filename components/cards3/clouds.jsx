@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
-import SpiralData from '../../assets/cards3/spiral.json';
+import SpiralData from '../../assets/cards3/clouds.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lottie from 'lottie-react';
 const vh = (coef) => window.innerHeight * (coef / 100);
 
-export const Spiral = () => {
+export const Clouds = () => {
     gsap.registerPlugin(ScrollTrigger);
     const spiralRef = useRef();
     const spiralDataRef = useRef();
@@ -22,8 +22,8 @@ export const Spiral = () => {
                 '(min-width: 1200px)': () => {
                     ScrollTrigger.create({
                         trigger: 'body',
-                        start: `${vh((2 + 1) * 20)}px 0%`,
-                        end: `${vh(2 * 20 + 100)}px 0%`,
+                        start: `0px -170%`,
+                        end: `0px -230%`,
                         onUpdate: ({ progress }) => {
                             spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
                         },
@@ -64,7 +64,7 @@ export const Spiral = () => {
                 style={{ transform: 'rotateY(183deg)' }}
                 lottieRef={spiralDataRef}
                 rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-                className={'spiral  h-screen '}
+                className={'clouds  h-screen '}
                 animationData={SpiralData}
             />
         </div>

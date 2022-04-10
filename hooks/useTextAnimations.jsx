@@ -2,9 +2,45 @@ import gsap from 'gsap';
 import anime from 'animejs';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+let state = 0
+setInterval(()=>{
+    anime.timeline()
+        .add({
+            targets: `#text${state+1} .letter`,
+            translateX: [40,0],
+            translateZ: 0,
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            delay: (el, i) => 500 + 30 * i
+        }).add({
+        targets: `#text1${state+1} .letter`,
+        translateX: [0,-30],
+        opacity: [1,0],
+        easing: "easeInExpo",
+        duration: 1100,
+        delay: (el, i) => 100 + 30 * i
+    });
+    state = (state +1) % 3
+},6000)
+
+
+
+
+
+
+
+
+
+
 const UseTextAnimations = () => {
     const Split = (el, childrenSpan) => {
         [childrenSpan ? [...el?.childNodes || []] : el].flat().forEach((words) => {
+            if(!words ) return
             words.innerHTML = words.textContent.replace(
                 /\S/g,
                 "<span style='transform-origin: 50% 100%' class='inline-block'>$&</span>",
@@ -78,9 +114,8 @@ const UseTextAnimations = () => {
                 { scale: 0.7 },
                 {
                     scale: 1,
-                    // tylko w if
+
                     transformOrigin: 'bottom',
-                    //
                     scrollTrigger: {
                         start: typeof start === 'number' ? `${start}% 50%` : start,
                         end: typeof end === 'number' ? `${end}% 50%` : end,

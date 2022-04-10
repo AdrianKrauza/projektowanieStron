@@ -1562,14 +1562,15 @@ const Letters = () => {
             letterRef.current.goToAndStop(0);
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: '100% 50%',
-                end: `100% -100%`,
+                start: '100% 20%',
+                end: `100% -70%`,
+                markers: true,
                 onUpdate: ({ progress }) => {
                     letterRef.current.goToAndStop(progress * 99, true);
                 },
             });
         }, 0);
-    });
+    }, []);
     return (
         <div
             ref={containerRef}

@@ -4,21 +4,15 @@ import Image from 'next/image';
 import phone from '/assets/pragmile/Telefon.jpg';
 
 const Phone = ({ initCanvas }) => {
-    const canvasRef = useRef();
-    useEffect(() => {
-        initCanvas(canvasRef, 549, 595);
-    });
-    return (
-        <div className={'phone  left-[-300px]'}>
-            <div
-                className={'absolute top-0 w-[548px] h-[597px]'}
-                style={{ WebkitMaskImage: `url(/assets/pragmile/maska3SV.svg)` }}
-            >
-                <Image priority {...phone} />
-            </div>
-            <canvas ref={canvasRef} style={{ WebkitMaskImage: `url(/assets/pragmile/maska1SV.svg)` }} />
-        </div>
-    );
+    // const canvasRef = useRef();
+    // useEffect(() => {
+    //     initCanvas(canvasRef, 549, 595);
+    // });
+    // return (
+    //     <div className={'phone  left-[-300px]'}>
+    //         <canvas ref={canvasRef} />
+    //     </div>
+    // );
 };
 
 export default Phone;

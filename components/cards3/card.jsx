@@ -17,68 +17,20 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         setTimeout(() => {
-            // snotRef.current.setSpeed(0.5);
-            ScrollTrigger.create({
-                trigger: cardRef.current,
-                start: `${index * 45}% 100%`,
-                // onEnter: () => snotRef.current.playSegments([0, 12], true),
-            });
-
             ScrollTrigger.matchMedia({
                 '(min-width: 1200px)': () => {
-                    if (index === 0) {
-                        AnimationHeadingScrub(
-                            titleRef,
-                            'body',
-                            `${vh((index + 1) * 5)} 0%`,
-                            `${vh((index + 2) * 25)} 0%`,
-                        );
-                    } else if (index === 1) {
-                        AnimationHeadingScrub(
-                            titleRef,
-                            'body',
-                            `${vh((index + 1) * 20)} 0%`,
-                            `${vh((index + 2) * 35)} 0%`,
-                        );
-                    } else {
-                        AnimationHeadingScrub(
-                            titleRef,
-                            'body',
-                            `${vh((index + 1) * 25)} 0%`,
-                            `${vh((index + 2) * 35)} 0%`,
-                        );
-                    }
-                    gsap.to(cardRef.current, {
-                        background: 'linear-gradient( rgba(231,230,232,1) 30%, rgba(231,230,232,1) 61%)',
-                        duration: 0.5,
-                    });
-                    gsap.to(cardRef.current, {
-                        scrollTrigger: {
-                            trigger: 'body',
-                            start: `${vh((2 + 1) * 30)}px 0%`,
-                            end: `${vh((2 + 1) * 30)}px 0%`,
-                            onLeave: () =>
-                                gsap.to(cardRef.current, {
-                                    background: 'linear-gradient( #e4e2e4  30%, rgba(255,255,255,1) 61%)',
-                                    duration: 0.5,
-                                }),
-                            onEnterBack: () =>
-                                gsap.to(cardRef.current, {
-                                    background: 'linear-gradient( rgba(231,230,232,1) 30%, rgba(231,230,232,1) 61%)',
-                                    duration: 0.5,
-                                }),
-                        },
-                    });
+                    AnimationHeadingScrub(titleRef, 'body', `0 ${-190 - index * 10}%`, `0 ${-220 - index * 40}%`);
+
                     gsap.fromTo(
                         cardRef.current,
                         {
                             y: '100vh',
                         },
                         {
-                            y: '15vh',
+                            y: '-100vh',
                             scrollTrigger: {
-                                start: `${vh(index * 20)}px 0%`,
-                                end: `${vh((index + 1) * 20 + 20)}px 0%`,
+                                start: `0 ${-140}%`,
+                                end: `0 ${-450}%`,
                                 trigger: 'body',
                                 scrub: true,
                             },
@@ -118,64 +70,39 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     );
                 },
             });
-
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: 'body',
-                    start: '0% 0%',
-                    end: '0% -150%',
-                    scrub: true,
-                },
-            });
-            ScrollTrigger.matchMedia({
-                '(min-width: 1200px)': () => {
-                    tl.from('#header', {
-                        opacity: 1,
-                        scale: 1,
-                        // webkitFilter: 'blur(0px)',
-                        rotate: 0,
-                        duration: 0,
-                        y: '0vw',
-                    })
-                        // .to('#header', {
-                        //     // webkitFilter: 'blur(4px)',
-                        //     opacity: 0.4,
-                        //     scale: 0.8,
-                        //     // y: '-10vw',
-                        //     rotate: -1,
-                        //     // transformOrigin: 'top',
-                        //     duration: 3,
-                        //     ease: 'circ.out',
-                        // })
-                        .to('#header', {
-                            duration: 10,
-                            y: '20rem',
-                            opacity: 0,
-                            rotate: -10,
-                            scale: 0.25,
-                            // transformOrigin: 'top',
-                            // webkitFilter: 'blur(10px)',
-                            // ease: 'circ.in',
-                        });
-                },
-            });
         }, 0);
     }, []);
-    console.log(isSlowNetwork(), 'ds');
     return (
         <div
             ref={cardRef}
             className={
-                'pointer-events-none bg-lightGray rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-12 p-[1.8rem] relative mt-44 h-96 m:mt-[5rem] translate-y-[100vh] will-change-transform m:bg-transparent'
+                'bg-white rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-[1.8rem] p-[1.8rem] relative mt-44 h-[30rem] m:mt-[5rem] translate-y-[100vh] will-change-transform m:bg-transparent'
             }
         >
+            <p className={'text-center font-playfair text-[1.4rem] font-normal'}>Premium</p>
+            <h3
+                ref={titleRef}
+                className={`text-center font-playfair text-[3.4rem] m:text-[5rem] mt-[1rem] ${
+                    mobileRight && 'm:ml-[50rem]'
+                }`}
+            >
+                {title}
+            </h3>
+            <p
+                ref={paragraphRef}
+                className={`mt-9 font-roboto text-[2.2rem] m:text-[4rem] m:leading-[1] ${
+                    mobileRight && 'm:ml-[50rem]'
+                }`}
+            >
+                {paragraph}
+            </p>
             {!isSlowNetwork() ? (
                 <video
                     autoPlay
                     muted
                     loop
                     src={video}
-                    className={`absolute left-1/2 max-w-none w-[28rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
+                    className={` absolute max-w-none w-[28rem] bottom-[-5rem] left-1/2 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'
                     }`}
                     style={{ WebkitMaskImage: `url(${mask})` }}
@@ -190,25 +117,11 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     <Image {...image} />
                 </div>
             )}
-            <h3
-                ref={titleRef}
-                className={`font-playfair text-[3.4rem] m:text-[5rem] mt-24 ${mobileRight && 'm:ml-[50rem]'}`}
-            >
-                {title}
-            </h3>
-            <p
-                ref={paragraphRef}
-                className={`mt-9 font-roboto text-[2.2rem] m:text-[4rem] m:leading-[1] ${
-                    mobileRight && 'm:ml-[50rem]'
-                }`}
-            >
-                {paragraph}
-            </p>
-            <div
-                animationData={snot}
-                lottieRef={snotRef}
-                className={'-translate-x-1/2 left-1/2 absolute bottom-32 translate-y-full w-[25rem] -z-10 m:hidden'}
-            />
+            {/*<div*/}
+            {/*    animationData={snot}*/}
+            {/*    lottieRef={snotRef}*/}
+            {/*    className={'-translate-x-1/2 left-1/2 absolute bottom-32 translate-y-full w-[25rem] -z-10 m:hidden'}*/}
+            {/*/>*/}
         </div>
     );
 };

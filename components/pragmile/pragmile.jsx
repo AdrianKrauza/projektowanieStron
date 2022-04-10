@@ -19,7 +19,7 @@ const Pragmile = ({ setPageState }) => {
     const containerRef = useRef();
 
     const { pinPortfolio, moveElement, scrollAnimationElement } = usePortfolio(true);
-    const { initCanvas, updateImage } = UseCanvasFrameAnimation('pragmile/Comp 1_00', [0, 49]);
+    const { initCanvas, updateImage } = UseCanvasFrameAnimation('pragmile/canvas/Poster_247_00', [0, 59]);
     useEffect(() => {
         setTimeout(() => {
             gsap.to(containerRef.current.querySelector('.pin'), {
@@ -44,7 +44,7 @@ const Pragmile = ({ setPageState }) => {
                 },
             });
             pinPortfolio(containerRef);
-            moveElement('.startImg3', 1200, 8000, false, 0.3);
+            // moveElement('.startImg3', 1200, 8000, false, 0.3);
             moveElement('.page1', 1080, 7000);
             moveElement('.gate1', 2750, 4100);
             moveElement('.text1', 2680, 4400);
@@ -188,34 +188,7 @@ const Pragmile = ({ setPageState }) => {
                 5500,
                 1400,
             );
-            scrollAnimationElement(
-                '.startImg3',
-                {
-                    borderTopLeftRadius: '100%',
-                    borderTopRightRadius: '100%',
-                },
-                {
-                    borderTopLeftRadius: '0%',
-                    borderTopRightRadius: '0%',
-                },
-                1200,
-                150,
-            );
-            scrollAnimationElement(
-                '.startImg3 > span',
-                {
-                    scale: 3.5,
-                },
-                {
-                    scale: 1.4,
-                    transformOrigin: 'top',
-                },
-                1100,
-                1000,
-                {
-                    scrub: 4,
-                },
-            );
+
             [
                 [100, 100],
                 [100, 0],
@@ -239,22 +212,22 @@ const Pragmile = ({ setPageState }) => {
                     400,
                 );
             });
-            scrollAnimationElement('.startImg3', {}, {}, 9600, 3300, {
+            scrollAnimationElement('.startImg3', {}, {}, 3850, 6400, {
                 onUpdate: ({ progress }) => {
-                    updateImage(Math.floor(progress * 50 * 5));
+                    updateImage(Math.floor(progress * 50 * 4));
                 },
             });
         }, 0);
     }, []);
     return (
         //
-        <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen -mt-[75rem] '}>
+        <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen mt-[-35rem] '}>
             <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
                 <StartImg />
                 <Page1 />
-                <Page2 />
+                <Page2 initCanvas={initCanvas} />
                 <Page3 />
-                <Phone initCanvas={initCanvas} />
+                {/*<Phone />*/}
                 <End />
                 <If containerRef={containerRef} />
             </div>

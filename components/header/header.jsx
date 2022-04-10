@@ -38,23 +38,41 @@ const Header = () => {
         gsap.set(imageRef.current, {
             opacity: 1,
         });
+        gsap.fromTo(
+            imageRef.current,
+            {
+                rotate: 5,
+                scale: 1.5,
+            },
+            {
+                rotate: 0,
+                scale: 1,
+                delay: 0.5,
+                duration: 1,
+            },
+        );
         let animations;
         setTimeout(() => {
+            gsap.to('#header', {
+                duration: 10,
+                y: '20rem',
+                opacity: 0,
+                rotate: -10,
+                scale: 0.25,
+                scrollTrigger: {
+                    trigger: 'body',
+                    start: '0% 0%',
+                    end: '0% -100%',
+                    scrub: true,
+                },
+            });
             ScrollTrigger.matchMedia({
                 '(min-width: 1200px)': () => {
                     ScrollTrigger.create({
                         trigger: 'body ',
                         pin: '#header > div ',
                         start: '0% 0%',
-
-                        end: `${vh(2 * 20 + 125)}px 0%`,
-                    });
-                    ScrollTrigger.create({
-                        trigger: '.scroll-content ',
-                        pin: navRef.current,
-                        start: '0% 0%',
-
-                        end: `100% 100%`,
+                        end: `0 150%`,
                     });
                 },
             });
@@ -71,19 +89,6 @@ const Header = () => {
             });
         }, 0);
 
-        gsap.fromTo(
-            imageRef.current,
-            {
-                rotate: 5,
-                scale: 1.5,
-            },
-            {
-                rotate: 0,
-                scale: 1,
-                delay: 1,
-                duration: 1,
-            },
-        );
         //a0a0a0
         let currentState = 0;
         animations = setInterval(() => {
@@ -113,6 +118,7 @@ const Header = () => {
             y: 40,
             duration: 1,
         });
+
         setTimeout(() => {
             AnimationHeading(headerRef, true);
             setTimeout(() => {

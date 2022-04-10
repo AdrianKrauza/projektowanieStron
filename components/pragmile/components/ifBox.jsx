@@ -10,65 +10,56 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
     console.log(boxGif);
     const headerRef = useRef();
     const boxRef = useRef();
+    const textRef = useRef();
     const lottieRef = useRef();
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
-        if (second) return;
         setTimeout(() => {
             gsap.fromTo(
-                boxRef.current,
-                { opacity: 0.1 },
+                textRef.current.querySelectorAll('*'),
+                {
+                    opacity: 0.1,
+                },
                 {
                     opacity: 1,
+                    stagger: 0.1,
                     scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: `${vh((150 + 100 * index) * 0.4) + start} 0%`,
-                        end: `${vh((220 + 100 * index) * 0.4) + start} 0%`,
+                        trigger: 'body',
+                        start: `0 ${-70 - index * 30}%`,
+                        end: `0 ${-90 - index * 30}%`,
                         scrub: true,
                     },
                 },
             );
+
             gsap.fromTo(
-                lottieRef.current,
-                { opacity: 0 },
+                boxRef.current,
+                { y: '100vh' },
                 {
-                    opacity: 0.01,
+                    y: 0,
                     scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: `${vh((150 + 100 * index) * 0.4) + start} 0%`,
-                        end: `${vh((220 + 100 * index) * 0.4) + start} 0%`,
+                        trigger: 'body',
+                        start: `0 ${-30}%`,
+                        end: `0 ${-130}%`,
                         scrub: true,
                     },
                 },
-            );
-            AnimationHeadingScrub(
-                headerRef,
-                containerRef,
-                `${vh((160 + 100 * index) * 0.4) + start} 0%`,
-                `${vh((230 + 100 * index) * 0.4) + start} 0%`,
             );
         }, 0);
     }, []);
     return (
-        <div ref={boxRef} className={`relative ${!second && 'opacity-30'}`}>
-            <div
-                ref={lottieRef}
-                className={` ${
-                    !second && '-z-10'
-                }  w-[60rem] h-[70rem] rotate-90 -translate-x-1/2 left-1/2 -top-[25rem] absolute  opacity-[0.01]`}
-            >
-                <Image priority src={boxGif} layout={'fill'} />
-            </div>
+        <div ref={boxRef} className={`relative `}>
+            <p ref={textRef} className={'text-[1.6rem] text-[#CBCBCB] leading-[1.1]'}>
+                {el[0]
+                    .split(' ')
+                    .map((text) => (text !== '<br/>' ? <b className={'inline font-black'}>{text} </b> : <br />))}
+                <br />
+                <br />
 
-            <h3 ref={headerRef} className={'text-center font-playfair text-[#dfdfdf] text-[5rem] mb-[2vw]'}>
-                Jeśli:
-            </h3>
-            <p
-                className={'text-[1.6rem] text-[#CBCBCB] leading-[1.1]'}
-                dangerouslySetInnerHTML={{
-                    __html: `<b class="text-[#dfdfdf] font-black">${el[0]}</b><br/><br/>${el[1]}`,
-                }}
-            />
+                {el[1]
+                    .split(' ')
+                    .map((text) => (text !== '<br/>' ? <span className={'inline'}>{text} </span> : <br />))}
+            </p>
         </div>
     );
 };

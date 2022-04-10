@@ -53,7 +53,7 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
             className={'border-[1px] border-t-[#cecece] border-dotted py-[1.3rem] pl-[2rem] relative    '}
         >
             <div ref={bgRef} className={'bg-white w-full h-full absolute left-0 top-0 -z-10 scale-x-0'} />
-            <p className={'  text-[1.3rem]'}>{question}</p>
+            <p className={'  text-[1.5rem]'}>{question}</p>
             <p ref={answerRef} className={'pl-[1rem] flex items-end  text-[1.2rem] opacity-0 h-0 overflow-hidden'}>
                 TAK
             </p>

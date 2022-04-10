@@ -35,8 +35,9 @@ const LottieLetter = ({ container, data, left, top, to = 0, second = false }) =>
             } else {
                 ScrollTrigger.create({
                     trigger: container.current,
-                    start: '0% 60%',
-                    end: `0% -80%`,
+                    start: '0% 20%',
+                    end: `0% -60%`,
+                    markers: true,
                     onUpdate: ({ progress }) => {
                         letterRef.current.goToAndStop(progress * to, true);
                     },

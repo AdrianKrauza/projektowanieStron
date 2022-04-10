@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import gsap,{Expo,Power4,Power1} from 'gsap';
+import gsap, { Expo, Power4, Power1 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,19 +17,28 @@ const UsePortfolio = (changeSpeed = 0) => {
             end: '100% 0%',
         });
     };
-    const moveElement = (el, start, speed,responsive = true,stop = 0.7,scrub = true) => {
+    const moveElement = (el, start, speed, responsive = true, stop = 0.7, scrub = true) => {
         const element = container.current.querySelectorAll(el);
-        gsap.to(element, {
-
-            y: responsive ? -vh(100) - ((container.current.querySelector(el)?.offsetHeight / 5 || 0)  ):(-window.innerHeight + container.current.querySelector(el)?.offsetHeight * stop || 0) ,
-            ease:responsive ? 'none' : Expo.easeOut,
-            scrollTrigger: {
-                trigger: container.current,
-                start: `${typeof start === 'number' ? (vh(100) * changeSpeed) + ( vh(50) + start)* ( changeSpeed ? 0.4 : 1) + 'px' :  start} 100%`,
-                end: `+=${ (vh( 100 )  + speed) * ( changeSpeed ? 0.4 : 1)} 100%`,
-                scrub,
+        gsap.set(element,{
+            top:-element[0]?.clientHeight
+            }
+        )
+        gsap.fromTo(
+            element,
+            {
+                y: 2000 + speed + element[0]?.clientHeight,
             },
-        });
+            {
+                y: '0',
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: `${start * ( element[0]?.clientHeight / 1000)} 0%`,
+                    end: `+=${2000} 0%`,
+                    scrub,
+                },
+            },
+        );
     };
     const scrollAnimationElement = (el, from, to, start, end, scrollTriggerProps) => {
         const element = container.current.querySelectorAll(el);
@@ -38,8 +47,8 @@ const UsePortfolio = (changeSpeed = 0) => {
             ...to,
             scrollTrigger: {
                 trigger: container.current,
-                start: `${(vh(100) * changeSpeed) + start* ( changeSpeed ? 0.4 : 1)}px 100%`,
-                end: `+=${(vh(100) + end)* ( changeSpeed ? 0.4 : 1)} 100%`,
+                start: `${vh(100) * changeSpeed + start * (changeSpeed ? 0.4 : 1)}px 100%`,
+                end: `+=${(vh(100) + end) * (changeSpeed ? 0.4 : 1)} 100%`,
                 scrub: true,
                 ...scrollTriggerProps,
             },

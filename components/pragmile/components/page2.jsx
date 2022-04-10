@@ -7,9 +7,11 @@ import box2 from '/assets/pragmile/Kwadrat2.jpg';
 import box3 from '/assets/pragmile/Kwadrat-Front.png';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-const Page2 = () => {
+const Page2 = ({ initCanvas }) => {
     const greenGradientRef = useRef();
+    const canvasRef = useRef();
     useEffect(() => {
+        initCanvas(canvasRef, 549, 595);
         setTimeout(() => {
             window.onresize = window.onload = function () {
                 gsap.set('.m1_stage', { x: '50%', opacity: 1 });
@@ -20,7 +22,6 @@ const Page2 = () => {
                 repeat: -1,
                 duration: 5,
             });
-            // .add(() => {
             window.addEventListener('mousemove', (e) => {
                 gsap.to('.m1_cGroup', {
                     duration: 1,
@@ -29,29 +30,36 @@ const Page2 = () => {
                     overwrite: 'auto',
                 });
             });
-            // }, 'orbs+=0.5');
         }, 0);
     });
 
     return (
         <>
             <div className={'bg2 w-[1350px] h-[700px] bg-[#18181A]  rounded-t-[90px] overflow-hidden'}>
-                <style jsx>
-                    {`
-                        .gradient {
-                            position: absolute;
-                            right: -507px;
-                            bottom: -947px;
-                            width: 2000px;
-                            height: 2000px;
-                            border-radius: 100%;
-                            background: #012515;
-                            background: radial-gradient(circle, #012515 0%, #18181a 71%);
-                        }
-                    `}
-                </style>
-                <div className={'gradient'} ref={greenGradientRef} />
-                <svg width="100%" height="100%" fill={'transparent'} className={'main1 relative opacity-[0.5] '}>
+                <div className={'absolute '}>
+                    <canvas className={'ml-[20px]'} ref={canvasRef} />
+                </div>
+                {/*<style jsx>*/}
+                {/*    {`*/}
+                {/*        .gradient {*/}
+                {/*            position: absolute;*/}
+                {/*            right: -507px;*/}
+                {/*            bottom: -947px;*/}
+                {/*            width: 2000px;*/}
+                {/*            height: 2000px;*/}
+                {/*            border-radius: 100%;*/}
+                {/*            background: #012515;*/}
+                {/*            background: radial-gradient(circle, #012515 0%, #18181a 71%);*/}
+                {/*        }*/}
+                {/*    `}*/}
+                {/*</style>*/}
+                {/*<div className={'gradient'} ref={greenGradientRef} />*/}
+                <svg
+                    width="100%"
+                    height="100%"
+                    fill={'transparent'}
+                    className={'main1 relative opacity-[0.5] translate-x-[320px]'}
+                >
                     <defs>
                         <linearGradient id="grad1" x1="50%" y1="0%" x2="50%" y2="100%">
                             <stop offset="10%" style={{ stopColor: '#284a2c', stopOpacity: 0.9 }} />

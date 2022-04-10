@@ -18,17 +18,25 @@ import Transform from '../components/transform/transform';
 import MobilePragmile from '../components/mobilePragmile/mobilePragmile';
 import Nav from '../components/nav/nav';
 import Footer from '../components/oko/components/footer';
+import Portfolios from '../components/portfolios/portfolios';
 
 const pageState = {
     0: (setPageState) => (
         <div>
-            <Header />
-            <Cards3 />
-            <Tablets />
-            <Letters />
-            <Book />
+            {/*<Header />*/}
+            {/*<If />*/}
+            {/*<Cards3 />*/}
+            {/**/}
+            {/*<Tablets />*/}
+            {/*<div className={'h-[100vh]'} />*/}
+            {/*<div className={'h-[100vh]'} />*/}
+
+            {/*<Letters />*/}
+            {/*<Book />*/}
+            {/*<Portfolios />*/}
+            {/*<div className={'h-[100vh]'} />*/}
             <Guarantee />
-            <Pragmile setPageState={setPageState} />
+            {/*<Pragmile setPageState={setPageState} />*/}
         </div>
     ),
     1: (setPageState) => (
@@ -48,27 +56,16 @@ export default function Home({ index }) {
 
     return (
         <>
-            <Nav />
-            <UseSmoothScrollBar pageState={pageState2} fromEnter={fromEnter}>
-                {/*<div className={'h-[50vh]'} />*/}
-                {/*<div className={'h-[100vh]'} />*/}
-                {/*<MobilePragmile />*/}
-                {/*<div className={'h-[100vh]'} />*/}
-                {/*<div className={'h-[100vh]'} />*/}
-                {/*<div className={'h-[100vh]'} />*/}
-                {/*<div className={'h-[100vh]'} />*/}
-                {/*<Pragmile2 setPageState={setPageState} />*/}
-                <div>{pageState[pageState2](setPageState)}</div>
-                {/*<Footer />*/}
-                {/*<Pragmile setPageState={setPageState} />*/}
-                {/*<div className={'h-[40rem]'} />*/}
-                {/*<Cards3 />*/}
+            <Header />
+            <If />
+            <Cards3 />
 
-                {/*<Pragmile />*/}
-                {/*<Banach />*/}
-                {/*<Oko />*/}
-            </UseSmoothScrollBar>
-            {/*<Transform currentPageState={currentPageState} />*/}
+            <Tablets />
+
+            <Letters />
+            <Book />
+            <Guarantee />
+            <Portfolios />
         </>
     );
 }

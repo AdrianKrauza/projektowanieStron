@@ -12,7 +12,7 @@ const Page1 = () => {
                 }
             >
                 <div className={'   rounded-t-[60px] overflow-hidden w-[95rem]'}>
-                    <Image priority {...page1} />
+                    <Image layout={'responsive'} priority {...page1} />
                 </div>
 
                 <div
@@ -21,11 +21,11 @@ const Page1 = () => {
                     }
                 />
             </div>
-            <div className={'gate1 left-[20vw] w-[10rem] '}>
-                <Image priority {...gate1} />
+            <div className={'gate1 left-[20vw] w-[10rem] bg-[red]'}>
+                <Image layout={'responsive'} priority {...gate1} />
             </div>
             <div className={'text1  left-[20vw] w-[45rem] '}>
-                <Image priority {...text1} />
+                <Image layout={'responsive'} priority {...text1} />
                 {/*<style jsx>{`*/}
                 {/*    @keyframes pulse {*/}
                 {/*        0% {*/}

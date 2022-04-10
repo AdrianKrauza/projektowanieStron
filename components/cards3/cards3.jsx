@@ -2,7 +2,7 @@ import Card from './card';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { Spiral } from './spiral';
+import { Clouds } from './clouds';
 import useTextAnimations from '../../hooks/useTextAnimations';
 const vh = (coef) => window.innerHeight * (coef / 100);
 import image1 from '/assets/cards3/carrey_jp.jpg';
@@ -19,7 +19,7 @@ const Cards3 = () => {
             gsap.to(cardsRef.current, {
                 scrollTrigger: {
                     trigger: 'body',
-                    end: `${vh((2 + 1) * 20 + 35)}px 0%`,
+                    end: `0 -500%`,
                     pin: cardsRef.current,
                 },
             });
@@ -27,11 +27,15 @@ const Cards3 = () => {
     });
     return (
         <>
-            <Spiral />
+            <Clouds />
             <div
                 ref={cardsRef}
                 className={'absolute m:flex-col flex justify-center w-screen top-0 pointer-events-none'}
             >
+                {/*<div*/}
+                {/*    ref={circleRef}*/}
+                {/*    className={'w-screen h-[100vw] bg-[#E7E6E8] absolute rounded-[100%] top-[100vh]'}*/}
+                {/*/>*/}
                 <h2
                     className={'text-center text-[7rem] relative top-[20rem] opacity-0 m:block hidden'}
                     ref={headingRef}
@@ -48,7 +52,7 @@ const Cards3 = () => {
                     image={image2}
                     paragraph={
                         <>
-                            Wizualną różnicę <br /> łatwo zamienisz w <br /> zaufanie i poważanie.
+                            Wizualną różnicę <br /> łatwo zamienisz w <br /> poważanie i zaufanie.
                         </>
                     }
                 />
@@ -70,7 +74,7 @@ const Cards3 = () => {
                     mask={'/assets/cards3/maska_ziomkiSV.svg'}
                     video={'/assets/cards3/Konwersja.mp4'}
                     image={image3}
-                    title={'Konwersja'}
+                    title={'Sales'}
                     paragraph={
                         <>
                             Gwarantujemy dużo <br /> więcej zapytań lub <br /> wyższą sprzedaż.

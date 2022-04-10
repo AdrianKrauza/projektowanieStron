@@ -45,9 +45,9 @@ const Pragmile = ({ setPageState }) => {
             });
             pinPortfolio(containerRef);
             // moveElement('.startImg3', 1200, 6000, false, 0.3);
-            moveElement('.page1', 1080, 500);
-            moveElement('.gate1', 1250, 200);
-            moveElement('.text1', 1250, 230);
+            moveElement('.page1', 900, 1500);
+            moveElement('.gate1', 1300, 1200);
+            moveElement('.text1', 1300, 1230);
             moveElement('.bg2', 1300, 600);
             moveElement('.text2', 1450, 200);
             moveElement('.gate2', 1440, 150);
@@ -250,9 +250,9 @@ const Pragmile = ({ setPageState }) => {
             <div className={'pin w-[95rem] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
                 {/*<StartImg />*/}
                 <Page1 />
-                <Page2 />
-                <Page3 />
-                <End />
+                {/*<Page2 />*/}
+                {/*<Page3 />*/}
+                {/*<End />*/}
                 {/*<If containerRef={containerRef} />*/}
             </div>
         </div>

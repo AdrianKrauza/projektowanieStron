@@ -3,13 +3,12 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useRouter } from 'next/router';
-import logoWebp from '/assets/pragmile/TeamNovate-WebP.webp';
-import logoGif from '/assets/pragmile/TeamNovate-GF.gif';
 import img3 from '/assets/guarantee/Projektowanie-UX-Makieta.jpg';
 import gif from '/assets/guarantee/ezgif.com-gif-maker (17).gif';
 import shadow from '/assets/guarantee/Cien.jpg';
 import FAQ from './FAQ';
 import Image from 'next/image';
+
 gsap.registerPlugin(ScrollTrigger);
 const month = [
     'W styczniu',
@@ -27,8 +26,7 @@ const month = [
 ];
 const getMonth = () => {
     const date = new Date();
-    const month = date.getMonth();
-    return month;
+    return date.getMonth();
 };
 
 const Guarantee = ({ setPageState }) => {
@@ -37,44 +35,56 @@ const Guarantee = ({ setPageState }) => {
     const heading2Ref = useRef();
     const heading3Ref = useRef();
     const conRef = useRef();
+    const pulsRef = useRef();
     const openBlackRef = useRef();
     const router = useRouter();
     useEffect(() => {
         setTimeout(() => {
-            gsap.fromTo(
-                openBlackRef.current,
-                {
-                    borderTopLeftRadius: '100%',
-                    borderTopRightRadius: '100%',
-                },
-                {
-                    borderTopLeftRadius: '0%',
-                    borderTopRightRadius: '0%',
-                    scrollTrigger: {
-                        trigger: openBlackRef.current,
-                        start: '0 100%',
-                        end: '50% 100%',
-                        scrub: true,
-                    },
-                },
-            );
-            ScrollTrigger.create({
-                trigger: conRef.current,
-                start: 'top top',
-                end: 'bottom 50%',
-            });
             AnimationHeadingScrub(heading2Ref, heading2Ref, -50, 200, false, true);
             AnimationHeadingScrub(heading3Ref, heading3Ref, -50, 200, false, true);
-            AnimationHeadingScrub(headerRef, headerRef, -50, 200, false, true);
+            AnimationHeadingScrub(headerRef, headerRef, -150, 100, false, true);
+            gsap.to(headerRef.current, {
+                y: '-5vw',
+                scrollTrigger: {
+                    start: `${-150}% 50%`,
+                    end: `${100}% 50%`,
+                    scrub: true,
+                    trigger: headerRef.current,
+                },
+            });
+            gsap.to(pulsRef.current, {
+                ease: 'none',
+                scale: 2,
+                yoyo: true,
+                repeat: -1,
+                duration: 4,
+                transformOrigin: 'top',
+            });
         }, 0);
     }, []);
     return (
         <div ref={conRef} className={`w-screen   relative z-10 mt-[32rem] bg-lightGray `}>
-            <h2 className={'text-center text-[16rem]  my-0 '}>GWARANCJA</h2>
+            <div
+                ref={pulsRef}
+                style={{ background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 45%)' }}
+                className={'left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] absolute -z-10 -mt-[3rem]'}
+            />
+            <h2 className={'text-center text-[15rem]  my-0 '}>GWARANCJA</h2>
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
                 Zwiększymy konwersję Twojej/ strony albo zwrócimy Ci/ 100% środków!
             </h3>
-            <p className={'text-2xl mt-10 text-darkGray-900 text-center mb-[5rem]'}>+ Szczegóły w sekcji FAQ</p>
+            <p className={'font-normal text-[1rem] m-auto block w-fit leading-[1.3] mt-[-3rem]'}>
+                <b>Łatwo policzyć:</b> Jeśli już pokonamy Twoją stronę, to nadal nie <br />
+                stracisz pieniędzy, bo każda złotówka, którą nam zapłacisz, będzie <br />
+                pochodziła z EXTRA zamówień i sprzedaży, którą wygenerujesz.
+            </p>
+            <button
+                className={
+                    'bg-[#E7E6E8] border-[rgb(51,51,51)] border-[1px] p-[1rem] px-[3.5rem] m-auto block my-[4rem] mb-[10rem] rounded-[3rem] text-[1.5rem]'
+                }
+            >
+                Wyceń swój projekt
+            </button>
             <div className={'flex justify-center items-end mb-[5rem]'}>
                 <div className={' w-[25rem]'}>
                     <p className={' text-[3.5rem]'}>
@@ -102,7 +112,7 @@ const Guarantee = ({ setPageState }) => {
                 />
             </div>
 
-            <div className={'m-auto w-[41rem]  '}>
+            <div className={'m-auto w-[43rem]  '}>
                 <p className={'text-[2rem]'}>
                     Nie da się ukryć, że uwielbiamy się z grafikami,
                     <br />
@@ -119,17 +129,17 @@ const Guarantee = ({ setPageState }) => {
                     Porządkują twoją ofertę. Piszą świetne treści.
                     <br />
                     <br />
-                    Budują klikalny prototyp Twojej strony,
-                    <br />
-                    zorientowany na wysokie rezultaty:
+                    Budują klikalny prototyp Twojej nowej strony, <br />
+                    zorientowany na wysokie rezultaty biznesowe. <br />
+                    <i> - Wszystko co dobre zaczyna się od makiety UX!</i>
                 </p>
             </div>
-            <p className={'text-center mt-[3rem] text-[2rem]'}>
-                Wszystko zaczyna się od <br /> makiety UX <i>User Experience.</i>
-            </p>
+            <p className={'text-center mt-[6rem] text-[3.5rem]'}>User Experience Design</p>
             <a
                 href={'https://copywriting.pl/makiety'}
-                className={'text-center mt-[1rem] text-[1rem] text-white underline block'}
+                target={'_blank'}
+                className={'text-center mt-[1rem] text-[1rem] text-white underline block mb-[2rem]'}
+                rel="noreferrer"
             >
                 ( Kompletny proces zobaczysz tutaj )
             </a>
@@ -147,19 +157,82 @@ const Guarantee = ({ setPageState }) => {
                 />
             </div>
             <div />
-            <div className={'flex align-center justify-center mt-[-86px] ml-[-100px]'}>
-                <div className={'flex flex-col justify-center items-center'}>
-                    <Image {...gif} />
-                    <div className={'mt-[-40px] -z-10 relative'}>
-                        <Image {...shadow} />
-                    </div>
-                </div>
+            <div className={'flex align-center justify-center mt-[-86px] ml-[100px] z-10 relative'}>
+                <style jsx>{`
+                    .shimmer {
+                        color: rgba(255, 255, 255, 0.1);
+                        background: -webkit-gradient(
+                            linear,
+                            left top,
+                            right top,
+                            from(#d2952a),
+                            to(#d2952a),
+                            color-stop(0.5, #fff)
+                        );
+                        background: -moz-gradient(
+                            linear,
+                            left top,
+                            right top,
+                            from(#d2952a),
+                            to(#d2952a),
+                            color-stop(0.5, #fff)
+                        );
+                        background: gradient(
+                            linear,
+                            left top,
+                            right top,
+                            from(#d2952a),
+                            to(#d2952a),
+                            color-stop(0.01, #fff)
+                        );
 
+                        background-size: 120px 100%;
+                        -webkit-background-clip: text;
+                        -moz-background-clip: text;
+                        background-clip: text;
+                        -webkit-animation-name: shimmer;
+                        -moz-animation-name: shimmer;
+                        animation-name: shimmer;
+                        animation-duration: 6s;
+                        -webkit-animation-iteration-count: infinite;
+                        -moz-animation-iteration-count: infinite;
+                        animation-iteration-count: infinite;
+                        background-repeat: no-repeat;
+                        background-position: 0 0;
+                        background-color: #d2952a;
+                        padding: 2px 0;
+                        margin-top: 86px;
+                    }
+                    @keyframes shimmer {
+                        0% {
+                            background-position: 0%;
+                        }
+                        10% {
+                            background-position: 120%;
+                        }
+                        100% {
+                            background-position: 120%;
+                        }
+                    }
+                `}</style>
+                {/*text-[#D2952A]*/}
                 <div>
-                    <p className={'text-[55px] font-black text-[#D2952A] mt-[90px]'}>Projekt UX - GRATIS *</p>
+                    <p className={'text-[55px] font-black  mt-[90px] shimmer '}>Projekt UX - GRATIS! *</p>
                     <p className={'text-[21px] mt-[10px] font-normal'}>
                         * {month[getMonth()]} opracowujemy projekt makiety UX w cenie strony.
                     </p>
+                </div>
+                <div
+                    className={'flex flex-col justify-center items-center mt-[-5px] ml-[-30px] -z-10 '}
+                    style={{ transform: 'rotateY(180deg)' }}
+                >
+                    <div className={'ml-[30px]'}>
+                        <Image {...gif} />
+                    </div>
+
+                    <div className={'mt-[-45px]  -z-10 relative'}>
+                        <Image {...shadow} />
+                    </div>
                 </div>
             </div>
             <p className={'text-center mt-[5rem] text-[3rem]'}>A gdy idzie o kwestie techniczne to:</p>
@@ -167,29 +240,6 @@ const Guarantee = ({ setPageState }) => {
                 Wszystkie/ odpowiedzi/ brzmią - Tak!
             </h2>
             <FAQ />
-            <h2 className={'text-center my-[10rem] text-[10rem] '} ref={heading3Ref}>
-                Przykłady/ realizacji
-            </h2>
-            <div className={'h-[30rem] -z-10 relative overflow-hidden'}>
-                <div ref={openBlackRef} className={'bg-darkGray-900 h-[100vw] w-screen'}>
-                    <div
-                        className={
-                            '  mt-[5rem] flex flex-col justify-center h-[400px] bg-red  absolute items-center w-full'
-                        }
-                    >
-                        <div className={'mb-[4rem]'}>
-                            <picture>
-                                <source srcSet={logoWebp.src} type="image/webp" />
-                                <img src={logoGif.src} className={'shadow-[0_0_60px_50px_#141414] '} />
-                            </picture>
-                        </div>
-                        <p className={'text-center text-[#dfdfdf]'}>
-                            Team Novate - Przykład strony dla <br />
-                            innowacyjnego zespołu programistów
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };

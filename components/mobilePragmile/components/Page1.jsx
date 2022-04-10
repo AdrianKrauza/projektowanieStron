@@ -17,14 +17,14 @@ const Page1 = () => {
                 className={' border-[1px] border-[#022300]  rounded-t-[60px]   shadow-[-1px_-10px_22px_10px_#090e0760]'}
             >
                 <div className={' w-[95vw] rounded-t-[60px] overflow-hidden '}>
-                    <img priority layout={'responsive'} {...page1} />
+                    <Image priority layout={'responsive'} {...page1} />
                 </div>
             </Element>
             <Element nieWiemCoToTakiego={0.026} start={20} end={60} width={10} left={20}>
-                <img priority layout={'responsive'} {...gate1} />
+                <Image priority layout={'responsive'} {...gate1} />
             </Element>
             <Element nieWiemCoToTakiego={0.0265} start={20} end={55} left={20} width={50}>
-                <img priority layout={'responsive'} {...text1} />
+                <Image priority layout={'responsive'} {...text1} />
             </Element>
         </>
     );
