@@ -112,8 +112,8 @@ html {
 .clouds * {
   fill: #E7E6E8 !important;
 }
-.spiral rect {
-  fill: #E5E6EA !important;
+.spiral path {
+  fill: #0B0B0B !important;
 }
 .banachCloud path {
   fill: #06051c !important;

@@ -1564,7 +1564,7 @@ const Letters = () => {
                 trigger: containerRef.current,
                 start: '100% 20%',
                 end: `100% -70%`,
-                markers: true,
+
                 onUpdate: ({ progress }) => {
                     letterRef.current.goToAndStop(progress * 99, true);
                 },

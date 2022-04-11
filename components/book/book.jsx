@@ -51,7 +51,8 @@ const texts = [
         ],
     ],
 ];
-const Arrow = ({ color = 'black' }) => {
+const Arrow = ({ color = '#c2c2c2' }) => {
+    //c2c2c2 //bg f5f5f6
     return (
         <div style={{ top: '23rem', left: '-3rem' }} className={'absolute  top-[50rem]'}>
             <style jsx>{`
@@ -90,7 +91,7 @@ const Arrow = ({ color = 'black' }) => {
                     bottom: 0;
                     left: 50%;
                     width: 1px;
-                    height: 14vw;
+                    height: 21rem;
                     background: ${color};
                 }
 
@@ -100,9 +101,9 @@ const Arrow = ({ color = 'black' }) => {
                     bottom: 0;
                     left: 50%;
                     width: 1px;
-                    height: 14rem;
-                    background: ${color};
-                    opacity: 0.4;
+                    height: 21rem;
+                    background: #f5f5f6;
+                    opacity: 1;
                 }
 
                 .line {

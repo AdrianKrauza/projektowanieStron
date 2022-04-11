@@ -10,6 +10,7 @@ import gsap from 'gsap';
 const Page2 = ({ initCanvas }) => {
     const greenGradientRef = useRef();
     const canvasRef = useRef();
+
     useEffect(() => {
         initCanvas(canvasRef, 549, 595);
         setTimeout(() => {

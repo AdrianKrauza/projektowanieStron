@@ -14,7 +14,6 @@ const preloadImages = (updateImage) => {
     setTimeout(() => {
         bookImages.map((book) => {
             for (let i = book[0]; i < book[0] + book[1] + 1; i++) {
-                console.log(i);
                 images[i] = new Image();
                 images[i].src = currentFrame(i);
             }
@@ -37,6 +36,7 @@ const BookCanvas = ({ bookSectionRef }) => {
         img.onload = () => context.drawImage(img, 0, 0);
 
         const updateImage = (index) => {
+            console.log(index);
             images[index] && context.drawImage(images[index], 0, 0);
         };
 

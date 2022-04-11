@@ -47,7 +47,6 @@ const Sphere = ({ index, bookSectionRef }) => {
                         start: '0% 0%',
                         end: '100% 0%',
                         toggleActions: 'play  reverse play reverse ',
-                        markers: true,
                     },
                 },
             );

@@ -1,12 +1,14 @@
 import Image from 'next/image';
-import city1 from '/assets/portfolios/Banach-1wszyi-planFIN.png';
-import city2 from '/assets/portfolios/Banach-2gi-plan-FIN.png';
+import city1 from '/assets/portfolios/Banach-1wszyi-planFIN (1).png';
+import city2 from '/assets/portfolios/Banach-2gi-plan-FIN.jpg';
 import page1 from '/assets/portfolios/Tworzenie-strony-finanse.jpg';
 import page2 from '/assets/portfolios/Tworzenie-strony-konsulting.jpg';
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Link from 'next/link';
+import banach from '../../assets/portfolios/Strona-Banach-logo.jpg';
 gsap.registerPlugin(ScrollTrigger);
 //
 const Banach = () => {
@@ -25,7 +27,6 @@ const Banach = () => {
                 start: '0 80%',
                 end: '0% 10%',
                 scrub: 3,
-                markers: true,
             };
             gsap.to(phoneRef.current, {
                 y: -150,
@@ -53,28 +54,34 @@ const Banach = () => {
     return (
         <div className={'flex justify-center gap-[10rem] bg-[#E3E3E3] h-[70rem] pt-[20rem] '}>
             <div className={'relative z-10 mt-[2rem]'}>
-                <video
-                    src={'/assets/portfolios/ezgif.com-gif-maker (35).mp4'}
-                    autoPlay
-                    muted
-                    loop
-                    className={'w-[15rem] mb-[2rem]'}
-                />
-                <h2 className={'text-white font-roboto text-[3rem] font-thin'}>
+                <div className={'mb-[2rem]'}>
+                    <Image {...banach} />
+                </div>
+                <h2 className={'text-[#382924] font-roboto text-[2.5rem] font-thin mb-[2rem]'}>
                     Banach Outsourcing <br />
-                    Przyklad strony w branzy
-                    <br />
-                    Konsultingu, doradztwa i fin
-                    <br />
+                    Strona firmy księgowej, <br />
+                    która działa jak w zegarku.
                 </h2>
-                <p className={'text-white font-roboto text-[1.2rem] mt-[1rem]'}>
-                    0d roku 2015 pisze posty da Kawiarni Cafe Klaps organizuje proste
+                <p
+                    className={
+                        'text-[#9c907b] border-[#9c907b] ml-[1rem] border-l-[1px] pl-[1rem] font-roboto text-[1.7rem] mt-[1rem] leading-[1.2]'
+                    }
+                >
+                    Nasza marka prezentowała się dość nudno,
                     <br />
-                    kampanie marketingowe. W 2018 roku narodzila sie moja pasja
-                    <br />
-                    do pisania wierszy, co przerodzito sie w pisanie tekstów.
+                    ale Owocni tchnęli w nią zupełnie nową jakość.
+                    <br /> Jesteśmy bardzo zadowoleni z efektów.”
                 </p>
-                <button className={'w-[14rem] mt-[2rem] h-[3rem] bg-[#082219] rounded-[2rem]'} />
+                <p
+                    className={
+                        'text-[#9c907b] ml-[1rem] pl-[1rem] mt-[2rem] font-roboto text-[1rem] mt-[0.8rem] mb-[3rem]'
+                    }
+                >
+                    Piotr Banach - Manager
+                </p>
+                <Link href={'/banach'} target={'_blank'} rel="noreferrer" passHref>
+                    <a className={'text-[1.5rem] text-[#ab854a]'}>Zobacz realizacje</a>
+                </Link>
             </div>
 
             <div ref={containerRef} className={'relative w-[40rem] mt-[5rem] '}>

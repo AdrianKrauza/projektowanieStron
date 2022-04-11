@@ -59,9 +59,7 @@ export default function Home({ index }) {
             <Header />
             <If />
             <Cards3 />
-
             <Tablets />
-
             <Letters />
             <Book />
             <Guarantee />

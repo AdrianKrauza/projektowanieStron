@@ -21,7 +21,7 @@ const Cloud = () => {
                 start: `0 0%`,
                 end: `0 -50%`,
                 onUpdate: ({ progress }) => {
-                    spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
+                    spiralDataRef.current.goToAndStop(Math.floor(18 * progress - 1), true);
                 },
                 // onLeave: () => {
                 //     document.body.classList.remove('bg-darkGray-900');

@@ -15,7 +15,7 @@ const StartImg = ({ gradient1State }) => {
                 scrollTrigger: {
                     start: `0 100%`,
                     end: `0% 50%`,
-                    markers: true,
+
                     scrub: true,
                     trigger: ArrowRef.current,
                 },

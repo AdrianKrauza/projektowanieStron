@@ -29,7 +29,7 @@ const Pragmile = ({ setPageState }) => {
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: `${(vh(300 + 100) + 16000) * 0.4} 0px`,
-                markers: true,
+
                 onEnter: () => {
                     gsap.set('body', {
                         background: 'rgb(10,10,10)',

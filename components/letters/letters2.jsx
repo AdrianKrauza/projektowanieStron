@@ -37,7 +37,7 @@ const LottieLetter = ({ container, data, left, top, to = 0, second = false }) =>
                     trigger: container.current,
                     start: '0% 20%',
                     end: `0% -60%`,
-                    markers: true,
+
                     onUpdate: ({ progress }) => {
                         letterRef.current.goToAndStop(progress * to, true);
                     },

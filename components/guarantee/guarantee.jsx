@@ -55,10 +55,13 @@ const Guarantee = ({ setPageState }) => {
             gsap.to(pulsRef.current, {
                 ease: 'none',
                 scale: 2,
-                yoyo: true,
-                repeat: -1,
-                duration: 4,
                 transformOrigin: 'top',
+                scrollTrigger: {
+                    start: `0 100%`,
+                    end: `0 00%`,
+                    scrub: true,
+                    trigger: pulsRef.current,
+                },
             });
         }, 0);
     }, []);
@@ -80,7 +83,7 @@ const Guarantee = ({ setPageState }) => {
             </p>
             <button
                 className={
-                    'bg-[#E7E6E8] border-[rgb(51,51,51)] border-[1px] p-[1rem] px-[3.5rem] m-auto block my-[4rem] mb-[10rem] rounded-[3rem] text-[1.5rem]'
+                    'bg-[#E7E6E8] border-[rgb(51,51,51)] border-[1px] p-[1rem] px-[3.5rem] m-auto block my-[8rem]  rounded-[3rem] text-[1.5rem]'
                 }
             >
                 Wyceń swój projekt

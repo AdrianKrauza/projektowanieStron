@@ -25,8 +25,8 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
                     stagger: 0.1,
                     scrollTrigger: {
                         trigger: 'body',
-                        start: `0 ${-70 - index * 30}%`,
-                        end: `0 ${-90 - index * 30}%`,
+                        start: `0 ${-90 - index * 30}%`,
+                        end: `0 ${-110 - index * 30}%`,
                         scrub: true,
                     },
                 },

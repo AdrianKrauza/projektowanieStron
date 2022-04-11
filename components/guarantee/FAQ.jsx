@@ -50,7 +50,9 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
             onClick={() => setIsOpen((prev) => prev.map((item, i) => (i === index ? !item : false)))}
-            className={'border-[1px] border-t-[#cecece] border-dotted py-[1.3rem] pl-[2rem] relative    '}
+            className={
+                'cursor-pointer border-[1px] border-t-[#cecece] border-dotted py-[1.3rem] pl-[2rem] relative    '
+            }
         >
             <div ref={bgRef} className={'bg-white w-full h-full absolute left-0 top-0 -z-10 scale-x-0'} />
             <p className={'  text-[1.5rem]'}>{question}</p>
@@ -76,7 +78,7 @@ const Faq = () => {
     const [isOpen, setIsOpen] = useState(new Array(questions.length).fill(false));
 
     return (
-        <div className={'w-[45rem] m-auto border-[1px] border-b-[#cecece]'}>
+        <div className={'w-[55rem] m-auto border-[1px] border-b-[#cecece]'}>
             {questions.map((question, index) => (
                 <Question
                     setIsOpen={setIsOpen}

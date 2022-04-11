@@ -5,10 +5,12 @@ import shape2 from '/assets/portfolios/Dlon-Artefakt.png';
 import hand from '/assets/portfolios/Dlon-Mobile-Design.png';
 import shape1 from '/assets/portfolios/Tlo-strony.png';
 import crowd from '/assets/portfolios/Tlum.png';
+import oko from '/assets/portfolios/Logo-strony-oko.jpg';
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 //
 const Oko = () => {
@@ -40,7 +42,6 @@ const Oko = () => {
                 start: '0 70%',
                 end: '0% 40%',
                 scrub: 3,
-                markers: true,
             };
             gsap.to(circle1Ref.current, {
                 y: -66,
@@ -88,28 +89,37 @@ const Oko = () => {
     return (
         <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[80rem] pt-[20rem] '}>
             <div className={'relative z-10 mt-[2rem]'}>
-                <video
-                    src={'/assets/portfolios/ezgif.com-gif-maker (35).mp4'}
-                    autoPlay
-                    muted
-                    loop
-                    className={'w-[15rem] mb-[2rem]'}
-                />
-                <h2 className={'text-white font-roboto text-[3rem] font-thin'}>
-                    Banach Outsourcing <br />
-                    Przyklad strony w branzy
+                <div className={'mb-[2rem]'}>
+                    <Image {...oko} />
+                </div>
+
+                <h2 className={'text-[#60578f] font-roboto text-[2.5rem] font-thin mb-[2rem]'}>
+                    OKO - Filmowy projekt <br />
+                    strony dla studia wideo
                     <br />
-                    Konsultingu, doradztwa i fin
-                    <br />
+                    rozszerzonej rzeczywistości.
                 </h2>
-                <p className={'text-white font-roboto text-[1.2rem] mt-[1rem]'}>
-                    0d roku 2015 pisze posty da Kawiarni Cafe Klaps organizuje proste
+                <p
+                    className={
+                        'text-[#3e3e3f] ml-[1rem] border-l-[1px] pl-[1rem] font-roboto text-[1.7rem] mt-[1rem] leading-[1.2]'
+                    }
+                >
+                    Jestem bardzo zadowolony z finalnego efektu
                     <br />
-                    kampanie marketingowe. W 2018 roku narodzila sie moja pasja
+                    i dopracowania wszystkich szczegółów.
                     <br />
-                    do pisania wierszy, co przerodzito sie w pisanie tekstów.
+                    Pełen profesjonalizm. Polecam.
                 </p>
-                <button className={'w-[14rem] mt-[2rem] h-[3rem] bg-[#082219] rounded-[2rem]'} />
+                <p
+                    className={
+                        'text-[#3e3e3f] ml-[1rem] pl-[1rem] mt-[2rem] font-roboto text-[1rem] mt-[0.8rem] mb-[3rem]'
+                    }
+                >
+                    Witalij Bińkowski - Właściciel
+                </p>
+                <Link href={'/oko'} target={'_blank'} rel="noreferrer" passHref>
+                    <a className={'text-[1.5rem] text-[#342c5d]'}>Zobacz realizacje</a>
+                </Link>
             </div>
 
             <div ref={containerRef} className={'relative w-[40rem] mt-[5rem] '}>
