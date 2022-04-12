@@ -20,7 +20,7 @@ const Footer = () => {
             <h2 ref={headerRef} className={'text-center text-[white] mb-[10rem]'}>
                 Dobry pomysł na/ biznes jest wart/ dobrej strony.
             </h2>
-
+            {/**/}
             <div className={'text-center mb-[1.5rem]'}>
                 <Image {...form} priority />
             </div>
