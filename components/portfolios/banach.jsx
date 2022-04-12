@@ -55,7 +55,7 @@ const Banach = () => {
         <div className={'flex justify-center gap-[10rem] bg-[#E3E3E3] h-[60rem] pt-[10rem] overflow-hidden'}>
             <div className={'relative z-10 mt-[2rem]'}>
                 <div className={'mb-[2rem]'}>
-                    <Image {...banach} />
+                    <Image priority {...banach} />
                 </div>
                 <h2 className={'text-[#382924] font-roboto text-[2.5rem] font-thin mb-[2rem]'}>
                     Banach Outsourcing <br />
@@ -86,14 +86,14 @@ const Banach = () => {
 
             <div ref={containerRef} className={'relative w-[40rem] mt-[5rem] '}>
                 <div ref={city2Ref} className={'left-[-130px] top-[-100px] absolute'}>
-                    <Image {...city2} layout={'fixed'} />
+                    <Image priority {...city2} layout={'fixed'} />
                 </div>
                 <div ref={city1Ref} className={'left-[-120px] top-[-200px] absolute '}>
-                    <Image {...city1} layout={'fixed'} />
+                    <Image priority {...city1} layout={'fixed'} />
                 </div>
 
                 <div ref={page2Ref} className={'rounded-t-[30px] overflow-hidden left-0 top-[0] absolute '}>
-                    <Image {...page2} />
+                    <Image priority {...page2} />
                     <video
                         src={'/assets/portfolios/Strona-pattern1.mp4'}
                         autoPlay
@@ -120,7 +120,7 @@ const Banach = () => {
                     />
                 </div>
                 <div ref={page1Ref} className={'rounded-t-[30px] overflow-hidden top-[200px] left-[160px] absolute '}>
-                    <Image {...page1} />
+                    <Image priority {...page1} />
                 </div>
                 <video
                     ref={phoneRef}

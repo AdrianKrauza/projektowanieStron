@@ -15,14 +15,14 @@ const Footer = () => {
     return (
         <div className={'footer bg-darkGray-900 pt-[5rem] '} style={{ width: 'inherit' }}>
             <div className={'text-center mb-[5rem]'}>
-                <Image {...footerImage} />
+                <Image {...footerImage} priority />
             </div>
             <h2 ref={headerRef} className={'text-center text-[white] mb-[10rem]'}>
                 Dobry pomysł na/ biznes jest wart/ dobrej strony.
             </h2>
 
             <div className={'text-center mb-[1.5rem]'}>
-                <Image {...form} />
+                <Image {...form} priority />
             </div>
 
             <p className={'text-center text-white opacity-60 pb-[10rem] text-[1rem]'}>© Owocni.pl</p>

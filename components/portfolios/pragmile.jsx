@@ -164,20 +164,20 @@ const Pragmile2 = () => {
                         'rounded-t-[30px] overflow-hidden left-0 top-[100px] absolute border-[1px] border-[#022300]'
                     }
                 >
-                    <Image {...page1} />
+                    <Image priority {...page1} />
                 </div>
                 <div ref={gateRef} className={'left-[120px] top-[190px] absolute'}>
-                    <Image {...gate} />
+                    <Image priority {...gate} />
                 </div>
                 <div ref={gate2Ref} className={'left-[190px] top-[290px] absolute'}>
-                    <Image {...gate} />
+                    <Image priority {...gate} />
                 </div>
                 <div ref={manRef} className={'left-0 top-[150px] absolute'}>
                     <div className={'w-[200px] h-[200px] bg-[#141414] absolute top-[200px] '} />
-                    <Image {...man} />
+                    <Image priority {...man} />
                 </div>
                 <div ref={text1Ref} className={'left-[120px] top-[150px] absolute'}>
-                    <Image {...text1} />
+                    <Image priority {...text1} />
                     <style jsx>{`
                         @keyframes pulse {
                             0% {
@@ -205,7 +205,7 @@ const Pragmile2 = () => {
                     <div className={'ring-button'} />
                 </div>
                 <div ref={text2Ref} className={'left-[200px] top-[300px] absolute '}>
-                    <Image {...text2} />
+                    <Image priority {...text2} />
                 </div>
                 <div ref={handRef} className={'left-0 top-[120px] absolute'}>
                     <div
@@ -213,7 +213,7 @@ const Pragmile2 = () => {
                             'bg-darkGray-900 absolute w-[1200px] translate-x-[-300px] translate-y-[250px] h-[250px]'
                         }
                     />
-                    <Image {...hand} />
+                    <Image priority {...hand} />
                     <canvas
                         className={'ml-[20px] absolute top-[11px] left-[337px]'}
                         ref={canvasRef}
@@ -222,13 +222,13 @@ const Pragmile2 = () => {
                 </div>
 
                 <div ref={box3Ref} className={'left-[-20px] top-[300px] absolute'}>
-                    <Image {...box3} />
+                    <Image priority {...box3} />
                 </div>
                 <div ref={box2Ref} className={'left-[-40px] top-[220px] absolute'}>
-                    <Image {...box2} />
+                    <Image priority {...box2} />
                 </div>
                 <div ref={box1Ref} className={'left-[-20px] top-[130px] absolute'}>
-                    <Image {...box1} />
+                    <Image priority {...box1} />
                 </div>
             </div>
         </div>

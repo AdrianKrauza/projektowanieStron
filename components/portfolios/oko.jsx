@@ -129,15 +129,15 @@ const Oko = () => {
                     style={{ background: 'radial-gradient(circle, #1D1932 0%, rgba(0,0,0,0) 74%);' }}
                 />
                 <div ref={shape1Ref} className={'left-[300px] top-[70px] absolute '}>
-                    <Image {...shape1} />
+                    <Image priority {...shape1} />
                 </div>
                 <div ref={page1Ref} className={'left-0 top-[100px] absolute rounded-t-[30px] overflow-hidden'}>
-                    <Image {...page1} />
+                    <Image priority {...page1} />
                     <div ref={shape2Ref} className={'left-[380px] top-[100px] absolute '}>
-                        <Image {...shape2} />
+                        <Image priority {...shape2} />
                     </div>
                     <div ref={handRef} className={'left-[350px] top-[160px] absolute'}>
-                        <Image {...hand} />
+                        <Image {...hand} priority />
                     </div>
                     <div
                         style={{
@@ -150,7 +150,7 @@ const Oko = () => {
                 </div>
 
                 <div ref={crowdRef} className={'left-0 top-[180px] absolute'}>
-                    <Image {...crowd} />
+                    <Image {...crowd} priority />
                 </div>
                 <div ref={videoRef} className={'left-[25px] top-[290px] absolute'}>
                     <div className={'bg-[#0C012B] w-[538px] h-[200px] absolute top-0 left-[-25px] '} />
@@ -163,7 +163,7 @@ const Oko = () => {
                     />
                 </div>
                 <div ref={page3Ref} className={'left-[15px] top-[180px] absolute scale-x-[1.7]'}>
-                    <Image {...page3} />
+                    <Image {...page3} priority />
                     <div className={'bg-[#141414] w-[538px] h-[400px] absolute left-[-30px] translate-y-[-20px] '} />
                 </div>
             </div>
