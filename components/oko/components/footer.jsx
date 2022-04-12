@@ -21,15 +21,14 @@ const Footer = ({ containerRef }) => {
     }, []);
     return (
         <div className={'footer bg-black '} style={{ width: 'inherit' }}>
-            <div className={'text-center mb-[10rem]'}>
-                <Image {...footerImage} />
+            <div className={'text-center'}>
+                <Image {...form} />
             </div>
-
             <h2 ref={headerRef} className={'text-center text-[white] mb-[10rem]'}>
                 Dobry pomysł na/ biznes jest wart/ dobrej strony.
             </h2>
-            <div className={'text-center'}>
-                <Image {...form} />
+            <div className={'text-center mb-[10rem]'}>
+                <Image {...footerImage} />
             </div>
         </div>
     );

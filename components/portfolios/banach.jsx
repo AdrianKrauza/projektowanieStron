@@ -52,7 +52,7 @@ const Banach = () => {
     }, []);
     //
     return (
-        <div className={'flex justify-center gap-[10rem] bg-[#E3E3E3] h-[70rem] pt-[20rem] '}>
+        <div className={'flex justify-center gap-[10rem] bg-[#E3E3E3] h-[60rem] pt-[10rem] overflow-hidden'}>
             <div className={'relative z-10 mt-[2rem]'}>
                 <div className={'mb-[2rem]'}>
                     <Image {...banach} />

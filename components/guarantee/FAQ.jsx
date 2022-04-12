@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import useTextAnimations from '../../hooks/useTextAnimations';
 const questions = [
     'Gwarantujecie przebić konwersję mojej obecnej strony?',
     'Mogę samodzielnie edytować lub rozbudować stronę?',
@@ -13,6 +14,7 @@ const questions = [
     'Czy możecie przyjąć mój projekt Teraz? Jak zacząć?',
 ];
 const Question = ({ question, setIsOpen, isOpen, index }) => {
+    const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         gsap.to(answerRef.current, {
             height: isOpen ? '3rem' : 0,
@@ -31,6 +33,7 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
         });
     }, [isOpen]);
     const bgRef = useRef(null);
+    const yesRef = useRef(null);
     const answerRef = useRef(null);
     const handleEnter = () => {
         gsap.to(bgRef.current, {
@@ -45,6 +48,11 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
             transformOrigin: 'left',
         });
     };
+    useEffect(() => {
+        setTimeout(() => {
+            AnimationHeadingScrub(yesRef, yesRef, -250, 200, false, true);
+        }, 0);
+    });
     return (
         <div
             onMouseEnter={handleEnter}
@@ -54,6 +62,9 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
                 'cursor-pointer border-[1px] border-t-[#cecece] border-dotted py-[1.3rem] pl-[2rem] relative    '
             }
         >
+            <p ref={yesRef} className={'text-white absolute right-[5rem] top-[1rem] font-playfair '}>
+                TAK
+            </p>
             <div ref={bgRef} className={'bg-white w-full h-full absolute left-0 top-0 -z-10 scale-x-0'} />
             <p className={'  text-[1.5rem]'}>{question}</p>
             <p ref={answerRef} className={'pl-[1rem] flex items-end  text-[1.2rem] opacity-0 h-0 overflow-hidden'}>

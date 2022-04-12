@@ -150,18 +150,6 @@ const Banach = () => {
             moveElement('.patternConvert', 400, 1250);
 
             scrollAnimationElement(
-                '.banach3',
-                {
-                    borderRadius: '100%',
-                },
-                {
-                    borderRadius: '0%',
-                },
-                50,
-                100,
-            );
-
-            scrollAnimationElement(
                 '.signature',
                 {
                     backgroundPositionX: '100%',
@@ -272,7 +260,7 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[350rem]  mt-[10rem]'}>
+        <div ref={containerRef} className={'h-[350rem]  mt-[0rem]'}>
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
                 <div
                     ref={lottieCloudRef}

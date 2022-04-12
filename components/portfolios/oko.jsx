@@ -87,7 +87,7 @@ const Oko = () => {
     }, []);
     //
     return (
-        <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[80rem] pt-[20rem] '}>
+        <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[50rem] pt-[10rem] '}>
             <div className={'relative z-10 mt-[2rem]'}>
                 <div className={'mb-[2rem]'}>
                     <Image {...oko} />

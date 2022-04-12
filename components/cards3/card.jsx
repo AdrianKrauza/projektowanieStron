@@ -30,7 +30,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                             y: '-100vh',
                             scrollTrigger: {
                                 start: `0 ${-140}%`,
-                                end: `0 ${-450}%`,
+                                end: `0 ${-430}%`,
                                 trigger: 'body',
                                 scrub: true,
                             },

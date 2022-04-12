@@ -21,7 +21,7 @@ const UseCanvasFrameAnimation = (path, images) => {
         context = el.current.getContext('2d');
         context.fillRect(25, 25, 100, 100);
         img = new Image();
-        img.src = currentFrame(1);
+        img.src = currentFrame(images[0]);
         el.current.width = width;
         el.current.height = height;
         img.onload = () => context.drawImage(img, 0, 0);

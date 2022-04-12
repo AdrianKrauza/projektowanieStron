@@ -76,7 +76,7 @@ const Guarantee = ({ setPageState }) => {
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
                 Zwiększymy konwersję Twojej/ strony albo zwrócimy Ci/ 100% środków!
             </h3>
-            <p className={'font-normal text-[1rem] m-auto block w-fit leading-[1.3] mt-[-3rem]'}>
+            <p className={'font-normal text-[1rem] m-auto block w-fit leading-[1.3] mt-[-1rem]'}>
                 <b>Łatwo policzyć:</b> Jeśli już pokonamy Twoją stronę, to nadal nie <br />
                 stracisz pieniędzy, bo każda złotówka, którą nam zapłacisz, będzie <br />
                 pochodziła z EXTRA zamówień i sprzedaży, którą wygenerujesz.

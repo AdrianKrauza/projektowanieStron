@@ -113,7 +113,7 @@ const Pragmile2 = () => {
     }, []);
     //
     return (
-        <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[50rem]'}>
+        <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[45rem] overflow-hidden'}>
             <div className={'relative z-10 mt-[2rem]'}>
                 <video
                     src={'/assets/portfolios/ezgif.com-gif-maker (36).mp4'}
@@ -204,13 +204,13 @@ const Pragmile2 = () => {
 
                     <div className={'ring-button'} />
                 </div>
-                <div ref={text2Ref} className={'left-[200px] top-[300px] absolute'}>
+                <div ref={text2Ref} className={'left-[200px] top-[300px] absolute '}>
                     <Image {...text2} />
                 </div>
                 <div ref={handRef} className={'left-0 top-[120px] absolute'}>
                     <div
                         className={
-                            'bg-darkGray-900 absolute w-[1200px] translate-x-[-300px] translate-y-[250px] h-[400px]'
+                            'bg-darkGray-900 absolute w-[1200px] translate-x-[-300px] translate-y-[250px] h-[250px]'
                         }
                     />
                     <Image {...hand} />

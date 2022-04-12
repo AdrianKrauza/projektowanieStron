@@ -31,12 +31,12 @@ const BookCanvas = ({ bookSectionRef }) => {
         gsap.registerPlugin(ScrollTrigger);
         const img = new Image();
         img.src = currentFrame(bookImages[0][0]);
-        bookCanvasRef.current.width = 960;
-        bookCanvasRef.current.height = 540;
+        bookCanvasRef.current.width = 845;
+        bookCanvasRef.current.height = 476;
         img.onload = () => context.drawImage(img, 0, 0);
 
         const updateImage = (index) => {
-            console.log(index);
+            console.log(index, context, images[index]);
             images[index] && context.drawImage(images[index], 0, 0);
         };
 

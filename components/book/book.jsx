@@ -152,7 +152,7 @@ const TopText = () => {
 
             ScrollTrigger.create({
                 trigger: topTextRef.current,
-                start: '80% 60%',
+                start: '40% 60%',
                 end: '100% 60%',
                 onEnter: () => {
                     AnimationHeading(headingRef, true);

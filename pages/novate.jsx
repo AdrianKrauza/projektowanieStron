@@ -1,5 +1,5 @@
 import PragmilePage from '../components/pragmile/pragmile';
-const Pragmile = () => {
+const Novate = () => {
     return (
         <div>
             <PragmilePage />
@@ -7,4 +7,4 @@ const Pragmile = () => {
     );
 };
 
-export default Pragmile;
+export default Novate;
