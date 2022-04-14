@@ -39,7 +39,7 @@ const Oko = () => {
             moveElement('.textSlider', 4700, 650);
             moveElement('.page3', 5200, 700);
             moveElement('.ending', 5650, 100);
-            moveElement('.footer', 6200, 100);
+            moveElement('.footer', 6100, 100);
 
             scrollAnimationElement(
                 '.page2 .boxes > div',
@@ -109,8 +109,8 @@ const Oko = () => {
     return (
         <div
             ref={containerRef}
-            style={{ background: '#06061c', height: 'calc(100vh + 6400px)' }}
-            className={'  w-screen mt-[-65rem] overflow-hidden relative -z-10'}
+            style={{ background: '#06061c', height: 'calc(100vh + 6100px)' }}
+            className={'  w-screen mt-[-65rem] overflow-hidden relative '}
         >
             <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
                 <StartImg gradient1State={gradient1State} />
@@ -118,7 +118,7 @@ const Oko = () => {
                 <Page2 />
                 <Parallax />
                 <Page3 />
-                <Footer containerRef={containerRef} />
+                <Footer />
             </div>
         </div>
     );

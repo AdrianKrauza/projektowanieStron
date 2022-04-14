@@ -1,3 +1,7 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 const Line = ({ color, top }) => {
     return (
         <div style={{ top: top }} className={'absolute  left-1/2 -translate-x-1/2'}>
@@ -89,16 +93,28 @@ const Line = ({ color, top }) => {
         </div>
     );
 };
-const Arrow = ({ color, top1, top2 }) => {
+const Arrow = ({ color, top1, top2, children }) => {
+    const containerRef = useRef(null);
+    useEffect(() => {
+        setTimeout(() => {
+            gsap.to(containerRef.current, {
+                y: '-100vh',
+                scrollTrigger: {
+                    trigger: 'body',
+                    start: '0 0%',
+                    end: '0% -40%',
+                    scrub: 1,
+                },
+            });
+        }, 0);
+    }, []);
     return (
-        <>
-            <p style={{ top: top1, color }} className={` absolute  left-1/2 -translate-x-1/2 text-[2rem]`}>
-                Team Novate - Softwarehouse
-                <br />
-                Wybrane fragmenty realizacji.
+        <div ref={containerRef} className={'w-screen absolute top-0'}>
+            <p style={{ top: top1, color }} className={` absolute  left-1/2 -translate-x-1/2 text-[2rem] text-center`}>
+                {children}
             </p>
             <Line color={color} top={top2} />
-        </>
+        </div>
     );
 };
 

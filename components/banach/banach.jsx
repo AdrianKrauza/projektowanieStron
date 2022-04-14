@@ -27,6 +27,9 @@ import dynamic from 'next/dynamic';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import lottieLoad from '../../helpers/lottieLoad';
 import logoGif from '../../assets/banach/Banach-Logo.gif';
+import Arrow from '../arrow/arrow';
+import footerImage from '../../assets/footer/Wierzymy-w-Male-Firmy.png';
+import Link from 'next/link';
 /* eslint-disable */
 // const Odometer = dynamic(import('react-odometerjs'), {
 //     ssr: false,
@@ -92,8 +95,6 @@ const Banach = () => {
             duration: 2,
         });
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef, headerRef, `${vh(600) * 0.4} 0%`, `${vh(690) * 0.4} 0%`, false, true);
-            AnimationParagraphScrub(paragraphRef, headerRef, `${vh(680) * 0.4} 0%`, `${vh(740) * 0.4} 0%`, false);
             cloudLottieData.current.goToAndStop(0, true);
             ScrollTrigger.create({
                 trigger: containerRef.current,
@@ -106,31 +107,7 @@ const Banach = () => {
                 start: `${vh(550 * 0.4)}px 0%`,
                 end: `${vh(750 * 0.4)}px 0%`,
                 onUpdate: ({ progress }) => {
-                    console.log(progress);
-                    if (progress === 1) {
-                        gsap.set([lottieCloudRef.current, '.banach1', '.page1', '.patternPhone', '.pattern'], {
-                            opacity: 0,
-                        });
-                        gsap.set(['.bg-darkGray-900'], {
-                            background: '#06061C',
-                        });
-                    } else {
-                        gsap.set([lottieCloudRef.current, '.banach1', '.page1', '.patternPhone', '.pattern'], {
-                            opacity: 1,
-                        });
-                        gsap.set(['.bg-darkGray-900'], {
-                            background: '#141414',
-                        });
-                    }
                     cloudLottieData.current.goToAndStop(Math.floor(24 * progress - 1), true);
-                },
-                onLeave: () => {
-                    document.body.classList.remove('bg-darkGray-900');
-                    document.body.classList.add('bg-lightGray');
-                },
-                onEnterBack: () => {
-                    document.body.classList.remove('bg-lightGray');
-                    document.body.classList.add('bg-darkGray-900');
                 },
             });
             percentTextRef.current.querySelectorAll('h2').forEach((el) => {
@@ -185,23 +162,17 @@ const Banach = () => {
                 225,
                 {},
             );
-            scrollAnimationElement('.cloudText', { y: '40vh' }, { y: '-300vh' }, 810, 930);
             scrollAnimationElement(
                 '.cloudText',
-                {},
                 {
-                    onEnter: () => {
-                        // videoRef.current.play();
-                        try {
-                            console.log(videoRef);
-                            videoRef.current.play();
-                        } catch (err) {
-                            console.log(err);
-                        }
-                    },
+                    opacity: '0',
                 },
-                980,
-                930,
+                {
+                    opacity: 100,
+                },
+                880,
+                225,
+                {},
             );
             banachTextScrollAnimation(containerRef, '.animation-header1', 250 * 0.4);
             banachTextScrollAnimation(containerRef, '.animation-header2', 450 * 0.4);
@@ -260,8 +231,18 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[350rem]  mt-[0rem]'}>
+        <div ref={containerRef} className={'h-[350vh] bg-[#E2E2E2]  mt-[0rem]'}>
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
+                <div
+                    style={{ transform: 'translate(-50%,-25vw)   ', bottom: 'auto' }}
+                    className={'startImg3  w-screen -translate-x-1/2 left-1/2  z-30'}
+                >
+                    <Arrow color={'#878073'} top1={'calc(  100vh)'} top2={'calc( 120vh)'}>
+                        Banach Outsourcing <br />
+                        Wybrane fragmenty realizacji.
+                    </Arrow>
+                </div>
+
                 <div
                     ref={lottieCloudRef}
                     style={{ transform: 'translateX(-50%)' }}
@@ -273,30 +254,45 @@ const Banach = () => {
                         className={'pointer-events-none banachCloud z-50 w-screen  '}
                     />
                 </div>
+                {/**/}
                 <div
                     style={{ transform: 'translateX(-50%)' }}
                     className={
-                        'cloudText pointer-events-none w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen'
+                        'cloudText  w-screen h-screen z-50 w-screen absolute -translate-x-1/2 left-1/2 top-0 h-screen'
                     }
                 >
-                    <h2 ref={headerRef} className={'text-[7rem] mt-[10rem] text-center text-lightGray'}>
-                        2x lepsza stron,/ pomoże Ci stworzyć/ 2x lepszy biznes.
-                    </h2>
-                    <div>
-                        <p ref={paragraphRef} className={'text-[#dfdfdf] mt-[3rem] text-center text-[2rem]'}>
-                            2x więcej zapytań, 2x więcej sprzedaży, 2x więcej zysków.{' '}
-                        </p>
-                    </div>
-                    <div
-                        className={`  flex flex-col justify-center h-[400px]  absolute items-center w-full mt-[20rem]`}
-                    >
-                        <div className={'mb-[4rem]'}>
-                            <video ref={videoRef} src="/assets/oko/Oko-logo.mp4" muted className={'w-96'} />
+                    <div className={'mt-[4rem] '} style={{ width: 'inherit' }}>
+                        <div className={'m-auto flex justify-center'}>
+                            <Image {...footerImage} />
                         </div>
-                        <p className={'text-center text-[#dfdfdf]'}>
-                            Studio OKO - Przykład strony dla <br />
-                            studia wideo rozszerzonej rzeczywistości.
-                        </p>
+                        <button
+                            className={
+                                ' bg-[#E3E3E3] color-[#E3E3E3]  text-[1.6rem] py-[1rem] rounded-[2rem] font-normal text-center w-[37rem] m-auto block my-[2rem]'
+                            }
+                        >
+                            Wyślijcie mi niezobowiązującą ofertę
+                        </button>
+
+                        <div className={'flex w-[37rem] gap-[2rem] m-auto '}>
+                            <Link href={'/'} passHref>
+                                <a
+                                    className={
+                                        'border-[1px] border-[#E3E3E3] color-[#E3E3E3] text-[1.6rem] font-normal px-[2rem] py-[1rem] rounded-[2rem] w-1/2 text-center'
+                                    }
+                                >
+                                    Powrót
+                                </a>
+                            </Link>
+                            <Link href={'/novate'} passHref>
+                                <a
+                                    className={
+                                        'border-[1px] border-[#E3E3E3] color-[#E3E3E3] text-[1.6rem] font-normal px-[2rem] py-[1rem] rounded-[2rem] w-1/2 text-center'
+                                    }
+                                >
+                                    Następny projekt
+                                </a>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div

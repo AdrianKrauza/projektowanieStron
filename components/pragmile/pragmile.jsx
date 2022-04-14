@@ -13,6 +13,7 @@ import End from './components/end';
 import Phone from './components/phone';
 import UseCanvasFrameAnimation from '../../hooks/useCanvasFrameAnimation';
 import If from './components/if';
+import Footer from './components/footer';
 gsap.registerPlugin(ScrollTrigger);
 const vh = (coef) => window.innerHeight * (coef / 100);
 const Pragmile = ({ setPageState }) => {
@@ -26,23 +27,7 @@ const Pragmile = ({ setPageState }) => {
                 opacity: 1,
                 duration: 2,
             });
-            ScrollTrigger.create({
-                trigger: containerRef.current,
-                start: `${(vh(300 + 100) + 16000) * 0.4} 0px`,
 
-                onEnter: () => {
-                    gsap.set('body', {
-                        background: 'rgb(10,10,10)',
-                    });
-                    gsap.to('body', {
-                        opacity: 0,
-                        duration: 0.2,
-                        onComplete: () => {
-                            setPageState(1);
-                        },
-                    });
-                },
-            });
             pinPortfolio(containerRef);
             // moveElement('.startImg3', 1200, 8000, false, 0.3);
             moveElement('.page1', 1080, 7000);
@@ -73,6 +58,7 @@ const Pragmile = ({ setPageState }) => {
             moveElement('.box2_1', 12200, 1200);
             moveElement('.box2_2', 12300, 1000);
             moveElement('.box2_3', 12700, 300);
+            moveElement('.footer', 13500, 500);
             //
             scrollAnimationElement(
                 '.startImg3 img',
@@ -221,15 +207,18 @@ const Pragmile = ({ setPageState }) => {
     }, []);
     return (
         //
-        <div ref={containerRef} className={'h-[20000px] bg-[#141414] w-screen mt-[-35rem] '}>
+        <div
+            ref={containerRef}
+            style={{ height: 'calc(5400px + 150vh)' }}
+            className={' bg-[#141414] w-screen mt-[-35rem] overflow-hidden '}
+        >
             <div className={'pin w-[1350px] relative h-screen  bg-[#141414] -translate-x-1/2 left-1/2 opacity-0 '}>
                 <StartImg />
                 <Page1 />
                 <Page2 initCanvas={initCanvas} />
                 <Page3 />
-                {/*<Phone />*/}
                 <End />
-                <If containerRef={containerRef} />
+                <Footer />
             </div>
         </div>
     );

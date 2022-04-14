@@ -10,16 +10,16 @@ const StartImg = ({ gradient1State }) => {
     const ArrowRef = useRef(null);
     useEffect(() => {
         setTimeout(() => {
-            gsap.to(ArrowRef.current, {
-                y: '5vw',
-                scrollTrigger: {
-                    start: `0 100%`,
-                    end: `0% 50%`,
-
-                    scrub: true,
-                    trigger: ArrowRef.current,
-                },
-            });
+            // gsap.to(ArrowRef.current, {
+            //     y: '5vw',
+            //     scrollTrigger: {
+            //         start: `0 100%`,
+            //         end: `0% 50%`,
+            //
+            //         scrub: true,
+            //         trigger: ArrowRef.current,
+            //     },
+            // });
         }, 0);
     }, []);
     return (
@@ -38,7 +38,10 @@ const StartImg = ({ gradient1State }) => {
                     className={'absolute w-screen h-[100%]  top-[0rem]'}
                 />
                 <div ref={ArrowRef}>
-                    <Arrow color={'#9e94bb'} top1={'calc( 25vw + 30vh)'} top2={'calc( 25vw + 50vh)'} />
+                    <Arrow color={'#9e94bb'} top1={'calc( 25vw + 30vh)'} top2={'calc( 25vw + 50vh)'}>
+                        OKO - Wyposażenie studia wideo.
+                        <br /> Wybrane fragmenty realizacji.
+                    </Arrow>
                 </div>
             </div>
             {/*<div className={'szejp '} style={{ left: 'calc((-50vw + (1350px / 2))' }}>*/}

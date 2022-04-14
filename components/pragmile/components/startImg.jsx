@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import startImg from '/assets/pragmile/Tlo.jpg';
 import { useEffect } from 'react';
+import Arrow from '../../arrow/arrow';
 
 const StartImg = () => {
     return (
@@ -9,7 +10,12 @@ const StartImg = () => {
             style={{ transform: 'translateX(-50%)  scale(1.5)', bottom: 'auto' }}
         >
             <Image priority {...startImg} layout={'responsive'} quality={100} />
-
+            <div>
+                <Arrow color={'#aeccab'} top1={'calc( 35rem - 30vh)'} top2={'calc( 35rem - 10vh)'}>
+                    Team Novate - Softwarehouse <br />
+                    Wybrane fragmenty realizacji.
+                </Arrow>
+            </div>
             <div className={'bg-gradient-to-t from-[#141414] w-screen h-[150px] absolute bottom-[-40%]'} />
             <div
                 style={{
