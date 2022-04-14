@@ -12,15 +12,15 @@ export default function Home({ index }) {
     return (
         <div>
             {/*<Loading />*/}
-            {/*<Header />*/}
-            {/*<If />*/}
-            {/*<Cards3 />*/}
-            {/*<Tablets />*/}
-            {/*<Letters />*/}
-            {/*<Book />*/}
-            {/*<Guarantee />*/}
-            {/*<Portfolios />*/}
-            {/*<Footer />*/}
+            <Header />
+            <If />
+            <Cards3 />
+            <Tablets />
+            <Letters />
+            <Book />
+            <Guarantee />
+            <Portfolios />
+            <Footer />
         </div>
     );
 }
