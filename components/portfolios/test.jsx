@@ -14,6 +14,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import UseCanvasFrameAnimation from '../../hooks/useCanvasFrameAnimation';
 gsap.registerPlugin(ScrollTrigger);
 import Link from 'next/link';
+import oko from '../../assets/portfolios/';
 //
 const Pragmile2 = () => {
     const page1Ref = useRef();
@@ -114,13 +115,9 @@ const Pragmile2 = () => {
     return (
         <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[45rem] overflow-hidden'}>
             <div className={'relative z-10 mt-[2rem]'}>
-                <video
-                    src={'/assets/portfolios/ezgif.com-gif-maker (36).mp4'}
-                    autoPlay
-                    muted
-                    loop
-                    className={'w-[247px] mb-[2rem]'}
-                />
+                <div className={'mb-[2rem]'}>
+                    <Image priority {...oko} />
+                </div>
                 <h2 className={'text-white font-roboto text-[2.5rem] font-thin mb-[2rem]'}>
                     Team Novate <br />
                     Innowacyjny projekt strony <br />
