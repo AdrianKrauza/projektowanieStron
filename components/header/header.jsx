@@ -118,6 +118,7 @@ const Header = () => {
         });
         gsap.fromTo(
             imageRef.current,
+
             {
                 rotate: 5,
                 scale: 1.5,
