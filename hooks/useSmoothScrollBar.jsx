@@ -27,6 +27,7 @@ const UseSmoothScrollBar = ({ children }) => {
                 });
             }
         }, 0);
+
         return () => {
             const t = ScrollTrigger.getAll();
             t.forEach((t) => t.kill());

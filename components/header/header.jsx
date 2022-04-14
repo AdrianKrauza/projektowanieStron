@@ -11,10 +11,83 @@ import { GradientAnimation } from '../../helpers/gradientAnimation';
 import Logo from './logo';
 const vh = (coef) => window.innerHeight * (coef / 100);
 gsap.registerPlugin(ScrollTrigger);
+const Timer = () => {
+    return (
+        <div className="dw mx-[.5rem]">
+            <style jsx>{`
+                .dw {
+                    height: 3rem;
+                    overflow: hidden;
+                }
+                .con {
+                    display: flex;
+                }
+                .con div {
+                    display: flex;
+                    flex-direction: column;
+                }
+                span {
+                    height: 3rem;
+                    font-size: 2.5rem;
+                    background: #141414;
+                }
+                .last {
+                    position: absolute;
+                }
+                .s2 {
+                    animation: letteranim 0.33s 10 linear;
+                    animation-timing-function: steps(10, end);
+                    animation-fill-mode: forwards;
+                }
+                .s1 {
+                    animation: letteranim 3.33s 1 linear;
+                    animation-timing-function: steps(10, end);
+                    animation-fill-mode: forwards;
+                }
 
+                @keyframes letteranim {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    100% {
+                        transform: translateY(-100%);
+                    }
+                }
+            `}</style>
+            <span className="last">99</span>
+            <div className="con">
+                <div className="s1">
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                </div>
+                <div className="s2">
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                </div>
+            </div>
+        </div>
+    );
+};
 const Header = () => {
     const { AnimationHeading, AnimationParagraph } = UseTextAnimations();
     const headerRef = useRef();
+    const waitingRef = useRef();
     const gradientRefMobile = useRef();
     const paragraphRef = useRef();
     const gradientRef = useRef();
@@ -23,6 +96,7 @@ const Header = () => {
     const mouseDownRef = useRef();
     const imageBgRef = useRef();
     const navRef = useRef();
+
     gsap.fromTo(
         headerRef.current,
         {
@@ -35,6 +109,10 @@ const Header = () => {
         },
     );
     useEffect(() => {
+        gsap.to(waitingRef.current, {
+            opacity: 0,
+            duration: 0.5,
+        });
         gsap.set(imageRef.current, {
             opacity: 1,
         });
@@ -120,7 +198,7 @@ const Header = () => {
         });
 
         setTimeout(() => {
-            AnimationHeading(headerRef, true);
+            // AnimationHeading(headerRef, true);
             setTimeout(() => {
                 gsap.to(mouseDownRef.current, {
                     duration: 2,
@@ -160,19 +238,26 @@ const Header = () => {
                             <h1
                                 ref={headerRef}
                                 className={
-                                    'text-[6.5rem] m:ml-0 ml-14 text-[#dfdfdf] font-black font-playfair leading-[0.85] pt-40 opacity-0 relative z-20 m:text-center m:text-[12rem]'
+                                    'text-[6.5rem] m:ml-0 ml-14 text-[#dfdfdf] font-black font-playfair leading-[0.85] pt-40 relative z-20 m:text-center m:text-[12rem]'
                                 }
                             >
                                 <span className={'block tracking-[1px]'}>Tu się tworzy</span>
                                 <span className={'block tracking-[1px]'}>dobre strony </span>
                             </h1>
                             <p
+                                ref={waitingRef}
+                                className={
+                                    'absolute ml-14 m:ml-0 text-[2.5rem] text-[#dfdfdf] font-thin font-roboto mt-10 leading-[1.2]  z-20  m:text-center m:text-[6rem] flex  '
+                                }
+                            >
+                                Momencik <Timer /> %
+                            </p>
+                            <p
                                 ref={paragraphRef}
                                 className={
                                     'ml-14 m:ml-0 text-[2.5rem] text-[#dfdfdf] font-thin font-roboto mt-10 leading-[1.2] opacity-0  relative z-20  m:text-center m:text-[6rem]'
                                 }
                             >
-                                {/*14 -ml-12*/}
                                 <span className={'block tracking-[-1px]'}>Projektujemy przyjemne, cyfrowe</span>
                                 <span className={'block tracking-[-2px]'}>doświadczenia, które dostarczają</span>
                                 <span className={'block tracking-[-3px]'}>topowych wyników biznesowych.</span>
@@ -224,11 +309,13 @@ const Header = () => {
                                         max-width: unset !important;
                                     }
                                 `}</style>
-                                <div className={'absolute left-[20rem] top-[2rem] w-[52rem]'}>
-                                    <Image {...preVideo} priority />
-                                </div>
-
-                                <video src="/assets/header/video.mp4" autoPlay={true} muted={true} loop={true} />
+                                <video
+                                    src="/assets/header/video.mp4"
+                                    poster={'/assets/header/poster.jpg'}
+                                    autoPlay
+                                    muted
+                                    loop
+                                />
                             </div>
                             {/*<div*/}
                             {/*    ref={imageBgRef}*/}

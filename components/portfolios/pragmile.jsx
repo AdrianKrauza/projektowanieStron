@@ -39,7 +39,6 @@ const Pragmile2 = () => {
                 trigger: containerRef.current,
                 start: '0 80%',
                 end: '0% 20%',
-                markers: true,
                 scrub: 3,
             };
             gsap.to(circle1Ref.current, {

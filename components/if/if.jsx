@@ -46,6 +46,9 @@ const If = () => {
                     },
                 },
             );
+            gsap.set(pinRef.current, {
+                opacity: 1,
+            });
             ScrollTrigger.create({
                 trigger: 'body ',
                 pin: pinRef.current,
@@ -57,7 +60,7 @@ const If = () => {
     return (
         <>
             <Cloud />
-            <div ref={pinRef} className={'w-screen  h-screen absolute top-[20vh]'}>
+            <div ref={pinRef} className={'w-screen  h-screen absolute top-[20vh] opacity-0'}>
                 <div ref={ifContentRef} className={''}>
                     <h2 ref={headerRef} className={'text-center text-[6.5rem] text-[#dfdfdf]  '}>
                         <span>Owocne strony będą</span>

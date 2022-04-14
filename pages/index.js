@@ -7,10 +7,12 @@ import Letters from '../components/letters/letters';
 import If from '../components/if/if';
 import Portfolios from '../components/portfolios/portfolios';
 import Footer from '../components/footer/footer';
+import Loading from '../components/Loading/Loading';
 
 export default function Home({ index }) {
     return (
-        <>
+        <div>
+            {/*<Loading />*/}
             <Header />
             <If />
             <Cards3 />
@@ -20,6 +22,6 @@ export default function Home({ index }) {
             <Guarantee />
             <Portfolios />
             <Footer />
-        </>
+        </div>
     );
 }

@@ -46,7 +46,7 @@ const Cards3 = () => {
                 </h2>
                 <Card
                     mask={'/assets/cards3/maska_dicaprioSV.svg'}
-                    video={'/assets/cards3/Logo+Identyfikacja.mp4'}
+                    video={'/assets/cards3/LogoIdentyfikacja.mp4'}
                     title={'UX & design'}
                     index={0}
                     image={image2}
