@@ -6,6 +6,7 @@ import hand from '/assets/portfolios/Dlon-Mobile-Design.png';
 import shape1 from '/assets/portfolios/Tlo-strony.png';
 import crowd from '/assets/portfolios/Tlum.png';
 import oko from '/assets/portfolios/Logo-strony-oko.jpg';
+import hipnotyzuj from '/assets/oko/Hipnotyzuj.gif';
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
@@ -90,7 +91,7 @@ const Oko = () => {
         <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[50rem] pt-[10rem] '}>
             <div className={'relative z-10 mt-[2rem]'}>
                 <div className={'mb-[2rem]'}>
-                    <Image {...oko} />
+                    <Image priority {...oko} />
                 </div>
 
                 <h2 className={'text-[#60578f] font-roboto text-[2.5rem] font-thin mb-[2rem]'}>
@@ -154,13 +155,16 @@ const Oko = () => {
                 </div>
                 <div ref={videoRef} className={'left-[25px] top-[290px] absolute'}>
                     <div className={'bg-[#0C012B] w-[538px] h-[200px] absolute top-0 left-[-25px] '} />
-                    <video
-                        src={'/assets/portfolios/Hipnotyzuj-strona-oko.mp4'}
-                        autoPlay
-                        muted
-                        loop
-                        className={'relative'}
-                    />
+                    <div className={'flex justify-center w-[490px]'}>
+                        <Image {...hipnotyzuj} />
+                    </div>
+                    {/*<video*/}
+                    {/*    src={'/assets/portfolios/Hipnotyzuj-strona-oko.mp4'}*/}
+                    {/*    autoPlay*/}
+                    {/*    muted*/}
+                    {/*    loop*/}
+                    {/*    className={'relative'}*/}
+                    {/*/>*/}
                 </div>
                 <div ref={page3Ref} className={'left-[15px] top-[180px] absolute scale-x-[1.7]'}>
                     <Image {...page3} priority />

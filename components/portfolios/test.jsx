@@ -14,7 +14,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import UseCanvasFrameAnimation from '../../hooks/useCanvasFrameAnimation';
 gsap.registerPlugin(ScrollTrigger);
 import Link from 'next/link';
-import oko from '../../assets/portfolios/';
+import oko from '../../assets/portfolios/Logo-Teamnovate.jpg';
 //
 const Pragmile2 = () => {
     const page1Ref = useRef();
@@ -206,10 +206,10 @@ const Pragmile2 = () => {
                 <div ref={handRef} className={'left-0 top-[120px] absolute'}>
                     <div
                         className={
-                            'bg-darkGray-900 absolute w-[1200px] translate-x-[-300px] translate-y-[250px] h-[250px]'
+                            'bg-darkGray-900 absolute w-[1200px] translate-x-[-300px] translate-y-[250px] h-[300px]'
                         }
                     />
-                    <Image priority {...hand} />
+                    <Image quality={100} priority {...hand} />
                     <canvas
                         className={'ml-[20px] absolute top-[11px] left-[337px]'}
                         ref={canvasRef}
