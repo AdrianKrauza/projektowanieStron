@@ -11,7 +11,7 @@ const UsePortfolio = () => {
         container = containerRef;
         ScrollTrigger.create({
             trigger: containerRef.current,
-            pin: containerRef.current.querySelector('.pin2'),
+            pin: containerRef.current?.querySelector('.pin2'),
             start: '0% 0%',
             end: '100% 0%',
         });

@@ -118,9 +118,10 @@ const Oko = () => {
                 >
                     Witalij Bińkowski - Właściciel
                 </p>
-                <Link href={'/oko'} target={'_blank'} rel="noreferrer" passHref>
-                    <a className={'text-[1.5rem] text-[#342c5d]'}>Zobacz realizacje</a>
-                </Link>
+
+                <a href={'/oko'} target={'_blank'} className={'text-[1.5rem] text-[#342c5d]'} rel="noreferrer">
+                    Zobacz realizacje
+                </a>
             </div>
 
             <div ref={containerRef} className={'relative w-[40rem] mt-[5rem] '}>

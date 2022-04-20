@@ -1572,17 +1572,21 @@ const Letters = () => {
         }, 0);
     }, []);
     return (
-        <div
-            ref={containerRef}
-            className={
-                'pointer-events-none h-[1px] relative z-50 top-[-44rem] left-[10rem] flex mb-[30rem] w-[60rem] m-auto'
-            }
-        >
-            <div className={'top-[-14.5rem] left-[-14.8rem] relative w-full'}>
-                <UpperLine />
-            </div>
+        <div className={'bg-lightGray pb-[30rem]'}>
+            <div
+                ref={containerRef}
+                className={'pointer-events-none h-[1px] relative z-50 top-[-44rem] left-[10rem] flex  w-[60rem] m-auto'}
+            >
+                <div className={'top-[-14.5rem] left-[-14.8rem] relative w-full'}>
+                    <UpperLine />
+                </div>
 
-            <Lottie animationData={letters} lottieRef={letterRef} className={`w-full absolute pointer-events-none`} />
+                <Lottie
+                    animationData={letters}
+                    lottieRef={letterRef}
+                    className={`w-full absolute pointer-events-none`}
+                />
+            </div>
         </div>
     );
 };

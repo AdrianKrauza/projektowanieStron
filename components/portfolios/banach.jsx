@@ -79,9 +79,11 @@ const Banach = () => {
                 >
                     Piotr Banach - Manager
                 </p>
-                <Link href={'/banach'} target={'_blank'} rel="noreferrer" passHref>
-                    <a className={'text-[1.5rem] text-[#ab854a]'}>Zobacz realizacje</a>
-                </Link>
+                {/*<Link href={'/banach'} target={'_blank'} rel="noreferrer" passHref>*/}
+                <a href={'/banach'} target={'_blank'} className={'text-[1.5rem] text-[#ab854a]'} rel="noreferrer">
+                    Zobacz realizacje
+                </a>
+                {/*</Link>*/}
             </div>
 
             <div ref={containerRef} className={'relative w-[40rem] mt-[5rem] '}>

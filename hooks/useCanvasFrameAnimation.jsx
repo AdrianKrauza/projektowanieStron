@@ -14,7 +14,7 @@ const UseCanvasFrameAnimation = (path, images) => {
                 images2[i] = new Image();
                 images2[i].src = currentFrame(i);
             }
-        }, 5000);
+        }, 10000);
     };
 
     const initCanvas = (el, width, height) => {
@@ -31,7 +31,6 @@ const UseCanvasFrameAnimation = (path, images) => {
     };
 
     const updateImage = (index) => {
-        console.log(images2[index % images[1]], images, index);
         images2[index % images[1]] && context.drawImage(images2[index % images[1]], 0, 0);
     };
 

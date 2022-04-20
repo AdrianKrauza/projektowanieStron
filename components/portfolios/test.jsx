@@ -139,11 +139,12 @@ const Pragmile2 = () => {
                 >
                     Marcin Kowalski - Założyciel
                 </p>
-                <Link href={'/novate'} target={'_blank'} rel="noreferrer" passHref>
-                    <a className={'text-[1.5rem] text-[#0e563f]'}>Zobacz realizacje</a>
-                </Link>
+
+                <a href={'/novate'} target={'_blank'} className={'text-[1.5rem] text-[#0e563f]'} rel="noreferrer">
+                    Zobacz realizacje
+                </a>
             </div>
-            <div ref={containerRef} className={'relative w-[40rem] mt-[10rem] '}>
+            <div ref={containerRef} className={'relative w-[640px] mt-[10rem] '}>
                 <div
                     ref={circle1Ref}
                     className={'left-[-100px] w-[500px] h-[500px] top-[150px] absolute '}

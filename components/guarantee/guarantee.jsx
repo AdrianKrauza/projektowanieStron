@@ -1,5 +1,5 @@
 import useTextAnimations from '../../hooks/useTextAnimations';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useRouter } from 'next/router';
@@ -38,8 +38,12 @@ const Guarantee = ({ setPageState }) => {
     const pulsRef = useRef();
     const openBlackRef = useRef();
     const router = useRouter();
+    const [videoName, setVideoName] = useState('');
+    const [videoName2, setVideoName2] = useState('');
     useEffect(() => {
         setTimeout(() => {
+            setTimeout(() => setVideoName('/assets/gu/Projektowanie-stron-statystyki.mp4 '), 6000);
+            setTimeout(() => setVideoName2('/assets/gu/Projektowanie-UX.mp4 '), 8000);
             AnimationHeadingScrub(heading2Ref, heading2Ref, -50, 200, false, true);
             AnimationHeadingScrub(heading3Ref, heading3Ref, -50, 200, false, true);
             AnimationHeadingScrub(headerRef, headerRef, -150, 100, false, true);
@@ -66,20 +70,20 @@ const Guarantee = ({ setPageState }) => {
         }, 0);
     }, []);
     return (
-        <div ref={conRef} className={`w-screen   relative z-10 mt-[32rem] bg-lightGray `}>
+        <div ref={conRef} className={`w-screen   relative z-10 pt-[35rem] bg-lightGray `}>
             <div
                 ref={pulsRef}
                 style={{ background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 45%)' }}
-                className={'left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] absolute -z-10 -mt-[3rem]'}
+                className={'left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] absolute -z-10 -mt-[3rem] z-[]'}
             />
             <h2 className={'text-center text-[15rem]  my-0 '}>GWARANCJA</h2>
             <h3 ref={headerRef} className={'text-center   text-[5.5rem] mt-[10rem] '}>
                 Zwiększymy konwersję Twojej/ strony albo zwrócimy Ci/ 100% środków!
             </h3>
             <p className={'font-normal text-[1rem] m-auto block w-fit leading-[1.3] mt-[-1rem]'}>
-                <b>Łatwo policzyć:</b> Jeśli już pokonamy Twoją stronę, to nadal nie <br />
-                stracisz pieniędzy, bo każda złotówka, którą nam zapłacisz, będzie <br />
-                pochodziła z EXTRA zamówień i sprzedaży, którą wygenerujesz.
+                <b>Łatwo policzyć:</b> Jeśli przebijemy konwersję Twojej strony to też nie tracisz. <br />
+                Bo każda złotówka, którą nam zapłacisz, wróci do Ciebie z dodatkowych <br />
+                zamówień i sprzedaży zdobytych dzięki dużo wyższej konwersji strony.
             </p>
             <button
                 className={
@@ -108,7 +112,7 @@ const Guarantee = ({ setPageState }) => {
                 <video
                     className={'-mb-[50px]'}
                     style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
-                    src="/assets/gu/Projektowanie-stron-statystyki.mp4"
+                    src={videoName}
                     loop
                     autoPlay
                     muted
@@ -148,16 +152,18 @@ const Guarantee = ({ setPageState }) => {
             </a>
             <div className={'flex justify-center'}>
                 <Image priority quality={100} {...img3} />
-                <video
-                    style={{
-                        WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
-                    }}
-                    src="/assets/gu/Projektowanie-UX.mp4 "
-                    className={'absolute w-[670px] translate-y-[45px] translate-x-[-5px] -mb-[4rem]'}
-                    muted
-                    loop
-                    autoPlay
-                />
+                <div className={'absolute w-[670px] translate-y-[45px] translate-x-[-5px] -mb-[4rem]'}>
+                    <video
+                        style={{
+                            WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
+                        }}
+                        src={videoName2}
+                        className={' w-[670px] '}
+                        muted
+                        loop
+                        autoPlay
+                    />
+                </div>
             </div>
             <div />
             <div className={'flex align-center justify-center mt-[-86px] ml-[100px] z-10 relative'}>

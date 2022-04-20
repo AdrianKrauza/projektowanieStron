@@ -14,7 +14,7 @@ const Tablets = () => {
         }, 0);
     }, []);
     return (
-        <div className={'mt-[160vh] '}>
+        <div className={'mt-[160vh] bg-lightGray '}>
             <h2 ref={headingRef} className={'text-center text-darkGray'}>
                 Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
             </h2>

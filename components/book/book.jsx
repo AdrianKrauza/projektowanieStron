@@ -17,12 +17,8 @@ const textsSpace = [
 const texts = [
     [
         ['W sieci jest więcej ', 'klientów niż Twoja firma ', 'jest w stanie obsłużyć.  '],
-        [
-            'Jak kupuje się bułki w sklepie, ',
-            'tak możesz kupić od Google',
-            'czy Facebook więcej ruchu,',
-            'niż udźwigną Twoje serwery.',
-        ],
+        ['Jeszcze dziś kupisz od Google', 'czy Facebook więcej ruchu niż', 'udźwigną Twoje serwery.'],
+        ['Ruch to nie problem.', 'Problem to konwersja.'],
     ],
     [
         [
@@ -184,55 +180,62 @@ const TopText = () => {
 const Book = () => {
     const bookSectionRef = useRef();
     return (
-        <div ref={bookSectionRef} className={'relative w-[100rem] m-auto  -mt-[28rem] z-20 '}>
-            <BookCanvas bookSectionRef={bookSectionRef} />
-            <WhiteSpheres bookSectionRef={bookSectionRef} />
-            <div style={{ perspective: '100px' }} className={' right-0 mb-96 ml-[25rem] mt-[35rem] translate-y-[4rem]'}>
-                <p
-                    style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg) translateY(2rem)' }}
-                    className={'leading-snug font-size'}
+        <div className={'bg-lightGray'}>
+            <div ref={bookSectionRef} className={'relative w-[100rem] m-auto  -mt-[28rem] z-20 '}>
+                <BookCanvas bookSectionRef={bookSectionRef} />
+                <WhiteSpheres bookSectionRef={bookSectionRef} />
+                <div
+                    style={{ perspective: '100px' }}
+                    className={' right-0 mb-96 ml-[25rem] pt-[35rem] translate-y-[4rem]'}
                 >
-                    <span>To czego się tu dowiesz zmieni </span>
-                    <span>Twój sposób myślenia </span>
-                    <span>o firmie w internecie</span>
-                </p>
-            </div>
-            <div className={'hidden'}>
-                <div className={'h-72'} />
-                <div className={'h-2'} />
-            </div>
-            <TopText />
-            {texts.map((text, index) => (
-                <div key={index} className={'ml-36'}>
-                    <div
-                        className={`h-${
-                            !index ? 60 : 65
-                        } space m:h-[60rem] justify-center w-[32rem]  mt-20  z-20 relative flex items-center  `}
+                    <p
+                        style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg) translateY(2rem)' }}
+                        className={'leading-snug font-size'}
                     >
-                        <p
-                            className={`text-center text-[${useIsFirefox() ? 2 : 5}rem] font-[600] blur-[4px] font-${
-                                !useIsFirefox() ? 'robotoMono' : 'roboto'
-                            } text-[#E7E6E8]`}
-                        >
-                            {textsSpace[index][0]}
-                            <span className={'text-[8rem]'}>{textsSpace[index][1]}</span>
-                        </p>
-                    </div>
-                    <div className={'font-robotoMono'} />
-                    {text.map((paragraph) => (
-                        <p
-                            className={`m:text-[8rem] text-[${useIsFirefox() ? 2.9 : 3.4}rem] mt-20 font-${
-                                !useIsFirefox() ? 'robotoMono' : 'roboto'
-                            }`}
-                            key={paragraph.join()}
-                        >
-                            {paragraph.map((line) => (
-                                <Line key={line} line={line} />
-                            ))}
-                        </p>
-                    ))}
+                        <span>To czego się tu dowiesz zmieni </span>
+                        <span>Twój sposób myślenia </span>
+                        <span>o firmie w internecie</span>
+                    </p>
                 </div>
-            ))}
+                <div className={'hidden'}>
+                    <div className={'h-72'} />
+                    <div className={'h-2'} />
+                </div>
+                <TopText />
+                {texts.map((text, index) => (
+                    <div key={index} className={'ml-36'}>
+                        <div
+                            className={`h-${
+                                !index ? 60 : 65
+                            } space m:h-[60rem] justify-center w-[32rem]  mt-20  z-20 relative flex items-center  `}
+                        >
+                            <p
+                                className={`text-center text-[${
+                                    useIsFirefox() ? 2 : 5
+                                }rem] font-[600] blur-[4px] font-${
+                                    !useIsFirefox() ? 'robotoMono' : 'roboto'
+                                } text-[#E7E6E8]`}
+                            >
+                                {textsSpace[index][0]}
+                                <span className={'text-[8rem]'}>{textsSpace[index][1]}</span>
+                            </p>
+                        </div>
+                        <div className={'font-robotoMono'} />
+                        {text.map((paragraph) => (
+                            <p
+                                className={`m:text-[8rem] text-[${useIsFirefox() ? 2.9 : 3.4}rem] mt-20 font-${
+                                    !useIsFirefox() ? 'robotoMono' : 'roboto'
+                                }`}
+                                key={paragraph.join()}
+                            >
+                                {paragraph.map((line) => (
+                                    <Line key={line} line={line} />
+                                ))}
+                            </p>
+                        ))}
+                    </div>
+                ))}
+            </div>{' '}
         </div>
     );
 };

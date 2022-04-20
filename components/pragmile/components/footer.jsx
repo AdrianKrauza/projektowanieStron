@@ -20,24 +20,22 @@ const Footer = ({ containerRef }) => {
             </button>
 
             <div className={'flex w-[37rem] gap-[2rem] m-auto '}>
-                <Link href={'/'} passHref>
-                    <a
-                        className={
-                            'border-[1px] border-[#E3E3E3] color-[#E3E3E3] text-[1.6rem] font-normal px-[2rem] py-[1rem] rounded-[2rem] w-1/2 text-center'
-                        }
-                    >
-                        Powrót
-                    </a>
-                </Link>
-                <Link href={'/oko'} passHref>
-                    <a
-                        className={
-                            'border-[1px] border-[#E3E3E3] color-[#E3E3E3] text-[1.6rem] font-normal px-[2rem] py-[1rem] rounded-[2rem] w-1/2 text-center'
-                        }
-                    >
-                        Następny projekt
-                    </a>
-                </Link>
+                <a
+                    href={'/'}
+                    className={
+                        'border-[1px] border-[#E3E3E3] color-[#E3E3E3] text-[1.6rem] font-normal px-[2rem] py-[1rem] rounded-[2rem] w-1/2 text-center'
+                    }
+                >
+                    Powrót
+                </a>
+                <a
+                    href={'/oko'}
+                    className={
+                        'border-[1px] border-[#E3E3E3] color-[#E3E3E3] text-[1.6rem] font-normal px-[2rem] py-[1rem] rounded-[2rem] w-1/2 text-center'
+                    }
+                >
+                    Następny projekt
+                </a>
             </div>
         </div>
     );

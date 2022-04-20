@@ -27,14 +27,14 @@ export const Clouds = () => {
                         onUpdate: ({ progress }) => {
                             spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
                         },
-                        onLeave: () => {
-                            document.body.classList.remove('bg-darkGray-900');
-                            document.body.classList.add('bg-lightGray');
-                        },
-                        onEnterBack: () => {
-                            document.body.classList.remove('bg-lightGray');
-                            document.body.classList.add('bg-darkGray-900');
-                        },
+                        // onLeave: () => {
+                        //     document.body.classList.remove('bg-darkGray-900');
+                        //     document.body.classList.add('bg-lightGray');
+                        // },
+                        // onEnterBack: () => {
+                        //     document.body.classList.remove('bg-lightGray');
+                        //     document.body.classList.add('bg-darkGray-900');
+                        // },
                     });
                 },
                 '(max-width: 1200px)': () => {

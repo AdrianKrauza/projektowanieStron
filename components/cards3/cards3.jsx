@@ -19,7 +19,7 @@ const Cards3 = () => {
             gsap.to(cardsRef.current, {
                 scrollTrigger: {
                     trigger: 'body',
-                    end: `0 -500%`,
+                    end: `0 -350%`,
                     pin: cardsRef.current,
                 },
             });
@@ -47,7 +47,7 @@ const Cards3 = () => {
                 <Card
                     mask={'/assets/cards3/maska_dicaprioSV.svg'}
                     video={'/assets/cards3/LogoIdentyfikacja.mp4'}
-                    title={'UX & design'}
+                    title={'Design + UX '}
                     index={0}
                     image={image2}
                     paragraph={
