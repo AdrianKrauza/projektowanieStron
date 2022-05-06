@@ -7,7 +7,6 @@ import boxGif from '/assets/if/ezgif.com-gif-maker (13).gif';
 import { useEffect, useRef } from 'react';
 const vh = (coef) => window.innerHeight * (coef / 100);
 const IfBox = ({ el, index, containerRef, start, second }) => {
-    console.log(boxGif);
     const headerRef = useRef();
     const boxRef = useRef();
     const lottieRef = useRef();

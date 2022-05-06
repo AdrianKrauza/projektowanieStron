@@ -13,7 +13,7 @@ const Footer = () => {
         }, 1000);
     }, []);
     return (
-        <div className={'footer bg-darkGray-900 pt-[5rem] '} style={{ width: 'inherit' }}>
+        <div className={'footer bg-darkGray-900 pt-[5rem] relative z-50 -mt-[2px] '} style={{ width: 'inherit' }}>
             <div className={'text-center mb-[5rem]'}>
                 <Image {...footerImage} priority />
             </div>

@@ -109,14 +109,16 @@ const Guarantee = ({ setPageState }) => {
                         To nie są szczegóły. <br /> To są fundamenty!
                     </p>
                 </div>
-                <video
-                    className={'-mb-[50px]'}
-                    style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
-                    src={videoName}
-                    loop
-                    autoPlay
-                    muted
-                />
+                <div>
+                    <video
+                        className={'-mb-[50px]'}
+                        style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
+                        src={videoName}
+                        loop
+                        autoPlay
+                        muted
+                    />
+                </div>
             </div>
 
             <div className={'m-auto w-[43rem]  '}>

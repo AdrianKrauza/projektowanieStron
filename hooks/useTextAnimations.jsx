@@ -77,7 +77,7 @@ const UseTextAnimations = () => {
     };
     const AnimationParagraphScrub = (el, trigger, start = -50, end = 200, childrenSpan = false) => {
         Split(el.current, childrenSpan);
-        console.log(el.current);
+
         gsap.fromTo(
             el.current.querySelectorAll('span '),
             {

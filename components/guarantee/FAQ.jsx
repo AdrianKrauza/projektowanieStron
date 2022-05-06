@@ -62,7 +62,7 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
                 'cursor-pointer border-[1px] border-t-[#cecece] border-dotted py-[1.3rem] pl-[2rem] relative    '
             }
         >
-            <p ref={yesRef} className={'text-white absolute right-[5rem] top-[1rem] font-playfair '}>
+            <p ref={yesRef} className={'text-white absolute right-[5rem] top-[0.7rem] font-playfair '}>
                 TAK
             </p>
             <div ref={bgRef} className={'bg-white w-full h-full absolute left-0 top-0 -z-10 scale-x-0'} />
@@ -99,6 +99,20 @@ const Faq = () => {
                     question={question}
                 />
             ))}
+            <div
+                className={
+                    'border-[1px] border-t-[#cecece] border-dotted py-[0.9rem] pl-[2rem] relative flex justify-between items-center '
+                }
+            >
+                <p className={' text-[1.5rem]'}>Zapytaj nas o to co jest najwazniejsze da Ciebie</p>
+                <button
+                    className={
+                        'border-[1px] border-[#cecece] text-black text-[1.2rem] rounded-[10rem] px-[2rem]  py-[.5rem] font-normal'
+                    }
+                >
+                    Zadaj pytanie
+                </button>
+            </div>
         </div>
     );
 };

@@ -1,6 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Nav from '../components/nav/nav';
-import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 
 class MyDocument extends Document {
     render() {

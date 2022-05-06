@@ -36,7 +36,6 @@ const BookCanvas = ({ bookSectionRef }) => {
         img.onload = () => context.drawImage(img, 0, 0);
 
         const updateImage = (index) => {
-            console.log(index, context, images[index]);
             images[index] && context.drawImage(images[index], 0, 0);
         };
 

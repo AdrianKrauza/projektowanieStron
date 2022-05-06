@@ -16,6 +16,7 @@ const UseSmoothScrollBar = ({ children }) => {
             alwaysShowTracks: true,
             syncCallbacks: true,
         });
+
         setScrollBarCreated(true);
         setTimeout(() => {
             if (document.querySelector('.gsap-marker-scroller-start')) {
@@ -27,7 +28,6 @@ const UseSmoothScrollBar = ({ children }) => {
                 });
             }
         }, 0);
-
         return () => {
             const t = ScrollTrigger.getAll();
             t.forEach((t) => t.kill());

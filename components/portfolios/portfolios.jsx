@@ -58,7 +58,7 @@ const Portfolios = () => {
         }, 0);
     }, []);
     return (
-        <div className={'bg-lightGray relative'}>
+        <div className={'bg-lightGray relative '}>
             <h2 className={'text-center py-[10rem] text-[10rem] '} ref={heading3Ref}>
                 Przykłady <br /> realizacji
             </h2>

@@ -128,7 +128,7 @@ const Oko = () => {
                 <div
                     ref={circle1Ref}
                     className={'left-[200px] w-[500px] h-[500px] top-[-150px] absolute '}
-                    style={{ background: 'radial-gradient(circle, #1D1932 0%, rgba(0,0,0,0) 74%);' }}
+                    style={{ background: 'radial-gradient(circle, #1D1932 0%, rgba(0,0,0,0) 74%)' }}
                 />
                 <div ref={shape1Ref} className={'left-[300px] top-[70px] absolute '}>
                     <Image priority {...shape1} />

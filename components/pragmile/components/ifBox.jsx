@@ -7,7 +7,6 @@ import boxGif from '/assets/if/ezgif.com-gif-maker (13).gif';
 import { useEffect, useRef } from 'react';
 const vh = (coef) => window.innerHeight * (coef / 100);
 const IfBox = ({ el, index, containerRef, start, second }) => {
-    console.log(boxGif);
     const headerRef = useRef();
     const boxRef = useRef();
     const textRef = useRef();
@@ -50,15 +49,27 @@ const IfBox = ({ el, index, containerRef, start, second }) => {
     return (
         <div ref={boxRef} className={`relative `}>
             <p ref={textRef} className={'text-[1.6rem] text-[#CBCBCB] leading-[1.1]'}>
-                {el[0]
-                    .split(' ')
-                    .map((text) => (text !== '<br/>' ? <b className={'inline font-black'}>{text} </b> : <br />))}
+                {el[0].split(' ').map((text) =>
+                    text !== '<br/>' ? (
+                        <b key={text} className={'inline font-black'}>
+                            {text}{' '}
+                        </b>
+                    ) : (
+                        <br key={Math.random()} />
+                    ),
+                )}
                 <br />
                 <br />
 
-                {el[1]
-                    .split(' ')
-                    .map((text) => (text !== '<br/>' ? <span className={'inline'}>{text} </span> : <br />))}
+                {el[1].split(' ').map((text) =>
+                    text !== '<br/>' ? (
+                        <span key={text} className={'inline'}>
+                            {text}{' '}
+                        </span>
+                    ) : (
+                        <br key={Math.random()} />
+                    ),
+                )}
             </p>
         </div>
     );

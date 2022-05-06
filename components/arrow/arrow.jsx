@@ -93,7 +93,7 @@ const Line = ({ color, top }) => {
         </div>
     );
 };
-const Arrow = ({ color, top1, top2, children }) => {
+const Arrow = ({ color, top1, top2, children, scale = true }) => {
     const containerRef = useRef(null);
     useEffect(() => {
         setTimeout(() => {
@@ -110,10 +110,15 @@ const Arrow = ({ color, top1, top2, children }) => {
     }, []);
     return (
         <div ref={containerRef} className={'w-screen absolute top-0'}>
-            <p style={{ top: top1, color }} className={` absolute  left-1/2 -translate-x-1/2 text-[2rem] text-center`}>
-                {children}
-            </p>
-            <Line color={color} top={top2} />
+            <div className={scale && 'scale-[1.5] relative top-[-33rem]'}>
+                <p
+                    style={{ top: top1, color }}
+                    className={` absolute  left-1/2 -translate-x-1/2 text-[2rem] text-center`}
+                >
+                    {children}
+                </p>
+                <Line color={color} top={top2} />
+            </div>
         </div>
     );
 };

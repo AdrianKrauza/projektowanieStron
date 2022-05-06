@@ -245,14 +245,14 @@ const Header = () => {
                                 <span className={'block tracking-[1px]'}>Tu się tworzy</span>
                                 <span className={'block tracking-[1px]'}>dobre strony </span>
                             </h1>
-                            <p
+                            <div
                                 ref={waitingRef}
                                 className={
                                     'absolute ml-14 m:ml-0 text-[2.5rem] text-[#dfdfdf] font-thin font-roboto mt-10 leading-[1.2]  z-20  m:text-center m:text-[6rem] flex  '
                                 }
                             >
                                 Momencik <Timer /> %
-                            </p>
+                            </div>
                             <p
                                 ref={paragraphRef}
                                 className={

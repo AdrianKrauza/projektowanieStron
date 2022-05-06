@@ -2,15 +2,41 @@ import '../styles/globals.css';
 import '../styles/odometer-theme-minimal.css';
 import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 import Nav from '../components/nav/nav';
-import { Main, NextScript } from 'next/document';
-
+import { useEffect, useState } from 'react';
+const Resize = () => {
+    const [isResize, setIsResize] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsResize(true);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    return (
+        isResize && (
+            <div
+                className={'absolute z-[99999] bottom-0   bg-white bg-opacity-30 p-3 m-3 rounded'}
+                style={{ backdropFilter: 'blur(12px)' }}
+            >
+                <p className={'text-[1.5rem] '}>
+                    Wykryliśmy zmiany w<br /> rozmiarze okna przeglądarki. <br /> Prosze odświeżyć stronę.
+                </p>
+            </div>
+        )
+    );
+};
 function MyApp({ Component, pageProps }) {
     return (
         <div>
+            <Resize />
             <Nav />
-            <UseSmoothScrollBar>
+            {/*<UseSmoothScrollBar>*/}
+            <div className={'max-w-screen overflow-hidden'}>
                 <Component {...pageProps} />
-            </UseSmoothScrollBar>
+            </div>
+            {/*</UseSmoothScrollBar>*/}
         </div>
     );
 }

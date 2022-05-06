@@ -8,18 +8,17 @@ import If from '../components/if/if';
 import Portfolios from '../components/portfolios/portfolios';
 import Footer from '../components/footer/footer';
 
-export default function Home({ index }) {
+export default function Home() {
     return (
         <div>
-            {/*<Loading />*/}
-            <Header />
-            <If />
-            <Cards3 />
-            <Tablets />
-            <Letters />
-            <Book />
+            {/*<Header />*/}
+            {/*<If />*/}
+            {/*<Cards3 />*/}
+            {/*<Tablets />*/}
+            {/*<Letters />*/}
+            {/*<Book />*/}
             <Guarantee />
-            <Portfolios />
+            {/*<Portfolios />*/}
             <Footer />
         </div>
     );

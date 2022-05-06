@@ -139,7 +139,6 @@ const Page3 = () => {
                     this.textPath.textContent = this.textContent.trim();
                 }
             }
-            console.log(customElements);
 
             customElements.get('circle-text') || customElements.define('circle-text', CircleText, {});
         }
