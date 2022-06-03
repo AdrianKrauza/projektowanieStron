@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import Input from './input';
 import getCid from '../../helpers/getCid';
+import getClientId from '../../helpers/getCid';
 const Shield = () => (
     <svg width="66" height="80" viewBox="0 0 66 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -27,15 +28,13 @@ const Shield = () => (
 );
 const time = new Date().getTime();
 const Form = () => {
-    const { register, handleSubmit } = useForm();
+    const { handleSubmit } = useForm();
     const [data, setData] = useState({
         'form[Imię]': '',
         'form[Mail]': '',
         'form[Telefon]': '',
         'form[Wiadomość]': '',
     });
-    // object to  URLSearchParams
-
     const onSubmit = async () => {
         const formdata = new FormData();
         formdata.append('session-start', time);
@@ -53,6 +52,33 @@ const Form = () => {
             body: formdata,
             redirect: 'follow',
         };
+
+        if (getClientId()) {
+            const myHeaders = new Headers();
+            myHeaders.append('Content-Type', 'application/json');
+
+            const raw = JSON.stringify({
+                v: 1,
+                t: 'event',
+                cid: getClientId(),
+                ec: 'Forms',
+                ea: 'Send',
+                dr: 'strony.owocni.pl',
+                tid: 'UA-7397797-1',
+            });
+
+            const requestOptions2 = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow',
+            };
+
+            fetch('https://www.google-analytics.com/collect', requestOptions2)
+                .then((response) => response.text())
+                .then((result) => console.log(result))
+                .catch((error) => console.log('error', error));
+        }
         fetch('https://form.owocni.pl/send.php', requestOptions)
             .then((response) => response.text())
             .then((result) => console.log(result))
@@ -83,7 +109,6 @@ const Form = () => {
                         <Input
                             optional
                             label={'Tel.'}
-                            register={register}
                             name={'form[Telefon]'}
                             handleOnChange={(e) => {
                                 setData((data) => ({ ...data, 'form[Telefon]': e.target.value }));
@@ -95,7 +120,6 @@ const Form = () => {
                             textarea
                             label={'Napisz kilka słów o swoim projekcie'}
                             handleOnChange={(e) => {
-                                console.log(data);
                                 setData((data) => ({ ...data, 'form[Wiadomość]': e.target.value }));
                             }}
                             name={'form[Wiadomość]'}
