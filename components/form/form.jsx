@@ -44,7 +44,6 @@ const Form = () => {
             el.addEventListener('click', open);
         });
     }, []);
-    return <div></div>;
     return (
         <div className={'fixed top-0 w-screen'}>
             <div
