@@ -107,7 +107,7 @@ const Faq = () => {
                 <p className={' text-[1.5rem]'}>Zapytaj nas o to co jest najwazniejsze da Ciebie</p>
                 <button
                     className={
-                        'border-[1px] border-[#cecece] text-black text-[1.2rem] rounded-[10rem] px-[2rem]  py-[.5rem] font-normal'
+                        'form-open border-[1px] border-[#cecece] text-black text-[1.2rem] rounded-[10rem] px-[2rem]  py-[.5rem] font-normal'
                     }
                 >
                     Zadaj pytanie

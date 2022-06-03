@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import done from '/assets/form/done.png';
 import Image from 'next/image';
-const Input = ({ label, optional = false, textarea = false }) => {
+const Input = ({ label, optional = false, textarea = false, handleOnChange, name }) => {
     const [isClick, setIsClick] = useState(false);
     const [isValid, setIsValid] = useState(false);
     const [value, setValue] = useState('');
@@ -22,16 +22,17 @@ const Input = ({ label, optional = false, textarea = false }) => {
         >
             {!textarea ? (
                 <input
-                    name={'firstName'}
                     className={'p-[10px] w-full  outline-0 text-[16px] text-[#919191]'}
                     onFocus={() => setIsClick(true)}
                     onBlur={checkValid}
-                    onChange={(e) => setValue(e.target.value)}
+                    onChange={(e) => {
+                        handleOnChange(e);
+                        setValue(e.target.value);
+                    }}
                 />
             ) : (
                 <>
                     <textarea
-                        name={'firstName'}
                         style={{
                             height: isActive() ? '300px' : '46px',
                             paddingTop: isActive() ? '75px' : '0',
@@ -40,12 +41,15 @@ const Input = ({ label, optional = false, textarea = false }) => {
                         className={'p-[10px] w-full  outline-0 text-[16px] text-[#919191] '}
                         onFocus={() => setIsClick(true)}
                         onBlur={checkValid}
-                        onChange={(e) => setValue(e.target.value)}
+                        onChange={(e) => {
+                            handleOnChange(e);
+                            setValue(e.target.value);
+                        }}
                     />
                     <p
                         style={{ opacity: isActive() ? '1' : '0' }}
                         className={
-                            'z-50 absolute text-[16px] py-[15px] top-0 pl-[10px] pointer-events-none text-[#438d07] italic bg-white w-full '
+                            'z-50 absolute text-[16px] py-[15px] top-0 pl-[10px] pointer-events-none text-[#438d07] leading-[1.4] bg-white w-full '
                         }
                     >
                         Im więcej się dowiemy, tym lepiej Ci pomożemy. <br />

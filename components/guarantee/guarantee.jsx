@@ -87,7 +87,7 @@ const Guarantee = ({ setPageState }) => {
             </p>
             <button
                 className={
-                    'bg-[#E7E6E8] border-[rgb(51,51,51)] border-[1px] p-[1rem] px-[3.5rem] m-auto block my-[8rem]  rounded-[3rem] text-[1.5rem]'
+                    'form-open bg-[#E7E6E8] border-[rgb(51,51,51)] border-[1px] p-[1rem] px-[3.5rem] m-auto block my-[8rem]  rounded-[3rem] text-[1.5rem]'
                 }
             >
                 Wyceń swój projekt
