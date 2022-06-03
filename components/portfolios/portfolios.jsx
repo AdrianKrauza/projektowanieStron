@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import logo from '/assets/portfolios/Zrzut ekranu 2022-04-9 o 20.59.52.png';
 gsap.registerPlugin(ScrollTrigger);
-import Pragmile from './test';
+import Pragmile from './pragma';
 import Banach from './banach';
 import Oko from './oko';
 import UseCanvasFrameAnimation from '../../hooks/useCanvasFrameAnimation';

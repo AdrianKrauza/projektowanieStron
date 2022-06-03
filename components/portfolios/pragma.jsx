@@ -111,7 +111,7 @@ const Pragmile2 = () => {
             });
         }, 0);
     }, []);
-    //
+    // //
     return (
         <div className={'flex justify-center gap-[10rem] bg-darkGray-900 h-[45rem] overflow-hidden -mt-[2px]'}>
             <div className={'relative z-10 mt-[2rem]'}>
@@ -230,6 +230,7 @@ const Pragmile2 = () => {
             </div>
         </div>
     );
+    return <div></div>;
 };
 //
 export default Pragmile2;

@@ -27,7 +27,7 @@ const Nav = () => {
                         <div className={'flex items-center'}>
                             <button
                                 className={
-                                    'font-bold bg-[#0071e3] text-white text-[12px] px-[20px] py-[10px] mr-[20px] rounded-[50px]'
+                                    'form-open font-bold bg-[#0071e3] text-white text-[12px] px-[20px] py-[10px] mr-[20px] rounded-[50px]'
                                 }
                             >
                                 Poproszę o ofertę

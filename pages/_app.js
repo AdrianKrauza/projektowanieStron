@@ -1,8 +1,10 @@
 import '../styles/globals.css';
+import 'animate.css';
 import '../styles/odometer-theme-minimal.css';
 import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 import Nav from '../components/nav/nav';
 import { useEffect, useState } from 'react';
+import Form from '../components/form/form';
 const Resize = () => {
     const [isResize, setIsResize] = useState(false);
     useEffect(() => {
@@ -32,11 +34,12 @@ function MyApp({ Component, pageProps }) {
         <div>
             <Resize />
             <Nav />
-            {/*<UseSmoothScrollBar>*/}
-            <div className={'max-w-screen overflow-hidden'}>
-                <Component {...pageProps} />
-            </div>
-            {/*</UseSmoothScrollBar>*/}
+            <UseSmoothScrollBar>
+                <div className={'max-w-screen overflow-hidden'}>
+                    <Component {...pageProps} />
+                </div>
+            </UseSmoothScrollBar>
+            <Form />
         </div>
     );
 }

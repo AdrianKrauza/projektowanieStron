@@ -15,7 +15,7 @@ const Tablets = () => {
     }, []);
     return (
         <div className={'mt-[160vh] bg-lightGray '}>
-            <h2 ref={headingRef} className={'text-center text-darkGray'}>
+            <h2 ref={headingRef} className={'text-center text-darkGray '}>
                 Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
             </h2>
             <p className={'text-center mt-28 leading-[1.3] relative z-10'}>
