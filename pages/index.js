@@ -7,10 +7,23 @@ import Letters from '../components/letters/letters';
 import If from '../components/if/if';
 import Portfolios from '../components/portfolios/portfolios';
 import Footer from '../components/footer/footer';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-    return (
-        <div>
+    const [isMobile, setIsMobile] = useState('init');
+    useEffect(() => {
+        console.log(window.innerWidth, isMobile);
+        if (window.innerWidth < 768) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
+    });
+    if (isMobile === 'init') return <div></div>;
+    return isMobile ? (
+        <div style={{ display: isMobile ? 'block' : 'none' }}>mobile</div>
+    ) : (
+        <div style={{ display: !isMobile ? 'block' : 'none' }}>
             <Header />
             <If />
             <Cards3 />
