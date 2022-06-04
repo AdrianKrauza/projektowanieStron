@@ -19,7 +19,7 @@ const Resize = () => {
     return (
         isResize && (
             <div
-                className={'absolute z-[99999] bottom-0   bg-white bg-opacity-30 p-3 m-3 rounded'}
+                className={'m:hidden absolute z-[99999] bottom-0   bg-white bg-opacity-30 p-3 m-3 rounded'}
                 style={{ backdropFilter: 'blur(12px)' }}
             >
                 <p className={'text-[1.5rem] '}>
@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
             <Resize />
             <Nav />
             <UseSmoothScrollBar>
-                <div className={'max-w-screen overflow-hidden'}>
+                <div className={'max-w-screen overflow-hidden min-h-screen'}>
                     <Component {...pageProps} />
                 </div>
             </UseSmoothScrollBar>

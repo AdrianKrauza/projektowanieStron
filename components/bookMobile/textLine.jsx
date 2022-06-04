@@ -10,8 +10,8 @@ const Line = ({ line }) => {
                 scrollTrigger: {
                     trigger: lineRef.current,
                     scrub: true,
-                    start: 'top-=300% top+=40%',
-                    end: 'bottom+=300% top+=40%',
+                    start: 'top-=310% top+=60%',
+                    end: 'bottom+=310% top+=60%',
                 },
             });
             tl.to(lineRef.current, {
@@ -21,10 +21,6 @@ const Line = ({ line }) => {
             tl.to(lineRef.current, {
                 opacity: 1,
                 '--font-weight': 350,
-            });
-            tl.to(lineRef.current, {
-                opacity: 0.4,
-                '--font-weight': 100,
             });
         }, []);
     }, []);

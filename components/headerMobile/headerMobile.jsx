@@ -11,80 +11,8 @@ import { GradientAnimation } from '../../helpers/gradientAnimation';
 import Logo from './logo';
 const vh = (coef) => window.innerHeight * (coef / 100);
 gsap.registerPlugin(ScrollTrigger);
-const Timer = () => {
-    return (
-        <div className="dw mx-[.5rem]">
-            <style jsx>{`
-                .dw {
-                    height: 3rem;
-                    overflow: hidden;
-                }
-                .con {
-                    display: flex;
-                }
-                .con div {
-                    display: flex;
-                    flex-direction: column;
-                }
-                span {
-                    height: 3rem;
-                    font-size: 2.5rem;
-                    background: #141414;
-                }
-                .last {
-                    position: absolute;
-                }
-                .s2 {
-                    animation: letteranim 0.33s 10 linear;
-                    animation-timing-function: steps(10, end);
-                    animation-fill-mode: forwards;
-                }
-                .s1 {
-                    animation: letteranim 3.33s 1 linear;
-                    animation-timing-function: steps(10, end);
-                    animation-fill-mode: forwards;
-                }
 
-                @keyframes letteranim {
-                    0% {
-                        transform: translateY(0);
-                    }
-                    100% {
-                        transform: translateY(-100%);
-                    }
-                }
-            `}</style>
-            <span className="last">99</span>
-            <div className="con">
-                <div className="s1">
-                    <span>0</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                </div>
-                <div className="s2">
-                    <span>0</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                </div>
-            </div>
-        </div>
-    );
-};
-const Header = () => {
+const HeaderMobile = () => {
     const { AnimationHeading, AnimationParagraph } = UseTextAnimations();
     const headerRef = useRef();
     const waitingRef = useRef();
@@ -245,14 +173,7 @@ const Header = () => {
                                 <span className={'block tracking-[1px]'}>Tu się tworzy</span>
                                 <span className={'block tracking-[1px]'}>dobre strony </span>
                             </h1>
-                            <div
-                                ref={waitingRef}
-                                className={
-                                    'absolute ml-14 m:ml-0 text-[2.5rem] text-[#dfdfdf] font-thin font-roboto mt-10 leading-[1.2]  z-20  m:text-center m:text-[6rem] flex  '
-                                }
-                            >
-                                Momencik <Timer /> %
-                            </div>
+
                             <p
                                 ref={paragraphRef}
                                 className={
@@ -297,56 +218,29 @@ const Header = () => {
                             <div
                                 ref={imageBgRef}
                                 style={{
-                                    WebkitMaskImage: `url(assets/header/Monit1-Maska.svg)`,
+                                    WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
                                 }}
-                                className={' z-10 absolute w-full h-full bg-black m:hidden top-[-0.3rem]'}
+                                className={'z-10 absolute w-[86rem] h-[52rem] left-[8.5rem]  top-[0.9rem]'}
                             >
                                 <style jsx>{`
                                     video {
-                                        width: 46rem;
+                                        width: 88rem;
                                         position: relative;
-                                        left: 24rem;
-                                        top: 4.8rem;
+                                        left: 0rem;
+                                        top: -1rem;
                                         max-width: unset !important;
+                                        //display: none;
                                     }
                                 `}</style>
                                 <video
-                                    src="/assets/header/video.mp4"
-                                    poster={'/assets/header/poster.jpg'}
-                                    autoPlay
-                                    muted
-                                    loop
+                                    src="/assets/header/Projektowannie-stron-MOBILE.mp4"
+                                    autoPlay={true}
+                                    muted={true}
+                                    loop={true}
                                 />
                             </div>
-                            {/*<div*/}
-                            {/*    ref={imageBgRef}*/}
-                            {/*    style={{*/}
-                            {/*        WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,*/}
-                            {/*    }}*/}
-                            {/*    className={'z-10 absolute w-[86rem] h-[52rem] left-[8.5rem]  top-[0.9rem]'}*/}
-                            {/*>*/}
-                            {/*    <style jsx>{`*/}
-                            {/*        video {*/}
-                            {/*            width: 88rem;*/}
-                            {/*            position: relative;*/}
-                            {/*            left: 0rem;*/}
-                            {/*            top: -1rem;*/}
-                            {/*            max-width: unset !important;*/}
-                            {/*            //display: none;*/}
-                            {/*        }*/}
-                            {/*    `}</style>*/}
-                            {/*    <video*/}
-                            {/*        src="/assets/header/Projektowannie-stron-MOBILE.mp4"*/}
-                            {/*        autoPlay={true}*/}
-                            {/*        muted={true}*/}
-                            {/*        loop={true}*/}
-                            {/*    />*/}
-                            {/*</div>*/}
-                            <div className={'m:block hidden'}>
+                            <div className={'block '}>
                                 <Image priority quality={85} layout={'responsive'} {...LaptopMobileImg} />
-                            </div>
-                            <div className={'m:hidden'}>
-                                <Image priority quality={85} layout={'responsive'} {...LaptopImg} />
                             </div>
                         </div>
                     </div>
@@ -356,4 +250,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderMobile;

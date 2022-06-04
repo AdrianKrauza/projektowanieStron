@@ -85,14 +85,18 @@ const Form = () => {
             .catch((error) => console.log('error', error));
     };
     return (
-        <div className={'w-[560px] z-[9999] relative left-1/2 -translate-x-1/2 '}>
+        <div className={'w-screen max-w-[560px] z-[9999] relative left-1/2 -translate-x-1/2 '}>
             <div className={'bg-white  animate__animated py-[40px] px-[40px]'}>
-                <h2 className={'text-[28px] pb-[50px] text-[#0d0701] font-[400]'}>
-                    Napisz kilka słów o swoim projekcie <br />i otrzymaj{' '}
+                <h2
+                    className={
+                        'text-[28px] pb-[50px] text-[#0d0701] font-[400] m:text-[24px] m:pb-[25px] m:text-center'
+                    }
+                >
+                    Napisz kilka słów o swoim projekcie <br className={'m:hidden'} />i otrzymaj{' '}
                     <b className={'text-[#438d07] font-bold'}>niezobowiązującą</b> ofertę.
                 </h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className={'flex gap-[20px]'}>
+                    <div className={'flex gap-[20px] m:flex-col m:gap-[10px]'}>
                         <Input
                             label={'Imię:'}
                             handleOnChange={(e) => {
@@ -115,7 +119,7 @@ const Form = () => {
                             }}
                         />
                     </div>
-                    <div className={'flex gap-[2rem] mt-[1rem]'}>
+                    <div className={'flex gap-[20px] mt-[10px]'}>
                         <Input
                             textarea
                             label={'Napisz kilka słów o swoim projekcie'}
@@ -125,11 +129,11 @@ const Form = () => {
                             name={'form[Wiadomość]'}
                         />
                     </div>
-                    <div className={'flex gap-[30px] items-center'}>
-                        <div className={'relative w-full z-10 top-[5px]'}>
+                    <div className={'flex gap-[30px] items-center m:flex-col'}>
+                        <div className={'relative w-full z-10 top-[5px] m:mt-[20px]'}>
                             <button
                                 className={
-                                    'top-0 relative top-[-5px] hover:top-0 bg-[#438d07] font-[400] text-white text-[22px] rounded-[10px] py-[10px] w-full '
+                                    'top-0 relative top-[-5px] hover:top-0 bg-[#438d07] font-[400] text-white text-[22px] rounded-[10px] py-[10px] w-full m:text-[16px]'
                                 }
                                 type="submit"
                             >
@@ -137,7 +141,7 @@ const Form = () => {
                             </button>
                             <div
                                 className={
-                                    'h-[42px] -z-10 top-0 absolute bg-[#31600b] font-[400] text-[#31600b] text-[22px] rounded-[10px] py-[10px] w-full '
+                                    'h-[42px] -z-10 top-0 absolute bg-[#31600b] font-[400] text-[#31600b00] text-[22px] rounded-[10px] py-[10px] w-full m:text-[16px] m:hidden '
                                 }
                             >
                                 Wyślijcie mi niezobowiązującą ofertę

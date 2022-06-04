@@ -5,24 +5,25 @@ import IfBox from '../pragmile/components/ifBox';
 import vh from '/helpers/vh';
 import useTextAnimations from '../../hooks/useTextAnimations';
 import Cloud from './cloud';
+import IfBoxMobile from './ifBoxMobile';
 
 gsap.registerPlugin(ScrollTrigger);
 const start = 13500;
 const boxesData = [
     [
-        'Chcesz podwoić liczbę <br/> klientów z takiej samej <br/> ilości odwiedzin strony.',
-        'Bez zwiększania wydatków  <br/> na reklamę w internecie.',
+        'Chcesz podwoić liczbę / klientów z takiej samej / ilości odwiedzin strony.',
+        'Bez zwiększania wydatków  / na reklamę w internecie.',
     ],
     [
-        'Zależy Ci, aby Twoja strona <br/> wyglądała świetnie a jej <br/> używanie było przyjemne.',
-        'Chcesz zdobyć duże zaufanie <br/> już od pierwszego spojrzenia.',
+        'Zależy Ci, aby Twoja strona / wyglądała świetnie a jej / używanie było przyjemne.',
+        'Chcesz zdobyć duże zaufanie / już od pierwszego spojrzenia.',
     ],
     [
-        'Szukasz ludzi, którzy zrobią <br/> wszystko za Ciebie. Chcesz <br/> mieć czas i wolną głowę.',
-        'Od napisania przekonującej <br/> oferty, do doskonałej grafiki.',
+        'Szukasz ludzi, którzy zrobią / wszystko za Ciebie. Chcesz / mieć czas i wolną głowę.',
+        'Od napisania przekonującej / oferty, do doskonałej grafiki.',
     ],
 ];
-const If = () => {
+const IfMobile = () => {
     const ifContentRef = useRef();
     const headerRef = useRef();
     const boxesRef = useRef();
@@ -59,16 +60,26 @@ const If = () => {
     }, []);
     return (
         <>
-            <Cloud />
-            <div ref={pinRef} className={'w-screen  h-screen absolute top-[20vh] opacity-0'}>
-                <div ref={ifContentRef} className={''}>
-                    <h2 ref={headerRef} className={'text-center text-[6.5rem] text-[#dfdfdf]  '}>
+            <div ref={pinRef} className={'w-screen  h-screen absolute top-[0] opacity-0'}>
+                <div ref={ifContentRef}>
+                    <h2 ref={headerRef} className={'text-center text-[8.5rem] text-[#dfdfdf] h-[20vh] pt-[5vh]'}>
                         <span>Owocne strony będą</span>
-                        <span>dla Ciebie idealne, jeśli:</span>
+                        <span>dla Ciebie idealne,</span>
+                        <span> jeśli:</span>
                     </h2>
-                    <div ref={boxesRef} className={'w-[75rem] m-auto justify-between flex mt-[5rem]'}>
+                    <div
+                        ref={boxesRef}
+                        className={'w-[75rem] m-auto justify-between h-[80vh] flex  flex-col pb-[10vh] '}
+                    >
                         {boxesData.map((el, index) => (
-                            <IfBox containerRef={ifContentRef} key={el[0]} el={el} index={index} start={start} second />
+                            <IfBoxMobile
+                                containerRef={ifContentRef}
+                                key={el[0]}
+                                el={el}
+                                index={index}
+                                start={start}
+                                second
+                            />
                         ))}
                     </div>
                 </div>
@@ -77,4 +88,4 @@ const If = () => {
     );
 };
 
-export default If;
+export default IfMobile;

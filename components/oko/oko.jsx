@@ -11,7 +11,7 @@ import Parallax from './components/parallax';
 import Page3 from './components/page3';
 import Slider from './components/slider';
 import Footer from './components/footer';
-// import Header from '/components/oko/components/header/header';
+// import HeaderMobile from '/components/oko/components/header/header';
 
 gsap.registerPlugin(ScrollTrigger);
 

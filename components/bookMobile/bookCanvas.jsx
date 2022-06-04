@@ -36,37 +36,25 @@ const BookCanvas = ({ bookSectionRef }) => {
         img.onload = () => context.drawImage(img, 0, 0);
 
         const updateImage = (index) => {
-            images[index] && context.drawImage(images[index], 0, 0);
+            images[index * 2] && context.drawImage(images[index * 2], 0, 0);
         };
 
         preloadImages(updateImage);
 
         let lastState;
         setTimeout(() => {
-            ScrollTrigger.matchMedia({
-                '(min-width: 1200px)': () => {
-                    ScrollTrigger.create({
-                        trigger: bookSectionRef.current,
-                        pin: bookCanvasRef.current,
-                        start: '0 6%',
-                        end: '105% 15%',
-                    });
-                },
-                '(max-width: 1200px)': () => {
-                    ScrollTrigger.create({
-                        trigger: bookSectionRef.current,
-                        pin: bookCanvasRef.current,
-                        start: `0% ${vh(100) - window.innerWidth * 0.8}`,
-                        end: '105% 70%',
-                    });
-                },
+            ScrollTrigger.create({
+                trigger: bookSectionRef.current,
+                pin: bookCanvasRef.current,
+                start: `0% 10%`,
+                end: '105% 70%',
             });
 
             bookSectionRef.current.querySelectorAll('.space').forEach((el, index) => {
                 if (!index) {
                     ScrollTrigger.create({
                         trigger: bookSectionRef.current,
-                        start: '0 6%',
+                        start: '0 0%',
                         end: '19% center',
                         onUpdate: (e) => {
                             const state = Math.floor(e.progress * bookImages[index][1] + bookImages[index][0]);
@@ -94,8 +82,8 @@ const BookCanvas = ({ bookSectionRef }) => {
         });
     }, []);
     return (
-        <div className={'absolute -right-20 mt-40 m:z-30 m:shadow-[#e6e8ec_0px_-9px_13px_5px]'}>
-            <canvas ref={bookCanvasRef} className={'w-[66rem] m:w-[110rem]'} />
+        <div className={'absolute -right-20 mt-40 z-30 shadow-[#e6e8ec_0px_-9px_13px_5px]'}>
+            <canvas ref={bookCanvasRef} className={'w-[110rem]'} />
         </div>
     );
 };

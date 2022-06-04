@@ -8,7 +8,7 @@ const Nav = () => {
     const navRef = useRef();
     useEffect(() => {}, []);
     return (
-        <div className={'absolute w-screen'}>
+        <div className={'absolute w-screen m:hidden'}>
             <div className={'relative overflow-hidden h-[52px] black z-50 bg-black '}>
                 <nav ref={navRef} className={'bg-black m:hidden absolute z-[999]  w-screen h-[42px] '}>
                     <div

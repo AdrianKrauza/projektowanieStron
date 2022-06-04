@@ -2,6 +2,11 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
+const size = {
+    zobacz: 6,
+    'tę grubą': 7,
+    'gwarancje...': 8,
+};
 const Line = ({ line }) => {
     const lineRef = useRef();
     useEffect(() => {
@@ -28,13 +33,17 @@ const Line = ({ line }) => {
             });
         }, []);
     }, []);
-
+    console.log(line);
     return (
         <span
             className={'block opacity-40'}
             ref={lineRef}
             key={line}
-            style={{ fontVariationSettings: `"wght"var(--font-weight, 100)` }}
+            style={{
+                fontVariationSettings: `"wght"var(--font-weight, 100)`,
+                fontSize: size[line] + 'rem',
+                color: line === '|' && 'transparent',
+            }}
         >
             {line}
         </span>

@@ -139,75 +139,21 @@ const Arrow = ({ color = '#c2c2c2' }) => {
         </div>
     );
 };
-const TopText = () => {
-    const topTextRef = useRef();
-    const headingRef = useRef();
-    useEffect(() => {
-        setTimeout(() => {
-            const { AnimationHeading } = UseTextAnimations();
 
-            ScrollTrigger.create({
-                trigger: topTextRef.current,
-                start: '40% 60%',
-                end: '100% 60%',
-                onEnter: () => {
-                    AnimationHeading(headingRef, true);
-                },
-            });
-            ScrollTrigger.create({
-                trigger: topTextRef.current,
-                pin: topTextRef.current,
-                start: '80% 70%',
-                end: '150% 60%',
-            });
-        }, 0);
-    }, []);
-    return (
-        <div ref={topTextRef} className={'ml-36 z-10 relative'}>
-            <Arrow />
-            <div>
-                <h2 ref={headingRef} className={'text-[8.5rem] tracking-[-7px]  opacity-0  leading-[.9]'}>
-                    <span>W trzech</span>
-                    <span>prostych</span>
-                    <span>słowach.</span>
-                </h2>
-                <p className={'text-4xl mt-6'}>Konwersja, Konwersja, Konwersja!</p>
-            </div>
-        </div>
-    );
-};
-
-const Book = () => {
+const BookMobile = () => {
     const bookSectionRef = useRef();
     return (
         <div className={'bg-lightGray'}>
-            <div ref={bookSectionRef} className={'relative w-[100rem] m-auto  -mt-[60rem] z-20 '}>
+            <div ref={bookSectionRef} className={'relative w-[100rem] m-auto z-20 '}>
                 <BookCanvas bookSectionRef={bookSectionRef} />
-                <WhiteSpheres bookSectionRef={bookSectionRef} />
-                <div
-                    style={{ perspective: '100px' }}
-                    className={' right-0 mb-96 ml-[25rem] mt-[35rem] translate-y-[4rem]'}
-                >
-                    <p
-                        style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg) translateY(2rem)' }}
-                        className={'leading-snug font-size'}
-                    >
-                        <span>To czego się tu dowiesz zmieni </span>
-                        <span>Twój sposób myślenia </span>
-                        <span>o firmie w internecie</span>
-                    </p>
-                </div>
                 <div className={'hidden'}>
                     <div className={'h-72'} />
                     <div className={'h-2'} />
                 </div>
-                <TopText />
                 {texts.map((text, index) => (
                     <div key={index} className={'ml-36'}>
                         <div
-                            className={`h-${
-                                !index ? 60 : 65
-                            } space m:h-[60rem] justify-center w-[32rem]  mt-20  z-20 relative flex items-center  `}
+                            className={`space m:h-[30rem] justify-center w-[32rem]  mt-20  z-20 relative flex items-center  `}
                         >
                             <p
                                 className={`text-center text-[${
@@ -240,4 +186,4 @@ const Book = () => {
     );
 };
 
-export default Book;
+export default BookMobile;

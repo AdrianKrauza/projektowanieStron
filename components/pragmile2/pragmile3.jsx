@@ -253,7 +253,7 @@ const Pragmile = ({ setPageState }) => {
                 <Page2 />
                 <Page3 />
                 <End />
-                {/*<If containerRef={containerRef} />*/}
+                {/*<IfMobile containerRef={containerRef} />*/}
             </div>
         </div>
     );

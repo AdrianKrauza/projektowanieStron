@@ -70,7 +70,7 @@ const Guarantee = ({ setPageState }) => {
         }, 0);
     }, []);
     return (
-        <div ref={conRef} className={`w-screen   relative z-10 pt-[35rem] bg-lightGray `}>
+        <div ref={conRef} className={`w-screen   relative z-10 pt-[15rem] bg-lightGray `}>
             <div
                 ref={pulsRef}
                 style={{ background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 45%)' }}
