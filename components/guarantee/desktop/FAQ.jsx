@@ -72,7 +72,7 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
             <p
                 ref={yesRef}
                 className={
-                    'text-white m:text-[5rem] absolute right-[5rem] m:right-[10.5rem] top-[0.7rem] m:top-[1.7rem]  font-playfair '
+                    'text-white m:text-[5rem] absolute right-[5rem] m:right-[10.5rem] top-[0.7rem] m:top-[1.7rem]  font-playfair font-bold '
                 }
             >
                 TAK

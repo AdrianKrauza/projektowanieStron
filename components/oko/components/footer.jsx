@@ -18,7 +18,7 @@ const Footer = ({ containerRef }) => {
             </div>
             <button
                 className={
-                    ' bg-[#E3E3E3] color-[#E3E3E3]  text-[1.6rem] py-[1rem] rounded-[2rem] font-normal text-center w-[37rem] m-auto block my-[2rem]'
+                    'form-open bg-[#E3E3E3] color-[#E3E3E3]  text-[1.6rem] py-[1rem] rounded-[2rem] font-normal text-center w-[37rem] m-auto block my-[2rem]'
                 }
             >
                 Wyślijcie mi niezobowiązującą ofertę

@@ -231,7 +231,7 @@ const Banach = () => {
         }, 10000);
     }, []);
     return (
-        <div ref={containerRef} className={'h-[350vh] bg-[#E2E2E2]  mt-[0rem]'}>
+        <div ref={containerRef} className={'h-[450vh] bg-[#E2E2E2]  mt-[0rem]'}>
             <div className={'pin2 w-[1350px] m-auto relative h-screen opacity-0'}>
                 <div
                     style={{ transform: 'translate(-50%,-25vw)   ', bottom: 'auto' }}
@@ -267,7 +267,7 @@ const Banach = () => {
                         </div>
                         <button
                             className={
-                                ' bg-[#E3E3E3] color-[#E3E3E3]  text-[1.6rem] py-[1rem] rounded-[2rem] font-normal text-center w-[37rem] m-auto block my-[2rem]'
+                                'form-open bg-[#E3E3E3] color-[#E3E3E3]  text-[1.6rem] py-[1rem] rounded-[2rem] font-normal text-center w-[37rem] m-auto block my-[2rem]'
                             }
                         >
                             Wyślijcie mi niezobowiązującą ofertę

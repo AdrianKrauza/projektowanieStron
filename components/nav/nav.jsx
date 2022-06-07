@@ -16,7 +16,7 @@ const Nav = () => {
                         }
                     >
                         <div className={'flex items-center '}>
-                            <div className={'m:scale-[.8]'}>
+                            <div className={'m:scale-[.8] mt-[10px]'}>
                                 <Logo />
                             </div>
                             <p className={' m:hidden text-[12px] ml-[5px] font-bold'}>Dlaczego owocne strony?</p>
@@ -34,7 +34,7 @@ const Nav = () => {
                                 Poproszę o ofertę
                             </button>
                             <a
-                                href=""
+                                href="tel://+48660970980"
                                 className={
                                     'font-bold text-white text-[12px] m:border-2 m:border-[#2f2f2f] px-[20px] py-[10px] rounded-[50px] m:text-[9px] m:px-[10px] m:py-[8px]'
                                 }

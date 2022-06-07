@@ -23,6 +23,7 @@ const Oko = () => {
     const [gradient2State, setGradient2State] = useState(0);
     useEffect(() => {
         setTimeout(() => {
+            gsap.to(containerRef.current, { opacity: 1, delay: 0.9, duration: 0.5 });
             pinPortfolio(containerRef);
             moveElement('.headerImg', 2000, 3000);
             moveElement('.szejp', 1600, 2000);
@@ -107,18 +108,20 @@ const Oko = () => {
         }, 0);
     }, []);
     return (
-        <div
-            ref={containerRef}
-            style={{ background: '#06061c', height: 'calc(100vh + 6100px)' }}
-            className={'  w-screen mt-[-65rem] overflow-hidden relative '}
-        >
-            <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
-                <StartImg gradient1State={gradient1State} />
-                <Header gradient2State={gradient2State} />
-                <Page2 />
-                <Parallax />
-                <Page3 />
-                <Footer />
+        <div className={'bg-[#06061c]'}>
+            <div
+                ref={containerRef}
+                style={{ background: '#06061c', height: 'calc(100vh + 6100px)' }}
+                className={'opacity-0  w-screen mt-[-65rem] overflow-hidden relative '}
+            >
+                <div className={'pin w-[1350px] relative h-screen  -translate-x-1/2 left-1/2  '}>
+                    <StartImg gradient1State={gradient1State} />
+                    <Header gradient2State={gradient2State} />
+                    <Page2 />
+                    <Parallax />
+                    <Page3 />
+                    <Footer />
+                </div>
             </div>
         </div>
     );

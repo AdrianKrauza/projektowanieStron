@@ -38,7 +38,7 @@ const Input = ({ label, optional = false, textarea = false, handleOnChange, popU
                         }}
                         className={`${
                             popUp ? 'popUp' : 'footerForm'
-                        } p-[10px] w-full  outline-0 text-[16px] text-[#919191] `}
+                        } p-[10px] w-full   outline-0 text-[16px] text-[#919191] `}
                         onFocus={() => {
                             if (popUp) {
                                 document.querySelector('.popUpForm').scrollTop = 300;
@@ -57,7 +57,7 @@ const Input = ({ label, optional = false, textarea = false, handleOnChange, popU
                     <p
                         style={{ opacity: isActive() ? '1' : '0' }}
                         className={
-                            'z-50 text-left absolute text-[16px] pb-[5px] py-[15px] top-0 pl-[10px] pointer-events-none text-[#438d07] leading-[1.4] bg-white w-full m:text-[10px]'
+                            'font-[300] z-50 text-left absolute text-[16px] pb-[5px] py-[15px] top-0 pl-[10px] pointer-events-none text-[#438d07] leading-[1.4] bg-white w-full m:text-[10px]'
                         }
                     >
                         Im więcej się dowiemy, tym lepiej Ci pomożemy. <br />

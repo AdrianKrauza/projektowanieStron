@@ -19,7 +19,10 @@ const Book = () => {
             <div ref={bookSectionRef} className={'relative w-[100rem] m-auto  -mt-[60rem] z-20 '}>
                 <BookCanvas bookSectionRef={bookSectionRef} />
                 <WhiteSpheres bookSectionRef={bookSectionRef} />
-                <div style={{ perspective: '100px' }} className={' right-0  ml-[25rem] mt-[35rem] translate-y-[4rem]'}>
+                <div
+                    style={{ perspective: '100px' }}
+                    className={'mb-96 right-0  ml-[25rem] mt-[35rem] translate-y-[4rem]'}
+                >
                     <p
                         style={{ transform: ' rotateX(1deg) rotateZ(326deg) skew(19deg, 5deg) translateY(2rem)' }}
                         className={'leading-snug font-size'}

@@ -13,7 +13,7 @@ const UseSmoothScrollBar = ({ children }) => {
         setTimeout(() => {
 
 
-        document.querySelector('.footerForm').addEventListener('click',()=>{
+        document.querySelector('.footerForm')?.addEventListener('click',()=>{
             bodyScrollBar.current?.scrollTo(0, 7550);
         })   }, 0);
         scroller.current = document.querySelector('.scroller');

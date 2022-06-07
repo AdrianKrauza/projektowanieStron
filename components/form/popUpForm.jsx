@@ -8,14 +8,14 @@ const PopUpForm = () => {
     const [isOpen, setIsOpen] = useState(false);
     const formAnimationRef = useRef(null);
     const open = () => {
-        document.querySelector('.scroller').style.display = 'none';
+        // document.querySelector('.scroller').style.display = 'none';
         setIsOpen(true);
         formAnimationRef.current.style.opacity = 1;
         formAnimationRef.current.classList.remove('animate__zoomOut');
         formAnimationRef.current.classList.add('animate__zoomInDown');
     };
     const close = () => {
-        document.querySelector('.scroller').style.display = 'block';
+        // document.querySelector('.scroller').style.display = 'block';
         setIsOpen(false);
         formAnimationRef.current.classList.remove('animate__zoomInDown');
         formAnimationRef.current.classList.add('animate__zoomOut');
