@@ -1,16 +1,22 @@
 import Header from '../components/header/header';
-import Cards3 from '../components/cards3/cards3';
+import Cards3 from '../components/cards3/desktop/cards3';
 import Tablets from '../components/tablets/tablets';
 import Book from '../components/book/desktop/book';
-import Guarantee from '../components/guarantee/guarantee';
+import Guarantee from '../components/guarantee/desktop/guarantee';
 import Letters from '../components/letters/letters';
 import If from '../components/if/if';
 import Portfolios from '../components/portfolios/portfolios';
 import Footer from '../components/footer/footer';
 import { useEffect, useState } from 'react';
 import HeaderMobile from '../components/headerMobile/headerMobile';
-import Form from '../components/form/formEl';
+import Form from '../components/form/form';
 import IfMobile from '../components/ifMobile/ifMobile';
+import BookMobile from '../components/book/mobile/bookMobile';
+import GuaranteeMobile from '../components/guarantee/mobile/guaranteeMobile';
+import Cards3Mobile from '../components/cards3/mobile/cards3Mobile';
+import getRatio from '../helpers/getRatio';
+import UxMobile from '../components/ux/mobile/uxMobile';
+import FaqMobile from '../components/faq/mobile/faqMobile';
 // import BookMobile from '../components/bookMobile/bookMobile';
 
 export default function Home() {
@@ -22,19 +28,31 @@ export default function Home() {
         } else {
             setIsMobile(false);
         }
-    });
+        // if (getRatio() < 0.6) {
+        //     document.querySelector('html').style.fontSize = '1vw';
+        // } else {
+        //     document.querySelector('html').style.fontSize = '.5vh';
+        // }
+        // window.onresize = () => {
+        //     document.querySelector('html').style.fontSize = `${1 * getRatio()}vw`;
+        //     if (getRatio() < 0.6) {
+        //         document.querySelector('html').style.fontSize = '1vw';
+        //     } else {
+        //         document.querySelector('html').style.fontSize = '.5vh';
+        //     }
+        // };
+    }, []);
     if (isMobile === 'init') return <div></div>;
     return isMobile ? (
-        <div>
+        <div className={'relative z-10'}>
             <HeaderMobile />
             <IfMobile />
-            {/*<div className={'h-[150vh]'}></div>*/}
-            {/*<BookMobile />*/}
-            {/*<div className={'h-[150vh]'}></div>*/}
-            {/*<div className={'mt-[100vh] top-0 absolute '}>*/}
-            {/*    <Form />*/}
-            {/*    */}
-            {/*</div>*/}
+            <BookMobile />
+            <GuaranteeMobile />
+            <Cards3Mobile />
+            <UxMobile />
+            <FaqMobile />
+            <Footer />
         </div>
     ) : (
         <div>

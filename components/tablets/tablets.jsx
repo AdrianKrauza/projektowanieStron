@@ -17,15 +17,15 @@ const Tablets = () => {
             gsap.fromTo(
                 maskImage.current,
                 {
-                    clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
+                    clipPath: 'polygon(0 62%, 48% 11%, 68% 48%, 19% 100%)',
                 },
                 {
-                    clipPath: 'polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)',
+                    clipPath: 'polygon(38% 19%, 46% 14%, 68% 48%, 61% 52%)',
                     scrollTrigger: {
                         trigger: maskImage.current,
                         scrub: 1,
                         start: '10% center',
-                        end: '60% center',
+                        end: '90% center',
                     },
                 },
             );

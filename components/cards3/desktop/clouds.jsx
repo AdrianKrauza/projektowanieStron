@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import SpiralData from '../../assets/cards3/clouds.json';
+import SpiralData from '../../../assets/cards3/clouds.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lottie from 'lottie-react';
@@ -27,21 +27,37 @@ export const Clouds = () => {
                         onUpdate: ({ progress }) => {
                             spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
                         },
-                        // onLeave: () => {
-                        //     document.body.classList.remove('bg-darkGray-900');
-                        //     document.body.classList.add('bg-lightGray');
-                        // },
-                        // onEnterBack: () => {
-                        //     document.body.classList.remove('bg-lightGray');
-                        //     document.body.classList.add('bg-darkGray-900');
-                        // },
+                        onLeave: () => {
+                            document.body.classList.remove('bg-darkGray-900');
+                            document.body.classList.add('bg-lightGray');
+                        },
+                        onEnterBack: () => {
+                            document.body.classList.remove('bg-lightGray');
+                            document.body.classList.add('bg-darkGray-900');
+                        },
                     });
+                    // ScrollTrigger.create({
+                    //     trigger: 'body',
+                    //     start: `0px -170%`,
+                    //     end: `0px -230%`,
+                    //     onUpdate: ({ progress }) => {
+                    //         spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
+                    //     },
+                    //     // onLeave: () => {
+                    //     //     document.body.classList.remove('bg-darkGray-900');
+                    //     //     document.body.classList.add('bg-lightGray');
+                    //     // },
+                    //     // onEnterBack: () => {
+                    //     //     document.body.classList.remove('bg-lightGray');
+                    //     //     document.body.classList.add('bg-darkGray-900');
+                    //     // },
+                    // });
                 },
                 '(max-width: 1200px)': () => {
                     ScrollTrigger.create({
                         trigger: 'body',
-                        start: `${vh(0)}px 0%`,
-                        end: `${vh(50)}px 0%`,
+                        start: `${vh(50)}px 0%`,
+                        end: `${vh(100)}px 0%`,
                         onUpdate: ({ progress }) => {
                             spiralDataRef.current.goToAndStop(Math.floor(24 * progress - 1), true);
                         },

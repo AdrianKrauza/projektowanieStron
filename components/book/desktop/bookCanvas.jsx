@@ -65,7 +65,7 @@ const BookCanvas = ({ bookSectionRef }) => {
     }, []);
     return (
         <div className={'absolute -right-20 mt-40 m:z-30 m:shadow-[#e6e8ec_0px_-9px_13px_5px]'}>
-            <canvas ref={bookCanvasRef} className={'w-[66rem] m:w-[110rem]'} />
+            <canvas ref={bookCanvasRef} className={'w-[66rem] m:w-[110rem] canvasBook'} />
         </div>
     );
 };

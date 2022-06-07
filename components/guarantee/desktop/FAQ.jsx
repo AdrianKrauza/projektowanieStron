@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import useTextAnimations from '../../hooks/useTextAnimations';
+import useTextAnimations from '../../../hooks/useTextAnimations';
+import useIsMobile from '../../../hooks/useIsMobile';
 const questions = [
     'Gwarantujecie przebić konwersję mojej obecnej strony?',
     'Mogę samodzielnie edytować lub rozbudować stronę?',
@@ -15,9 +16,11 @@ const questions = [
 ];
 const Question = ({ question, setIsOpen, isOpen, index }) => {
     const { AnimationHeadingScrub } = useTextAnimations();
+    const isMobile = useIsMobile();
     useEffect(() => {
         gsap.to(answerRef.current, {
-            height: isOpen ? '3rem' : 0,
+            height: isOpen ? '8rem' : 0,
+            // height: isOpen ? '3rem' : 0,
             duration: 0.1,
             delay: !isOpen ? 0.1 : 0,
         });
@@ -50,6 +53,10 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
     };
     useEffect(() => {
         setTimeout(() => {
+            if (isMobile) {
+                AnimationHeadingScrub(yesRef, yesRef, 2250, 2700, false, true);
+                return;
+            }
             AnimationHeadingScrub(yesRef, yesRef, -250, 200, false, true);
         }, 0);
     });
@@ -62,22 +69,36 @@ const Question = ({ question, setIsOpen, isOpen, index }) => {
                 'cursor-pointer border-[1px] border-t-[#cecece] border-dotted py-[1.3rem] pl-[2rem] relative    '
             }
         >
-            <p ref={yesRef} className={'text-white absolute right-[5rem] top-[0.7rem] font-playfair '}>
+            <p
+                ref={yesRef}
+                className={
+                    'text-white m:text-[5rem] absolute right-[5rem] m:right-[10.5rem] top-[0.7rem] m:top-[1.7rem]  font-playfair '
+                }
+            >
                 TAK
             </p>
             <div ref={bgRef} className={'bg-white w-full h-full absolute left-0 top-0 -z-10 scale-x-0'} />
-            <p className={'  text-[1.5rem]'}>{question}</p>
-            <p ref={answerRef} className={'pl-[1rem] flex items-end  text-[1.2rem] opacity-0 h-0 overflow-hidden'}>
+            <p className={'m:text-[3.5rem]  text-[1.5rem] m:mr-[20rem] m:leading-[1.2]'}>{question}</p>
+            <p
+                ref={answerRef}
+                className={'pl-[1rem] flex items-end m:text-[5rem] text-[1.2rem]  opacity-0 h-0 overflow-hidden'}
+            >
                 TAK
             </p>
             <div
                 className={
-                    'absolute right-[2rem] top-[1.4rem]  rounded-full border-[1px] border-[#cecece] w-[1.5rem] h-[1.5rem]'
+                    'absolute right-[2rem] top-[1.4rem]  rounded-full border-[1px] border-[#cecece] w-[1.5rem] h-[1.5rem] m:w-[7rem] m:h-[7rem]'
                 }
             >
-                <div className={'w-[.65rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem]'}> </div>
                 <div
-                    className={`w-[.65rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem] translate-y-[-1px] transition-opacity rotate-90 opacity-${
+                    className={
+                        'w-[.65rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem] m:w-[3rem] m:left-[1.9rem] m:top-[3rem]'
+                    }
+                >
+                    {' '}
+                </div>
+                <div
+                    className={`m:left-[1.9rem] m:top-[3rem] w-[.65rem] m:w-[3rem] bg-black h-[1px] relative left-[.35rem] top-[.7rem] translate-y-[-1px] transition-opacity rotate-90 opacity-${
                         isOpen ? 0 : 1
                     }`}
                 />
@@ -89,7 +110,7 @@ const Faq = () => {
     const [isOpen, setIsOpen] = useState(new Array(questions.length).fill(false));
 
     return (
-        <div className={'w-[55rem] m-auto border-[1px] border-b-[#cecece]'}>
+        <div className={'w-[55rem] m:w-[90rem] m-auto border-[1px] border-b-[#cecece]'}>
             {questions.map((question, index) => (
                 <Question
                     setIsOpen={setIsOpen}
@@ -104,10 +125,12 @@ const Faq = () => {
                     'border-[1px] border-t-[#cecece] border-dotted py-[0.9rem] pl-[2rem] relative flex justify-between items-center '
                 }
             >
-                <p className={' text-[1.5rem]'}>Zapytaj nas o to co jest najwazniejsze da Ciebie</p>
+                <p className={'m:text-[3.5rem]  text-[1.5rem] m:mr-[20rem] m:leading-[1.2]'}>
+                    Zapytaj nas o to co jest najwazniejsze da Ciebie
+                </p>
                 <button
                     className={
-                        'form-open border-[1px] border-[#cecece] text-black text-[1.2rem] rounded-[10rem] px-[2rem]  py-[.5rem] font-normal'
+                        'form-open border-[1px] m:w-[55rem] border-[#cecece] text-black text-[1.2rem] m:text-[3rem] rounded-[10rem] px-[2rem]  width-[55vw] py-[.5rem] font-normal m:py-[2rem]'
                     }
                 >
                     Zadaj pytanie

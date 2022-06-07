@@ -8,7 +8,14 @@ const UseSmoothScrollBar = ({ children }) => {
     const [scrollBarCreated, setScrollBarCreated] = useState(false);
     const scroller = useRef();
     const bodyScrollBar = useRef();
+
     useEffect(() => {
+        setTimeout(() => {
+
+
+        document.querySelector('.footerForm').addEventListener('click',()=>{
+            bodyScrollBar.current?.scrollTo(0, 7550);
+        })   }, 0);
         scroller.current = document.querySelector('.scroller');
         bodyScrollBar.current = Scrollbar.init(scroller.current, {
             damping: 0.05,
@@ -28,6 +35,9 @@ const UseSmoothScrollBar = ({ children }) => {
                 });
             }
         }, 0);
+        setTimeout(() => {
+            document.querySelector('.scroll-content >div').classList.remove('stopScroll');
+        }, 1000);
         return () => {
             const t = ScrollTrigger.getAll();
             t.forEach((t) => t.kill());
@@ -42,7 +52,7 @@ const UseSmoothScrollBar = ({ children }) => {
     //         }, 100);
     //
     //         setTimeout(() => {
-    //             // document.querySelector(".scroll-content >div").classList.remove("stopScroll");
+
     //         }, 1000);
     //
     //     }else if(fromEnter === "bottom"){

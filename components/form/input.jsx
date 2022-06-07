@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import done from '/assets/form/done.png';
 import Image from 'next/image';
-const Input = ({ label, optional = false, textarea = false, handleOnChange, name }) => {
+const Input = ({ label, optional = false, textarea = false, handleOnChange, popUp }) => {
     const [isClick, setIsClick] = useState(false);
     const [isValid, setIsValid] = useState(false);
     const [value, setValue] = useState('');
-    const isActive = () => {
-        return isClick || value;
-    };
+    const isActive = () => isClick || value;
     const checkValid = () => {
         setIsClick(false);
         setIsValid(!!value.length);
@@ -34,12 +32,22 @@ const Input = ({ label, optional = false, textarea = false, handleOnChange, name
                 <>
                     <textarea
                         style={{
-                            height: isActive() ? '300px' : '46px',
-                            paddingTop: isActive() ? '75px' : '0',
-                            transition: 'height 0.5s linear',
+                            height: isActive() ? '200px' : '46px',
+                            paddingTop: isActive() ? '85px' : '0',
+                            transition: 'height 0.2s linear',
                         }}
-                        className={'p-[10px] w-full  outline-0 text-[16px] text-[#919191] '}
-                        onFocus={() => setIsClick(true)}
+                        className={`${
+                            popUp ? 'popUp' : 'footerForm'
+                        } p-[10px] w-full  outline-0 text-[16px] text-[#919191] `}
+                        onFocus={() => {
+                            if (popUp) {
+                                document.querySelector('.popUpForm').scrollTop = 300;
+                                // document
+                                //     .querySelector('.popUp')
+                                //     .scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+                            }
+                            setIsClick(true);
+                        }}
                         onBlur={checkValid}
                         onChange={(e) => {
                             handleOnChange(e);
@@ -49,7 +57,7 @@ const Input = ({ label, optional = false, textarea = false, handleOnChange, name
                     <p
                         style={{ opacity: isActive() ? '1' : '0' }}
                         className={
-                            'z-50 absolute text-[16px] py-[15px] top-0 pl-[10px] pointer-events-none text-[#438d07] leading-[1.4] bg-white w-full '
+                            'z-50 text-left absolute text-[16px] pb-[5px] py-[15px] top-0 pl-[10px] pointer-events-none text-[#438d07] leading-[1.4] bg-white w-full m:text-[10px]'
                         }
                     >
                         Im więcej się dowiemy, tym lepiej Ci pomożemy. <br />

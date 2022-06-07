@@ -33,7 +33,7 @@ const Line = ({ line }) => {
             });
         }, []);
     }, []);
-    console.log(line);
+    console.log(!!size[line]);
     return (
         <span
             className={'block opacity-40'}

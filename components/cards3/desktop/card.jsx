@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import useTextAnimations from '../../hooks/useTextAnimations';
+import useTextAnimations from '../../../hooks/useTextAnimations';
 import snot from '/assets/cards3/snot.json';
 import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 import Lottie from 'lottie-react';
-import isSlowNetwork from '../../helpers/isSlovNetwork';
+import isSlowNetwork from '../../../helpers/isSlovNetwork';
 const vh = (coef) => window.innerHeight * (coef / 100);
 const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
     const cardRef = useRef();
@@ -38,32 +38,19 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     );
                 },
                 '(max-width: 1200px)': () => {
-                    gsap.fromTo(
-                        [paragraphRef.current, titleRef.current],
-                        {
-                            color: 'white',
-                        },
-                        {
-                            color: '#151515',
-                            scrollTrigger: {
-                                start: `${vh(30)}px 0%`,
-                                end: `${vh(45)}px 0%`,
-                                trigger: 'body',
-                                scrub: true,
-                            },
-                        },
-                    );
+                    console.log(cardRef.current);
                     gsap.fromTo(
                         cardRef.current,
                         {
                             y: `${100 + 40 * index}vh`,
                         },
                         {
-                            y: '15vh',
+                            y: '0',
                             scrollTrigger: {
-                                start: `${vh(0)}px 0%`,
-                                end: `${vh(40)}px 0%`,
-                                trigger: 'body',
+                                start: `-${vh(100)}px 0%`,
+                                end: `${vh(0)}px 0%`,
+                                trigger: cardRef.current.parentNode,
+                                markers: true,
                                 scrub: true,
                             },
                         },
@@ -79,10 +66,16 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                 'bg-white rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-[1.8rem] p-[1.8rem] relative mt-44 h-[30rem] m:mt-[5rem] translate-y-[100vh] will-change-transform m:bg-transparent'
             }
         >
-            <p className={'text-center font-playfair text-[1.4rem] font-normal'}>Premium</p>
+            <p
+                className={`text-center font-playfair text-[1.4rem] font-normal m:text-left ${
+                    mobileRight && 'm:ml-[50rem]'
+                }`}
+            >
+                Premium
+            </p>
             <h3
                 ref={titleRef}
-                className={`text-center font-playfair text-[3.4rem] m:text-[5rem] mt-[1rem] ${
+                className={`m:text-left text-center font-playfair text-[3.4rem] m:text-[5rem] mt-[1rem] ${
                     mobileRight && 'm:ml-[50rem]'
                 }`}
             >
@@ -102,7 +95,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     muted
                     loop
                     src={video}
-                    className={` absolute max-w-none w-[28rem] bottom-[-5rem] left-1/2 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
+                    className={`m:translate-y-0 m:top-0 absolute max-w-none w-[28rem] bottom-[-5rem] left-1/2 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'
                     }`}
                     style={{ WebkitMaskImage: `url(${mask})` }}
@@ -110,7 +103,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
             ) : (
                 <div
                     style={{ WebkitMaskImage: `url(${mask})` }}
-                    className={`absolute left-1/2 max-w-none w-[27rem] -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
+                    className={`absolute left-1/2 max-w-none w-[27rem] m:translate-y-0 -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'
                     }`}
                 >

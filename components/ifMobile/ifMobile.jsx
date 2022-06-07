@@ -11,16 +11,16 @@ gsap.registerPlugin(ScrollTrigger);
 const start = 13500;
 const boxesData = [
     [
-        'Chcesz podwoić liczbę / klientów z takiej samej / ilości odwiedzin strony.',
+        'Chcesz podwoić liczbę klientów / z tej samej ilości odwiedzin strony.',
         'Bez zwiększania wydatków  / na reklamę w internecie.',
     ],
     [
-        'Zależy Ci, aby Twoja strona / wyglądała świetnie a jej / używanie było przyjemne.',
-        'Chcesz zdobyć duże zaufanie / już od pierwszego spojrzenia.',
+        'Chcesz prezentować profesjonalizm.',
+        'Zależy Ci, by Twoja strona wyglądała / świetnie a jej używanie było przyjemne.',
     ],
     [
-        'Szukasz ludzi, którzy zrobią / wszystko za Ciebie. Chcesz / mieć czas i wolną głowę.',
-        'Od napisania przekonującej / oferty, do doskonałej grafiki.',
+        'Chcesz mieć czas i wolną głowę.',
+        'Szukasz ludzi, którzy zrobią wszystko / za Ciebie. Od napisania przekonującej / oferty, do doskonałej grafiki.',
     ],
 ];
 const IfMobile = () => {
@@ -31,22 +31,22 @@ const IfMobile = () => {
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         setTimeout(() => {
-            AnimationHeadingScrub(headerRef, { current: document.body }, '0 -20%', '0 -100%', true, true);
-            gsap.fromTo(
-                headerRef.current,
-                {
-                    y: '10vw',
-                },
-                {
-                    y: 0,
-                    scrollTrigger: {
-                        trigger: 'body',
-                        start: `0 -0%`,
-                        end: `0 -150%`,
-                        scrub: true,
-                    },
-                },
-            );
+            AnimationHeadingScrub(headerRef, { current: document.body }, '0 -5%', '0 -50%', true, true);
+            // gsap.fromTo(
+            //     headerRef.current,
+            //     {
+            //         y: '10vw',
+            //     },
+            //     {
+            //         y: 0,
+            //         scrollTrigger: {
+            //             trigger: 'body',
+            //             start: `0 -0%`,
+            //             end: `0 -150%`,
+            //             scrub: true,
+            //         },
+            //     },
+            // );
             gsap.set(pinRef.current, {
                 opacity: 1,
             });
@@ -62,15 +62,12 @@ const IfMobile = () => {
         <>
             <div ref={pinRef} className={'w-screen  h-screen absolute top-[0] opacity-0'}>
                 <div ref={ifContentRef}>
-                    <h2 ref={headerRef} className={'text-center text-[8.5rem] text-[#dfdfdf] h-[20vh] pt-[5vh]'}>
-                        <span>Owocne strony będą</span>
-                        <span>dla Ciebie idealne,</span>
-                        <span> jeśli:</span>
+                    <h2 ref={headerRef} className={'text-center text-[10rem] text-[#dfdfdf] mb-[7rem] mt-[21rem]'}>
+                        <span> Owocne strony</span>
+                        <span>będą dla Ciebie</span>
+                        <span> idealne, jeśli:</span>
                     </h2>
-                    <div
-                        ref={boxesRef}
-                        className={'w-[75rem] m-auto justify-between h-[80vh] flex  flex-col pb-[10vh] '}
-                    >
+                    <div ref={boxesRef} className={'w-[75rem] m-auto justify-between h-[70rem] flex  flex-col   '}>
                         {boxesData.map((el, index) => (
                             <IfBoxMobile
                                 containerRef={ifContentRef}
@@ -89,3 +86,17 @@ const IfMobile = () => {
 };
 
 export default IfMobile;
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+    */

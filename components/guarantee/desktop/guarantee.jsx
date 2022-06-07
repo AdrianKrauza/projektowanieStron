@@ -1,4 +1,4 @@
-import useTextAnimations from '../../hooks/useTextAnimations';
+import useTextAnimations from '../../../hooks/useTextAnimations';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -158,6 +158,7 @@ const Guarantee = ({ setPageState }) => {
                     <video
                         style={{
                             WebkitMaskImage: `url(assets/header/Maska-Laptop-MOBILE.svg)`,
+                            filter: 'contrast(101%)',
                         }}
                         src={videoName2}
                         className={' w-[670px] '}

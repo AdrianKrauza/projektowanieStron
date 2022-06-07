@@ -156,10 +156,7 @@ html {
    }
  }
 
-.stopScroll{
-  overflow: hidden;
-  height: 100vh;
-}
+
 .scrollbar-track-x{
   display: none!important;
 }
@@ -167,3 +164,24 @@ html {
 .scrollbar-track-y ,scrollbar-track-x{
   display: none!important;
 }}
+*{
+  max-width: 100vw;
+  /*overflow: hidden;*/
+}
+/*.stopScroll > div > div{*/
+/*  max-height: 100vh;*/
+/*  !*overflow: hidden*!*/
+/*}*/
+.scroller{
+  overflow:hidden!important;
+}
+.stopScroll{
+  overflow: hidden;
+  height: 100vh;
+}
+.stopScroll .pin-spacer{
+  overflow: hidden!important;
+  max-height: 100vh!important;
+  padding: 0!important;
+  inset: 0!important;
+}

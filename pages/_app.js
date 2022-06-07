@@ -4,7 +4,7 @@ import '../styles/odometer-theme-minimal.css';
 import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 import Nav from '../components/nav/nav';
 import { useEffect, useState } from 'react';
-import Form from '../components/form/form';
+import PopUpForm from '../components/form/popUpForm';
 const Resize = () => {
     const [isResize, setIsResize] = useState(false);
     useEffect(() => {
@@ -35,11 +35,13 @@ function MyApp({ Component, pageProps }) {
             <Resize />
             <Nav />
             <UseSmoothScrollBar>
-                <div className={'max-w-screen overflow-hidden min-h-screen'}>
+                <div className={'max-w-screen overflow-hidden min-h-screen stopScroll'}>
+                    {/*<div>*/}
                     <Component {...pageProps} />
+                    {/*</div>*/}
                 </div>
             </UseSmoothScrollBar>
-            <Form />
+            <PopUpForm />
         </div>
     );
 }

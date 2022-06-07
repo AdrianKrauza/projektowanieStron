@@ -9,6 +9,8 @@ import preVideo from '/assets/header/Projektowanie-stron-EKRAN.jpg';
 import UseTextAnimations from '../../hooks/useTextAnimations.jsx';
 import { GradientAnimation } from '../../helpers/gradientAnimation';
 import Logo from './logo';
+import getRatio from '../../helpers/getRatio';
+import Arrow from './arrow';
 const vh = (coef) => window.innerHeight * (coef / 100);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,7 +157,7 @@ const HeaderMobile = () => {
                         }
                     />
                     <div className={'max-w-[90rem] m-auto relative h-screen top-10'}>
-                        <div className={'m:top-[80rem] m:relative pointer-events-none'}>
+                        <div className={'m:top-[90rem] m:relative pointer-events-none'}>
                             <style jsx>{`
                                 @media (min-width: 2000px) {
                                     h1,
@@ -177,12 +179,12 @@ const HeaderMobile = () => {
                             <p
                                 ref={paragraphRef}
                                 className={
-                                    'ml-14 m:ml-0 text-[2.5rem] text-[#dfdfdf] font-thin font-roboto mt-10 leading-[1.2] opacity-0  relative z-20  m:text-center m:text-[6rem]'
+                                    'ml-14 m:ml-0 text-[2.2rem] text-[#dfdfdf] font-thin font-roboto mt-10 leading-[1.2] opacity-0  relative z-20  m:text-center m:text-[5rem]'
                                 }
                             >
-                                <span className={'block tracking-[-1px]'}>Projektujemy przyjemne, cyfrowe</span>
-                                <span className={'block tracking-[-2px]'}>doświadczenia, które dostarczają</span>
-                                <span className={'block tracking-[-3px]'}>topowych wyników biznesowych.</span>
+                                <span className={'block tracking-[-.1rem]'}>Projektujemy przyjemne, cyfrowe</span>
+                                <span className={'block tracking-[-.17rem]'}>doświadczenia, które dostarczają</span>
+                                <span className={'block tracking-[-.25rem]'}>topowych wyników biznesowych.</span>
                             </p>
                         </div>
                         <div
@@ -211,9 +213,8 @@ const HeaderMobile = () => {
                         </div>
                         <div
                             ref={imageRef}
-                            className={
-                                'w-[80rem] absolute top-[2rem] -right-44 inline-block m:right-[-7rem] m:w-[105rem] m:mt-48 opacity-0'
-                            }
+                            style={{ top: `12rem` }}
+                            className={`w-[80rem] absolute  -right-44 inline-block m:right-[-7rem] m:w-[105rem] m:mt-48 opacity-0`}
                         >
                             <div
                                 ref={imageBgRef}
@@ -226,7 +227,7 @@ const HeaderMobile = () => {
                                     video {
                                         width: 88rem;
                                         position: relative;
-                                        left: 0rem;
+                                        left: 0;
                                         top: -1rem;
                                         max-width: unset !important;
                                         //display: none;
@@ -243,6 +244,15 @@ const HeaderMobile = () => {
                                 <Image priority quality={85} layout={'responsive'} {...LaptopMobileImg} />
                             </div>
                         </div>
+                        <div className={'absolute z-20 left-1/2 -translate-x-1/2 top-[145rem]'}>
+                            <div className=" w-[8rem] h-[16rem] rounded-full rounded-full border-[1px] border-[#545458] m-auto mb-[2rem]  ">
+                                <svg ref={mouseMoveRef} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className="dot" cx="64.5" cy="64.5" r="10" fill="#545458 " />
+                                </svg>
+                            </div>
+                            <p className={'text-[4rem] text-[#545458] font-normal text-center'}>Przewiń</p>
+                        </div>
+                        {/*{getRatio() < 0.55 && <Arrow />}*/}
                     </div>
                 </div>
             </div>
@@ -251,3 +261,5 @@ const HeaderMobile = () => {
 };
 
 export default HeaderMobile;
+
+// get width / height of the viewport

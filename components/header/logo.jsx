@@ -12,7 +12,7 @@ const Logo = () => {
             y: -5670 + 91,
             ease: SteppedEase.config(62),
         });
-        logo.progress(100);
+        // logo.progress(100);
         const handleMouseEnter = () => {
             logo.reverse();
         };
