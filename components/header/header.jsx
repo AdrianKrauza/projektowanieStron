@@ -315,6 +315,7 @@ const Header = () => {
                                     poster={'/assets/header/poster.jpg'}
                                     autoPlay
                                     muted
+                                    playsInline
                                     loop
                                 />
                             </div>

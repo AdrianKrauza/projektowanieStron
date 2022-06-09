@@ -28,6 +28,7 @@ const UxMobile = () => {
                         muted
                         loop
                         autoPlay
+                        playsInline
                     />
                 </div>
             </div>

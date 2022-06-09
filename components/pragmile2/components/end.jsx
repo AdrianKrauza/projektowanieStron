@@ -59,6 +59,7 @@ const End = () => {
                 loop
                 muted
                 autoPlay
+                playsInline
             />
             <div className={'text5 translate-x-[1060px]  scale-[0.7]'}>
                 <Image priority {...text5} />

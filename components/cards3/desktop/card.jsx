@@ -94,6 +94,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     autoPlay
                     muted
                     loop
+                    playsInline
                     src={video}
                     className={`m:translate-y-0 m:top-0 absolute max-w-none w-[28rem] bottom-[-5rem] left-1/2 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'

@@ -101,6 +101,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         className={'left-[17px] top-[410px] absolute'}
                         style={{ clipPath: 'polygon(0 0, 90% 0, 100% 90%, 0 90%)' }}
                     />
@@ -108,6 +109,7 @@ const Banach = () => {
                         src={'/assets/portfolios/Strona-pattern2.mp4'}
                         autoPlay
                         muted
+                        playsInline
                         loop
                         className={'left-[17px] top-[480px] absolute'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 100% 99%, 0 99%)' }}
@@ -116,6 +118,7 @@ const Banach = () => {
                         src={'/assets/portfolios/Strona-pattern3.mp4'}
                         autoPlay
                         muted
+                        playsInline
                         loop
                         className={'left-[25px] top-[570px] absolute'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
@@ -125,6 +128,7 @@ const Banach = () => {
                     <Image priority {...page1} />
                 </div>
                 <video
+                    playsInline
                     ref={phoneRef}
                     style={{ WebkitMaskImage: `url(/assets/portfolios/phoneMaskdesign.svg)` }}
                     src={'/assets/portfolios/Mobile-Design.mp4'}

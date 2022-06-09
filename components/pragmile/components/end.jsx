@@ -62,6 +62,7 @@ const End = () => {
                 <div className={'gr'} />
             </div>
             <video
+                playsInline
                 className={'videoHand translate-x-[1090px] w-[350px] scale-[0.7] mix-blend-difference h-[304px]'}
                 src={'/assets/pragmile/Badz-soba-animacja.mp4'}
                 loop

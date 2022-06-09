@@ -42,7 +42,7 @@ const PopUpForm = () => {
             />
 
             <div
-                style={{ scrollBehavior: 'smooth' }}
+                // style={{ scrollBehavior: 'smooth' }}
                 className={
                     'w-[560px] max-h-screen  popUpForm m:overflow-scroll z-[9999] absolute left-1/2 -translate-x-1/2 top-[50vh] -translate-y-1/2 m:top-0 m:translate-y-[0] '
                 }

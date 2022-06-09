@@ -19,7 +19,7 @@ const Presentation = () => {
             </p>
             <div className={'h-[100px] bg-white w-[1px] mx-10'} />
             <div>
-                <video ref={video} src="/assets/oko/Oko-logo.mp4" autoPlay muted className={'w-96'} />
+                <video playsInline ref={video} src="/assets/oko/Oko-logo.mp4" autoPlay muted className={'w-96'} />
             </div>
         </div>
     );

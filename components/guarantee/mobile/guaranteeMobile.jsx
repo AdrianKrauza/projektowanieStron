@@ -81,6 +81,7 @@ const Guarantee = ({ setPageState }) => {
                     src={videoName}
                     loop
                     autoPlay
+                    playsInline
                     muted
                 />
             </div>

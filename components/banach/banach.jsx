@@ -355,6 +355,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         style={{ WebkitMaskImage: `url(/assets/banach/phoneMask.svg)` }}
                     />
                 </div>
@@ -481,6 +482,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         className={'w-[100px] absolute top-[3320px]  mix-blend-darken left-[1009px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 100% 99%, 0 99%)' }}
                     />
@@ -489,6 +491,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[575px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 100% 99%, 0 99%)' }}
                     />
@@ -497,6 +500,7 @@ const Banach = () => {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         className={'w-[130px] absolute top-[3320px]  mix-blend-darken left-[158px]'}
                         style={{ clipPath: 'polygon(0 0, 99% 0, 99% 100%, 0% 100%)' }}
                     />

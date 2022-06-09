@@ -116,6 +116,7 @@ const Guarantee = ({ setPageState }) => {
                         src={videoName}
                         loop
                         autoPlay
+                        playsInline
                         muted
                     />
                 </div>
@@ -164,6 +165,7 @@ const Guarantee = ({ setPageState }) => {
                         className={' w-[670px] '}
                         muted
                         loop
+                        playsInline
                         autoPlay
                     />
                 </div>
