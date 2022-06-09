@@ -1,8 +1,11 @@
 import PragmilePage from '../components/pragmile/pragmile';
+import PortfolioMobile from '../components/portfolioMobile/portfolioMobile';
 const Novate = () => {
     return (
         <div>
-            <PragmilePage />
+            <PortfolioMobile>
+                <PragmilePage />
+            </PortfolioMobile>
         </div>
     );
 };

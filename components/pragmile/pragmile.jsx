@@ -25,6 +25,7 @@ const Pragmile = ({ setPageState }) => {
         setTimeout(() => {
             gsap.to(containerRef.current.querySelector('.pin'), {
                 opacity: 1,
+                delay: 0.9,
                 duration: 2,
             });
 

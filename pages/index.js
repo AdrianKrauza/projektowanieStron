@@ -27,20 +27,22 @@ export default function Home() {
             setIsMobile(true);
         } else {
             setIsMobile(false);
+            return;
         }
-        // if (getRatio() < 0.6) {
-        //     document.querySelector('html').style.fontSize = '1vw';
-        // } else {
-        //     document.querySelector('html').style.fontSize = '.5vh';
-        // }
-        // window.onresize = () => {
-        //     document.querySelector('html').style.fontSize = `${1 * getRatio()}vw`;
-        //     if (getRatio() < 0.6) {
-        //         document.querySelector('html').style.fontSize = '1vw';
-        //     } else {
-        //         document.querySelector('html').style.fontSize = '.5vh';
-        //     }
-        // };
+
+        if (getRatio() < 0.55) {
+            document.querySelector('html').style.fontSize = '1vw';
+        } else {
+            document.querySelector('html').style.fontSize = '.5vh';
+        }
+        window.onresize = () => {
+            document.querySelector('html').style.fontSize = `${1 * getRatio()}vw`;
+            if (getRatio() < 0.55) {
+                document.querySelector('html').style.fontSize = '1vw';
+            } else {
+                document.querySelector('html').style.fontSize = '.5vh';
+            }
+        };
     }, []);
     if (isMobile === 'init') return <div></div>;
     return isMobile ? (

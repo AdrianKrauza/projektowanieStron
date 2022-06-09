@@ -1,8 +1,11 @@
 import BanachPage from '../components/banach/banach';
+import PortfolioMobile from '../components/portfolioMobile/portfolioMobile';
 const Novate = () => {
     return (
         <div>
-            <BanachPage />
+            <PortfolioMobile>
+                <BanachPage />
+            </PortfolioMobile>
         </div>
     );
 };
