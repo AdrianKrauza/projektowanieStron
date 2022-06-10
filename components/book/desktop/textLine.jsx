@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 const size = {
     zobacz: 6,
     'tę grubą': 7,
-    'gwarancje...': 8,
+    'gwarancję...': 8,
 };
 const Line = ({ line }) => {
     const lineRef = useRef();

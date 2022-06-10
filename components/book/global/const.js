@@ -30,7 +30,7 @@ export const TEXTS = [
             '|',
             'zobacz',
             'tę grubą',
-            'gwarancje...',
+            'gwarancję...',
         ],
     ],
 ];

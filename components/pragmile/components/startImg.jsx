@@ -12,7 +12,7 @@ const StartImg = () => {
             <Image priority {...startImg} layout={'responsive'} quality={100} />
             <div>
                 <Arrow scale={false} color={'#aeccab'} top1={'calc( 35rem - 15vh)'} top2={'calc( 35rem + 5vh)'}>
-                    Team Novate - Softwarehouse <br />
+                    TeamNovate - Softwarehouse <br />
                     Wybrane fragmenty realizacji.
                 </Arrow>
             </div>

@@ -13,7 +13,7 @@ const FaqMobile = () => {
     return (
         <div className={'bg-lightGray mt-[25rem] pb-[20vw]'}>
             <h2 className={'text-center my-[5rem] mt-[1rem] text-[10rem] tracking-[-0.6rem]'} ref={heading2Ref}>
-                Wszystkie/ odpowiedzi/ brzmią - Tak!
+                Wszystkie/ odpowiedzi/ brzmią - tak!
             </h2>
             <div className={'mt-[15rem]'}>
                 <Faq />

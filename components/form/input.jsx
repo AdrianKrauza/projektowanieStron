@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import done from '/assets/form/done.png';
 import Image from 'next/image';
-const Input = ({ label, optional = false, textarea = false, handleOnChange, popUp }) => {
+const Input = ({ label, optional = false, textarea = false, handleOnChange, popUp, autocomplete = '' }) => {
     const [isClick, setIsClick] = useState(false);
     const [isValid, setIsValid] = useState(false);
     const [value, setValue] = useState('');
@@ -23,6 +23,7 @@ const Input = ({ label, optional = false, textarea = false, handleOnChange, popU
                     className={'p-[10px] w-full  outline-0 text-[16px] text-[#919191]'}
                     onFocus={() => setIsClick(true)}
                     onBlur={checkValid}
+                    autoComplete={autocomplete}
                     onChange={(e) => {
                         handleOnChange(e);
                         setValue(e.target.value);

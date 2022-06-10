@@ -15,7 +15,7 @@ const UseSmoothScrollBar = ({ children }) => {
 
 
         document.querySelector('.footerForm')?.addEventListener('click',()=>{
-            isMobile && bodyScrollBar.current?.scrollTo(0, 7550);
+            window.innerWidth < 1000 && bodyScrollBar.current?.scrollTo(0, 7550);
         })   }, 0);
         scroller.current = document.querySelector('.scroller');
         bodyScrollBar.current = Scrollbar.init(scroller.current, {

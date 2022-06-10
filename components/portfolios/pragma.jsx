@@ -119,7 +119,7 @@ const Pragmile2 = () => {
                     <Image priority {...oko} />
                 </div>
                 <h2 className={'text-white font-roboto text-[2.5rem] font-thin mb-[2rem]'}>
-                    Team Novate <br />
+                    TeamNovate <br />
                     Innowacyjny projekt strony <br />
                     dla innowacyjnego zespołu IT
                 </h2>

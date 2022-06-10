@@ -1,5 +1,6 @@
 import getCid from '../../helpers/getCid';
 import getClientId from '../../helpers/getCid';
+import Router from 'next/router';
 
 const onSubmit = async (data, time) => {
     const formdata = new FormData();
@@ -49,5 +50,7 @@ const onSubmit = async (data, time) => {
         .then((response) => response.text())
         .then((result) => console.log(result))
         .catch((error) => console.log('error', error));
+
+    await Router.push('https://owocni.pl/dziekujemy');
 };
 export default onSubmit;

@@ -261,7 +261,7 @@ const Header = () => {
                             >
                                 <span className={'block tracking-[-1px]'}>Projektujemy przyjemne, cyfrowe</span>
                                 <span className={'block tracking-[-2px]'}>doświadczenia, które dostarczają</span>
-                                <span className={'block tracking-[-3px]'}>topowych wyników biznesowych.</span>
+                                <span className={'block tracking-[1px]'}>topowe wyniki biznesowe.</span>
                             </p>
                         </div>
                         <div

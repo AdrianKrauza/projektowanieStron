@@ -34,10 +34,12 @@ const Form = ({ popUp }) => {
                             handleOnChange={(e) => {
                                 setData((data) => ({ ...data, 'form[Imię]': e.target.value }));
                             }}
+                            autocomplete="name"
                             name={'form[Imię]'}
                         />
                         <Input
                             label={'Mój email to:'}
+                            autocomplete="email"
                             handleOnChange={(e) => {
                                 setData((data) => ({ ...data, 'form[Mail]': e.target.value }));
                             }}
@@ -45,6 +47,7 @@ const Form = ({ popUp }) => {
                         <Input
                             optional
                             label={'Tel.'}
+                            autocomplete="tel"
                             name={'form[Telefon]'}
                             handleOnChange={(e) => {
                                 setData((data) => ({ ...data, 'form[Telefon]': e.target.value }));

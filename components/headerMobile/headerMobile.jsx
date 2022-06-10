@@ -184,7 +184,7 @@ const HeaderMobile = () => {
                             >
                                 <span className={'block tracking-[-.1rem]'}>Projektujemy przyjemne, cyfrowe</span>
                                 <span className={'block tracking-[-.17rem]'}>doświadczenia, które dostarczają</span>
-                                <span className={'block tracking-[-.25rem]'}>topowych wyników biznesowych.</span>
+                                <span className={'block tracking-[-.20rem]'}>topowe wyniki biznesowe.</span>
                             </p>
                         </div>
                         <div
