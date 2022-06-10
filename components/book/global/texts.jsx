@@ -19,9 +19,9 @@ const Space = ({ index }) => {
         </div>
     );
 };
-const Texts = () => {
+const Texts = ({ b }) => {
     return (
-        <div className={'m:pt-[70rem]'}>
+        <div className={`m:pt-[70rem] ${b && 'pt-[30rem]'}`}>
             {TEXTS.map((text, index) => (
                 <div key={index} className={'ml-36 '}>
                     <Space index={index} />

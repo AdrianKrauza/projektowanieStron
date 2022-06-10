@@ -6,14 +6,12 @@ import useTextAnimations from '../../hooks/useTextAnimations';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import ForEntrepreneurs from '../forEntrepreneurs/forEntrepreneurs';
 gsap.registerPlugin(ScrollTrigger);
-const Tablets = () => {
-    const headingRef = useRef();
+const Tablets = ({ b }) => {
     const maskImage = useRef();
-    const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         setTimeout(() => {
-            AnimationHeadingScrub(headingRef, headingRef, -50, 200, false, true);
             gsap.fromTo(
                 maskImage.current,
                 {
@@ -32,10 +30,8 @@ const Tablets = () => {
         }, 0);
     }, []);
     return (
-        <div className={'mt-[160vh] bg-lightGray '}>
-            <h2 ref={headingRef} className={'text-center text-darkGray '}>
-                Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
-            </h2>
+        <div className={`${!b ? 'mt-[160vh]' : '-mt-[10rem]'} bg-lightGray `}>
+            {!b && <ForEntrepreneurs />}
             <p className={'text-center mt-28 leading-[1.3] relative z-10'}>
                 Zdobądź piękną, wysokowydajną stronę, która przekonuje <br />
                 znacznie więcej klientów niż strony Twojej konkurencji.

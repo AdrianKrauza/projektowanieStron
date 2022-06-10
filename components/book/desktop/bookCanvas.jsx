@@ -9,7 +9,7 @@ import handleOnUpdate from '../global/handleOnUpdateBook';
 let images = [[], [], [], []];
 let frameLast;
 
-const BookCanvas = ({ bookSectionRef }) => {
+const BookCanvas = ({ bookSectionRef, b }) => {
     const bookCanvasRef = useRef();
     // const [timer, setTimer] = useState(0);
     useEffect(() => {
@@ -33,13 +33,13 @@ const BookCanvas = ({ bookSectionRef }) => {
                 trigger: bookSectionRef.current,
                 pin: bookCanvasRef.current,
                 start: '0 6%',
-                end: '95% 15%',
+                end: `${b ? 80 : 95}% 15%`,
             });
             bookSectionRef.current.querySelectorAll('.space').forEach((el, index) => {
                 if (!index) {
                     ScrollTrigger.create({
                         trigger: bookSectionRef.current,
-                        start: '0 6%',
+                        start: `${b ? -10 : 0}% 6%`,
                         end: '19% center',
                         onUpdate: (e) => (frameLast = handleOnUpdate(e, index, frameLast, images, context)),
                     });
@@ -57,7 +57,7 @@ const BookCanvas = ({ bookSectionRef }) => {
                 ScrollTrigger.create({
                     trigger: el,
                     start: '200% center',
-                    end: '340% center',
+                    end: `${b ? 300 : 340}% center`,
                     onUpdate: (e) => (frameLast = handleOnUpdate(e, index, frameLast, images, context)),
                 });
             });

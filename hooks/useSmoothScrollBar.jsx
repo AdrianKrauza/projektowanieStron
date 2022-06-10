@@ -2,19 +2,20 @@ import Scrollbar from 'smooth-scrollbar';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import useIsMobile from "./useIsMobile";
 gsap.registerPlugin(ScrollTrigger);
 
 const UseSmoothScrollBar = ({ children }) => {
     const [scrollBarCreated, setScrollBarCreated] = useState(false);
     const scroller = useRef();
     const bodyScrollBar = useRef();
-
+    const isMobile = useIsMobile()
     useEffect(() => {
         setTimeout(() => {
 
 
         document.querySelector('.footerForm')?.addEventListener('click',()=>{
-            bodyScrollBar.current?.scrollTo(0, 7550);
+            isMobile && bodyScrollBar.current?.scrollTo(0, 7550);
         })   }, 0);
         scroller.current = document.querySelector('.scroller');
         bodyScrollBar.current = Scrollbar.init(scroller.current, {
@@ -37,6 +38,7 @@ const UseSmoothScrollBar = ({ children }) => {
         }, 0);
         setTimeout(() => {
             document.querySelector('.scroll-content >div').classList.remove('stopScroll');
+            // console.log(getOffset(document.querySelector('.scroll-content >div')));
         }, 1000);
         return () => {
             const t = ScrollTrigger.getAll();

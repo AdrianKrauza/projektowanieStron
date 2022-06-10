@@ -62,7 +62,7 @@ const Sphere = ({ index, bookSectionRef }) => {
         </div>
     );
 };
-const WhiteSpheres = ({ bookSectionRef }) => {
+const WhiteSpheres = ({ bookSectionRef, b }) => {
     const spheresRef = useRef();
     useEffect(() => {
         setTimeout(() => {
@@ -70,7 +70,7 @@ const WhiteSpheres = ({ bookSectionRef }) => {
                 trigger: bookSectionRef.current,
                 pin: spheresRef.current,
                 start: '0% 10%',
-                end: '105% 50%',
+                end: `${b ? 95 : 105}% 50%`,
             });
 
             bookSectionRef.current.querySelectorAll('.space').forEach((el, index) => {

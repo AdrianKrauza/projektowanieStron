@@ -63,13 +63,11 @@ export default function Home() {
         <div>
             <Header />
             <If />
-            <Book b />
-            <GuaranteeConversation />
-            <Tablets b />
+            <Cards3 />
+            <Tablets />
             <Letters />
-            <Statistics b />
-            <Cards3 b />
-            <Faq />
+            <Book />
+            <Guarantee />
             <Portfolios />
             <Footer />
         </div>

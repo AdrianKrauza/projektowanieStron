@@ -10,20 +10,22 @@ import image2 from '/assets/cards3/dicaprio_jp.jpg';
 import image3 from '/assets/cards3/szydercze_ziomki_jp.jpg';
 import Cards from '../global/cards';
 gsap.registerPlugin(ScrollTrigger);
-const Cards3 = () => {
+const Cards3 = ({ b }) => {
     const cardsRef = useRef();
     const headingRef = useRef();
     const { AnimationHeadingScrub } = useTextAnimations();
     useEffect(() => {
         setTimeout(() => {
             AnimationHeadingScrub(headingRef, { current: document.body }, vh(10), vh(15), true);
-            gsap.to(cardsRef.current, {
-                scrollTrigger: {
-                    trigger: 'body',
-                    end: `0 -350%`,
-                    pin: cardsRef.current,
-                },
-            });
+            if (!b) {
+                gsap.to(cardsRef.current, {
+                    scrollTrigger: {
+                        trigger: 'body',
+                        end: `0 -350%`,
+                        pin: cardsRef.current,
+                    },
+                });
+            }
         }, 0);
     });
     return (
@@ -31,14 +33,16 @@ const Cards3 = () => {
             <Clouds />
             <div
                 ref={cardsRef}
-                className={'absolute m:flex-col flex justify-center w-screen top-0 pointer-events-none'}
+                className={`${
+                    !b ? 'absolute ' : 'mt-[60rem] -mb-[45rem]'
+                }  m:flex-col flex justify-center w-screen top-0 pointer-events-none`}
             >
                 {/*<div*/}
                 {/*    ref={circleRef}*/}
                 {/*    className={'w-screen h-[100vw] bg-[#E7E6E8] absolute rounded-[100%] top-[100vh]'}*/}
                 {/*/>*/}
                 <h2
-                    className={'text-center text-[7rem] relative top-[20rem] opacity-0 m:block hidden'}
+                    className={`text-center text-[7rem] relative top-[20rem] opacity-0 m:block hidden`}
                     ref={headingRef}
                 >
                     <span> Dla przedsiębiorców,</span>

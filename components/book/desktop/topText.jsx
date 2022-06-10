@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-const TopText = () => {
+const TopText = ({ b }) => {
     const topTextRef = useRef();
     const headingRef = useRef();
     useEffect(() => {
@@ -30,7 +30,7 @@ const TopText = () => {
         }, 0);
     }, []);
     return (
-        <div ref={topTextRef} className={'ml-36 z-10 relative'}>
+        <div ref={topTextRef} className={`ml-36 z-10 relative '}`}>
             <Arrow />
             <div>
                 <h2 ref={headingRef} className={'text-[8.5rem] tracking-[-7px]  opacity-0  leading-[.9]'}>
