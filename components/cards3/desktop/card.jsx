@@ -50,7 +50,6 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                                 start: `-${vh(100)}px 0%`,
                                 end: `${vh(0)}px 0%`,
                                 trigger: cardRef.current.parentNode,
-                                markers: true,
                                 scrub: true,
                             },
                         },
@@ -63,11 +62,11 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
         <div
             ref={cardRef}
             className={
-                'bg-white rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-[1.8rem] p-[1.8rem] relative mt-44 h-[30rem] m:mt-[5rem] translate-y-[100vh] will-change-transform m:bg-transparent'
+                'bg-white rounded-3xl  w-[24rem] m:w-[90rem] m:h-[40rem] m:ml-[5rem] mx-[1.8rem] p-[1.8rem] relative mt-44 h-[30rem] m:mt-[-3rem] translate-y-[100vh] will-change-transform m:bg-transparent'
             }
         >
             <p
-                className={`text-center font-playfair text-[1.4rem] font-normal m:text-left ${
+                className={`text-center font-playfair text-[1.4rem] m:text-[3.4rem] font-normal m:text-left ${
                     mobileRight && 'm:ml-[50rem]'
                 }`}
             >
@@ -83,7 +82,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
             </h3>
             <p
                 ref={paragraphRef}
-                className={`mt-9 font-roboto text-[2.2rem] m:text-[4rem] m:leading-[1] ${
+                className={`mt-9 font-roboto text-[2.2rem] m:text-[4.3rem] m:leading-[1] ${
                     mobileRight && 'm:ml-[50rem]'
                 }`}
             >

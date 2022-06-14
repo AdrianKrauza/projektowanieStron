@@ -238,6 +238,7 @@ const HeaderMobile = () => {
                                     autoPlay={true}
                                     muted={true}
                                     loop={true}
+                                    playsInline
                                 />
                             </div>
                             <div className={'block '}>

@@ -20,7 +20,7 @@ const Cards3 = () => {
         <>
             <div
                 ref={cardsRef}
-                className={'bg-lightGray m:flex-col flex justify-center w-screen top-0 pointer-events-none'}
+                className={'bg-lightGray m:flex-col flex justify-center w-screen top-0 pointer-events-none mt-[10rem]'}
             >
                 <Cards />
             </div>

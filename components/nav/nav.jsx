@@ -19,7 +19,9 @@ const Nav = () => {
                             <div className={'m:scale-[.8] mt-[10px]'}>
                                 <Logo />
                             </div>
-                            <p className={' m:hidden text-[12px] ml-[5px] font-bold'}>Dlaczego owocne strony?</p>
+                            <p className={' m:hidden text-[12px] ml-[5px] font-bold'} id={'nav1'}>
+                                Dlaczego owocne strony?
+                            </p>
                             <p className={' m:hidden text-[12px] ml-[5px] font-bold'}>|</p>
                             <p className={' m:hidden text-[12px] ml-[5px] font-bold'}>Gwarancja</p>
                             <p className={' m:hidden text-[12px] ml-[5px] font-bold'}>|</p>

@@ -36,12 +36,13 @@ const BookMobile = () => {
                 opacity: 0.9,
                 scrollTrigger: { trigger: 'body', start: '0% -110%', end: `0 -110%`, scrub: true },
             });
+            headingRef.current.style.opacity = 1;
         }, 0);
     }, []);
     return (
         <>
             <div ref={textContainer} className={'z-[99]  absolute w-screen top-[20rem]'}>
-                <h2 ref={headingRef} className={' text-center text-darkGray text-[8rem]   '}>
+                <h2 ref={headingRef} className={'opacity-0 text-center text-darkGray text-[8rem]   '}>
                     Dla przedsiębiorców,/ którzy oczekują/ rezultatów.
                 </h2>
             </div>
