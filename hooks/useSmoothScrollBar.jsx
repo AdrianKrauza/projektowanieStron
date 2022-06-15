@@ -39,7 +39,7 @@ const UseSmoothScrollBar = ({ children }) => {
         }, 0);
         setTimeout(() => {
             document.querySelector('.scroll-content >div').classList.remove('stopScroll');
-            const y = document.querySelector("#__next > div > div.scroller > div.scroll-content > div > div > div.bg-lightGray.mt-\\[200vh\\] > div").getBoundingClientRect().y
+            const y = document.querySelector("#__next > div > div.scroller > div.scroll-content > div > div > div.bg-lightGray.mt-\\[200vh\\] > div")?.getBoundingClientRect().y
             document.querySelector('#nav1')?.addEventListener('click',()=>{
 
             // console.log(getOffset(document.querySelector("#__next > div > div.scroller > div.scroll-content > div > div > div.bg-lightGray.mt-\\[200vh\\] > div > div.absolute.-right-20.mt-40.m\\:z-30.m\\:shadow-\\[\\#e6e8ec_0px_-9px_13px_5px\\] > div > canvas")));

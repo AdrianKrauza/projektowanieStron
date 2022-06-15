@@ -32,12 +32,12 @@ const UxMobile = () => {
                     />
                 </div>
             </div>
-            <div className={'flex justify-center -mt-[10rem]'}>
+            <div className={' flex justify-center -mt-[10rem]'}>
                 <Image {...gif} />
             </div>
             <button
                 className={
-                    'text-[7rem] text-center m-auto bg-[red] px-[7rem] py-[5rem] bg-[#ff9600] block rounded-[5rem] font-playfair'
+                    'form-open text-[7rem] text-center m-auto bg-[red] px-[7rem] py-[5rem] bg-[#ff9600] block rounded-[5rem] font-playfair'
                 }
             >
                 Wyślijcie mi ofertę

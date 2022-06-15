@@ -103,7 +103,7 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
             ) : (
                 <div
                     style={{ WebkitMaskImage: `url(${mask})` }}
-                    className={`absolute left-1/2 max-w-none w-[27rem] m:translate-y-0 -translate-y-3/4 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
+                    className={`m:translate-y-0 m:top-0 absolute max-w-none w-[28rem] bottom-[-5rem] left-1/2 -translate-x-1/2 m:w-[50rem] m:translate-x-0 m:translate-y-[0rem] ${
                         mobileRight && 'm:left-[0rem]'
                     }`}
                 >
