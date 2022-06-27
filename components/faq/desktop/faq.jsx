@@ -7,6 +7,7 @@ const Faq = () => {
     const heading2Ref = useRef();
     useEffect(() => {
         setTimeout(() => {
+            const w = '';
             AnimationHeadingScrub(heading2Ref, heading2Ref, -50, 200, false, true);
         }, 0);
     }, []);
