@@ -172,7 +172,7 @@ const Dziekujemy = () => {
                         <br />
                     </p>
                     <a
-                        href=""
+                        href="https://copywriting.pl/makiety"
                         className={
                             'm:mt-[5rem] m:text-[5rem] m:p-[2rem]  bg-[#50764C] inline-block mt-[2rem] text-white text-center text-[1.5rem] font-normal p-[.5rem]'
                         }

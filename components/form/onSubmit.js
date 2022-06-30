@@ -50,7 +50,6 @@ const onSubmit = async (data, time) => {
         .then((response) => response.text())
         .then((result) => console.log(result))
         .catch((error) => console.log('error', error));
-
-    await Router.push('https://strony.owocni.pl/dziekujemy');
+    window.location.href = '/dziekujemy';
 };
 export default onSubmit;
