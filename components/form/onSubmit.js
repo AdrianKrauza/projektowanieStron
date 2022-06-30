@@ -51,6 +51,6 @@ const onSubmit = async (data, time) => {
         .then((result) => console.log(result))
         .catch((error) => console.log('error', error));
 
-    await Router.push('https://owocni.pl/dziekujemy');
+    await Router.push('https://strony.owocni.pl/dziekujemy');
 };
 export default onSubmit;
