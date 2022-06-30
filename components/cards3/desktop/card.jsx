@@ -38,7 +38,6 @@ const Card = ({ title, paragraph, video, mask, index, mobileRight, image }) => {
                     );
                 },
                 '(max-width: 1200px)': () => {
-                    console.log(cardRef.current);
                     gsap.fromTo(
                         cardRef.current,
                         {

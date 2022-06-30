@@ -5,6 +5,7 @@ import UseSmoothScrollBar from '../hooks/useSmoothScrollBar';
 import Nav from '../components/nav/nav';
 import { useEffect, useState } from 'react';
 import PopUpForm from '../components/form/popUpForm';
+import Head from 'next/head';
 const Resize = () => {
     const [isResize, setIsResize] = useState(false);
     useEffect(() => {
@@ -32,6 +33,9 @@ const Resize = () => {
 function MyApp({ Component, pageProps }) {
     return (
         <div>
+            <Head>
+                <title>Owocne strony internetowe</title>
+            </Head>
             <Resize />
             <Nav />
             <UseSmoothScrollBar>

@@ -24,7 +24,7 @@ const Guarantee = ({ setPageState }) => {
             AnimationHeadingScrub(heading2Ref, heading2Ref, -50, 200, false, true);
             AnimationHeadingScrub(heading3Ref, heading3Ref, -50, 200, false, true);
             AnimationHeadingScrub(headerRef, headerRef, -150, 100, false, true);
-            console.log(headerRef.current);
+
             headerRef.current.querySelectorAll('span').forEach((el) => {
                 if (el.innerHTML === '1' || el.innerHTML === '0') {
                     el.style.fontSize = '16rem';

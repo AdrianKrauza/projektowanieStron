@@ -116,7 +116,7 @@ const BookCanvas = ({ bookSectionRef }) => {
 
         setTimeout(() => {
             images = preloadImages(images);
-            console.log(images);
+
             updateBook(images[0][0], context);
         }, 6000);
 

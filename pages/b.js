@@ -25,7 +25,6 @@ import Faq from '../components/faq/desktop/faq';
 export default function Home() {
     const [isMobile, setIsMobile] = useState('init');
     useEffect(() => {
-        console.log(window.innerWidth, isMobile);
         if (window.innerWidth < 768) {
             setIsMobile(true);
         } else {
