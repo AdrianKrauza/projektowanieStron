@@ -69,7 +69,7 @@ const Form = ({ popUp }) => {
                         <div className={'relative w-full z-10 top-[5px] m:mt-[20px]'}>
                             <button
                                 className={
-                                    'top-0 relative top-[-5px] hover:top-0 bg-[#438d07] font-[400] text-white text-[22px] rounded-[10px] py-[10px] w-full m:text-[16px]'
+                                    'form-close top-0 relative top-[-5px] hover:top-0 bg-[#438d07] font-[400] text-white text-[22px] rounded-[10px] py-[10px] w-full m:text-[16px]'
                                 }
                                 type="submit"
                             >

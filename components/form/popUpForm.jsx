@@ -25,6 +25,9 @@ const PopUpForm = () => {
             document.querySelectorAll('.form-open').forEach((el) => {
                 el.addEventListener('click', open);
             });
+            document.querySelectorAll('.form-close').forEach((el) => {
+                el.addEventListener('click', open);
+            });
         }, 0);
     }, []);
     return (
